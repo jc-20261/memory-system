@@ -1,0 +1,211 @@
+--- generalized_sketch ---
+Below is the bottom-up generalised action plot. Leaf actions are replaced by reusable template names. Complex actions are marked with **general:** and **alt:**, preserving the specific memory sequence in the alternative name. All original offsets, temporal types, durations, and hierarchical nesting are retained.
+
+---
+
+## LANE H — Human actions (generalised)
+
+- `[T0, seq, ~2 s]` **general: Retrieve object from container** | **alt: Take apple from bowl.**
+  - `[T0, seq, ~0.3 s]` **general: Perceive target location**
+  - `[T0+0.3, seq, ~0.4 s]` **general: Reach toward object**
+  - `[T0+0.7, seq, ~0.3 s]` **general: Contact object**
+  - `[T0+1.0, seq, ~0.4 s]` **general: Grasp object**
+  - `[T0+1.4, seq, ~0.4 s]` **general: Lift object**
+  - `[T0+1.8, seq, ~0.2 s]` **general: Transport object out of container**
+  - `[T0+0.2, parallel, ~2 s]` **general: Sense object properties during grasp** | **alt: Feel cold, tight/waxy skin, weight/density under thumb.**
+    - `[T0+0.2, parallel, ~0.5 s]` **general: Sense temperature**
+    - `[T0+0.3, parallel, ~0.5 s]` **general: Sense surface texture**
+    - `[T0+0.7, parallel, ~1.3 s]` **general: Sense weight/force by proprioception**
+
+- `[T0+2, seq, ~8 s]` **general: Wash object under running water** | **alt: Turn apple under tap; run palm over entire surface.**
+  - `[T0+2, seq, ~0.5 s]` **general: Transport object to wash location**
+  - `[T0+2.5, seq, ~0.5 s]` **general: Activate water flow**
+  - `[T0+3, seq, ~1 s]` **general: Position object under stream**
+  - `[T0+4, cyclical, ~5 s]` **general: Rotate object under flowing water while manually scanning** | **alt: Rotate apple under water: wrist supination/pronation; fingers index.**
+    - `[T0+4, cyclical, ~5 s]` **general: Rotate object with support hand**
+    - `[T0+4, parallel/cyclical, ~5 s]` **general: Fluid-surface interaction during rotation** (see N2)
+    - `[T0+4, parallel/cyclical, ~5 s]` **general: Scan entire surface by touch**
+  - `[T0+9, seq, ~1 s]` **general: Complete rinse and remove from flow**
+  - `[T0+2, parallel, ~8 s]` **general: Sense surface features during washing** | **alt: Feel stem dimple/crater and faint scar line.**
+    - `[T0+8, parallel, ~1 s]` **general: Probe feature with fingers**
+    - `[T0+8.5, parallel, ~1 s]` **general: Detect surface irregularity**
+
+- `[T0+10, seq, ~4 s]` **general: Dry object by wiping with fabric** | **alt: Dry apple on shirt.**
+  - `[T0+10, seq, ~0.5 s]` **general: Bring object to absorbent surface**
+  - `[T0+10.5, seq, ~2.5 s]` **general: Rub object against absorbent material** | **alt: Press apple against shirt; wipe/rotate with palm.**
+    - `[T0+10.5, cyclical, ~2.5 s]` **general: Cyclical rubbing/water transfer to fabric**
+  - `[T0+13, seq, ~0.7 s]` **general: Inspect object for residual liquid**
+  - `[T0+13.7, seq, ~0.3 s]` **general: Release absorbent material**
+  - `[T0+10, parallel, ~4 s]` **general: Surface drying/optical change** (see N3)
+
+- `[T0+14, seq, ~2 s]` **general: Position and stabilize object on work surface** | **alt: Set apple on cutting board, stem-side up; press down.**
+  - `[T0+14, seq, ~0.5 s]` **general: Move object over support surface**
+  - `[T0+14.5, seq, ~0.5 s]` **general: Orient object for task**
+  - `[T0+15, seq, ~0.5 s]` **general: Place object on surface**
+  - `[T0+15.5, seq, ~0.5 s]` **general: Stabilize object by pressing**
+  - `[T0+14, parallel, ~2 s]` **general: Object remains stationary** | **alt: Apple does not roll.**
+    - `[T0+15, state, ~2 s]` **general: Static friction/contact stabilizes object**
+
+- `[T0+16, seq, ~2 s]` **general: Prepare and grip cutting tool with safe object hold** | **alt: Hold paring knife in right hand, thumb braced on bolster; left hand pins apple, fingertips curled back.**
+  - `[T0+16, seq, ~0.5 s]` **general: Reach toward tool**
+  - `[T0+16.5, seq, ~0.5 s]` **general: Grip tool with precision brace**
+  - `[T0+17, seq, ~0.5 s]` **general: Contact and pin object**
+  - `[T0+17.5, seq, ~0.5 s]` **general: Adopt safe hand posture**
+  - `[T0+16, parallel, ~2 s]` **general: Sense grip readiness**
+
+- `[T0+18, seq, ~1 s]` **general: Initiate controlled cut into object surface** | **alt: First cut: sink blade just beside stem, ~1/4 inch deep, until pop through skin into flesh.**
+  - `[T0+18, seq, ~0.2 s]` **general: Position blade at target site**
+  - `[T0+18.2, seq, ~0.2 s]` **general: Apply cutting force**
+  - `[T0+18.4, seq, ~0.3 s]` **general: Material deforms under blade pressure**
+  - `[T0+18.7, seq, ~0.1 s]` **general: Blade ruptures surface**
+  - `[T0+18.8, seq, ~0.2 s]` **general: Control cut depth and retract**
+  - `[T0+18, parallel, immediate]` **general: Surface rupture exposes tissue and fluid** (see N4)
+
+- `[T0+19, cyclical, ~35–45 s]` **general: Remove outer layer with blade by iterative rotation** | **alt: Peel: rotate apple against blade; left thumb pushes fruit forward in small increments; knife stays nearly still.**
+  - `[T0+19, cyclical, ~35–45 s]` **general: Iterative surface-layer removal cycle** | **alt: Peel cycle: left thumb pushes, right hand rotates, blade engages, peel curls, reset.**
+    - `[per cycle, seq, ~0.5–1 s]` **general: Incrementally advance object**
+    - `[per cycle, seq, ~0.2 s]` **general: Rotate object against tool**
+    - `[per cycle, seq, ~0.2 s]` **general: Tool separates surface layer**
+    - `[per cycle, seq, ~0.2 s]` **general: Separated layer curls/relaxes**
+    - `[per cycle, seq, ~0.1 s]` **general: Reset grip for next cycle**
+  - `[T0+~50, seq, ~5 s]` **general: Adapt removal around irregular end** | **alt: At bottom, peel narrows; lift knife and reposition twice around calyx end.**
+    - `[T0+~50, seq, ~1.5 s]` **general: Reposition blade around irregular feature**
+    - `[T0+~51.5, seq, ~1.5 s]` **general: Cut remaining narrow strip**
+    - `[T0+~53, seq, ~2 s]` **general: Detach and release removed layer**
+  - `[T0+19, parallel/cyclical]` **general: Continuous removed-layer formation** | **alt: Peel ribbon forms: continuous, ~1 inch wide, curls away, drops in loose spiral onto board.**
+    - `[T0+19, cyclical, ~35–45 s]` **general: Removed layer lengthens and curls under gravity**
+    - `[T0+~50, seq, ~5 s]` **general: Irregular end pieces detach**
+
+- `[T0+~55, seq, ~2 s]` **general: Manipulate and inspect prepared object** | **alt: Turn naked apple in hand.**
+  - `[T0+~55, seq, ~0.5 s]` **general: Adjust grip/support**
+  - `[T0+~55.5, seq, ~1 s]` **general: Rotate and inspect object**
+  - `[T0+~56.5, seq, ~0.5 s]` **general: Orient object for next operation**
+
+- `[T0+~57, seq, ~3 s]` **general: Divide object into quarters through core** | **alt: Quarter apple: blade down through core, firm crunch; second cut; four pieces fall apart.**
+  - `[T0+~57, seq, ~0.5 s]` **general: Align blade along axis**
+  - `[T0+~57.5, seq, ~1 s]` **general: Bisect object through core** | **alt: First bisection: press/cut down through core; firm crunch.**
+    - `[T0+~57.5, seq, ~0.3 s]` **general: Apply downward cutting force**
+    - `[T0+~57.8, seq, ~0.4 s]` **general: Blade traverses tissue, rupturing cells**
+    - `[T0+~58.2, seq, ~0.3 s]` **general: Object separates into halves**
+  - `[T0+~58.5, seq, ~1 s]` **general: Repeat bisection on pieces** | **alt: Second cut: rotate/reposition halves; cut through core again.**
+    - `[T0+~58.5, seq, ~0.3 s]` **general: Rotate/reposition pieces**
+    - `[T0+~58.8, seq, ~0.4 s]` **general: Cut through core again**
+    - `[T0+~59.2, seq, ~0.3 s]` **general: Object separates into quarters**
+  - `[T0+~57, parallel]` **general: Crunch and core exposure during division** (see N11)
+
+- `[T0+~60, iterative/cyclical, ~30 s]` **general: Remove core from each piece iteratively** | **alt: For each quarter: lay flat and slice out core.**
+  - `[T0+~60, repeated 4×, ~7.5 s each]` **general: Iterative core removal from pieces** | **alt: Quarter-core cycle: lay flat, identify core, insert blade, slice around core, extract wedge, set aside.**
+    - `[per quarter, seq, ~1 s]` **general: Place and stabilize piece**
+    - `[per quarter, seq, ~1 s]` **general: Identify internal feature**
+    - `[per quarter, seq, ~2 s]` **general: Insert blade along boundary**
+    - `[per quarter, seq, ~2 s]` **general: Cut around core to separate**
+    - `[per quarter, seq, ~1 s]` **general: Extract internal core/seed structure**
+    - `[per quarter, seq, ~0.5 s]` **general: Place removed part aside**
+  - `[T0+~60, repeated 4×]` **general: Core/seed extraction with cut-surface reactions** | **alt: Extract triangular core wedge with 3 seeds in papery pockets.**
+    - `[per quarter, parallel]` **general: Juice release and oxidative browning at cut surfaces** (see N6)
+    - `[per quarter, parallel]` **general: Seed pockets tear/separate**
+
+- `[T0+~90, seq, ~2 s]` **general: Discard small items by ballistic projection into receptacle** | **alt: Flick seeds into sink; they click against steel.**
+  - `[T0+~90, seq, ~0.5 s]` **general: Gather small items**
+  - `[T0+~90.5, seq, ~0.5 s]` **general: Prepare flicking grip/tension**
+  - `[T0+~91, seq, ~0.3 s]` **general: Launch object by flicking**
+  - `[T0+~91.3, seq, ~0.7 s]` **general: Object travels and impacts surface**
+  - `[T0+~90, parallel]` **general: Impact acoustics and settling in receptacle** (see N12)
+
+- `[T0+~92, seq, ~5 s]` **general: Transfer prepared pieces into container** | **alt: Put slices into bowl.**
+  - `[T0+~92, seq, ~1 s]` **general: Gather pieces**
+  - `[T0+~93, seq, ~2 s]` **general: Transfer pieces to container**
+  - `[T0+~95, seq, ~1.5 s]` **general: Place and arrange pieces loosely**
+  - `[T0+~96.5, seq, ~0.5 s]` **general: Withdraw and verify**
+
+- `[T0+~97, seq, ~2 s]` **general: Dispose of waste into receptacle** | **alt: Put peels into compost crock.**
+  - `[T0+~97, seq, ~0.5 s]` **general: Gather discarded layer**
+  - `[T0+~97.5, seq, ~0.7 s]` **general: Transfer waste to receptacle**
+  - `[T0+~98.2, seq, ~0.5 s]` **general: Release and let settle**
+  - `[T0+~98.7, seq, ~0.3 s]` **general: Clean work surface**
+
+- `[T0+~99, lingering/parallel, hours]` **general: Lingering sensory residue after task** | **alt: Hands smell like apple for rest of morning, even after washing.**
+  - `[T0+~99, state, hours]` **general: Volatile retention in skin oils**
+  - `[T0+~99, delayed, ~minutes]` **general: Partial removal by washing leaves residue**
+  - `[T0+~99, parallel, hours]` **general: Olfactory adaptation and intermittent detection**
+
+---
+
+## LANE N — Natural / material processes (generalised)
+
+- `[T0, state, continuous]` **general: Initial material state of cold hydrated object** | **alt: Apple is cold from refrigerator; dense with water.**
+  - `[T0, state, continuous]` **general: Thermal equilibration/heat transfer**
+  - `[T0, state, continuous]` **general: Turgor pressure/dense mass**
+  - `[T0, state, continuous]` **general: Intact waxy surface/low friction**
+
+- `[T0+2, parallel, ~8 s]` **general: Liquid-surface interaction and runoff** | **alt: Water beads and rolls off waxy skin immediately during washing.**
+  - `[T0+2, seq, ~0.5 s]` **general: Liquid wetting of surface**
+  - `[T0+2.5, cyclical, ~5 s]` **general: Droplet coalescence under surface tension**
+  - `[T0+3, parallel, ~5 s]` **general: Gravity/capillary runoff**
+  - `[T0+4, delayed, ~minutes]` **general: Evaporation and cavity retention**
+
+- `[T0+10, parallel, ~4 s]` **general: Fabric drying and surface optical change** | **alt: Drying on shirt changes skin from glossy to dull matte red.**
+  - `[T0+10, parallel, ~2.5 s]` **general: Capillary wicking into fabric**
+  - `[T0+10.5, parallel, ~2.5 s]` **general: Absorption reduces surface liquid**
+  - `[T0+12, delayed, ~minutes]` **general: Evaporation alters surface optics**
+  - `[T0+13, delayed, ~minutes]` **general: Matte appearance from exposed microtexture**
+
+- `[T0+18, parallel, immediate]` **general: Cut-induced tissue exposure and fluid release** | **alt: Cut breaks skin; exposed flesh is pale yellow-white; thin juice film weeps immediately.**
+  - `[T0+18, seq, immediate]` **general: Blade parts surface layers**
+  - `[T0+18.1, seq, immediate]` **general: Cell rupture releases vacuolar fluid**
+  - `[T0+18.2, parallel, immediate]` **general: Fluid film forms on cut surface**
+  - `[T0+18.2, parallel, immediate]` **general: Cut surface color change from scattering/air**
+  - `[T0+18.3, delayed, +10 s]` **general: Oxidation onset** (see N6)
+
+- `[T0+19, parallel, ~35–45 s]` **general: Surface-layer separation and tissue exposure** | **alt: Peel separation exposes wet, faintly green-white flesh.**
+  - `[T0+19, cyclical, ~35–45 s]` **general: Blade shears cell adhesion layer**
+  - `[T0+19, parallel/cyclical]` **general: Surface layer separates exposing tissue**
+  - `[T0+19, parallel/cyclical]` **general: Fluid films and runs down object**
+  - `[T0+19, delayed]` **general: Browning of exposed tissue** (see N6)
+
+- `[T0+29, delayed, +10 s after first exposure, ongoing]` **general: Oxidative browning of cut tissue** | **alt: Exposed flesh begins dulling toward tan; oxidation/browning repeats for every new cut surface.**
+  - `[T0+29, seq, +10 s]` **general: Oxygen diffusion into tissue**
+  - `[T0+29, parallel, ongoing]` **general: Enzymatic oxidation of phenolics**
+  - `[T0+29, delayed, seconds–minutes]` **general: Polymerization to brown pigments**
+  - `[T0+29, parallel, ongoing]` **general: Cut-surface browning reset by new cuts**
+
+- `[T0+19, parallel, continuous]` **general: Aroma release and perception** | **alt: Aroma volatiles rise — green, sharp, faintly floral.**
+  - `[T0+19, parallel, continuous]` **general: Cell rupture releases volatiles**
+  - `[T0+19, parallel, continuous]` **general: Volatile diffusion/dispersal**
+  - `[T0+19, parallel, continuous]` **general: Olfactory detection of volatiles**
+
+- `[T0+19, parallel]` **general: Acoustic emission and perception during cutting** | **alt: Blade makes soft, wet, rasping sound, like paper tearing slowly.**
+  - `[T0+19, cyclical]` **general: Tool-tissue friction**
+  - `[T0+19, parallel]` **general: Acoustic bursts from cell rupture**
+  - `[T0+19, parallel]` **general: Sound transmission to auditory system**
+  - `[T0+19, parallel]` **general: Perception of cutting sound**
+
+- `[T0+~55, parallel/after peeling]` **general: Fluid runoff along skin** | **alt: Juice runs down wrist to heel of palm.**
+  - `[T0+~55, seq]` **general: Fluid accumulation at contact**
+  - `[T0+~55, parallel]` **general: Gravity/capillary spread on skin**
+  - `[T0+~55, delayed]` **general: Fluid reaches distal skin area**
+
+- `[T0+~55 to +minutes, delayed]` **general: Fluid film drying to tacky residue** | **alt: Juice dries tacky on skin.**
+  - `[T0+~55, delayed, minutes]` **general: Water evaporation from film**
+  - `[T0+~55, delayed, minutes]` **general: Solute concentration forms tacky residue**
+  - `[T0+~55, delayed, minutes]` **general: Residue adhesion to skin oils**
+
+- `[T0+~57, parallel]` **general: Crunch and core tissue exposure during division** | **alt: Quartering produces firm crunch; core wedge is fibrous, pale, slightly translucent.**
+  - `[T0+~57, seq]` **general: Blade fractures tissue, cell walls snap**
+  - `[T0+~57, parallel]` **general: Acoustic crunch from microfractures**
+  - `[T0+~57, parallel]` **general: Core wedge material properties**
+
+- `[T0+~90, parallel]` **general: Impact acoustics and settling in receptacle** | **alt: Seeds click against steel sink.**
+  - `[T0+~90, seq]` **general: Impact and elastic deformation**
+  - `[T0+~90, parallel]` **general: Acoustic click/steel resonance**
+  - `[T0+~90, parallel]` **general: Particles settle in basin/drain**
+
+- `[T0+~97, parallel]` **general: Post-disposal oxidative deterioration** | **alt: Peel edges in compost crock are already browning.**
+  - `[T0+~97, parallel]` **general: Oxygen exposure at cut edges**
+  - `[T0+~97, delayed]` **general: Enzymatic browning and dehydration**
+  - `[T0+~97, ongoing]` **general: Progressive browning/darkening**
+
+- `[T0+~99, lingering, hours]` **general: Lingering volatile retention and perception** | **alt: Apple odor persists on hands after washing.**
+  - `[T0+~99, state, hours]` **general: Volatile absorption into skin**
+  - `[T0+~99, delayed, hours]` **general: Slow release from skin oils**
+  - `[T0+~99, parallel, hours]` **general: Persistent intermittent olfactory detection**

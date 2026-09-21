@@ -1,0 +1,6167 @@
+{
+  "remove": {
+    "action_template_count": 73,
+    "memory_count": 45,
+    "instance_count": 74
+  },
+  "survey_plant": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "scan": {
+    "action_template_count": 64,
+    "memory_count": 40,
+    "instance_count": 61
+  },
+  "saccade": {
+    "action_template_count": 248,
+    "memory_count": 78,
+    "instance_count": 414
+  },
+  "fixate": {
+    "action_template_count": 454,
+    "memory_count": 79,
+    "instance_count": 570
+  },
+  "track": {
+    "action_template_count": 59,
+    "memory_count": 31,
+    "instance_count": 46
+  },
+  "shift": {
+    "action_template_count": 114,
+    "memory_count": 54,
+    "instance_count": 118
+  },
+  "select": {
+    "action_template_count": 44,
+    "memory_count": 27,
+    "instance_count": 46
+  },
+  "identify": {
+    "action_template_count": 61,
+    "memory_count": 34,
+    "instance_count": 51
+  },
+  "compare": {
+    "action_template_count": 111,
+    "memory_count": 52,
+    "instance_count": 101
+  },
+  "assess": {
+    "action_template_count": 59,
+    "memory_count": 34,
+    "instance_count": 62
+  },
+  "note": {
+    "action_template_count": 38,
+    "memory_count": 20,
+    "instance_count": 35
+  },
+  "detect": {
+    "action_template_count": 104,
+    "memory_count": 40,
+    "instance_count": 84
+  },
+  "decide": {
+    "action_template_count": 13,
+    "memory_count": 10,
+    "instance_count": 12
+  },
+  "process": {
+    "action_template_count": 15,
+    "memory_count": 13,
+    "instance_count": 16
+  },
+  "reach": {
+    "action_template_count": 182,
+    "memory_count": 76,
+    "instance_count": 231
+  },
+  "extend": {
+    "action_template_count": 141,
+    "memory_count": 64,
+    "instance_count": 232
+  },
+  "open": {
+    "action_template_count": 123,
+    "memory_count": 74,
+    "instance_count": 184
+  },
+  "spread": {
+    "action_template_count": 105,
+    "memory_count": 48,
+    "instance_count": 96
+  },
+  "curl": {
+    "action_template_count": 60,
+    "memory_count": 45,
+    "instance_count": 82
+  },
+  "flex": {
+    "action_template_count": 96,
+    "memory_count": 58,
+    "instance_count": 168
+  },
+  "surround": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "twist": {
+    "action_template_count": 43,
+    "memory_count": 21,
+    "instance_count": 33
+  },
+  "press": {
+    "action_template_count": 490,
+    "memory_count": 90,
+    "instance_count": 600
+  },
+  "rotate": {
+    "action_template_count": 258,
+    "memory_count": 76,
+    "instance_count": 262
+  },
+  "maintain": {
+    "action_template_count": 164,
+    "memory_count": 61,
+    "instance_count": 172
+  },
+  "detach": {
+    "action_template_count": 45,
+    "memory_count": 26,
+    "instance_count": 38
+  },
+  "pull": {
+    "action_template_count": 213,
+    "memory_count": 52,
+    "instance_count": 169
+  },
+  "separate": {
+    "action_template_count": 71,
+    "memory_count": 36,
+    "instance_count": 72
+  },
+  "toss": {
+    "action_template_count": 9,
+    "memory_count": 7,
+    "instance_count": 7
+  },
+  "lift": {
+    "action_template_count": 419,
+    "memory_count": 82,
+    "instance_count": 487
+  },
+  "release": {
+    "action_template_count": 362,
+    "memory_count": 88,
+    "instance_count": 501
+  },
+  "flick": {
+    "action_template_count": 8,
+    "memory_count": 6,
+    "instance_count": 9
+  },
+  "position": {
+    "action_template_count": 195,
+    "memory_count": 68,
+    "instance_count": 157
+  },
+  "shear": {
+    "action_template_count": 23,
+    "memory_count": 16,
+    "instance_count": 22
+  },
+  "move": {
+    "action_template_count": 201,
+    "memory_count": 62,
+    "instance_count": 205
+  },
+  "locate": {
+    "action_template_count": 47,
+    "memory_count": 30,
+    "instance_count": 45
+  },
+  "reposition": {
+    "action_template_count": 30,
+    "memory_count": 22,
+    "instance_count": 25
+  },
+  "adjust": {
+    "action_template_count": 117,
+    "memory_count": 58,
+    "instance_count": 106
+  },
+  "cut": {
+    "action_template_count": 88,
+    "memory_count": 26,
+    "instance_count": 87
+  },
+  "pick_up": {
+    "action_template_count": 49,
+    "memory_count": 21,
+    "instance_count": 43
+  },
+  "grasp": {
+    "action_template_count": 144,
+    "memory_count": 57,
+    "instance_count": 153
+  },
+  "align": {
+    "action_template_count": 166,
+    "memory_count": 62,
+    "instance_count": 146
+  },
+  "saw": {
+    "action_template_count": 5,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "complete": {
+    "action_template_count": 12,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "place": {
+    "action_template_count": 342,
+    "memory_count": 88,
+    "instance_count": 348
+  },
+  "lower": {
+    "action_template_count": 181,
+    "memory_count": 71,
+    "instance_count": 194
+  },
+  "contact": {
+    "action_template_count": 106,
+    "memory_count": 50,
+    "instance_count": 108
+  },
+  "brush": {
+    "action_template_count": 19,
+    "memory_count": 12,
+    "instance_count": 19
+  },
+  "stimulate": {
+    "action_template_count": 9,
+    "memory_count": 8,
+    "instance_count": 9
+  },
+  "touch": {
+    "action_template_count": 69,
+    "memory_count": 41,
+    "instance_count": 71
+  },
+  "bend": {
+    "action_template_count": 45,
+    "memory_count": 31,
+    "instance_count": 59
+  },
+  "scratch": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "abrade": {
+    "action_template_count": 5,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "tear": {
+    "action_template_count": 30,
+    "memory_count": 22,
+    "instance_count": 34
+  },
+  "initiate": {
+    "action_template_count": 20,
+    "memory_count": 24,
+    "instance_count": 34
+  },
+  "propagate": {
+    "action_template_count": 87,
+    "memory_count": 55,
+    "instance_count": 118
+  },
+  "drop": {
+    "action_template_count": 68,
+    "memory_count": 40,
+    "instance_count": 53
+  },
+  "lose": {
+    "action_template_count": 8,
+    "memory_count": 7,
+    "instance_count": 7
+  },
+  "flow": {
+    "action_template_count": 164,
+    "memory_count": 60,
+    "instance_count": 144
+  },
+  "form": {
+    "action_template_count": 185,
+    "memory_count": 57,
+    "instance_count": 144
+  },
+  "ooze": {
+    "action_template_count": 4,
+    "memory_count": 5,
+    "instance_count": 7
+  },
+  "dry": {
+    "action_template_count": 46,
+    "memory_count": 24,
+    "instance_count": 39
+  },
+  "evaporate": {
+    "action_template_count": 77,
+    "memory_count": 45,
+    "instance_count": 78
+  },
+  "congeal": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "diffuse": {
+    "action_template_count": 97,
+    "memory_count": 53,
+    "instance_count": 102
+  },
+  "disperse": {
+    "action_template_count": 46,
+    "memory_count": 22,
+    "instance_count": 34
+  },
+  "oxidize": {
+    "action_template_count": 17,
+    "memory_count": 11,
+    "instance_count": 16
+  },
+  "expose": {
+    "action_template_count": 27,
+    "memory_count": 22,
+    "instance_count": 26
+  },
+  "discolor": {
+    "action_template_count": 7,
+    "memory_count": 7,
+    "instance_count": 7
+  },
+  "wilt": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 6
+  },
+  "dehydrate": {
+    "action_template_count": 10,
+    "memory_count": 7,
+    "instance_count": 7
+  },
+  "gravitate": {
+    "action_template_count": 35,
+    "memory_count": 33,
+    "instance_count": 46
+  },
+  "accelerate": {
+    "action_template_count": 52,
+    "memory_count": 38,
+    "instance_count": 62
+  },
+  "travel": {
+    "action_template_count": 20,
+    "memory_count": 14,
+    "instance_count": 20
+  },
+  "pass": {
+    "action_template_count": 56,
+    "memory_count": 40,
+    "instance_count": 61
+  },
+  "transmit": {
+    "action_template_count": 93,
+    "memory_count": 44,
+    "instance_count": 96
+  },
+  "redistribute": {
+    "action_template_count": 18,
+    "memory_count": 16,
+    "instance_count": 20
+  },
+  "respond": {
+    "action_template_count": 9,
+    "memory_count": 6,
+    "instance_count": 10
+  },
+  "finish": {
+    "action_template_count": 21,
+    "memory_count": 23,
+    "instance_count": 23
+  },
+  "step_back": {
+    "action_template_count": 18,
+    "memory_count": 14,
+    "instance_count": 18
+  },
+  "straighten": {
+    "action_template_count": 20,
+    "memory_count": 19,
+    "instance_count": 24
+  },
+  "inspect": {
+    "action_template_count": 143,
+    "memory_count": 68,
+    "instance_count": 142
+  },
+  "smell": {
+    "action_template_count": 44,
+    "memory_count": 37,
+    "instance_count": 46
+  },
+  "raise": {
+    "action_template_count": 86,
+    "memory_count": 49,
+    "instance_count": 91
+  },
+  "inhale": {
+    "action_template_count": 33,
+    "memory_count": 45,
+    "instance_count": 72
+  },
+  "expand": {
+    "action_template_count": 44,
+    "memory_count": 28,
+    "instance_count": 39
+  },
+  "bind": {
+    "action_template_count": 34,
+    "memory_count": 23,
+    "instance_count": 27
+  },
+  "activate": {
+    "action_template_count": 79,
+    "memory_count": 40,
+    "instance_count": 88
+  },
+  "plant": {
+    "action_template_count": 13,
+    "memory_count": 15,
+    "instance_count": 29
+  },
+  "prepare": {
+    "action_template_count": 48,
+    "memory_count": 43,
+    "instance_count": 55
+  },
+  "trace": {
+    "action_template_count": 30,
+    "memory_count": 22,
+    "instance_count": 28
+  },
+  "verify": {
+    "action_template_count": 48,
+    "memory_count": 34,
+    "instance_count": 44
+  },
+  "incline": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "test": {
+    "action_template_count": 23,
+    "memory_count": 21,
+    "instance_count": 23
+  },
+  "grip": {
+    "action_template_count": 153,
+    "memory_count": 61,
+    "instance_count": 197
+  },
+  "widen": {
+    "action_template_count": 6,
+    "memory_count": 6,
+    "instance_count": 6
+  },
+  "break": {
+    "action_template_count": 60,
+    "memory_count": 27,
+    "instance_count": 48
+  },
+  "clench": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "squeeze": {
+    "action_template_count": 36,
+    "memory_count": 20,
+    "instance_count": 43
+  },
+  "crumble": {
+    "action_template_count": 12,
+    "memory_count": 8,
+    "instance_count": 12
+  },
+  "pour": {
+    "action_template_count": 95,
+    "memory_count": 34,
+    "instance_count": 101
+  },
+  "tilt": {
+    "action_template_count": 124,
+    "memory_count": 40,
+    "instance_count": 108
+  },
+  "shine": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "plunge": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "level": {
+    "action_template_count": 18,
+    "memory_count": 10,
+    "instance_count": 12
+  },
+  "compact": {
+    "action_template_count": 15,
+    "memory_count": 7,
+    "instance_count": 11
+  },
+  "transplant": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "invert": {
+    "action_template_count": 8,
+    "memory_count": 5,
+    "instance_count": 6
+  },
+  "extract": {
+    "action_template_count": 14,
+    "memory_count": 11,
+    "instance_count": 14
+  },
+  "dig": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 6
+  },
+  "backfill": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "check": {
+    "action_template_count": 60,
+    "memory_count": 33,
+    "instance_count": 56
+  },
+  "water": {
+    "action_template_count": 7,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "fill": {
+    "action_template_count": 41,
+    "memory_count": 29,
+    "instance_count": 41
+  },
+  "carry": {
+    "action_template_count": 70,
+    "memory_count": 31,
+    "instance_count": 62
+  },
+  "spray": {
+    "action_template_count": 22,
+    "memory_count": 9,
+    "instance_count": 26
+  },
+  "observe": {
+    "action_template_count": 264,
+    "memory_count": 81,
+    "instance_count": 240
+  },
+  "settle": {
+    "action_template_count": 112,
+    "memory_count": 51,
+    "instance_count": 101
+  },
+  "feel": {
+    "action_template_count": 135,
+    "memory_count": 58,
+    "instance_count": 120
+  },
+  "anticipate": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "grow": {
+    "action_template_count": 28,
+    "memory_count": 21,
+    "instance_count": 25
+  },
+  "compost": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "perceive": {
+    "action_template_count": 205,
+    "memory_count": 57,
+    "instance_count": 181
+  },
+  "look": {
+    "action_template_count": 42,
+    "memory_count": 26,
+    "instance_count": 38
+  },
+  "reflect": {
+    "action_template_count": 83,
+    "memory_count": 35,
+    "instance_count": 80
+  },
+  "walk": {
+    "action_template_count": 36,
+    "memory_count": 31,
+    "instance_count": 53
+  },
+  "chop": {
+    "action_template_count": 9,
+    "memory_count": 5,
+    "instance_count": 10
+  },
+  "pinch": {
+    "action_template_count": 73,
+    "memory_count": 32,
+    "instance_count": 62
+  },
+  "slice": {
+    "action_template_count": 20,
+    "memory_count": 13,
+    "instance_count": 23
+  },
+  "repeat": {
+    "action_template_count": 13,
+    "memory_count": 11,
+    "instance_count": 12
+  },
+  "rupture": {
+    "action_template_count": 43,
+    "memory_count": 20,
+    "instance_count": 46
+  },
+  "crush": {
+    "action_template_count": 11,
+    "memory_count": 4,
+    "instance_count": 8
+  },
+  "shatter": {
+    "action_template_count": 4,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "empty": {
+    "action_template_count": 8,
+    "memory_count": 6,
+    "instance_count": 8
+  },
+  "shake": {
+    "action_template_count": 43,
+    "memory_count": 21,
+    "instance_count": 31
+  },
+  "fall": {
+    "action_template_count": 123,
+    "memory_count": 38,
+    "instance_count": 88
+  },
+  "assemble": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "push": {
+    "action_template_count": 150,
+    "memory_count": 48,
+    "instance_count": 125
+  },
+  "gather": {
+    "action_template_count": 35,
+    "memory_count": 21,
+    "instance_count": 31
+  },
+  "catalyze": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "brown": {
+    "action_template_count": 10,
+    "memory_count": 8,
+    "instance_count": 11
+  },
+  "transport": {
+    "action_template_count": 23,
+    "memory_count": 15,
+    "instance_count": 22
+  },
+  "dump": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 6
+  },
+  "rise": {
+    "action_template_count": 104,
+    "memory_count": 39,
+    "instance_count": 79
+  },
+  "tip": {
+    "action_template_count": 13,
+    "memory_count": 10,
+    "instance_count": 13
+  },
+  "tap": {
+    "action_template_count": 108,
+    "memory_count": 36,
+    "instance_count": 133
+  },
+  "tumble": {
+    "action_template_count": 15,
+    "memory_count": 10,
+    "instance_count": 11
+  },
+  "turn": {
+    "action_template_count": 60,
+    "memory_count": 28,
+    "instance_count": 45
+  },
+  "drive": {
+    "action_template_count": 26,
+    "memory_count": 17,
+    "instance_count": 27
+  },
+  "crunch": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "fold": {
+    "action_template_count": 58,
+    "memory_count": 22,
+    "instance_count": 47
+  },
+  "bury": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "tamp": {
+    "action_template_count": 5,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "lean": {
+    "action_template_count": 17,
+    "memory_count": 14,
+    "instance_count": 16
+  },
+  "rinse": {
+    "action_template_count": 30,
+    "memory_count": 14,
+    "instance_count": 33
+  },
+  "hold": {
+    "action_template_count": 185,
+    "memory_count": 74,
+    "instance_count": 173
+  },
+  "drain": {
+    "action_template_count": 37,
+    "memory_count": 20,
+    "instance_count": 33
+  },
+  "close": {
+    "action_template_count": 54,
+    "memory_count": 41,
+    "instance_count": 66
+  },
+  "decompose": {
+    "action_template_count": 13,
+    "memory_count": 6,
+    "instance_count": 11
+  },
+  "metabolize": {
+    "action_template_count": 3,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "generate": {
+    "action_template_count": 47,
+    "memory_count": 26,
+    "instance_count": 39
+  },
+  "simmer": {
+    "action_template_count": 7,
+    "memory_count": 5,
+    "instance_count": 7
+  },
+  "stir": {
+    "action_template_count": 38,
+    "memory_count": 13,
+    "instance_count": 43
+  },
+  "return": {
+    "action_template_count": 61,
+    "memory_count": 30,
+    "instance_count": 51
+  },
+  "scrape": {
+    "action_template_count": 53,
+    "memory_count": 22,
+    "instance_count": 42
+  },
+  "evaluate": {
+    "action_template_count": 21,
+    "memory_count": 15,
+    "instance_count": 21
+  },
+  "taste": {
+    "action_template_count": 13,
+    "memory_count": 8,
+    "instance_count": 14
+  },
+  "hear": {
+    "action_template_count": 62,
+    "memory_count": 28,
+    "instance_count": 55
+  },
+  "escape": {
+    "action_template_count": 42,
+    "memory_count": 23,
+    "instance_count": 26
+  },
+  "toast": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "transfer": {
+    "action_template_count": 113,
+    "memory_count": 56,
+    "instance_count": 102
+  },
+  "scoop": {
+    "action_template_count": 66,
+    "memory_count": 22,
+    "instance_count": 52
+  },
+  "cup": {
+    "action_template_count": 16,
+    "memory_count": 11,
+    "instance_count": 13
+  },
+  "slide": {
+    "action_template_count": 175,
+    "memory_count": 65,
+    "instance_count": 156
+  },
+  "hover": {
+    "action_template_count": 19,
+    "memory_count": 13,
+    "instance_count": 17
+  },
+  "relax": {
+    "action_template_count": 71,
+    "memory_count": 46,
+    "instance_count": 83
+  },
+  "roll": {
+    "action_template_count": 49,
+    "memory_count": 25,
+    "instance_count": 52
+  },
+  "resist": {
+    "action_template_count": 20,
+    "memory_count": 15,
+    "instance_count": 16
+  },
+  "limit": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "impact": {
+    "action_template_count": 46,
+    "memory_count": 24,
+    "instance_count": 40
+  },
+  "rake": {
+    "action_template_count": 3,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "sense": {
+    "action_template_count": 131,
+    "memory_count": 48,
+    "instance_count": 122
+  },
+  "withdraw": {
+    "action_template_count": 32,
+    "memory_count": 35,
+    "instance_count": 54
+  },
+  "insert": {
+    "action_template_count": 69,
+    "memory_count": 27,
+    "instance_count": 68
+  },
+  "monitor": {
+    "action_template_count": 57,
+    "memory_count": 38,
+    "instance_count": 55
+  },
+  "listen": {
+    "action_template_count": 35,
+    "memory_count": 19,
+    "instance_count": 26
+  },
+  "orient": {
+    "action_template_count": 116,
+    "memory_count": 55,
+    "instance_count": 108
+  },
+  "recognize": {
+    "action_template_count": 62,
+    "memory_count": 32,
+    "instance_count": 57
+  },
+  "sniff": {
+    "action_template_count": 7,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "combust": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "vaporize": {
+    "action_template_count": 18,
+    "memory_count": 9,
+    "instance_count": 13
+  },
+  "conduct": {
+    "action_template_count": 31,
+    "memory_count": 20,
+    "instance_count": 27
+  },
+  "convect": {
+    "action_template_count": 11,
+    "memory_count": 7,
+    "instance_count": 9
+  },
+  "radiate": {
+    "action_template_count": 17,
+    "memory_count": 13,
+    "instance_count": 15
+  },
+  "heat": {
+    "action_template_count": 33,
+    "memory_count": 18,
+    "instance_count": 26
+  },
+  "condense": {
+    "action_template_count": 28,
+    "memory_count": 13,
+    "instance_count": 20
+  },
+  "migrate": {
+    "action_template_count": 11,
+    "memory_count": 8,
+    "instance_count": 10
+  },
+  "coat": {
+    "action_template_count": 23,
+    "memory_count": 14,
+    "instance_count": 15
+  },
+  "smoke": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "suspend": {
+    "action_template_count": 18,
+    "memory_count": 10,
+    "instance_count": 13
+  },
+  "arrange": {
+    "action_template_count": 21,
+    "memory_count": 14,
+    "instance_count": 16
+  },
+  "continue": {
+    "action_template_count": 8,
+    "memory_count": 7,
+    "instance_count": 9
+  },
+  "cook": {
+    "action_template_count": 8,
+    "memory_count": 5,
+    "instance_count": 8
+  },
+  "bead": {
+    "action_template_count": 25,
+    "memory_count": 17,
+    "instance_count": 20
+  },
+  "coalesce": {
+    "action_template_count": 21,
+    "memory_count": 13,
+    "instance_count": 15
+  },
+  "decline": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "bring": {
+    "action_template_count": 35,
+    "memory_count": 20,
+    "instance_count": 29
+  },
+  "snap": {
+    "action_template_count": 29,
+    "memory_count": 21,
+    "instance_count": 26
+  },
+  "fracture": {
+    "action_template_count": 31,
+    "memory_count": 16,
+    "instance_count": 24
+  },
+  "concentrate": {
+    "action_template_count": 24,
+    "memory_count": 12,
+    "instance_count": 16
+  },
+  "moisten": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "sweep": {
+    "action_template_count": 64,
+    "memory_count": 28,
+    "instance_count": 44
+  },
+  "rest": {
+    "action_template_count": 78,
+    "memory_count": 43,
+    "instance_count": 75
+  },
+  "cool": {
+    "action_template_count": 36,
+    "memory_count": 22,
+    "instance_count": 30
+  },
+  "adhere": {
+    "action_template_count": 30,
+    "memory_count": 17,
+    "instance_count": 21
+  },
+  "dissipate": {
+    "action_template_count": 28,
+    "memory_count": 21,
+    "instance_count": 28
+  },
+  "dilute": {
+    "action_template_count": 8,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "thin": {
+    "action_template_count": 21,
+    "memory_count": 11,
+    "instance_count": 17
+  },
+  "survey": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "swing": {
+    "action_template_count": 41,
+    "memory_count": 29,
+    "instance_count": 75
+  },
+  "strike": {
+    "action_template_count": 45,
+    "memory_count": 28,
+    "instance_count": 43
+  },
+  "stand": {
+    "action_template_count": 14,
+    "memory_count": 9,
+    "instance_count": 18
+  },
+  "push_off": {
+    "action_template_count": 2,
+    "memory_count": 3,
+    "instance_count": 5
+  },
+  "decelerate": {
+    "action_template_count": 16,
+    "memory_count": 14,
+    "instance_count": 20
+  },
+  "halt": {
+    "action_template_count": 7,
+    "memory_count": 8,
+    "instance_count": 8
+  },
+  "crouch": {
+    "action_template_count": 8,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "abduct": {
+    "action_template_count": 5,
+    "memory_count": 7,
+    "instance_count": 9
+  },
+  "anchor": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "point": {
+    "action_template_count": 17,
+    "memory_count": 7,
+    "instance_count": 20
+  },
+  "press_pull": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "tighten": {
+    "action_template_count": 19,
+    "memory_count": 15,
+    "instance_count": 21
+  },
+  "pop": {
+    "action_template_count": 12,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "collapse": {
+    "action_template_count": 27,
+    "memory_count": 17,
+    "instance_count": 24
+  },
+  "emit": {
+    "action_template_count": 142,
+    "memory_count": 52,
+    "instance_count": 156
+  },
+  "shed": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "register": {
+    "action_template_count": 52,
+    "memory_count": 26,
+    "instance_count": 48
+  },
+  "hook": {
+    "action_template_count": 13,
+    "memory_count": 8,
+    "instance_count": 11
+  },
+  "clear": {
+    "action_template_count": 28,
+    "memory_count": 19,
+    "instance_count": 25
+  },
+  "smooth": {
+    "action_template_count": 29,
+    "memory_count": 16,
+    "instance_count": 21
+  },
+  "watch": {
+    "action_template_count": 92,
+    "memory_count": 35,
+    "instance_count": 72
+  },
+  "advance": {
+    "action_template_count": 30,
+    "memory_count": 18,
+    "instance_count": 28
+  },
+  "drag": {
+    "action_template_count": 63,
+    "memory_count": 34,
+    "instance_count": 57
+  },
+  "stabilize": {
+    "action_template_count": 65,
+    "memory_count": 35,
+    "instance_count": 59
+  },
+  "choose": {
+    "action_template_count": 12,
+    "memory_count": 10,
+    "instance_count": 12
+  },
+  "take": {
+    "action_template_count": 15,
+    "memory_count": 9,
+    "instance_count": 14
+  },
+  "judge": {
+    "action_template_count": 26,
+    "memory_count": 16,
+    "instance_count": 20
+  },
+  "span": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "transpire": {
+    "action_template_count": 6,
+    "memory_count": 4,
+    "instance_count": 6
+  },
+  "buckle": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "fade": {
+    "action_template_count": 50,
+    "memory_count": 24,
+    "instance_count": 45
+  },
+  "scatter": {
+    "action_template_count": 33,
+    "memory_count": 25,
+    "instance_count": 32
+  },
+  "slump": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "play": {
+    "action_template_count": 7,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "modulate": {
+    "action_template_count": 11,
+    "memory_count": 10,
+    "instance_count": 11
+  },
+  "strain": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "accumulate": {
+    "action_template_count": 38,
+    "memory_count": 23,
+    "instance_count": 29
+  },
+  "sit": {
+    "action_template_count": 16,
+    "memory_count": 14,
+    "instance_count": 17
+  },
+  "recall": {
+    "action_template_count": 20,
+    "memory_count": 10,
+    "instance_count": 16
+  },
+  "progress": {
+    "action_template_count": 1,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "die": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "desiccate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "colonize": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "break_down": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "grow_deeper": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "elongate": {
+    "action_template_count": 12,
+    "memory_count": 7,
+    "instance_count": 11
+  },
+  "(no verb)": {
+    "action_template_count": 13,
+    "memory_count": 9,
+    "instance_count": 11
+  },
+  "create": {
+    "action_template_count": 11,
+    "memory_count": 9,
+    "instance_count": 9
+  },
+  "cease": {
+    "action_template_count": 7,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "cast": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "decrease": {
+    "action_template_count": 88,
+    "memory_count": 40,
+    "instance_count": 74
+  },
+  "increase": {
+    "action_template_count": 126,
+    "memory_count": 47,
+    "instance_count": 95
+  },
+  "change": {
+    "action_template_count": 68,
+    "memory_count": 35,
+    "instance_count": 62
+  },
+  "deactivate": {
+    "action_template_count": 17,
+    "memory_count": 11,
+    "instance_count": 17
+  },
+  "wrap": {
+    "action_template_count": 36,
+    "memory_count": 27,
+    "instance_count": 42
+  },
+  "unwrap": {
+    "action_template_count": 7,
+    "memory_count": 7,
+    "instance_count": 7
+  },
+  "seep": {
+    "action_template_count": 13,
+    "memory_count": 12,
+    "instance_count": 15
+  },
+  "soak": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "load": {
+    "action_template_count": 17,
+    "memory_count": 13,
+    "instance_count": 17
+  },
+  "drip": {
+    "action_template_count": 27,
+    "memory_count": 14,
+    "instance_count": 19
+  },
+  "lay": {
+    "action_template_count": 26,
+    "memory_count": 15,
+    "instance_count": 19
+  },
+  "leave": {
+    "action_template_count": 14,
+    "memory_count": 10,
+    "instance_count": 11
+  },
+  "stack": {
+    "action_template_count": 11,
+    "memory_count": 8,
+    "instance_count": 11
+  },
+  "start": {
+    "action_template_count": 22,
+    "memory_count": 15,
+    "instance_count": 19
+  },
+  "set": {
+    "action_template_count": 48,
+    "memory_count": 26,
+    "instance_count": 49
+  },
+  "glow": {
+    "action_template_count": 12,
+    "memory_count": 10,
+    "instance_count": 13
+  },
+  "absorb": {
+    "action_template_count": 71,
+    "memory_count": 31,
+    "instance_count": 63
+  },
+  "circulate": {
+    "action_template_count": 16,
+    "memory_count": 11,
+    "instance_count": 13
+  },
+  "shrink": {
+    "action_template_count": 14,
+    "memory_count": 7,
+    "instance_count": 10
+  },
+  "deepen": {
+    "action_template_count": 7,
+    "memory_count": 6,
+    "instance_count": 6
+  },
+  "cool_store": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "turn_off": {
+    "action_template_count": 10,
+    "memory_count": 11,
+    "instance_count": 11
+  },
+  "stop": {
+    "action_template_count": 69,
+    "memory_count": 41,
+    "instance_count": 67
+  },
+  "seal": {
+    "action_template_count": 10,
+    "memory_count": 8,
+    "instance_count": 11
+  },
+  "paint": {
+    "action_template_count": 6,
+    "memory_count": 2,
+    "instance_count": 6
+  },
+  "notice": {
+    "action_template_count": 61,
+    "memory_count": 38,
+    "instance_count": 55
+  },
+  "pry": {
+    "action_template_count": 17,
+    "memory_count": 8,
+    "instance_count": 13
+  },
+  "dip": {
+    "action_template_count": 16,
+    "memory_count": 11,
+    "instance_count": 15
+  },
+  "stroke": {
+    "action_template_count": 8,
+    "memory_count": 3,
+    "instance_count": 7
+  },
+  "reload": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "touch_up": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "step": {
+    "action_template_count": 37,
+    "memory_count": 23,
+    "instance_count": 57
+  },
+  "parallelize": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "harden": {
+    "action_template_count": 12,
+    "memory_count": 7,
+    "instance_count": 9
+  },
+  "intensify": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 6
+  },
+  "wipe": {
+    "action_template_count": 33,
+    "memory_count": 16,
+    "instance_count": 32
+  },
+  "clean": {
+    "action_template_count": 20,
+    "memory_count": 13,
+    "instance_count": 22
+  },
+  "summarize": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "repair": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "encode": {
+    "action_template_count": 22,
+    "memory_count": 13,
+    "instance_count": 22
+  },
+  "classify": {
+    "action_template_count": 15,
+    "memory_count": 8,
+    "instance_count": 15
+  },
+  "step_forward": {
+    "action_template_count": 5,
+    "memory_count": 5,
+    "instance_count": 13
+  },
+  "tension": {
+    "action_template_count": 8,
+    "memory_count": 6,
+    "instance_count": 6
+  },
+  "seat": {
+    "action_template_count": 8,
+    "memory_count": 3,
+    "instance_count": 8
+  },
+  "brace": {
+    "action_template_count": 14,
+    "memory_count": 11,
+    "instance_count": 13
+  },
+  "exert": {
+    "action_template_count": 7,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "receive": {
+    "action_template_count": 47,
+    "memory_count": 26,
+    "instance_count": 39
+  },
+  "support": {
+    "action_template_count": 38,
+    "memory_count": 21,
+    "instance_count": 27
+  },
+  "crack": {
+    "action_template_count": 18,
+    "memory_count": 14,
+    "instance_count": 16
+  },
+  "examine": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "soften": {
+    "action_template_count": 18,
+    "memory_count": 12,
+    "instance_count": 19
+  },
+  "penetrate": {
+    "action_template_count": 15,
+    "memory_count": 9,
+    "instance_count": 10
+  },
+  "swell": {
+    "action_template_count": 10,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "install": {
+    "action_template_count": 5,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "imprint": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "displace": {
+    "action_template_count": 29,
+    "memory_count": 17,
+    "instance_count": 21
+  },
+  "rehang": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "catch": {
+    "action_template_count": 7,
+    "memory_count": 6,
+    "instance_count": 6
+  },
+  "warm": {
+    "action_template_count": 19,
+    "memory_count": 17,
+    "instance_count": 18
+  },
+  "render": {
+    "action_template_count": 98,
+    "memory_count": 18,
+    "instance_count": 92
+  },
+  "retrieve": {
+    "action_template_count": 14,
+    "memory_count": 12,
+    "instance_count": 13
+  },
+  "retract": {
+    "action_template_count": 9,
+    "memory_count": 7,
+    "instance_count": 9
+  },
+  "unfold": {
+    "action_template_count": 11,
+    "memory_count": 9,
+    "instance_count": 10
+  },
+  "peel": {
+    "action_template_count": 31,
+    "memory_count": 13,
+    "instance_count": 28
+  },
+  "build": {
+    "action_template_count": 17,
+    "memory_count": 9,
+    "instance_count": 13
+  },
+  "form_sheen": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "sizzle": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "become": {
+    "action_template_count": 5,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "disintegrate": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "nucleate": {
+    "action_template_count": 17,
+    "memory_count": 13,
+    "instance_count": 15
+  },
+  "burst": {
+    "action_template_count": 20,
+    "memory_count": 10,
+    "instance_count": 15
+  },
+  "melt": {
+    "action_template_count": 13,
+    "memory_count": 4,
+    "instance_count": 6
+  },
+  "pool": {
+    "action_template_count": 17,
+    "memory_count": 11,
+    "instance_count": 15
+  },
+  "denature": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "react": {
+    "action_template_count": 10,
+    "memory_count": 6,
+    "instance_count": 6
+  },
+  "darken": {
+    "action_template_count": 24,
+    "memory_count": 17,
+    "instance_count": 21
+  },
+  "crisp": {
+    "action_template_count": 5,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "contract": {
+    "action_template_count": 52,
+    "memory_count": 30,
+    "instance_count": 54
+  },
+  "float": {
+    "action_template_count": 6,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "stream": {
+    "action_template_count": 11,
+    "memory_count": 8,
+    "instance_count": 12
+  },
+  "heap": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "land": {
+    "action_template_count": 16,
+    "memory_count": 8,
+    "instance_count": 10
+  },
+  "sputter": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "flash": {
+    "action_template_count": 10,
+    "memory_count": 9,
+    "instance_count": 10
+  },
+  "expel": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "season": {
+    "action_template_count": 7,
+    "memory_count": 7,
+    "instance_count": 7
+  },
+  "deposit": {
+    "action_template_count": 21,
+    "memory_count": 15,
+    "instance_count": 22
+  },
+  "sprinkle": {
+    "action_template_count": 17,
+    "memory_count": 7,
+    "instance_count": 13
+  },
+  "rub": {
+    "action_template_count": 23,
+    "memory_count": 17,
+    "instance_count": 21
+  },
+  "flip": {
+    "action_template_count": 11,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "catch_rotate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "solidify": {
+    "action_template_count": 7,
+    "memory_count": 2,
+    "instance_count": 5
+  },
+  "crystallize": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "glide": {
+    "action_template_count": 15,
+    "memory_count": 7,
+    "instance_count": 13
+  },
+  "dissolve": {
+    "action_template_count": 19,
+    "memory_count": 12,
+    "instance_count": 15
+  },
+  "scrub": {
+    "action_template_count": 33,
+    "memory_count": 7,
+    "instance_count": 39
+  },
+  "flow_to_drain": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "transition": {
+    "action_template_count": 32,
+    "memory_count": 17,
+    "instance_count": 29
+  },
+  "dampen": {
+    "action_template_count": 7,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "appear": {
+    "action_template_count": 30,
+    "memory_count": 15,
+    "instance_count": 24
+  },
+  "run": {
+    "action_template_count": 18,
+    "memory_count": 13,
+    "instance_count": 16
+  },
+  "add": {
+    "action_template_count": 64,
+    "memory_count": 28,
+    "instance_count": 75
+  },
+  "replace": {
+    "action_template_count": 12,
+    "memory_count": 8,
+    "instance_count": 10
+  },
+  "enter": {
+    "action_template_count": 21,
+    "memory_count": 13,
+    "instance_count": 17
+  },
+  "rock": {
+    "action_template_count": 9,
+    "memory_count": 9,
+    "instance_count": 9
+  },
+  "form_and_rise": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "descale": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "tense": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 6
+  },
+  "disengage": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "weaken": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "swirl": {
+    "action_template_count": 13,
+    "memory_count": 7,
+    "instance_count": 10
+  },
+  "boil": {
+    "action_template_count": 13,
+    "memory_count": 6,
+    "instance_count": 12
+  },
+  "toggle": {
+    "action_template_count": 6,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "bubble": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "opacify": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "switch_off": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "slow": {
+    "action_template_count": 14,
+    "memory_count": 6,
+    "instance_count": 9
+  },
+  "decay": {
+    "action_template_count": 18,
+    "memory_count": 12,
+    "instance_count": 16
+  },
+  "aggregate": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "reduce": {
+    "action_template_count": 35,
+    "memory_count": 28,
+    "instance_count": 35
+  },
+  "carry_along": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "swish": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "slosh": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "right": {
+    "action_template_count": 5,
+    "memory_count": 6,
+    "instance_count": 11
+  },
+  "dislodge": {
+    "action_template_count": 10,
+    "memory_count": 8,
+    "instance_count": 8
+  },
+  "equilibrate": {
+    "action_template_count": 13,
+    "memory_count": 11,
+    "instance_count": 11
+  },
+  "see": {
+    "action_template_count": 15,
+    "memory_count": 8,
+    "instance_count": 13
+  },
+  "set up": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "steady": {
+    "action_template_count": 25,
+    "memory_count": 16,
+    "instance_count": 24
+  },
+  "engage": {
+    "action_template_count": 24,
+    "memory_count": 20,
+    "instance_count": 27
+  },
+  "discriminate": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "distinguish": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "exhale": {
+    "action_template_count": 16,
+    "memory_count": 14,
+    "instance_count": 22
+  },
+  "plan": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "estimate": {
+    "action_template_count": 9,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "deadhead": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "vary": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "pivot": {
+    "action_template_count": 13,
+    "memory_count": 9,
+    "instance_count": 15
+  },
+  "sag": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "lose_turgor": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "efflux": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "heal": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "divide": {
+    "action_template_count": 5,
+    "memory_count": 5,
+    "instance_count": 6
+  },
+  "polymerize": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "focus": {
+    "action_template_count": 22,
+    "memory_count": 16,
+    "instance_count": 19
+  },
+  "photosynthesize": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "respire": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "produce": {
+    "action_template_count": 8,
+    "memory_count": 6,
+    "instance_count": 6
+  },
+  "prune": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "encircle": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "categorize": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "palpate": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "compress": {
+    "action_template_count": 55,
+    "memory_count": 24,
+    "instance_count": 50
+  },
+  "manage": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "shape": {
+    "action_template_count": 15,
+    "memory_count": 11,
+    "instance_count": 15
+  },
+  "discard": {
+    "action_template_count": 12,
+    "memory_count": 6,
+    "instance_count": 11
+  },
+  "preserve": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "protect": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "elevate": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "loop": {
+    "action_template_count": 6,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "tuck": {
+    "action_template_count": 13,
+    "memory_count": 7,
+    "instance_count": 9
+  },
+  "nod": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "hang": {
+    "action_template_count": 6,
+    "memory_count": 6,
+    "instance_count": 6
+  },
+  "gaze": {
+    "action_template_count": 9,
+    "memory_count": 6,
+    "instance_count": 6
+  },
+  "occur": {
+    "action_template_count": 12,
+    "memory_count": 14,
+    "instance_count": 20
+  },
+  "pressurize": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "pin": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "flake": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "persist": {
+    "action_template_count": 7,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "sublimate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "glisten": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "rustle": {
+    "action_template_count": 6,
+    "memory_count": 4,
+    "instance_count": 7
+  },
+  "vibrate": {
+    "action_template_count": 40,
+    "memory_count": 22,
+    "instance_count": 40
+  },
+  "quiesce": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "retain": {
+    "action_template_count": 12,
+    "memory_count": 8,
+    "instance_count": 12
+  },
+  "cycle": {
+    "action_template_count": 5,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "square": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "aim": {
+    "action_template_count": 21,
+    "memory_count": 7,
+    "instance_count": 12
+  },
+  "flutter": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "oscillate": {
+    "action_template_count": 35,
+    "memory_count": 19,
+    "instance_count": 31
+  },
+  "occlude": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "translate": {
+    "action_template_count": 27,
+    "memory_count": 13,
+    "instance_count": 18
+  },
+  "synthesize": {
+    "action_template_count": 5,
+    "memory_count": 2,
+    "instance_count": 5
+  },
+  "stiffen": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "lignify": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "branch": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "stress": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 5
+  },
+  "recover": {
+    "action_template_count": 9,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "regain": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "swap": {
+    "action_template_count": 4,
+    "memory_count": 2,
+    "instance_count": 4
+  },
+  "cover": {
+    "action_template_count": 8,
+    "memory_count": 7,
+    "instance_count": 7
+  },
+  "center": {
+    "action_template_count": 14,
+    "memory_count": 10,
+    "instance_count": 11
+  },
+  "secure": {
+    "action_template_count": 10,
+    "memory_count": 9,
+    "instance_count": 10
+  },
+  "cohere": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "desorb": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "secrete": {
+    "action_template_count": 8,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "thicken": {
+    "action_template_count": 13,
+    "memory_count": 7,
+    "instance_count": 9
+  },
+  "thicken_and_accumulate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "reinforce": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "store": {
+    "action_template_count": 11,
+    "memory_count": 9,
+    "instance_count": 9
+  },
+  "conclude": {
+    "action_template_count": 6,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "make": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "dust": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "cascade": {
+    "action_template_count": 11,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "clatter": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "mix": {
+    "action_template_count": 32,
+    "memory_count": 14,
+    "instance_count": 22
+  },
+  "wet": {
+    "action_template_count": 19,
+    "memory_count": 16,
+    "instance_count": 20
+  },
+  "bake": {
+    "action_template_count": 10,
+    "memory_count": 4,
+    "instance_count": 11
+  },
+  "caramelize": {
+    "action_template_count": 5,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "yield": {
+    "action_template_count": 8,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "peer": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "cool_crisp": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "crackle": {
+    "action_template_count": 7,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "pickle": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "ignite": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "rise_and_condense": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "sound": {
+    "action_template_count": 8,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "shock": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "hiss": {
+    "action_template_count": 8,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "find": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "pack": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "age": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "permeate": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "correlate": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "overcome": {
+    "action_template_count": 9,
+    "memory_count": 6,
+    "instance_count": 8
+  },
+  "follow": {
+    "action_template_count": 4,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "project": {
+    "action_template_count": 9,
+    "memory_count": 5,
+    "instance_count": 7
+  },
+  "alternate": {
+    "action_template_count": 6,
+    "memory_count": 6,
+    "instance_count": 6
+  },
+  "balance": {
+    "action_template_count": 13,
+    "memory_count": 9,
+    "instance_count": 11
+  },
+  "counteract": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "recoil": {
+    "action_template_count": 7,
+    "memory_count": 5,
+    "instance_count": 9
+  },
+  "bounce": {
+    "action_template_count": 9,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "collide": {
+    "action_template_count": 13,
+    "memory_count": 6,
+    "instance_count": 8
+  },
+  "wash": {
+    "action_template_count": 9,
+    "memory_count": 5,
+    "instance_count": 10
+  },
+  "turn_on": {
+    "action_template_count": 9,
+    "memory_count": 9,
+    "instance_count": 9
+  },
+  "wait": {
+    "action_template_count": 43,
+    "memory_count": 27,
+    "instance_count": 42
+  },
+  "change_color_on_wetting": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "squeak": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "wick": {
+    "action_template_count": 32,
+    "memory_count": 20,
+    "instance_count": 28
+  },
+  "adsorb": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "pressure": {
+    "action_template_count": 4,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "excite": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "reinsert": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "approach": {
+    "action_template_count": 9,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "deform": {
+    "action_template_count": 25,
+    "memory_count": 18,
+    "instance_count": 25
+  },
+  "exit": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 6
+  },
+  "cross": {
+    "action_template_count": 14,
+    "memory_count": 8,
+    "instance_count": 12
+  },
+  "splash": {
+    "action_template_count": 10,
+    "memory_count": 8,
+    "instance_count": 9
+  },
+  "lean_forward": {
+    "action_template_count": 8,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "pick": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "disrupt": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "hide": {
+    "action_template_count": 4,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "carry_out": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "angle": {
+    "action_template_count": 14,
+    "memory_count": 6,
+    "instance_count": 9
+  },
+  "pause": {
+    "action_template_count": 21,
+    "memory_count": 11,
+    "instance_count": 15
+  },
+  "emerge": {
+    "action_template_count": 11,
+    "memory_count": 9,
+    "instance_count": 12
+  },
+  "rebound": {
+    "action_template_count": 11,
+    "memory_count": 8,
+    "instance_count": 9
+  },
+  "arc": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "refract": {
+    "action_template_count": 13,
+    "memory_count": 10,
+    "instance_count": 10
+  },
+  "trickle": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "shut_off": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "pluck": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "glance": {
+    "action_template_count": 16,
+    "memory_count": 11,
+    "instance_count": 12
+  },
+  "remain": {
+    "action_template_count": 30,
+    "memory_count": 22,
+    "instance_count": 29
+  },
+  "sanitize": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "prop": {
+    "action_template_count": 4,
+    "memory_count": 2,
+    "instance_count": 4
+  },
+  "actuate": {
+    "action_template_count": 5,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "dispense": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "become_translucent": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "lighten": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "fetch": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "disinfect": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "off-gas": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "pat": {
+    "action_template_count": 13,
+    "memory_count": 9,
+    "instance_count": 12
+  },
+  "circle": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "illuminate": {
+    "action_template_count": 15,
+    "memory_count": 15,
+    "instance_count": 17
+  },
+  "kneel": {
+    "action_template_count": 12,
+    "memory_count": 10,
+    "instance_count": 14
+  },
+  "loosen": {
+    "action_template_count": 10,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "guide": {
+    "action_template_count": 16,
+    "memory_count": 9,
+    "instance_count": 11
+  },
+  "work": {
+    "action_template_count": 13,
+    "memory_count": 11,
+    "instance_count": 13
+  },
+  "lever": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "clamp": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "apply": {
+    "action_template_count": 19,
+    "memory_count": 13,
+    "instance_count": 16
+  },
+  "equalize": {
+    "action_template_count": 11,
+    "memory_count": 10,
+    "instance_count": 12
+  },
+  "probe": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "wiggle": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "interlock": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "trim": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "measure": {
+    "action_template_count": 21,
+    "memory_count": 13,
+    "instance_count": 18
+  },
+  "line": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 6
+  },
+  "entwine": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "ensure": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "mist": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "run_off": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "oppose": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "adduct": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 5
+  },
+  "coordinate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "damp": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "block": {
+    "action_template_count": 14,
+    "memory_count": 11,
+    "instance_count": 13
+  },
+  "fluctuate": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "face": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "descend": {
+    "action_template_count": 15,
+    "memory_count": 11,
+    "instance_count": 13
+  },
+  "grind": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "lock": {
+    "action_template_count": 15,
+    "memory_count": 14,
+    "instance_count": 15
+  },
+  "conform": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "confirm": {
+    "action_template_count": 56,
+    "memory_count": 34,
+    "instance_count": 49
+  },
+  "attain": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "curve": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "reorient": {
+    "action_template_count": 7,
+    "memory_count": 4,
+    "instance_count": 6
+  },
+  "set_aside": {
+    "action_template_count": 13,
+    "memory_count": 11,
+    "instance_count": 13
+  },
+  "score": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "spark": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "tremble": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "sink": {
+    "action_template_count": 11,
+    "memory_count": 9,
+    "instance_count": 9
+  },
+  "halve": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "blink": {
+    "action_template_count": 17,
+    "memory_count": 13,
+    "instance_count": 17
+  },
+  "crumple": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "split": {
+    "action_template_count": 12,
+    "memory_count": 7,
+    "instance_count": 10
+  },
+  "mince": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "blanch_peel": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "eject": {
+    "action_template_count": 9,
+    "memory_count": 7,
+    "instance_count": 11
+  },
+  "blanch": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "bloom": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "saute": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "mellow": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "transform": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "emulsify": {
+    "action_template_count": 7,
+    "memory_count": 5,
+    "instance_count": 7
+  },
+  "gel": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "degrade": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "purse": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "repot": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "leach": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "rush": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "sample": {
+    "action_template_count": 9,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "flatten": {
+    "action_template_count": 12,
+    "memory_count": 9,
+    "instance_count": 9
+  },
+  "entrain": {
+    "action_template_count": 10,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "control": {
+    "action_template_count": 5,
+    "memory_count": 6,
+    "instance_count": 6
+  },
+  "infiltrate": {
+    "action_template_count": 8,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "percolate": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "volatilize": {
+    "action_template_count": 5,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "arrive": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "appraise": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "establish": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "restore": {
+    "action_template_count": 12,
+    "memory_count": 7,
+    "instance_count": 11
+  },
+  "erect": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "wind": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "snag": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "tug": {
+    "action_template_count": 6,
+    "memory_count": 3,
+    "instance_count": 5
+  },
+  "cinch": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "excavate": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "thrust": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "stretch": {
+    "action_template_count": 25,
+    "memory_count": 13,
+    "instance_count": 20
+  },
+  "cling": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "step_sideways": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "reset": {
+    "action_template_count": 11,
+    "memory_count": 6,
+    "instance_count": 9
+  },
+  "knock": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "hit": {
+    "action_template_count": 7,
+    "memory_count": 7,
+    "instance_count": 7
+  },
+  "lean_away": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "view": {
+    "action_template_count": 19,
+    "memory_count": 17,
+    "instance_count": 20
+  },
+  "recheck": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "untie": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "densify": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "drift": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "indent": {
+    "action_template_count": 9,
+    "memory_count": 8,
+    "instance_count": 8
+  },
+  "wrinkle_flat": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "pound": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "mound": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "spill": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "dull": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "suck": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "hydrate": {
+    "action_template_count": 10,
+    "memory_count": 5,
+    "instance_count": 8
+  },
+  "diminish": {
+    "action_template_count": 8,
+    "memory_count": 5,
+    "instance_count": 7
+  },
+  "round": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "cure": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "pale": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "depart": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "reveal": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "spread_open": {
+    "action_template_count": 1,
+    "memory_count": 3,
+    "instance_count": 6
+  },
+  "drape": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "fasten": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "ferment": {
+    "action_template_count": 5,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "develop": {
+    "action_template_count": 9,
+    "memory_count": 6,
+    "instance_count": 8
+  },
+  "feed": {
+    "action_template_count": 3,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "form_topography": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "mark": {
+    "action_template_count": 8,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "climb": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "tie": {
+    "action_template_count": 14,
+    "memory_count": 3,
+    "instance_count": 11
+  },
+  "survey_prepare": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "unwind": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "transduce": {
+    "action_template_count": 18,
+    "memory_count": 12,
+    "instance_count": 18
+  },
+  "glint": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "search": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "dilate": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "circumnutate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "coil": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "trigger": {
+    "action_template_count": 19,
+    "memory_count": 14,
+    "instance_count": 25
+  },
+  "exceed": {
+    "action_template_count": 8,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "survey_row": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "segment": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "pierce": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "reestablish": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "handle": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "fly": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "interact": {
+    "action_template_count": 7,
+    "memory_count": 7,
+    "instance_count": 7
+  },
+  "linger": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "chill": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "preheat": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "prick": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "grate": {
+    "action_template_count": 4,
+    "memory_count": 2,
+    "instance_count": 4
+  },
+  "whisk": {
+    "action_template_count": 4,
+    "memory_count": 2,
+    "instance_count": 4
+  },
+  "coagulate": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "cool_set": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "serve": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "graft": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "wedge": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "converge": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "shave": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "overlap": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "exclude": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 3
+  },
+  "smear": {
+    "action_template_count": 6,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "prevent": {
+    "action_template_count": 5,
+    "memory_count": 5,
+    "instance_count": 6
+  },
+  "attend": {
+    "action_template_count": 28,
+    "memory_count": 14,
+    "instance_count": 28
+  },
+  "internalize": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "agitate": {
+    "action_template_count": 14,
+    "memory_count": 10,
+    "instance_count": 14
+  },
+  "localize": {
+    "action_template_count": 10,
+    "memory_count": 7,
+    "instance_count": 9
+  },
+  "switch": {
+    "action_template_count": 9,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "regrasp": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "vent": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "propel": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "consolidate": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "interpret": {
+    "action_template_count": 10,
+    "memory_count": 9,
+    "instance_count": 11
+  },
+  "swallow": {
+    "action_template_count": 3,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "submerge": {
+    "action_template_count": 13,
+    "memory_count": 6,
+    "instance_count": 10
+  },
+  "knead": {
+    "action_template_count": 5,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "bleed": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "exude": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 6
+  },
+  "cloud": {
+    "action_template_count": 6,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "form_solids": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "carry_away": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "refill": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "replenish": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "sway": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 6
+  },
+  "rattle": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "twist_off": {
+    "action_template_count": 2,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "unfasten": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "sustain": {
+    "action_template_count": 6,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "rearrange": {
+    "action_template_count": 9,
+    "memory_count": 5,
+    "instance_count": 8
+  },
+  "overshoot": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "finalize": {
+    "action_template_count": 6,
+    "memory_count": 6,
+    "instance_count": 6
+  },
+  "brake": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "weed": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "splay": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "slide_twist": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "access": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "form_sphere": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "clarify": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "crosslink": {
+    "action_template_count": 7,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "reconfigure": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "bundle": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "resume": {
+    "action_template_count": 6,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "count": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "aerosolize": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "compensate": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "force": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "lean_back": {
+    "action_template_count": 4,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "fling": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "rain": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "fragment": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "redirect": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "lodge": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "emerge_dusted": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "surface": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "atomize": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "skip": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "survey_surface": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "off_gas": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "slip": {
+    "action_template_count": 6,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "gain": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "cycle_wet_dry": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "combine": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "distribute": {
+    "action_template_count": 9,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "merge": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 6
+  },
+  "execute": {
+    "action_template_count": 7,
+    "memory_count": 6,
+    "instance_count": 7
+  },
+  "portion": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "cool_harden": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "bite": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "chew": {
+    "action_template_count": 8,
+    "memory_count": 3,
+    "instance_count": 5
+  },
+  "signal": {
+    "action_template_count": 13,
+    "memory_count": 6,
+    "instance_count": 9
+  },
+  "fatigue": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "attach": {
+    "action_template_count": 5,
+    "memory_count": 3,
+    "instance_count": 6
+  },
+  "lash": {
+    "action_template_count": 4,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "unroll": {
+    "action_template_count": 5,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "creak": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "clip": {
+    "action_template_count": 7,
+    "memory_count": 3,
+    "instance_count": 5
+  },
+  "section": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 3
+  },
+  "reespand": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "collect": {
+    "action_template_count": 15,
+    "memory_count": 7,
+    "instance_count": 8
+  },
+  "set_up": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "reverse": {
+    "action_template_count": 7,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "maneuver": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "sow": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "absorb_heat": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "furrow": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "draw": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "nudge": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "irrigate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "encounter": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "lubricate": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "plasticize": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "differ": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "catch_light": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "iterate": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "blend": {
+    "action_template_count": 7,
+    "memory_count": 3,
+    "instance_count": 7
+  },
+  "delineate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "assume": {
+    "action_template_count": 1,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "ground": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "accommodate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 3
+  },
+  "meet": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "send": {
+    "action_template_count": 14,
+    "memory_count": 5,
+    "instance_count": 8
+  },
+  "supinate": {
+    "action_template_count": 1,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "press_pop": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "pile": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "straddle": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "stride": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "bridge": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "stick": {
+    "action_template_count": 3,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "brew": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "steep": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "bottle": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "unspool": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "creep": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "dispose": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "relieve": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "reexpand": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "crease": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "bond": {
+    "action_template_count": 5,
+    "memory_count": 3,
+    "instance_count": 6
+  },
+  "visualize": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "join": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "adapt": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "zero": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "sense_texture": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "blot": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "dab": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "poach": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "shred": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "dice": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "pick_out": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "layer": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "thread": {
+    "action_template_count": 4,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "squelch": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "intermingle": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "meld": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "exchange": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "zest": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "sever": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "press_twist": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "read": {
+    "action_template_count": 85,
+    "memory_count": 34,
+    "instance_count": 85
+  },
+  "cube": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "fog": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "press_discard": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "cool_seal": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "cool_thicken": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "fry": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "weigh": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "heft": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "strip": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "curl_off": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "regrip": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "sort": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "wave": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "trap": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "uncap": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "cap": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "shimmer": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "blanch_fry": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "erupt": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "form_and_collapse": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "bob": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "pull_back": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "gelatinize": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "reheat": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "leap": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "proceed": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "shrink_ridge": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "admire": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "hum": {
+    "action_template_count": 9,
+    "memory_count": 7,
+    "instance_count": 9
+  },
+  "buzz": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "pulse": {
+    "action_template_count": 26,
+    "memory_count": 17,
+    "instance_count": 24
+  },
+  "resonate": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "couple": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "decompress": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "lurch": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "outflow": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "refocus": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "homogenize": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "wring": {
+    "action_template_count": 6,
+    "memory_count": 3,
+    "instance_count": 6
+  },
+  "encapsulate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "erode": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "expand_lather": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "discolour": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "reappear": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "swipe": {
+    "action_template_count": 14,
+    "memory_count": 12,
+    "instance_count": 13
+  },
+  "remove_micelle": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "entrap": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "cushion": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "attract": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "retreat": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "act": {
+    "action_template_count": 1,
+    "memory_count": 2,
+    "instance_count": 4
+  },
+  "frost": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "cool_drain": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "cream": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "beat": {
+    "action_template_count": 3,
+    "memory_count": 1,
+    "instance_count": 3
+  },
+  "fluff": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "sift": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "patch": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "skid": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "crisp_harden": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "acquire": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "operate": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "jerk": {
+    "action_template_count": 6,
+    "memory_count": 3,
+    "instance_count": 5
+  },
+  "unscrew": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "juice": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "slap": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "reform": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "drizzle": {
+    "action_template_count": 3,
+    "memory_count": 1,
+    "instance_count": 3
+  },
+  "aerate": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "incorporate": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "survey_height": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "untwist": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "eat": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "bag": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "steer": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "lean_backward": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "form_droplets": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "consume": {
+    "action_template_count": 4,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "germinate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "hydrolyze": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "cleave": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "humify": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "squat": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "uncoil": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "lengthen": {
+    "action_template_count": 6,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "spring": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "steepen": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "loft": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "tidy": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "clap": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "saturate": {
+    "action_template_count": 4,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "wake": {
+    "action_template_count": 9,
+    "memory_count": 8,
+    "instance_count": 10
+  },
+  "authenticate": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "click": {
+    "action_template_count": 21,
+    "memory_count": 12,
+    "instance_count": 24
+  },
+  "scale": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 7
+  },
+  "crossfade": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "show": {
+    "action_template_count": 11,
+    "memory_count": 10,
+    "instance_count": 13
+  },
+  "comprehend": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "update": {
+    "action_template_count": 68,
+    "memory_count": 22,
+    "instance_count": 59
+  },
+  "dismiss": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "dim": {
+    "action_template_count": 12,
+    "memory_count": 11,
+    "instance_count": 12
+  },
+  "configure": {
+    "action_template_count": 26,
+    "memory_count": 20,
+    "instance_count": 29
+  },
+  "unlock": {
+    "action_template_count": 3,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "cradle": {
+    "action_template_count": 2,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "navigate": {
+    "action_template_count": 13,
+    "memory_count": 14,
+    "instance_count": 16
+  },
+  "scroll": {
+    "action_template_count": 16,
+    "memory_count": 12,
+    "instance_count": 18
+  },
+  "parse": {
+    "action_template_count": 20,
+    "memory_count": 10,
+    "instance_count": 21
+  },
+  "fade_in": {
+    "action_template_count": 11,
+    "memory_count": 4,
+    "instance_count": 8
+  },
+  "layout": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "highlight": {
+    "action_template_count": 12,
+    "memory_count": 7,
+    "instance_count": 10
+  },
+  "feedback": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "unmask": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "indicate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "save": {
+    "action_template_count": 14,
+    "memory_count": 13,
+    "instance_count": 17
+  },
+  "peak": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "acknowledge": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 5
+  },
+  "calibrate": {
+    "action_template_count": 4,
+    "memory_count": 5,
+    "instance_count": 7
+  },
+  "breathe": {
+    "action_template_count": 17,
+    "memory_count": 13,
+    "instance_count": 18
+  },
+  "report": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "brighten": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "chime": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "preview": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "animate": {
+    "action_template_count": 12,
+    "memory_count": 8,
+    "instance_count": 11
+  },
+  "speak": {
+    "action_template_count": 5,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "ramp_down": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "accept": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "write": {
+    "action_template_count": 10,
+    "memory_count": 6,
+    "instance_count": 11
+  },
+  "contextualize": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "foreground": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "decode": {
+    "action_template_count": 18,
+    "memory_count": 11,
+    "instance_count": 20
+  },
+  "poll": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "interpolate": {
+    "action_template_count": 2,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "amplify": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "compute": {
+    "action_template_count": 12,
+    "memory_count": 5,
+    "instance_count": 10
+  },
+  "integrate": {
+    "action_template_count": 7,
+    "memory_count": 6,
+    "instance_count": 6
+  },
+  "simulate": {
+    "action_template_count": 6,
+    "memory_count": 4,
+    "instance_count": 6
+  },
+  "deliver": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "vocalize": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "articulate": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "restart": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "capture": {
+    "action_template_count": 4,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "buffer": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "transcribe": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "append": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "praise": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "critique": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "associate": {
+    "action_template_count": 6,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "infer": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "await": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "silence": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "hunt": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "preen": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "relay": {
+    "action_template_count": 5,
+    "memory_count": 3,
+    "instance_count": 5
+  },
+  "wind_up": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "refresh": {
+    "action_template_count": 6,
+    "memory_count": 4,
+    "instance_count": 4
+  },
+  "increase_reflectivity": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "wind_down": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "mount": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "skim": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "rewrite": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "warm_up": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "begin": {
+    "action_template_count": 11,
+    "memory_count": 7,
+    "instance_count": 7
+  },
+  "energize": {
+    "action_template_count": 12,
+    "memory_count": 7,
+    "instance_count": 11
+  },
+  "fade in": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "relate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "map": {
+    "action_template_count": 5,
+    "memory_count": 4,
+    "instance_count": 5
+  },
+  "discharge": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "pump": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "slide_in": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "move_up": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "enable": {
+    "action_template_count": 6,
+    "memory_count": 5,
+    "instance_count": 6
+  },
+  "arm": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "latch": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "still": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "power_off": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "fade out": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "blacken": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "wear": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "launch": {
+    "action_template_count": 5,
+    "memory_count": 5,
+    "instance_count": 5
+  },
+  "recline": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "ring": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "normalize": {
+    "action_template_count": 4,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "animate_in": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "compose": {
+    "action_template_count": 5,
+    "memory_count": 3,
+    "instance_count": 5
+  },
+  "display": {
+    "action_template_count": 8,
+    "memory_count": 5,
+    "instance_count": 7
+  },
+  "deemphasize": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "repaint": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "spin": {
+    "action_template_count": 6,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "end": {
+    "action_template_count": 3,
+    "memory_count": 3,
+    "instance_count": 3
+  },
+  "filter": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "allow": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "notify": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "type": {
+    "action_template_count": 23,
+    "memory_count": 8,
+    "instance_count": 29
+  },
+  "interrupt": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "abort": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "resolve": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "cancel": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "format": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "review": {
+    "action_template_count": 7,
+    "memory_count": 5,
+    "instance_count": 7
+  },
+  "tokenize": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "edit": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "copy": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "serialize": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "initialize": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "log": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "recolor": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 3
+  },
+  "terminate": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "formulate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "swivel": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "label": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "commit": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "extinguish": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "pucker": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "shiver": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "twitch": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "narrow": {
+    "action_template_count": 3,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "torque": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "unclip": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "count_down": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "pedal": {
+    "action_template_count": 3,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "mop": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "ripple": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "immerse": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "avoid": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "target": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "attenuate": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "nap": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "disappear": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "don": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "fit": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "intercept": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "lessen": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "habituate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "recede": {
+    "action_template_count": 3,
+    "memory_count": 1,
+    "instance_count": 3
+  },
+  "sleep": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "dissociate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "fuzz": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "forget": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "ascend": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "fire": {
+    "action_template_count": 4,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "constrict": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "sharpen": {
+    "action_template_count": 8,
+    "memory_count": 3,
+    "instance_count": 8
+  },
+  "redraw": {
+    "action_template_count": 9,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "overwrite": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "suspend_airflow": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "affirm": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "idle": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "define": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "graze": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "squint": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "regulate": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "dim_cool": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "turn off": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "intend": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "tick": {
+    "action_template_count": 4,
+    "memory_count": 3,
+    "instance_count": 4
+  },
+  "calm": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "depress": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "imagine": {
+    "action_template_count": 13,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "name": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "vasodilate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "fade_out": {
+    "action_template_count": 4,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "hollow": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "slide_up": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "translate_up": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "record": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "regard": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "rehearse": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "fix": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "space": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "murmur": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "convert": {
+    "action_template_count": 10,
+    "memory_count": 5,
+    "instance_count": 7
+  },
+  "style": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "muffle": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "deliberate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "expand_contract": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "ramp up": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "validate": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "erase": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "connect": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "charge": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "deintercalate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "intercalate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "recombine": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "step_out": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "calculate": {
+    "action_template_count": 4,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "zoom": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "resample": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "reengage": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "increment": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "contour": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "suppress": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "sweat": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "whistle": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "reenter": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "immobilize": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "interfere": {
+    "action_template_count": 2,
+    "memory_count": 2,
+    "instance_count": 2
+  },
+  "light": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "understand": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "rarefy": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "replay": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "succeed": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "slide_down": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "utter": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "stay": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "archive": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "spiral": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "roil": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "form_waves": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "fidget": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "slacken": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "sheet": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "blast": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "impinge": {
+    "action_template_count": 3,
+    "memory_count": 2,
+    "instance_count": 4
+  },
+  "deflect": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "vanish": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "flush": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "step_away": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "distort": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "wrinkle": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "reconcentrate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "spin_up": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "delaminate": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "whir": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "refrain": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "power_up": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "power_on": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "ready": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "power_down": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "program": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "output": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "populate": {
+    "action_template_count": 3,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "exercise": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "match": {
+    "action_template_count": 4,
+    "memory_count": 2,
+    "instance_count": 3
+  },
+  "attribute": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "mesh": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "reconverge": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "request": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "reflow": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "specify": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 2
+  },
+  "ramp": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "flicker": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "stutter": {
+    "action_template_count": 1,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "ramp_up": {
+    "action_template_count": 2,
+    "memory_count": 1,
+    "instance_count": 1
+  },
+  "assist": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "recruit": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "recalculate": {
+    "action_template_count": 3,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "mineralize": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "synchronize": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "strengthen": {
+    "action_template_count": 3,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "shorten": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "survive": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "change_pattern": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "pick_off": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "reassociate": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "shut": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "crank": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "elapse": {
+    "action_template_count": 2,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "lick": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "recirculate": {
+    "action_template_count": 2,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "decrement": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "withhold": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "grasp_fold": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "deflate": {
+    "action_template_count": 2,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "subvocalize": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "steam": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "streamline": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "numb": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "contain": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "ache": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "rip": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "ingest": {
+    "action_template_count": 2,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "surge": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "pull_taut": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "buoy": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "froth": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "step_aside": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "pursue": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "neck": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "splat": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "lift_tilt": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "shuffle": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "burn": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "neutralize": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "subdivide": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "skitter": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "plume": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "fail": {
+    "action_template_count": 3,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "advect": {
+    "action_template_count": 2,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "arise": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "poke": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "bulge": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "quicken": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "ease": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "solvate": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "spike": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "roughen": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "expire": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "splatter": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "topple": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "prioritize": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "entangle": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "recompute": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "arrest": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "offgas": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "expect": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  },
+  "dewet": {
+    "action_template_count": 1,
+    "memory_count": 0,
+    "instance_count": 0
+  }
+}

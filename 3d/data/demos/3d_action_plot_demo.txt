@@ -1,0 +1,108 @@
+--- memory_sketch ---
+## MEMORY SKETCH
+
+**Assumptions:** `T0` = first contact with the apple in the bowl. Durations are approximate. Offsets are relative to `T0`. Natural processes are placed in a parallel lane at matching offsets.
+
+---
+
+## 1. OBJECT LIST (tiered)
+
+- **Apple** — Honeycrisp, cold from refrigerator, dense with water
+  - **Skin**
+    - Waxy cuticle / tight glossy surface
+    - Stem
+    - Stem crater / shallow dimple
+    - Scar line — faint raised mark from branch rub
+    - Calyx end — five small puckered points
+  - **Flesh**
+    - Exposed cut surfaces — pale yellow-white / faintly green-white
+    - Shallow gouge near stem — from pressing too hard
+  - **Juice**
+    - Thin film weeping from cut flesh
+    - Run-down on wrist and heel of palm
+    - Dried tacky residue on skin
+  - **Core**
+    - Core wedge — triangular, fibrous, pale, slightly translucent
+    - Seeds — 3, dark brown, pointed at both ends
+      - Papery seed pockets
+  - **Peel**
+    - Continuous ribbon — about 1 inch wide
+    - Loose spiral on cutting board
+    - Narrowed calyx-end pieces
+  - **Quarters** — 4 pieces after quartering
+  - **Slices** — final cut pieces
+- **Bowl**
+  - Initial apples — implied source
+  - Later — receives apple slices
+- **Refrigerator** — cold source
+- **Sink**
+  - Steel basin / steel surface
+  - Discarded seeds
+- **Tap / water**
+  - Water stream
+  - Water beads / droplets
+- **Hands**
+  - Right hand
+    - Right thumb — braced against bolster
+  - Left hand
+    - Left thumb — pushes fruit forward
+    - Fingertips — curled back
+    - Palm / heel of palm
+    - Wrist
+  - Skin — juice tack, apple odor
+- **Shirt** — drying surface
+- **Cutting board**
+- **Paring knife**
+  - Blade — short
+    - Edge — cuts skin and flesh
+  - Bolster
+  - Handle
+    - Rivets — worn pale
+- **Compost crock**
+  - Peel pieces — already browning at edges
+- **Ambient air / aroma**
+  - Apple volatiles — green, sharp, faintly floral
+
+---
+
+## 2. ACTION PLOT
+
+### LANE H — Human actions
+
+- `[T0, seq, ~2 s]` Take apple from bowl.
+  - `[T0+0.2, parallel, ~2 s]` Feel cold, tight/waxy skin, weight/density under thumb.
+- `[T0+2, seq, ~8 s]` Turn apple under tap; run palm over entire surface.
+  - `[T0+2, parallel, ~8 s]` Feel stem dimple/crater and faint scar line.
+- `[T0+10, seq, ~4 s]` Dry apple on shirt.
+- `[T0+14, seq, ~2 s]` Set apple on cutting board, stem-side up; press down.
+  - `[T0+14, parallel]` Apple does not roll.
+- `[T0+16, seq, ~2 s]` Hold paring knife in right hand, thumb braced on bolster; left hand pins apple, fingertips curled back.
+- `[T0+18, seq, ~1 s]` First cut: sink blade just beside stem, ~1/4 inch deep, until pop through skin into flesh.
+- `[T0+19, cyclical, ~35–45 s]` Peel: rotate apple against blade; left thumb pushes fruit forward in small increments; knife stays nearly still.
+  - `[T0+19, parallel/cyclical]` Peel ribbon forms: continuous, ~1 inch wide, curls away, drops in loose spiral onto board.
+  - `[T0+~50, seq, ~5 s]` At bottom, peel narrows; lift knife and reposition twice around calyx end.
+- `[T0+~55, seq, ~2 s]` Turn naked apple in hand.
+- `[T0+~57, seq, ~3 s]` Quarter apple: blade down through core, firm crunch; second cut; four pieces fall apart.
+- `[T0+~60, iterative/cyclical, ~30 s]` For each quarter: lay flat and slice out core.
+  - `[T0+~60, repeated 4×]` Extract triangular core wedge with 3 seeds in papery pockets.
+- `[T0+~90, seq, ~2 s]` Flick seeds into sink; they click against steel.
+- `[T0+~92, seq, ~5 s]` Put slices into bowl.
+- `[T0+~97, seq, ~2 s]` Put peels into compost crock.
+- `[T0+~99, lingering/parallel, hours]` Hands smell like apple for rest of morning, even after washing.
+
+### LANE N — Natural / material processes in parallel
+
+- `[T0, state, continuous]` Apple is cold from refrigerator; dense with water.
+- `[T0+2, parallel, ~8 s]` Water beads and rolls off waxy skin immediately during washing.
+- `[T0+10, parallel, ~4 s]` Drying on shirt changes skin from glossy to dull matte red.
+- `[T0+18, parallel, immediate]` Cut breaks skin; exposed flesh is pale yellow-white; thin juice film weeps immediately.
+- `[T0+19, parallel, ~35–45 s]` Peel separation exposes wet, faintly green-white flesh.
+- `[T0+29, delayed, +10 s after first exposure, ongoing]` Exposed flesh begins dulling toward tan; oxidation/browning repeats for every new cut surface.
+- `[T0+19, parallel, continuous]` Aroma volatiles rise — green, sharp, faintly floral.
+- `[T0+19, parallel]` Blade makes soft, wet, rasping sound, like paper tearing slowly. *(material/acoustic response)*
+- `[T0+~55, parallel/after peeling]` Juice runs down wrist to heel of palm.
+- `[T0+~55 to +minutes, delayed]` Juice dries tacky on skin.
+- `[T0+~57, parallel]` Quartering produces firm crunch; core wedge is fibrous, pale, slightly translucent.
+- `[T0+~90, parallel]` Seeds click against steel sink.
+- `[T0+~97, parallel]` Peel edges in compost crock are already browning.
+- `[T0+~99, lingering, hours]` Apple odor persists on hands after washing.

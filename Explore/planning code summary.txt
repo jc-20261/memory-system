@@ -1,0 +1,813 @@
+# The Planning System — Complete Reference
+
+This document describes the planning module as currently implemented. It covers the architecture, index construction, matching primitives, object compatibility, verb and condition components, dual-mode validation, plan ranking, coverage bonus, grouped output, worked examples, and known limitations.
+
+---
+
+## 1. Overall Architecture
+
+The planning module sits on top of the pickle search system. It shares only the on-disk artifacts:
+
+- Pickle memories, object storage, action storage, verb storage, alias expansion.
+- The embedding cache (`EmbeddingCache`), same directory and groups.
+
+Everything else — matching primitives, value comparison, path comparison, object compatibility — is duplicated into `planner_match_helpers.py` so planning and search can evolve independently.
+
+### Files
+
+| File | Purpose |
+|---|---|
+| `planner_match_helpers.py` | Value / path / op scoring, embedding lookups, `object_compatibility`, substitution lookup, position-unit matching (scalar or list) |
+| `planner_planning_index.py` | Secondary indices: verb→actions, effect/precondition/old-state, object lookup, memory lookup |
+| `planner_verb_component.py` | Retrieves and scores candidate actions by verb and object fit; filters by allowed memories |
+| `planner_condition_component.py` | Backward chaining over effects and preconditions, with substitution and closed-list cycle prevention |
+| `planner_world_state_validator.py` | Dual-mode plan validation against world states |
+| `planner.py` | Orchestration, two-stage planning, multi-action pass, ranking, coverage bonus |
+| `Explorer.py` | CLI integration, grouped plan display, two trace files per run |
+
+### Data flow
+
+```
+QueryProcessor.last_planning_data
+        │
+        ▼
+    Planner.plan(query, search_results)
+        │
+        ├── Stage "top10": first memory_batch_size memories
+        │     ├── Verb-guided path (single seed terminal per candidate)
+        │     └── General backward chaining (all goals at once)
+        │
+        ├── Stage "all": every memory in search_results
+        │     ├── Verb-guided path
+        │     └── General backward chaining
+        │
+        ├── Multi-action pass (only if len(target_actions) > 1)
+        │     ├── Per target action: verb retrieval, per-action plan
+        │     └── Combine per-action plans (Cartesian product)
+        │
+        └── _rank_plans(plans, goals, query_objects,
+                        initial_conditions, total_target_actions)
+                │
+                ├─► WorldStateValidator.validate_plan_plan_context()
+                ├─► WorldStateValidator.validate_plan_query_context()
+                ├─► coverage bonus applied to positive score
+                ├─► coverage_group assigned
+                └─► sorted, threshold-filtered, returned
+```
+
+---
+
+## 2. The Planning Index (`PlanningIndex`)
+
+Built once per planning run from the search index's loaded memories.
+
+### Primary structures
+
+| Structure | Key | Value |
+|---|---|---|
+| `verb_to_actions` | verb name | list of action instance IDs |
+| `effect_index` | `(object, attr_path, op, value)` | action IDs whose **new** state matches |
+| `precondition_index` | same key format | action IDs whose **precondition** matches |
+| `old_state_index` | same key format | action IDs whose **old** state matches |
+| `action_by_id` | instance ID | `ActionInstance` |
+| `object_by_id` | object ID | `Object` |
+| `object_templates` | template name | template defaults from `object_storage` |
+| `memory_by_id` | memory ID | `Memory` |
+
+### Key construction
+
+`_entry_to_key` builds a hashable 4-tuple for any condition or change dict:
+
+```
+(object_name, attribute_path_tuple, operator, value_string)
+```
+
+Position is stored as a composite string:
+
+```
+"<relation>|<relationr>|<relative_to>"
+```
+
+The `relative_to` segment is a scalar or a comma-joined list, so both binary and ternary position units are preserved.
+
+### Memory lookups
+
+- `get_memory_objects(memory_id)` returns the runtime `Object` instances for a memory.
+- `get_memory_id_for_action(action)` extracts the memory ID from the first dot-separated segment of `action.instance_id`.
+- `_object_to_compat_dict(obj)` converts a runtime `Object` into the flat dict shape expected by `object_compatibility`.
+- `find_object_substitute` / `find_object_substitutes_batch` scan a memory or a set of memories for compatibility matches against a query object.
+
+### Tuning parameters (current values)
+
+| Parameter | Value | Purpose |
+|---|---|---|
+| `memory_batch_size` | 10 | Memories per stage (top10) |
+| `planning_depth_limit` | 60 | Max backward chaining depth |
+| `target_verb_cap` | 20 | Max candidates per target verb |
+| `context_verb_cap` | 10 | Max candidates per context verb |
+| `verb_exact_bonus` | 1.0 | Exact verb match score |
+| `verb_fuzzy_bonus` | 0.9 | Fuzzy verb match score |
+| `action_category_bonus` | 0.3 | Action category match bonus |
+| `candidate_actions_per_subgoal` | 10 | Max candidates per subgoal |
+| `subgoal_match_threshold` | 0.1 | Min score to accept an effect as a candidate |
+| `precondition_match_threshold` | 0.1 | Min score for a precondition to be satisfied |
+| `substitution_min_threshold` | 0.0 | Min object_compatibility for substitution |
+| `substitution_max_candidates` | 20 | Cap on objects scanned per substitution lookup |
+| `verb_score_weight` | 0.3 | Plan score contribution from verb |
+| `object_score_weight` | 0.2 | Plan score contribution from object fit |
+| `goal_satisfaction_weight` | 0.4 | Plan score contribution from validation |
+| `action_count_penalty` | 0.005 | Penalty per action in plan |
+| `validation_error_penalty` | 0.5 | Penalty per validation error |
+| `plan_score_threshold` | 0.0 | Min final score to keep a plan |
+
+### Multi-action tuning (class attributes on `Planner`)
+
+| Parameter | Value | Purpose |
+|---|---|---|
+| `multi_action_enabled` | True | Enable the multi-action pass |
+| `multi_action_per_action_plan_cap` | 3 | Max plans kept per target action |
+| `multi_action_max_combinations` | 20 | Global cap on combined plans |
+| `multi_action_max_seeds_per_action` | 10 | Seeds considered per target action |
+
+---
+
+## 3. Matching Primitives (`PlannerMatchHelpers`)
+
+Self-contained copy of the search engine's scoring.
+
+### Value matching (`value_match_score`)
+
+Returns a score in `[0, 1]`:
+
+| Case | Score |
+|---|---|
+| Exact normalized equality | 1.0 |
+| Scalar with unit within ±30% | 0.7 |
+| List-to-list: all index elements matched | 1.0 |
+| List-to-list: partial | 0.7 |
+| List-to-list: none | 0.0 |
+| Scalar vs list: scalar in list | 0.7 |
+| Scalar vs list: fuzzy element match | 0.6 |
+| Alias relation (either side) | 0.9 |
+| Fuzzy string match ≥ threshold | 0.9 |
+| Fuzzy via alias | 0.9 × 0.9 = 0.81 |
+| No match | 0.0 |
+
+### Path matching (`path_match_score`)
+
+Returns `(score, alias_used)`:
+
+| Case | Score |
+|---|---|
+| Contiguous exact | 1.0 |
+| Non-contiguous exact | 0.9 |
+| Contiguous fuzzy | 0.9 |
+| Non-contiguous fuzzy | 0.8 |
+| Partial exact | ratio × 1.0 |
+| Partial fuzzy | ratio × 0.8 |
+| Alias anywhere | × 0.9 |
+
+### Operator matching (`op_match_score`)
+
+| Case | Score |
+|---|---|
+| Exact operator | 1.0 |
+| Either side is `!=` | 0.5 |
+| Any other | 0.8 |
+
+### Position relative_to matching
+
+`_relative_to_match_score(q_rel_to, c_rel_to)` accepts a scalar or list on either side and returns the best pair score:
+
+- Any exact string match → 1.0.
+- Otherwise the best fuzzy similarity above threshold, or 0.0.
+
+Used by `_position_unit_match` so that `between(x, a, b)` and similar ternary relations match correctly.
+
+---
+
+## 4. Object Compatibility — The Substitution Ladder
+
+Determines how well two objects match. Returns `(score, signals, tier)`.
+
+### Tier ladder
+
+| Tier | Condition | Object multiplier |
+|---|---|---|
+| 1 | Exact ID or template match | **1.0** |
+| 2 | Alias relation (exact or fuzzy name) | **0.9** |
+| 3 | Fuzzy name ≥ threshold | **0.9** |
+| 4 | Attribute comparison, gate passed | **weighted sum, capped at 0.9** |
+| 5 | Gate failed, or no viable match | **0.0 (reject)** |
+
+### Tier 4 details — Attribute comparison
+
+**Defining signals (6):**
+
+- `category` — non-generic category overlap
+- `materials` — Jaccard / intersection of material lists
+- `shape` — exact or fuzzy string match
+- `dimensions` — unit match, see below
+- `position` — unit match, see below
+- `functions` — any fuzzy-matched function pair
+
+**Instance signals:** every other matched attribute-value pair from `attributes` (color, cleanliness, temperature, moisture, surface.coverage.type, etc.).
+
+**Dimensions unit:** consider `length`, `width`, `height_thickness`, and derived `volume`. Each sub-signal matches if the query value is within **50–150%** of the candidate value after unit normalization. The unit matches if at least **2 of 4** sub-signals match.
+
+**Position unit:** matches if `relative_to` matches (exact or fuzzy ≥ threshold), AND either `relationr` or `relation` matches. `relative_to` may be scalar or list on either side; the best pair is used.
+
+**Multi-signal gate:**
+
+```
+gate_signals = n_defining + floor(n_instance / 2)
+has_category = "category" in signals
+has_materials = "materials" in signals
+
+passes = gate_signals >= 2
+      OR has_category
+      OR has_materials
+```
+
+Category or material alone is enough. Otherwise, at least two defining signals, or one defining plus two instance signals, or four instance signals.
+
+**Score formula:**
+
+```
+units = n_defining × 1.0 + n_instance × 0.3
+raw   = (units / 6) × 0.9
+score = min(0.9, raw)
+```
+
+### Sample scores
+
+| Matched signals | Units | Score | Gate |
+|---|---|---|---|
+| 1 category only | 1.0 | 0.15 | pass (override) |
+| 1 material only | 1.0 | 0.15 | pass (override) |
+| 1 shape only | 1.0 | 0.15 | fail |
+| 2 defining | 2.0 | 0.30 | pass |
+| 3 defining | 3.0 | 0.45 | pass |
+| 4 defining | 4.0 | 0.60 | pass |
+| 5 defining | 5.0 | 0.75 | pass |
+| 6 defining | 6.0 | 0.90 | pass |
+| 4 instance only | 1.2 | 0.18 | pass |
+| 10 instance only | 3.0 | 0.45 | pass |
+| 2 defining + 4 instance | 3.2 | 0.48 | pass |
+
+### Cache
+
+Compat dicts resolved from query objects, memory instances, or template storage are cached per allow-list generation.
+
+---
+
+## 5. The Verb Component (`VerbComponent`)
+
+Retrieves candidate actions for a list of verbs and scores each by verb, object fit, and category.
+
+### Candidate retrieval
+
+For each verb in the supplied list:
+
+1. `pidx.get_actions_for_verb(verb)` returns all action instances with that verb.
+2. Filter by `allowed_memory_ids` if provided. The stage sets this to the current memory set; the multi-action pass clears it to `None`.
+3. Deduplicate by `action.instance_id`.
+4. Score each candidate (see below).
+5. Sort by total score descending, cap at `target_verb_cap` (20) for target verbs or `context_verb_cap` (10) for context.
+
+### Scoring
+
+```
+total = verb_score + object_score + category_score
+```
+
+**Verb score:**
+
+- Exact string match against any verb attached to the action (general template's verb, alt's verb) → **1.0**
+- Fuzzy match via the verb embedding group ≥ threshold → **0.9**
+- No match → **0.0**
+
+**Object score:**
+
+For each query object, find the best-matching action participant by `object_compatibility`. Take the best pair's score. Sum across query objects.
+
+```
+object_score = Σ_q max_p object_compatibility(q, p)
+```
+
+Each pair score is bounded to `[0, 1]`, so the sum is bounded to `[0, N]` where N is the number of query objects.
+
+**Category score:**
+
+`+0.3` if the query's `action_category` matches the action's `action_category`.
+
+### Trace
+
+Each candidate emits a detailed entry when trace is enabled:
+
+```json
+{
+  "verb": "...",
+  "action_instance_id": "...",
+  "action_template": "...",
+  "scores": {"verb": ..., "object": ..., "category": ..., "total": ...},
+  "details": {
+    "verb": {"matched_verb": ..., "match_type": ..., "score": ...},
+    "object": {"per_query_scores": [...], "comparisons": [...]},
+    "category": {...}
+  }
+}
+```
+
+---
+
+## 6. The Condition Component (`ConditionComponent`)
+
+Backward chaining over state changes and preconditions.
+
+### Scoring a condition pair
+
+For a goal condition and a candidate effect/condition:
+
+```
+core_score   = path_mult × op_mult × value_mult       # max 1.0
+score        = core_score × object_mult               # max 1.0
+```
+
+**Value fallback:** if `value_mult == 0`, strip banned components from both paths and retry the path match. If the filtered paths are empty or do not match, reject. If they match, set `value_mult = 0.2`.
+
+**Object multiplier:**
+
+| Case | object_mult |
+|---|---|
+| Either object absent | 1.0 |
+| Same object name | 1.0 |
+| Different objects, above gate | `object_compatibility` score |
+| Different objects, below gate | 0.0 (reject) |
+
+When the objects are identical, this is an **exact object match**. When the multiplier is `object_compatibility` < 1.0, this is a **substitution** and is recorded in the trace.
+
+### Candidate retrieval for a subgoal
+
+`_find_candidate_actions_for_goal` performs a straight scan over every key in `effect_index`. No pre-filtering. For each effect key:
+
+1. Score the pair `(goal_condition, effect_key)`.
+2. Filter by `score >= subgoal_match_threshold` (0.1).
+3. Collect the action IDs from `effect_index[key]`.
+4. Filter by allowed memories.
+5. Deduplicate by action ID, keeping the highest score.
+6. Sort by score descending, cap at `candidate_actions_per_subgoal` (10).
+
+### Backward chaining
+
+`generate_plan` runs a recursive loop:
+
+1. Start with `satisfied = initial_conditions`, `subgoals = goal_conditions`.
+2. For each subgoal in order:
+   - If satisfied by `current_satisfied`, skip.
+   - If the subgoal key is in `visited_subgoals`, skip.
+   - Otherwise add it and retrieve candidates.
+3. If no candidates, the branch fails.
+4. For each candidate:
+   - Extract its preconditions and old states.
+   - Any not satisfied by `current_satisfied` become new subgoals.
+   - Push the candidate onto the plan.
+   - Recurse with `current_subgoals[1:] + new_subgoals` and `satisfied + [subgoal]`.
+   - On failure, pop the candidate and try the next.
+5. If all candidates exhausted, the branch fails.
+6. If every subgoal in the list is either satisfied or already visited, the loop completes. Before returning True, it **verifies** that every remaining subgoal is satisfied by `current_satisfied`. If any remain unsatisfied, the branch fails with reason `unmet_subgoals_after_visited_closure`.
+
+### Cycle prevention
+
+`visited_subgoals` acts as a **closed list across the whole search**: once a subgoal has been expanded anywhere in the tree, it is not expanded again. This keeps the search tractable at depth 60 by making it a search over a graph rather than a tree. The trade-off is that a subgoal that failed in one branch will not be re-attempted in a sibling branch even when the surrounding satisfied set differs. To prevent the false-success mode that this closed list can produce, the loop verifies remaining subgoals before returning success.
+
+### Depth limit
+
+`planning_depth_limit` is 60. It applies to recursion depth, not directly to plan length. At `depth > max_depth`, the branch fails and unwinds.
+
+### Substitution events
+
+Every time a candidate is selected whose effect object differs from the goal object and passes the gate, a substitution event is recorded:
+
+```json
+{
+  "level": "goal",
+  "action_instance_id": "...",
+  "action_template": "...",
+  "original_object": "microwave_oven",
+  "substituted_object": "toaster_oven_01",
+  "similarity": 0.72,
+  "signals": ["category", "materials", "shape"],
+  "tier": "attribute"
+}
+```
+
+The object multiplier is the penalty. There is no separate substitution penalty.
+
+### Termination
+
+When backward chaining fails at a subgoal:
+
+- No candidate above threshold, or
+- All candidates backtracked, or
+- Depth limit exceeded, or
+- Remaining subgoals unsatisfied after the visited-closure check.
+
+The branch terminates, the failure is recorded in `failure_info`, and `generate_plan` returns `(None, diagnostics)`.
+
+---
+
+## 7. The World State Validator
+
+Two validations per plan, both lenient, neither discarding the plan.
+
+### Mode 1 — Plan-context validation
+
+Builds a world state from the memories referenced by the plan's actions. For each action, find its memory ID, and add all that memory's objects to the world state with their template defaults merged with instance overrides. Apply the plan, then check goals.
+
+**Purpose:** validate the plan in the world where its substituted actions actually make sense.
+
+### Mode 2 — Query-context validation
+
+Builds a world state from the query's objects and initial conditions only. Apply the plan against it.
+
+**Purpose:** check whether the plan would work if the query's own objects were the ones being manipulated. Expected to fail often; failures are recorded, not fatal.
+
+### Lenient execution
+
+In both modes:
+
+- Precondition failures are recorded but **do not halt the simulation**.
+- Effects are always applied.
+- Unknown objects in a change are added to the world state as empty objects.
+- Goal conditions are checked fuzzily and their individual scores are averaged into `goal_satisfaction`.
+
+### Fuzzy checks
+
+- **Value comparison:** `value_match_score` for `eq` / `ne`; `normalize_value` + numeric comparison for `gt` / `gte` / `lt` / `lte`; `in` treated as fuzzy list membership; `+=` not supported in preconditions.
+- **Object resolution:** exact ID → exact template → fuzzy via `object_compatibility` → fail. A fuzzy substitution is recorded as `substituted: true` with the resolved ID.
+
+### Report shape
+
+```json
+{
+  "mode": "plan_context" | "query_context",
+  "valid": bool,
+  "errors": [...],
+  "action_errors": {step: [errors]},
+  "unmet_goals": [...],
+  "goal_checks": [...],
+  "precondition_checks": [...],
+  "goal_satisfaction": float,
+  "final_state": WorldState,
+  "objects_in_state": [...]
+}
+```
+
+`goal_satisfaction` is the mean of the individual `goal_check` scores, each in `[0, 1]`. A partial match yields a partial satisfaction.
+
+`valid` is computed but never used to reject a plan — it is informational.
+
+---
+
+## 8. The Planner (`Planner`)
+
+### Two-stage planning
+
+Both stages always run.
+
+- **Stage "top10"** — the first `memory_batch_size` (10) memories from the search results.
+- **Stage "all"** — every memory in the search results.
+
+`_run_stage` sets the allowed memories on the condition component and passes the same set to `verb_component.retrieve_candidates` as `allowed_memory_ids`. Plans from both stages are tagged with their `stage` and appended to one candidate list. Ranking runs once at the end.
+
+### Per-stage generation
+
+Each stage runs two paths:
+
+**A. Verb-guided planning**
+
+1. `VerbComponent.retrieve_candidates(target_verbs, query_objects, ...)` returns up to 20 seed candidates.
+2. For each seed, `_build_plan_from_seed` extracts its preconditions and old states.
+3. Unsatisfied preconditions and old states become subgoals.
+4. `ConditionComponent.generate_plan(subgoals)` attempts to find a prefix plan that satisfies them.
+5. On success, the plan is `prefix + [seed]`.
+
+**B. General backward chaining**
+
+`ConditionComponent.generate_plan(goal_conditions)` directly attempts to satisfy the goal conditions without a seed.
+
+Both paths share the condition component's scoring, substitution, and termination behaviour.
+
+### Multi-action pass
+
+Runs after both stages, only when `len(target_actions) > 1`.
+
+`_generate_multi_action_plans`:
+
+1. Clears the allowed-memory restriction.
+2. For each target action, runs `retrieve_candidates([verb], ...)` and builds per-action plans from matching seeds, capped at `multi_action_per_action_plan_cap` (3).
+3. Combines the per-action plans by Cartesian product, capped at `multi_action_max_combinations` (20).
+4. Each combination is a plan whose action list is the concatenation of the per-action lists, with `actions_covered = N`, `type = "multi_action_combined"`, and `stage = "multi_action"`.
+
+### Plan ranking
+
+For each plan, run both validations:
+
+```python
+plan_sat  = validate_plan_plan_context(plan).goal_satisfaction
+query_sat = validate_plan_query_context(plan).goal_satisfaction
+blended_sat = 0.5 × plan_sat + 0.5 × query_sat
+```
+
+Base score:
+
+```
+positive = 0.3 × verb_score
+         + 0.2 × object_score
+         + 0.4 × blended_sat
+```
+
+Coverage bonus applied to the positive term only:
+
+```
+if total_target_actions > 1 and plan["actions_covered"] == total_target_actions:
+    coverage_bonus = total_target_actions
+else:
+    coverage_bonus = 1.0
+
+positive *= coverage_bonus
+```
+
+Final score:
+
+```
+final = positive
+      - 0.005 × action_count
+      - 0.5 × (plan_errors + query_errors)
+```
+
+Plans below `plan_score_threshold` (0.0) are filtered out.
+
+### Coverage groups
+
+Every ranked plan is tagged with `coverage_group`:
+
+| Group | Meaning |
+|---|---|
+| `verb_guided_all` | verb-guided plan covering all target actions (or the only target in a single-target query) |
+| `verb_guided_partial` | verb-guided plan covering only some targets |
+| `general` | general backward-chaining plan |
+
+The CLI and traces group plans by this field.
+
+### Score breakdown
+
+Each plan carries a `score_breakdown` dict:
+
+```json
+{
+  "stage": "...",
+  "coverage_group": "...",
+  "verb_score_raw": ...,
+  "verb_score_weight": 0.3,
+  "verb_score_contribution": ...,
+  "object_score_raw": ...,
+  "object_score_weight": 0.2,
+  "object_score_contribution": ...,
+  "goal_satisfaction_plan_context": ...,
+  "goal_satisfaction_query_context": ...,
+  "goal_satisfaction_blended": ...,
+  "goal_satisfaction_weight": 0.4,
+  "goal_satisfaction_contribution": ...,
+  "coverage_bonus_multiplier": ...,
+  "action_count": ...,
+  "action_count_penalty_per_action": 0.005,
+  "action_count_penalty_total": ...,
+  "plan_context_error_count": ...,
+  "query_context_error_count": ...,
+  "error_penalty_per_error": 0.5,
+  "error_penalty_total": ...,
+  "final_score": ...
+}
+```
+
+---
+
+## 9. Trace Files
+
+Two files are written per planning run, both overwritten.
+
+### `plan_trace_simple.txt`
+
+Grouped into three sections, each capped at 10 plans:
+
+- **Verb-guided plans — covering all target actions**
+- **Verb-guided plans — covering some target actions**
+- **General backward-chaining plans**
+
+Each plan shows: summary (type, stage, coverage group, score, action count, actions covered), action list, substitutions, score breakdown, and both validation summaries.
+
+### `plan_trace_full.txt`
+
+**Stage-level section.** One entry per stage, with `stage`, `batch_index`, memories, verb candidates, seed plans, and condition-component trace.
+
+**Plan-level section (grouped).** Same three groups as the simple trace, capped at 10 per group, with full per-plan detail: type, stage, coverage group, score, action count, actions covered, both validations in full (every precondition and goal check with actual values), and the plan's internal `trace` JSON.
+
+**Multi-action pass trace.** One block per multi-action pass: status, `failed_action_indices` if any, target actions, per-action seed records (verb/object/category/total scores, plan length, failure reason), and combinations list.
+
+**Representative long plans.** Two plans selected from `all_generated_plans` (pre-threshold pool): the shortest plan over 10 actions and the shortest over 20, with random tie-breaking. Each printed in full using `_format_plan_full`. Preceded by four censuses: plan length, plan type, plan stage, and coverage group.
+
+### Planner-side accumulators
+
+- `full_trace` — one entry per stage.
+- `multi_action_trace` — one entry per multi-action pass.
+- `all_generated_plans` — every plan that reached `_rank_plans`, before threshold filtering.
+
+---
+
+## 10. Worked Examples
+
+### Example 1 — Exact object match, no substitution
+
+Goal: `toaster_oven_01.surface_state = clean`. Memory has `clean_toaster_oven` with effect `(toaster_oven_01).surface_state = clean`.
+
+- Path `("surface_state")` vs `("surface_state")` → 1.0
+- Op `eq` vs `eq` → 1.0
+- Value `clean` vs `clean` → 1.0
+- Object `toaster_oven_01` vs `toaster_oven_01` → 1.0 (exact)
+- Score = 1.0 × 1.0 × 1.0 × 1.0 = **1.0**
+
+No substitution.
+
+### Example 2 — Substitution via attribute comparison
+
+Goal: `microwave_oven.surface_state = clean`. Memory has `clean_toaster_oven` with effect `(toaster_oven_01).surface_state = clean`.
+
+- Path: 1.0
+- Op: 1.0
+- Value `clean` vs `clean`: 1.0
+- Core: 1.0
+- Object: `microwave_oven` vs `toaster_oven_01`:
+  - Not exact, not alias, fuzzy name below threshold
+  - Attribute tier: category overlap (`kitchen_appliance`, `appliance`), material overlap (`metal`, `plastic`), shape match (`rectangular`), dimensions match (both ~50×40×30 cm), position match (`on counter`)
+  - 5 defining signals + 0 instance
+  - Units = 5.0, score = min(0.9, 5/6 × 0.9) = **0.75**
+  - Tier: "attribute"
+- Final: 1.0 × 0.75 = **0.75**
+
+Substitution event recorded: `microwave_oven → toaster_oven_01, similarity 0.75`.
+
+### Example 3 — Value fallback with banned path components
+
+Goal: `apple_01.state = clean`. Memory has `(apple_01).state = cleaned`.
+
+- Path `("state")` vs `("state")` → 1.0
+- Op: 1.0
+- Value `clean` vs `cleaned` → fuzzy match ~0.85
+- Core: 0.85
+- Object: same name → 1.0
+- Final: **0.85**
+
+`state` is in the banned component list, but the value matched, so the fallback was not triggered.
+
+### Example 4 — Banned path with no value match
+
+Goal: `apple_01.state = fresh`. Memory has `(pear_01).state = cleaned`.
+
+- Value `fresh` vs `cleaned`: 0.0
+- Fallback: filter banned components from both paths → both become `()` → empty → **reject** (0.0)
+
+If the path had been `("surface_state",)`, both paths would survive the filter and match contiguously → value fallback = 0.2, then object_mult for `apple_01` vs `pear_01` might be ~0.6, final score = 1.0 × 1.0 × 0.2 × 0.6 = **0.12**.
+
+### Example 5 — Verb-guided plan with substitution
+
+Query: "clean the microwave". Target verb: `clean`.
+
+Verb component retrieves 20 candidates for `clean`. The top candidate `clean_toaster_oven` in `mem_000017` scores:
+
+- Verb exact: 1.0
+- Object fit: `microwave_oven` vs participants `[person, toaster_oven_01]`:
+  - person vs person: 1.0
+  - microwave vs toaster: 0.75
+  - Sum: 1.75
+- Category match: 0.0 (no query category specified)
+- Total: 2.75
+
+Backward chaining on the seed's preconditions produces a plan. The seed's effect references `toaster_oven_01`, so the substitution `microwave_oven → toaster_oven_01` is recorded.
+
+Plan-context validation runs against a world state built from `mem_000017`'s objects and succeeds. Query-context validation runs against `microwave_oven` alone and fails many preconditions. Blended satisfaction ends up moderate, and the plan is kept with a positive score.
+
+### Example 6 — Multi-action combined plan
+
+Query: "clean a gold bar and bury it in the backyard". Two target actions: `clean` and `bury`.
+
+Multi-action pass:
+
+- Action 0 (`clean`): 3 plans, shortest 21 actions.
+- Action 1 (`bury`): 2 plans, shortest 1 action.
+- Combinations: 6.
+
+Combo 0 concatenates the 21-action clean plan and the 1-action bury plan: 22 actions total, `actions_covered = 2`.
+
+With `total_target_actions = 2`, the coverage bonus fires as ×2 on the positive score components. The combined plan covers every target action.
+
+### Example 7 — Backward chaining failure
+
+Goal: `door.state = open`. Query targets verb `open`. Verb component returns 20 candidates for `open`, but none of their effects reference a door-like object above the gate. Condition component's general backward chaining scans `effect_index` for `state = open` and finds no candidate whose effect object matches `door` above threshold. Both paths fail.
+
+Diagnostic: `failure = {"reason": "no_candidate_actions", "subgoal": door.state=open, "depth": 0}`.
+
+The plan list is empty for this stage; the next stage runs.
+
+---
+
+## 11. Full Scoring Table
+
+| Stage | Component | Value |
+|---|---|---|
+| Verb | Exact match | 1.0 |
+| Verb | Fuzzy match | 0.9 |
+| Object fit | Best pair per query object (via `object_compatibility`) | [0, 1] |
+| Object fit | Sum across query objects | [0, N] |
+| Category | Action category match | +0.3 |
+| Object compatibility | Tier 1 exact | 1.0 |
+| Object compatibility | Tier 2 alias | 0.9 |
+| Object compatibility | Tier 3 fuzzy name | 0.9 |
+| Object compatibility | Tier 4 attribute, 6 defining | 0.9 |
+| Object compatibility | Tier 4 attribute, 5 defining | 0.75 |
+| Object compatibility | Tier 4 attribute, 4 defining | 0.60 |
+| Object compatibility | Tier 4 attribute, 3 defining | 0.45 |
+| Object compatibility | Tier 4 attribute, 2 defining | 0.30 |
+| Object compatibility | Tier 4 attribute, 1 defining + 4 instance | 0.33 |
+| Object compatibility | Tier 4 attribute, 4 instance | 0.18 |
+| Instance weight | Per matched instance attribute | 0.3 units |
+| Gate | Category alone | pass |
+| Gate | Material alone | pass |
+| Gate | Otherwise | `n_defining + floor(n_instance/2) >= 2` |
+| Dimensions | Sub-signal within 50–150% | 1 of 4 |
+| Dimensions | Unit match | ≥ 2 of 4 |
+| Position | Match | relative_to (scalar or list, best pair) + (relationr or relation) |
+| Condition | Path contiguous exact | 1.0 |
+| Condition | Path non-contiguous exact | 0.9 |
+| Condition | Path contiguous fuzzy | 0.9 |
+| Condition | Path non-contiguous fuzzy | 0.8 |
+| Condition | Value exact | 1.0 |
+| Condition | Value within ±30% | 0.7 |
+| Condition | Value fuzzy | 0.9 |
+| Condition | Value fallback (non-banned path, value mismatch) | 0.2 |
+| Condition | Op exact | 1.0 |
+| Condition | Op `!=` | 0.5 |
+| Condition | Op other | 0.8 |
+| Condition | Object multiplier | 1.0 / 0.9 / [0, 0.9] / 0 |
+| Condition | Core × object | max 1.0 |
+| Backward chaining | Min candidate score | 0.1 |
+| Backward chaining | Max candidates per subgoal | 10 |
+| Backward chaining | Max depth | 60 |
+| Plan score | Verb weight | 0.3 |
+| Plan score | Object weight | 0.2 |
+| Plan score | Blended satisfaction weight | 0.4 |
+| Plan score | Coverage bonus (multi-target, all covered) | ×N, applied to positive only |
+| Plan score | Action count penalty | 0.005 per action |
+| Plan score | Validation error penalty | 0.5 per error |
+| Validation | Blended satisfaction | 0.5 × plan_sat + 0.5 × query_sat |
+
+---
+
+## 12. Known Limitations
+
+1. **General backward chaining is all-or-nothing.** It either satisfies all goals or fails. A partial-plan mode is not implemented; the multi-action pass is the only path that produces plans covering multiple targets when the general path cannot.
+
+2. **`visited_subgoals` is a global closed list.** A subgoal that fails in one branch is not re-attempted in sibling branches even when the surrounding satisfied set differs. This keeps the search tractable at depth 60 but sacrifices completeness.
+
+3. **`object_compatibility` runs twice per seed** — once in the verb component and again in the condition component, with reversed argument order. The two results are not guaranteed to agree.
+
+4. **`validation_error_penalty = 0.5`** is aggressive at depth 60. A long combined plan with many precondition failures can lose many points and fall below the threshold despite covering every target action. Lowering this value is the highest-impact change available for letting multi-action plans survive.
+
+5. **Verb component retrieval is exact-lookup only.** Fuzzy verb matching scores candidates but does not retrieve them. A target verb with no exact entry in `verb_to_actions` gets zero candidates. (`pidx.get_actions_for_verb` is a direct dictionary lookup.)
+
+6. **No reordering of goals** in the general path. Goals are processed in list order. If a later goal's satisfaction depends on an earlier goal's effect and they are listed in the wrong order, the chain may fail unnecessarily.
+
+7. **Effect scan is a straight linear scan** over `effect_index`. Fine at ~100 memories; will slow as the corpus grows. A hash lookup keyed on the goal condition would be the natural optimisation.
+
+8. **Substitution is symmetric and not tracked per branch.** A plan can substitute A → B, then later B → A. Usually fine, occasionally odd-looking.
+
+9. **Plan-context validation builds the world state from memories referenced by actions**, but does not include the query's own objects. A precondition referencing a query object not in any of the plan's memories will fail in plan-context mode.
+
+10. **`+=` operator is not supported** in precondition checks. It is handled in effect application but not in validation checks.
+
+11. **`valid` flag is informational only.** It does not gate plan retention. Ranking is the only filter.
+
+12. **Both validations run per plan** even when the plan clearly passes or fails. For large plan sets this doubles validation cost.
+
+13. **Action instance IDs assume the memory ID is the first dot-separated segment.** If that convention changes, `get_memory_id_for_action` will silently misbehave.
+
+14. **No deduplication of plans across stages or across seeds.** Two verb seeds that produce the same plan both appear in the ranked list.
+
+15. **Multi-action combinations are truncated by order, not by score.** When there are more than `multi_action_max_combinations` combinations, the Cartesian product is truncated lexicographically rather than keeping the highest-scoring combinations.
+
+16. **The multi-action pass runs over all memories**, ignoring the stage restrictions. This is by design but means stage-1 top-10 memory preferences do not influence multi-action output.
+
+17. **`memory_store.py`** still has a hardcoded path but is not used by the running system.
+
+18. **The four `3d_*` planner-adjacent files** have not been updated for the release.

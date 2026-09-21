@@ -1,0 +1,2602 @@
+OPERATIONS DEMO — Peeling a Honeycrisp Apple
+
+CALL STRUCTURE
+
+This file demonstrates the format for one Stage 4 call. Each numbered
+section below (H1 through H14) is a separate call. A single call receives
+one top-level action from the annotated timeline, and returns one JSON
+object with a single "operations" key and a "notes" key.
+
+The sections are ordered by the sequence of top-level actions in the
+apple-peeling memory, but each section is independent: it is the expected
+output for exactly one call, not a single response covering all actions.
+
+EXPECTED OUTPUT SHAPE
+
+Each call returns exactly one JSON object, nothing else:
+
+{
+  "operations": [ {...}, ... ],
+  "notes": "..."
+}
+
+No section headers, no prose before or after, no wrapper object.
+
+ELEMENT LABELING
+
+Every element inside an add_object or add_element operation must carry a
+material_override dict with a label field. The label names the semantic
+role of that element within its containing object. Labels are lowercase
+and use underscores when needed (stem, calyx, blade, handle, seed_1).
+
+Labels describe intrinsic composition, not current state. A sphere that
+represents the apple's skin is labeled "skin" whether or not the skin is
+currently present.
+
+Objects that already exist do not need to be relabeled when their
+properties change. Labels are assigned when an object or element is
+created.
+
+ARMS, HANDS, AND ARTICULATED LIMBS
+
+Arms are articulated limbs. Each arm's local origin is at its shoulder.
+To make an arm reach toward a world position, use `reach_arm_rotate` with
+the target's world-space coordinates. The runtime computes the rotation
+about the shoulder that points the arm at the target; the shoulder stays
+welded to the torso.
+
+Do NOT use `move`, `scale`, or `set_transform` on a limb. Those would
+translate the joint off the body.
+
+The hand is a rigid child of the arm and acts as an extension of the arm.
+It inherits the arm's rotation automatically. The hand is 20 cm long from
+wrist to fingertip, so the combined reach from shoulder to fingertip is
+90 cm.
+
+Hands may be rotated with `rotate` when a wrist-level articulation is
+wanted (for example, orienting the thumb on the bolster). The hand's
+local origin is at the wrist, so the rotation pivots correctly.
+
+The thumb is a child of the hand and rotates with it. Its own `rotate`
+also pivots at its base.
+
+PHYSICS PLACEHOLDERS
+
+The force and friction sub-dicts of a contact are placeholders for a
+future physics addon. Values are recorded but not consumed. Do not invent
+units or fields beyond those listed.
+
+OPERATION FIELDS
+
+  move:              object_id, delta
+  rotate:            object_id, quaternion
+  scale:             object_id, factor
+  set_transform:     object_id, world_transform
+  reach_arm_rotate:  object_id, target_world, participants
+  attach:            child_id, parent_id, preserve_world, snap_local
+  detach:            child_id
+  split:             source_id, cut_point_world, cut_normal_world,
+                     new_object_ids, children_assignment
+  merge:             object_ids, new_object_id
+  add_object:        object_id, template_name, elements, material,
+                     object_transform, parent_object_id, mass_grams
+  remove_object:     object_id
+  add_element:       object_id, element
+  remove_element:    object_id, element_index
+  change_properties: object_id, properties, merge
+  contact:           object_a, object_b, contact_type, contact_points,
+                     force, friction, starts_contact, ends_contact,
+                     participants, notes
+  release:           object_a, object_b, participants, notes
+  label:             object_id, label, element_index
+  unlabel:           object_id, element_index
+  wait:              duration, note
+  emit_event:        event_type, payload
+  compound:          label, operations, participants
+
+CONTACT-TYPE-TO-ATTACHMENT CONVENTION
+
+  touch          no attachment
+  grip           implies attachment
+  hold           implies attachment
+  push           optional
+  pull           optional
+  lean           no
+  support        no
+  rest_on        no
+
+
+═══════════════════════════════════════════════════════════════════════
+H1 — retrieve_object_from_container  (take apple from bowl)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "emit_event", "event_type": "sensory_visual",
+     "payload": {"qualia": ["apple_in_bowl"], "source": ["apple_01", "bowl_source_01"]},
+     "participants": {"agent": "eyes_01", "source": "apple_01"}},
+
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [30.0, 20.0, 100.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "destination": "bowl_source_01"}},
+
+    {"op": "contact", "object_a": "left_hand_01", "object_b": "apple_01",
+     "contact_type": "touch", "starts_contact": true,
+     "contact_points": [{"point_world": [30.0, 20.0, 100.0], "normal_world": [0.0, 0.0, -1.0]}],
+     "force": {"magnitude_n": 0.5, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.5, "regime": "static"},
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+
+    {"op": "attach", "child_id": "apple_01", "parent_id": "left_hand_01",
+     "preserve_world": true,
+     "participants": {"agent": "left_hand_01", "patient": "apple_01",
+                      "source": "bowl_source_01", "destination": "left_hand_01"}},
+
+    {"op": "contact", "object_a": "left_hand_01", "object_b": "apple_01",
+     "contact_type": "grip", "starts_contact": true,
+     "force": {"magnitude_n": 8.0, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.8, "regime": "static"},
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+
+    {"op": "change_properties", "object_id": "left_hand_01",
+     "properties": {"grip_type": "power_grasp", "finger_posture": "curled"},
+     "merge": true,
+     "participants": {"agent": "left_hand_01", "patient": "left_hand_01"}},
+
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [30.0, 20.0, 125.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "cause": "lift_apple_out_of_bowl"}},
+
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [-20.0, 0.0, 130.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "source": "bowl_source_01",
+                      "destination": "workspace_above_counter"}},
+
+    {"op": "change_properties", "object_id": "apple_01",
+     "properties": {"temperature": "cold", "surface_state": "dry",
+                    "physical_state": "intact", "moisture": "dry"},
+     "merge": true,
+     "participants": {"agent": "left_hand_01", "patient": "apple_01",
+                      "cause": "N1_initial_material_state"}},
+
+    {"op": "emit_event", "event_type": "sensory_tactile",
+     "payload": {"modalities": ["touch"],
+                 "qualia": ["cold", "waxy", "dense"],
+                 "source": ["apple_01"]},
+     "participants": {"agent": "left_hand_01", "source": "apple_01"}},
+
+    {"op": "emit_event", "event_type": "natural_process",
+     "payload": {"name": "N1_thermal_equilibration_onset",
+                 "source": ["apple_01"]},
+     "participants": {"agent": "air_01", "patient": "apple_01",
+                      "cause": "heat_transfer"}}
+  ],
+  "notes": "H1 take apple from bowl. Left arm reaches toward bowl via reach_arm_rotate about the shoulder. Touch contact followed by grip contact plus attach to left hand. Lift and withdraw via two further reach rotations. N1 initial cold state recorded as change_properties plus natural-process event."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+H2 — wash_object_under_water  (turn apple under tap; run palm over surface)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [-65.0, -8.0, 105.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "destination": "under_faucet_position"}},
+
+    {"op": "change_properties", "object_id": "faucet_tap_01",
+     "properties": {"state": "open"}, "merge": true,
+     "participants": {"agent": "person_01", "patient": "faucet_tap_01"}},
+
+    {"op": "add_object", "object_id": "water_stream_01",
+     "template_name": "water_stream",
+     "elements": [
+       {"element_type": "cylinder",
+        "parameters": {"radius_cm": 0.6, "height_cm": 25.0},
+        "transform": {"translate": [0,0,-12.5], "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "material_override": {"label": "water_stream"}}
+     ],
+     "material": {"color": "clear", "material": "water", "state": "flowing"},
+     "object_transform": {"translate": [-65.0, -6.0, 88.0],
+                          "rotate": [0,0,0,1], "scale": [1,1,1]},
+     "parent_object_id": null,
+     "participants": {"agent": "faucet_tap_01", "source": "faucet_tap_01"}},
+
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [-65.0, -6.0, 100.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "destination": "under_water_stream"}},
+
+    {"op": "compound", "label": "wash_rotation_cycle_1",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01",
+                      "co_agent": "left_thumb_01"},
+     "operations": [
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.382683, 0.923880],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "contact", "object_a": "left_hand_01", "object_b": "water_stream_01",
+        "contact_type": "touch", "starts_contact": true,
+        "force": {"magnitude_n": 0.3, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.1, "regime": "kinetic"},
+        "participants": {"agent": "water_stream_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"surface_state": "wet", "moisture": "damp"},
+        "merge": true,
+        "participants": {"agent": "water_stream_01", "patient": "apple_01",
+                         "cause": "N2_1_wetting"}},
+       {"op": "release", "object_a": "left_hand_01", "object_b": "water_stream_01",
+        "participants": {"agent": "left_hand_01", "patient": "water_stream_01"}}
+     ]},
+
+    {"op": "compound", "label": "wash_rotation_cycle_2",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.382683, 0.923880],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "contact", "object_a": "left_hand_01", "object_b": "water_stream_01",
+        "contact_type": "touch", "starts_contact": true,
+        "force": {"magnitude_n": 0.3, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.1, "regime": "kinetic"},
+        "participants": {"agent": "water_stream_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"surface_state": "wet", "moisture": "wet"},
+        "merge": true,
+        "participants": {"agent": "water_stream_01", "patient": "apple_01",
+                         "cause": "N2_1_wetting"}},
+       {"op": "release", "object_a": "left_hand_01", "object_b": "water_stream_01",
+        "participants": {"agent": "left_hand_01", "patient": "water_stream_01"}}
+     ]},
+
+    {"op": "compound", "label": "wash_rotation_cycle_3",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.382683, 0.923880],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "contact", "object_a": "left_hand_01", "object_b": "water_stream_01",
+        "contact_type": "touch", "starts_contact": true,
+        "force": {"magnitude_n": 0.3, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.1, "regime": "kinetic"},
+        "participants": {"agent": "water_stream_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"surface_state": "wet", "moisture": "wet"},
+        "merge": true,
+        "participants": {"agent": "water_stream_01", "patient": "apple_01"}},
+       {"op": "release", "object_a": "left_hand_01", "object_b": "water_stream_01",
+        "participants": {"agent": "left_hand_01", "patient": "water_stream_01"}}
+     ]},
+
+    {"op": "compound", "label": "wash_rotation_cycle_4",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.382683, 0.923880],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "contact", "object_a": "left_hand_01", "object_b": "water_stream_01",
+        "contact_type": "touch", "starts_contact": true,
+        "force": {"magnitude_n": 0.3, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.1, "regime": "kinetic"},
+        "participants": {"agent": "water_stream_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"surface_state": "wet", "moisture": "wet"},
+        "merge": true,
+        "participants": {"agent": "water_stream_01", "patient": "apple_01"}},
+       {"op": "release", "object_a": "left_hand_01", "object_b": "water_stream_01",
+        "participants": {"agent": "left_hand_01", "patient": "water_stream_01"}}
+     ]},
+
+    {"op": "compound", "label": "wash_rotation_cycle_5",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.382683, 0.923880],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "contact", "object_a": "left_hand_01", "object_b": "water_stream_01",
+        "contact_type": "touch", "starts_contact": true,
+        "force": {"magnitude_n": 0.3, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.1, "regime": "kinetic"},
+        "participants": {"agent": "water_stream_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"surface_state": "wet", "moisture": "wet"},
+        "merge": true,
+        "participants": {"agent": "water_stream_01", "patient": "apple_01"}},
+       {"op": "release", "object_a": "left_hand_01", "object_b": "water_stream_01",
+        "participants": {"agent": "left_hand_01", "patient": "water_stream_01"}}
+     ]},
+
+    {"op": "change_properties", "object_id": "faucet_tap_01",
+     "properties": {"state": "closed"}, "merge": true,
+     "participants": {"agent": "person_01", "patient": "faucet_tap_01"}},
+
+    {"op": "remove_object", "object_id": "water_stream_01",
+     "participants": {"agent": "faucet_tap_01", "patient": "water_stream_01",
+                      "destination": "sink_01"}},
+
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [-20.0, 0.0, 130.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "source": "under_faucet_position",
+                      "destination": "workspace_above_counter"}},
+
+    {"op": "emit_event", "event_type": "sensory_auditory",
+     "payload": {"qualia": ["running_water"], "source": ["faucet_tap_01"]},
+     "participants": {"agent": "faucet_tap_01", "source": "faucet_tap_01"}},
+
+    {"op": "emit_event", "event_type": "sensory_tactile",
+     "payload": {"qualia": ["stem_dimple", "scar_line"],
+                 "source": ["apple_01"]},
+     "participants": {"agent": "left_hand_01", "source": "apple_01"}},
+
+    {"op": "emit_event", "event_type": "natural_process",
+     "payload": {"name": "N2_water_beading_and_runoff",
+                 "source": ["apple_01", "water_stream_01"]},
+     "participants": {"agent": "water_stream_01", "patient": "apple_01",
+                      "cause": "surface_tension_and_gravity"}}
+  ],
+  "notes": "H2 wash under running water. Arm reaches to faucet and back via reach_arm_rotate. Five rotation cycles, each an explicit compound. N2 wetting recorded as change_properties on apple plus a natural-process event."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+H3 — dry_object_on_fabric  (dry apple on shirt)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [-20.0, -35.0, 110.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "destination": "against_shirt"}},
+
+    {"op": "contact", "object_a": "left_hand_01", "object_b": "shirt_01",
+     "contact_type": "push", "starts_contact": true,
+     "force": {"magnitude_n": 4.0, "direction_world": [0.0, -1.0, 0.0]},
+     "friction": {"coefficient": 0.6, "regime": "static"},
+     "participants": {"agent": "left_hand_01", "patient": "shirt_01"}},
+
+    {"op": "compound", "label": "dry_rub_cycle_1",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01",
+                      "target_surface": "shirt_01"},
+     "operations": [
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-17.0, -35.0, 110.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"surface_state": "damp", "moisture": "slightly_damp"},
+        "merge": true,
+        "participants": {"agent": "shirt_01", "patient": "apple_01",
+                         "cause": "N3_1_capillary_wicking"}},
+       {"op": "change_properties", "object_id": "shirt_01",
+        "properties": {"moisture": "damp", "surface_state": "damp"},
+        "merge": true,
+        "participants": {"agent": "apple_01", "patient": "shirt_01",
+                         "cause": "N3_1_capillary_wicking"}},
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-23.0, -35.0, 110.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01"}}
+     ]},
+
+    {"op": "compound", "label": "dry_rub_cycle_2",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01",
+                      "target_surface": "shirt_01"},
+     "operations": [
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-17.0, -35.0, 110.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"surface_state": "damp", "moisture": "slightly_damp"},
+        "merge": true,
+        "participants": {"agent": "shirt_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "shirt_01",
+        "properties": {"moisture": "damp"}, "merge": true,
+        "participants": {"agent": "apple_01", "patient": "shirt_01"}},
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-23.0, -35.0, 110.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01"}}
+     ]},
+
+    {"op": "compound", "label": "dry_rub_cycle_3",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01",
+                      "target_surface": "shirt_01"},
+     "operations": [
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-17.0, -35.0, 110.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"surface_state": "dry", "moisture": "dry"},
+        "merge": true,
+        "participants": {"agent": "shirt_01", "patient": "apple_01",
+                         "cause": "N3_2_absorption_complete"}},
+       {"op": "change_properties", "object_id": "shirt_01",
+        "properties": {"moisture": "damp"}, "merge": true,
+        "participants": {"agent": "apple_01", "patient": "shirt_01"}},
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-23.0, -35.0, 110.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01"}}
+     ]},
+
+    {"op": "compound", "label": "dry_rub_cycle_4",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01",
+                      "target_surface": "shirt_01"},
+     "operations": [
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-17.0, -35.0, 110.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"surface_state": "dry"}, "merge": true,
+        "participants": {"agent": "shirt_01", "patient": "apple_01"}},
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-23.0, -35.0, 110.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01"}}
+     ]},
+
+    {"op": "compound", "label": "dry_rub_cycle_5",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01",
+                      "target_surface": "shirt_01"},
+     "operations": [
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-17.0, -35.0, 110.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"color": "red_matte", "surface_optics": "matte"},
+        "merge": true,
+        "participants": {"agent": "air_01", "patient": "apple_01",
+                         "cause": "N3_3_evaporation_and_optical_change"}},
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-23.0, -35.0, 110.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01"}}
+     ]},
+
+    {"op": "release", "object_a": "left_hand_01", "object_b": "shirt_01",
+     "participants": {"agent": "left_hand_01", "patient": "shirt_01"}},
+
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [-20.0, 0.0, 130.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "source": "against_shirt",
+                      "destination": "workspace_above_counter"}},
+
+    {"op": "emit_event", "event_type": "sensory_visual",
+     "payload": {"qualia": ["glossy_to_matte_red"],
+                 "source": ["apple_01"]},
+     "participants": {"agent": "eyes_01", "source": "apple_01"}},
+
+    {"op": "emit_event", "event_type": "natural_process",
+     "payload": {"name": "N3_optical_change_glossy_to_matte",
+                 "source": ["apple_01"]},
+     "participants": {"agent": "air_01", "patient": "apple_01",
+                      "cause": "diffuse_reflection"}}
+  ],
+  "notes": "H3 dry on shirt. The rub cycles each comprise two reach rotations bracketing a small horizontal displacement, plus the property changes. N3 modelled as change_properties on apple (wet to damp to dry) plus change_properties on shirt plus an optical change plus an event."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+H4 — place_object_on_surface  (set apple on cutting board, stem-side up)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [-20.0, 20.0, 105.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "source": "workspace_above_counter",
+                      "destination": "above_cutting_board"}},
+
+    {"op": "rotate", "object_id": "apple_01",
+     "quaternion": [0.0, 0.0, 0.0, 1.0],
+     "participants": {"agent": "left_hand_01", "patient": "apple_01",
+                      "cause": "orient_stem_up"}},
+
+    {"op": "set_transform", "object_id": "apple_01",
+     "world_transform": {"translate": [-20.0, 20.0, 100.0],
+                         "rotate": [0,0,0,1], "scale": [1,1,1]},
+     "participants": {"agent": "left_hand_01", "patient": "apple_01",
+                      "destination": "cutting_board_01"}},
+
+    {"op": "detach", "child_id": "apple_01",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01",
+                      "source": "left_hand_01"}},
+
+    {"op": "release", "object_a": "left_hand_01", "object_b": "apple_01",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+
+    {"op": "attach", "child_id": "apple_01", "parent_id": "cutting_board_01",
+     "preserve_world": true,
+     "participants": {"agent": "cutting_board_01", "patient": "apple_01",
+                      "source": "free_body", "destination": "cutting_board_01"}},
+
+    {"op": "contact", "object_a": "apple_01", "object_b": "cutting_board_01",
+     "contact_type": "rest_on", "starts_contact": true,
+     "contact_points": [{"point_world": [-20.0, 20.0, 92.0], "normal_world": [0.0, 0.0, -1.0]}],
+     "force": {"magnitude_n": 2.0, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.6, "regime": "static"},
+     "participants": {"agent": "apple_01", "patient": "cutting_board_01"}},
+
+    {"op": "change_properties", "object_id": "apple_01",
+     "properties": {"linear_velocity": 0.0, "angular_velocity": 0.0},
+     "merge": true,
+     "participants": {"agent": "cutting_board_01", "patient": "apple_01",
+                      "cause": "static_friction"}},
+
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [-25.0, -50.0, 85.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "source": "above_cutting_board",
+                      "destination": "rest_at_side"}},
+
+    {"op": "emit_event", "event_type": "natural_process",
+     "payload": {"name": "H4s1_static_friction_stabilization",
+                 "source": ["apple_01", "cutting_board_01"]},
+     "participants": {"agent": "gravity_01", "patient": "apple_01",
+                      "cause": "static_friction"}}
+  ],
+  "notes": "H4 place on board. Reach rotations for the placement approach and return. Grip released (detach + release) and apple reattached to board with rest_on contact. Apple world z=100 puts its 8.0-cm radius bottom flush with the board's top at z=92."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+H5 — prepare_tool_and_pin_object  (hold knife; pin apple)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "reach_arm_rotate", "object_id": "right_arm_01",
+     "target_world": [10.0, 30.0, 92.0],
+     "participants": {"agent": "person_01", "patient": "right_arm_01",
+                      "destination": "near_paring_knife_01"}},
+
+    {"op": "attach", "child_id": "paring_knife_01", "parent_id": "right_hand_01",
+     "preserve_world": true,
+     "participants": {"agent": "right_hand_01", "patient": "paring_knife_01",
+                      "source": "cutting_board_01", "destination": "right_hand_01"}},
+
+    {"op": "contact", "object_a": "right_hand_01", "object_b": "paring_knife_01",
+     "contact_type": "grip", "starts_contact": true,
+     "force": {"magnitude_n": 6.0, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.9, "regime": "static"},
+     "participants": {"agent": "right_hand_01", "patient": "paring_knife_01"}},
+
+    {"op": "change_properties", "object_id": "right_hand_01",
+     "properties": {"grip_type": "pinch_grip", "thumb_position": "on_bolster"},
+     "merge": true,
+     "participants": {"agent": "right_hand_01", "patient": "right_hand_01",
+                      "cause": "precision_grip"}},
+
+    {"op": "rotate", "object_id": "right_hand_01",
+     "quaternion": [-0.130526, 0.0, 0.0, 0.991445],
+     "participants": {"agent": "person_01", "patient": "right_hand_01",
+                      "cause": "orient_thumb_to_bolster"}},
+
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [-20.0, 20.0, 100.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "destination": "on_apple_01"}},
+
+    {"op": "contact", "object_a": "left_hand_01", "object_b": "apple_01",
+     "contact_type": "hold", "starts_contact": true,
+     "contact_points": [{"point_world": [-20.0, 20.0, 100.0], "normal_world": [0.0, 0.0, -1.0]}],
+     "force": {"magnitude_n": 5.0, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.7, "regime": "static"},
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+
+    {"op": "change_properties", "object_id": "left_hand_01",
+     "properties": {"finger_posture": "curled_back", "grip_type": "pin"},
+     "merge": true,
+     "participants": {"agent": "left_hand_01", "patient": "left_hand_01",
+                      "cause": "safety_posture"}},
+
+    {"op": "emit_event", "event_type": "sensory_tactile",
+     "payload": {"qualia": ["worn_handle", "bolster_brace"],
+                 "source": ["paring_knife_01"]},
+     "participants": {"agent": "right_hand_01", "source": "paring_knife_01"}}
+  ],
+  "notes": "H5 prepare and grip. Both arms rotate to reach the knife on the board and the apple. The right hand rotates about the wrist to orient the thumb on the bolster. Knife attached to right hand with grip contact. Apple held by left hand with hold contact. Safe postures recorded."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+H6 — initiate_cut  (first cut beside stem)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "reach_arm_rotate", "object_id": "right_arm_01",
+     "target_world": [-19.0, 20.0, 100.0],
+     "participants": {"agent": "person_01", "patient": "right_arm_01",
+                      "destination": "beside_stem"}},
+
+    {"op": "set_transform", "object_id": "paring_knife_01",
+     "world_transform": {"translate": [-19.5, 20.0, 100.0],
+                         "rotate": [0.130526, 0.0, 0.0, 0.991445],
+                         "scale": [1,1,1]},
+     "participants": {"agent": "right_hand_01", "patient": "paring_knife_01",
+                      "destination": "apple_surface_at_stem"}},
+
+    {"op": "contact", "object_a": "paring_knife_01", "object_b": "apple_01",
+     "contact_type": "push", "starts_contact": true,
+     "contact_points": [{"point_world": [-19.7, 20.0, 102.5], "normal_world": [0.0, 0.0, -1.0]}],
+     "force": {"magnitude_n": 3.0, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.4, "regime": "kinetic"},
+     "participants": {"agent": "right_hand_01", "patient": "apple_01"}},
+
+    {"op": "change_properties", "object_id": "apple_01",
+     "properties": {"surface_integrity": "breached"}, "merge": true,
+     "participants": {"agent": "paring_knife_01", "patient": "apple_01",
+                      "cause": "N4_1_blade_rupture"}},
+
+    {"op": "add_object", "object_id": "apple_flesh_exposed_01",
+     "template_name": "apple_flesh",
+     "elements": [
+       {"element_type": "sphere", "parameters": {"radius_cm": 7.8},
+        "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "material_override": {"label": "flesh"}}
+     ],
+     "material": {"color": "pale_yellow_white", "moisture": "wet"},
+     "object_transform": {"translate": [-20.0, 20.0, 100.0],
+                          "rotate": [0,0,0,1], "scale": [1,1,1]},
+     "parent_object_id": "apple_01",
+     "mass_grams": null,
+     "participants": {"agent": "paring_knife_01", "patient": "apple_01",
+                      "cause": "N4_cut_tissue_exposure"}},
+
+    {"op": "change_properties", "object_id": "apple_flesh_exposed_01",
+     "properties": {"surface_state": "wet", "color": "pale_yellow_white",
+                    "oxidation": "none"}, "merge": true,
+     "participants": {"agent": "air_01", "patient": "apple_flesh_exposed_01",
+                      "cause": "N4_4_optical_scattering_and_N4_5_oxidation_onset"}},
+
+    {"op": "add_object", "object_id": "juice_01",
+     "template_name": "juice",
+     "elements": [
+       {"element_type": "sphere", "parameters": {"radius_cm": 0.3},
+        "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "material_override": {"label": "juice_pool"}}
+     ],
+     "material": {"color": "clear_yellowish", "state": "liquid"},
+     "object_transform": {"translate": [-19.5, 20.0, 100.5],
+                          "rotate": [0,0,0,1], "scale": [1,1,1]},
+     "parent_object_id": "apple_01",
+     "mass_grams": null,
+     "participants": {"agent": "apple_flesh_exposed_01", "patient": "juice_01",
+                      "cause": "N4_2_cell_rupture_releases_vacuolar_fluid"}},
+
+    {"op": "release", "object_a": "paring_knife_01", "object_b": "apple_01",
+     "participants": {"agent": "right_hand_01", "patient": "apple_01"}},
+
+    {"op": "reach_arm_rotate", "object_id": "right_arm_01",
+     "target_world": [-19.0, 20.0, 101.0],
+     "participants": {"agent": "person_01", "patient": "right_arm_01",
+                      "cause": "control_cut_depth_and_retract"}},
+
+    {"op": "emit_event", "event_type": "sensory_auditory",
+     "payload": {"qualia": ["soft_pop"],
+                 "source": ["apple_01", "paring_knife_01"]},
+     "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+  ],
+  "notes": "H6 first cut. Right arm rotates to bring knife beside the stem. Push contact of knife on apple, surface rupture, exposed flesh object created with 7.8-cm sphere labeled flesh, juice object created with sphere labeled juice_pool. Oxidation initialised to none. Cut depth retracted by a further rotation."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+H7 — continuous_peel  (rotate apple against blade; knife nearly still)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "add_object", "object_id": "peel_strip_01",
+     "template_name": "peel_strip",
+     "elements": [
+       {"element_type": "sheet",
+        "parameters": {"size_x_cm": 3.0, "size_y_cm": 1.5, "thickness_cm": 0.15},
+        "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "material_override": {"label": "peel_ribbon_sheet"}}
+     ],
+     "material": {"color": "red_brushed", "material": "apple_skin"},
+     "object_transform": {"translate": [-20.0, 20.0, 92.5],
+                          "rotate": [0,0,0,1], "scale": [1,1,1]},
+     "parent_object_id": "cutting_board_01",
+     "mass_grams": null,
+     "participants": {"agent": "paring_knife_01", "patient": "apple_01",
+                      "source": "apple_01",
+                      "cause": "N5_surface_layer_separation"}},
+
+    {"op": "contact", "object_a": "peel_strip_01", "object_b": "cutting_board_01",
+     "contact_type": "rest_on", "starts_contact": true,
+     "force": {"magnitude_n": 0.1, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.5, "regime": "static"},
+     "participants": {"agent": "peel_strip_01", "patient": "cutting_board_01",
+                      "cause": "gravity"}},
+
+    {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+     "contact_type": "push", "starts_contact": true,
+     "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+     "friction": {"coefficient": 0.6, "regime": "kinetic"},
+     "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+
+    {"op": "contact", "object_a": "left_hand_01", "object_b": "apple_01",
+     "contact_type": "grip", "starts_contact": true,
+     "force": {"magnitude_n": 7.0, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.8, "regime": "static"},
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+
+    {"op": "compound", "label": "peel_cycle_001",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01",
+                      "co_agent": "left_thumb_01", "instrument": "paring_knife_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01",
+                         "instrument": "paring_knife_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.975}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01",
+                         "cause": "N5_surface_layer_separation"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 1.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_002",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.950}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 2.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_003",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.925}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 3.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_004",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.900}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 4.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_005",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.875}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 5.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_006",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.850}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 6.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_007",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.825}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 7.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_008",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.800}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 8.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_009",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.775}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 9.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_010",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.750}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_flesh_exposed_01",
+        "properties": {"color": "light_brown", "oxidation": "light"}, "merge": true,
+        "participants": {"agent": "air_01", "patient": "apple_flesh_exposed_01",
+                         "cause": "N6_oxidative_browning"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 10.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_olfactory",
+        "payload": {"qualia": ["green", "sharp", "faintly_floral"],
+                    "source": ["apple_01"]},
+        "participants": {"agent": "apple_01", "source": "apple_01",
+                         "cause": "N7_aroma_release"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_011",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.725}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 11.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_012",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.700}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 12.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_013",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.675}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 13.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_014",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.650}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 14.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_015",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.625}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 15.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_016",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.600}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 16.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_017",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.575}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 17.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_018",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.550}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 18.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_019",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.525}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 19.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_020",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.500}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 20.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_021",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.475}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 21.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_022",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.450}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 22.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_023",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.425}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 23.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_024",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.400}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 24.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_025",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.375}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 25.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_026",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.350}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 26.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_027",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.325}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 27.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_028",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.300}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 28.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_029",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.275}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 29.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_030",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.250}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 30.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_031",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.225}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 31.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_032",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.200}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 32.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_033",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.175}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 33.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_034",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.150}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 34.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_035",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.125}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 35.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_036",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.100}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 36.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_037",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.075}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 37.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_038",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.050}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 38.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_039",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.025}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 39.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "peel_cycle_040",
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_thumb_01", "object_b": "apple_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 1.5, "direction_world": [0.0, 1.0, 0.0]},
+        "friction": {"coefficient": 0.6, "regime": "kinetic"},
+        "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+       {"op": "rotate", "object_id": "apple_01",
+        "quaternion": [0.0, 0.0, 0.078459, 0.996917],
+        "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"skin_coverage": 0.0, "skin_present": false,
+                       "physical_state": "peeled",
+                       "surface_state": "wet", "moisture": "wet"},
+        "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01",
+                         "cause": "N5_surface_layer_separation_complete"}},
+       {"op": "change_properties", "object_id": "peel_strip_01",
+        "properties": {"length_cm": 40.0}, "merge": true,
+        "participants": {"agent": "gravity_01", "patient": "peel_strip_01"}},
+       {"op": "emit_event", "event_type": "sensory_auditory",
+        "payload": {"qualia": ["wet_scraping"],
+                    "source": ["apple_01", "paring_knife_01"]},
+        "participants": {"agent": "paring_knife_01", "source": "apple_01"}}
+     ]},
+
+    {"op": "compound", "label": "calyx_repositioning",
+     "participants": {"agent": "right_hand_01", "patient": "apple_01"},
+     "operations": [
+       {"op": "reach_arm_rotate", "object_id": "right_arm_01",
+        "target_world": [-20.0, 20.0, 103.0],
+        "participants": {"agent": "person_01", "patient": "right_arm_01"}},
+       {"op": "change_properties", "object_id": "apple_01",
+        "properties": {"calyx_cleared": true}, "merge": true,
+        "participants": {"agent": "paring_knife_01", "patient": "apple_01"}}
+     ]},
+
+    {"op": "add_element", "object_id": "peel_strip_01",
+     "element": {"element_type": "cylinder",
+                 "parameters": {"radius_cm": 0.8, "height_cm": 8.0},
+                 "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+                 "material_override": {"label": "peel_curl"}},
+     "participants": {"agent": "gravity_01", "patient": "peel_strip_01",
+                      "cause": "H7s1_peel_curls_under_gravity"}},
+
+    {"op": "change_properties", "object_id": "apple_flesh_exposed_01",
+     "properties": {"color": "light_brown", "oxidation": "light"}, "merge": true,
+     "participants": {"agent": "air_01", "patient": "apple_flesh_exposed_01",
+                      "cause": "N6_oxidative_browning_complete"}},
+
+    {"op": "change_properties", "object_id": "peel_strip_01",
+     "properties": {"color": "browning_at_edges", "oxidation": "light"},
+     "merge": true,
+     "participants": {"agent": "air_01", "patient": "peel_strip_01",
+                      "cause": "N6_oxidative_browning_on_peel"}},
+
+    {"op": "release", "object_a": "left_thumb_01", "object_b": "apple_01",
+     "participants": {"agent": "left_thumb_01", "patient": "apple_01"}},
+
+    {"op": "emit_event", "event_type": "sensory_olfactory",
+     "payload": {"qualia": ["green", "sharp", "faintly_floral"],
+                 "source": ["apple_01"]},
+     "participants": {"agent": "apple_01", "source": "apple_01",
+                      "cause": "N7_aroma_release"}},
+
+    {"op": "emit_event", "event_type": "sensory_auditory",
+     "payload": {"qualia": ["soft_wet_rasping"],
+                 "source": ["apple_01", "paring_knife_01"]},
+     "participants": {"agent": "paring_knife_01", "source": "apple_01",
+                      "cause": "N8_acoustic_emission"}},
+
+    {"op": "emit_event", "event_type": "sensory_visual",
+     "payload": {"qualia": ["continuous_spiral_peel_ribbon"],
+                 "source": ["peel_strip_01"]},
+     "participants": {"agent": "peel_strip_01", "source": "peel_strip_01"}}
+  ],
+  "notes": "H7 continuous peel. Forty explicit compound cycles at 0.078-quaternion rotation each, driving skin_coverage from 1.0 to 0.0 in 0.025 steps. A rest_on contact is established between peel_strip_01 and cutting_board_01 right after the peel strip is created, so H13 can release it. N5, N6, N7, N8 recorded. Calyx repositioning via right arm reach_arm_rotate followed by a peel curl element added to the peel strip with label peel_curl."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+H8 — manipulate_and_inspect  (turn naked apple in hand)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "rotate", "object_id": "left_arm_01",
+     "quaternion": [0.0, 0.0, 0.0, 1.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01"}},
+
+    {"op": "rotate", "object_id": "apple_01",
+     "quaternion": [0.382683, 0.0, 0.0, 0.923880],
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+
+    {"op": "rotate", "object_id": "apple_01",
+     "quaternion": [0.0, 0.382683, 0.0, 0.923880],
+     "participants": {"agent": "left_hand_01", "patient": "apple_01"}},
+
+    {"op": "add_element", "object_id": "apple_01",
+     "element": {"element_type": "hemisphere",
+                 "parameters": {"radius_cm": 0.6},
+                 "transform": {"translate": [0.0, 5.0, 5.0],
+                               "rotate": [0,0,0,1], "scale": [1,1,1]},
+                 "material_override": {"label": "gouge"}},
+     "participants": {"agent": "paring_knife_01", "patient": "apple_01",
+                      "cause": "H8_1_recorded_gouge_from_H7_overpressure"}},
+
+    {"op": "change_properties", "object_id": "apple_01",
+     "properties": {"surface_state": "slippery", "moisture": "wet"},
+     "merge": true,
+     "participants": {"agent": "juice_01", "patient": "apple_01",
+                      "cause": "N5_3_fluid_film_on_surface"}},
+
+    {"op": "add_object", "object_id": "juice_on_hand_01",
+     "template_name": "juice",
+     "elements": [
+       {"element_type": "sphere", "parameters": {"radius_cm": 0.3},
+        "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "material_override": {"label": "juice_film"}}
+     ],
+     "material": {"color": "clear_yellowish", "state": "liquid",
+                  "viscosity": "slightly_sticky"},
+     "object_transform": {"translate": [-25.0, -38.0, 118.0],
+                          "rotate": [0,0,0,1], "scale": [1,1,1]},
+     "parent_object_id": "left_hand_01",
+     "mass_grams": null,
+     "participants": {"agent": "gravity_01", "patient": "juice_01",
+                      "source": "apple_01", "destination": "left_hand_01",
+                      "cause": "N9_fluid_runoff_along_skin"}},
+
+    {"op": "contact", "object_a": "juice_on_hand_01", "object_b": "left_hand_01",
+     "contact_type": "rest_on", "starts_contact": true,
+     "force": {"magnitude_n": 0.1, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.4, "regime": "static"},
+     "participants": {"agent": "juice_on_hand_01", "patient": "left_hand_01"}},
+
+    {"op": "change_properties", "object_id": "left_hand_01",
+     "properties": {"residue": "juice_film"}, "merge": true,
+     "participants": {"agent": "juice_on_hand_01", "patient": "left_hand_01",
+                      "cause": "N9_fluid_runoff"}},
+
+    {"op": "wait", "duration": 180.0,
+     "note": "N10 tacky drying on hand over minutes",
+     "participants": {"agent": "air_01", "patient": "juice_on_hand_01",
+                      "cause": "N10_evaporation"}},
+
+    {"op": "change_properties", "object_id": "left_hand_01",
+     "properties": {"residue": "tacky_residue"}, "merge": true,
+     "participants": {"agent": "air_01", "patient": "left_hand_01",
+                      "cause": "N10_2_solute_concentration_forms_tacky_residue"}},
+
+    {"op": "emit_event", "event_type": "sensory_tactile",
+     "payload": {"qualia": ["slippery"], "source": ["apple_01"]},
+     "participants": {"agent": "left_hand_01", "source": "apple_01"}},
+
+    {"op": "emit_event", "event_type": "sensory_visual",
+     "payload": {"qualia": ["shallow_gouge_near_stem"],
+                 "source": ["apple_01"]},
+     "participants": {"agent": "eyes_01", "source": "apple_01"}}
+  ],
+  "notes": "H8 inspect naked apple. The identity rotate on left_arm_01 is a no-op placeholder for the wrist rotation applied to the apple itself. Two apple rotations turn the fruit in the held hand. Gouge recorded as element with label gouge, juice runoff as new object with sphere labeled juice_film, tacky drying as change_properties after wait."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+H9 — quarter_object_through_core  (quarter apple)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "set_transform", "object_id": "paring_knife_01",
+     "world_transform": {"translate": [-20.0, 20.0, 104.0],
+                         "rotate": [0.0, 0.0, 0.0, 1.0],
+                         "scale": [1,1,1]},
+     "participants": {"agent": "right_hand_01", "patient": "paring_knife_01",
+                      "destination": "above_apple_01"}},
+
+    {"op": "detach", "child_id": "apple_01",
+     "participants": {"agent": "cutting_board_01", "patient": "apple_01",
+                      "source": "cutting_board_01"}},
+
+    {"op": "release", "object_a": "apple_01", "object_b": "cutting_board_01",
+     "participants": {"agent": "apple_01", "patient": "cutting_board_01"}},
+
+    {"op": "split", "source_id": "apple_01",
+     "cut_point_world": [-20.0, 20.0, 100.0],
+     "cut_normal_world": [1.0, 0.0, 0.0],
+     "new_object_ids": ["apple_half_left_01", "apple_half_right_01"],
+     "participants": {"agent": "paring_knife_01", "patient": "apple_01",
+                      "instrument": "paring_knife_01"}},
+
+    {"op": "split", "source_id": "apple_half_left_01",
+     "cut_point_world": [-20.0, 20.0, 100.0],
+     "cut_normal_world": [0.0, 1.0, 0.0],
+     "new_object_ids": ["apple_quarter_a_01", "apple_quarter_b_01"],
+     "participants": {"agent": "paring_knife_01", "patient": "apple_half_left_01",
+                      "instrument": "paring_knife_01"}},
+
+    {"op": "split", "source_id": "apple_half_right_01",
+     "cut_point_world": [-20.0, 20.0, 100.0],
+     "cut_normal_world": [0.0, 1.0, 0.0],
+     "new_object_ids": ["apple_quarter_c_01", "apple_quarter_d_01"],
+     "participants": {"agent": "paring_knife_01", "patient": "apple_half_right_01",
+                      "instrument": "paring_knife_01"}},
+
+    {"op": "change_properties", "object_id": "apple_quarter_a_01",
+     "properties": {"color": "light_brown", "oxidation": "light"}, "merge": true,
+     "participants": {"agent": "air_01", "patient": "apple_quarter_a_01",
+                      "cause": "N6_oxidative_browning"}},
+
+    {"op": "change_properties", "object_id": "apple_quarter_b_01",
+     "properties": {"color": "light_brown", "oxidation": "light"}, "merge": true,
+     "participants": {"agent": "air_01", "patient": "apple_quarter_b_01",
+                      "cause": "N6_oxidative_browning"}},
+
+    {"op": "change_properties", "object_id": "apple_quarter_c_01",
+     "properties": {"color": "light_brown", "oxidation": "light"}, "merge": true,
+     "participants": {"agent": "air_01", "patient": "apple_quarter_c_01",
+                      "cause": "N6_oxidative_browning"}},
+
+    {"op": "change_properties", "object_id": "apple_quarter_d_01",
+     "properties": {"color": "light_brown", "oxidation": "light"}, "merge": true,
+     "participants": {"agent": "air_01", "patient": "apple_quarter_d_01",
+                      "cause": "N6_oxidative_browning"}},
+
+    {"op": "attach", "child_id": "apple_quarter_a_01", "parent_id": "cutting_board_01",
+     "preserve_world": true,
+     "participants": {"agent": "gravity_01", "patient": "apple_quarter_a_01",
+                      "destination": "cutting_board_01"}},
+    {"op": "attach", "child_id": "apple_quarter_b_01", "parent_id": "cutting_board_01",
+     "preserve_world": true,
+     "participants": {"agent": "gravity_01", "patient": "apple_quarter_b_01",
+                      "destination": "cutting_board_01"}},
+    {"op": "attach", "child_id": "apple_quarter_c_01", "parent_id": "cutting_board_01",
+     "preserve_world": true,
+     "participants": {"agent": "gravity_01", "patient": "apple_quarter_c_01",
+                      "destination": "cutting_board_01"}},
+    {"op": "attach", "child_id": "apple_quarter_d_01", "parent_id": "cutting_board_01",
+     "preserve_world": true,
+     "participants": {"agent": "gravity_01", "patient": "apple_quarter_d_01",
+                      "destination": "cutting_board_01"}},
+
+    {"op": "contact", "object_a": "apple_quarter_a_01", "object_b": "cutting_board_01",
+     "contact_type": "rest_on", "starts_contact": true,
+     "force": {"magnitude_n": 0.5, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.6, "regime": "static"},
+     "participants": {"agent": "apple_quarter_a_01", "patient": "cutting_board_01"}},
+    {"op": "contact", "object_a": "apple_quarter_b_01", "object_b": "cutting_board_01",
+     "contact_type": "rest_on", "starts_contact": true,
+     "force": {"magnitude_n": 0.5, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.6, "regime": "static"},
+     "participants": {"agent": "apple_quarter_b_01", "patient": "cutting_board_01"}},
+    {"op": "contact", "object_a": "apple_quarter_c_01", "object_b": "cutting_board_01",
+     "contact_type": "rest_on", "starts_contact": true,
+     "force": {"magnitude_n": 0.5, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.6, "regime": "static"},
+     "participants": {"agent": "apple_quarter_c_01", "patient": "cutting_board_01"}},
+    {"op": "contact", "object_a": "apple_quarter_d_01", "object_b": "cutting_board_01",
+     "contact_type": "rest_on", "starts_contact": true,
+     "force": {"magnitude_n": 0.5, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.6, "regime": "static"},
+     "participants": {"agent": "apple_quarter_d_01", "patient": "cutting_board_01"}},
+
+    {"op": "emit_event", "event_type": "sensory_auditory",
+     "payload": {"qualia": ["firm_crunch"],
+                 "source": ["apple_01", "paring_knife_01"]},
+     "participants": {"agent": "paring_knife_01", "source": "apple_01",
+                      "cause": "N11_crunch_and_core_exposure"}},
+
+    {"op": "emit_event", "event_type": "sensory_visual",
+     "payload": {"qualia": ["four_pieces_fall_apart", "core_exposed"],
+                 "source": ["apple_01"]},
+     "participants": {"agent": "gravity_01", "source": "apple_01"}}
+  ],
+  "notes": "H9 quarter. Two binary splits produce four quarters. Each quarter inherits the source's elements and their labels; no explicit relabeling. Each quarter is attached to the board with rest_on contact. N6 and N11 recorded. Cut plane passes through apple centre at z=100."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+H10 — remove_core_from_quarters  (lay flat and slice out core)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "compound", "label": "core_removal_quarter_a",
+     "participants": {"agent": "paring_knife_01",
+                      "patient": "apple_quarter_a_01",
+                      "co_agent": "left_hand_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_hand_01", "object_b": "apple_quarter_a_01",
+        "contact_type": "hold", "starts_contact": true,
+        "force": {"magnitude_n": 4.0, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.7, "regime": "static"},
+        "participants": {"agent": "left_hand_01", "patient": "apple_quarter_a_01"}},
+       {"op": "contact", "object_a": "paring_knife_01", "object_b": "apple_quarter_a_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 2.0, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.4, "regime": "kinetic"},
+        "participants": {"agent": "paring_knife_01", "patient": "apple_quarter_a_01"}},
+       {"op": "add_object", "object_id": "apple_core_a_01",
+        "template_name": "apple_core",
+        "elements": [
+          {"element_type": "wedge",
+           "parameters": {"size_x_cm": 1.6, "size_y_cm": 2.4, "size_z_cm": 1.2},
+           "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+           "material_override": {"label": "core_wedge"}}
+        ],
+        "material": {"color": "pale_translucent", "material": "apple_core"},
+        "object_transform": {"translate": [-22.0, 18.0, 93.5],
+                             "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "parent_object_id": "cutting_board_01",
+        "mass_grams": null,
+        "participants": {"agent": "paring_knife_01",
+                         "patient": "apple_quarter_a_01",
+                         "source": "apple_quarter_a_01",
+                         "destination": "cutting_board_01"}},
+       {"op": "change_properties", "object_id": "apple_quarter_a_01",
+        "properties": {"core_present": false}, "merge": true,
+        "participants": {"agent": "paring_knife_01",
+                         "patient": "apple_quarter_a_01",
+                         "cause": "N6_4_cut_surface_browning_reset"}},
+       {"op": "contact", "object_a": "apple_core_a_01", "object_b": "cutting_board_01",
+        "contact_type": "rest_on", "starts_contact": true,
+        "force": {"magnitude_n": 0.2, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.5, "regime": "static"},
+        "participants": {"agent": "apple_core_a_01", "patient": "cutting_board_01"}},
+       {"op": "release", "object_a": "left_hand_01", "object_b": "apple_quarter_a_01",
+        "participants": {"agent": "left_hand_01", "patient": "apple_quarter_a_01"}}
+     ]},
+
+    {"op": "compound", "label": "core_removal_quarter_b",
+     "participants": {"agent": "paring_knife_01",
+                      "patient": "apple_quarter_b_01",
+                      "co_agent": "left_hand_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_hand_01", "object_b": "apple_quarter_b_01",
+        "contact_type": "hold", "starts_contact": true,
+        "force": {"magnitude_n": 4.0, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.7, "regime": "static"},
+        "participants": {"agent": "left_hand_01", "patient": "apple_quarter_b_01"}},
+       {"op": "contact", "object_a": "paring_knife_01", "object_b": "apple_quarter_b_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 2.0, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.4, "regime": "kinetic"},
+        "participants": {"agent": "paring_knife_01", "patient": "apple_quarter_b_01"}},
+       {"op": "add_object", "object_id": "apple_core_b_01",
+        "template_name": "apple_core",
+        "elements": [
+          {"element_type": "wedge",
+           "parameters": {"size_x_cm": 1.6, "size_y_cm": 2.4, "size_z_cm": 1.2},
+           "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+           "material_override": {"label": "core_wedge"}}
+        ],
+        "material": {"color": "pale_translucent", "material": "apple_core"},
+        "object_transform": {"translate": [-22.0, 22.0, 93.5],
+                             "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "parent_object_id": "cutting_board_01",
+        "mass_grams": null,
+        "participants": {"agent": "paring_knife_01",
+                         "patient": "apple_quarter_b_01",
+                         "source": "apple_quarter_b_01",
+                         "destination": "cutting_board_01"}},
+       {"op": "change_properties", "object_id": "apple_quarter_b_01",
+        "properties": {"core_present": false}, "merge": true,
+        "participants": {"agent": "paring_knife_01",
+                         "patient": "apple_quarter_b_01"}},
+       {"op": "contact", "object_a": "apple_core_b_01", "object_b": "cutting_board_01",
+        "contact_type": "rest_on", "starts_contact": true,
+        "force": {"magnitude_n": 0.2, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.5, "regime": "static"},
+        "participants": {"agent": "apple_core_b_01", "patient": "cutting_board_01"}},
+       {"op": "release", "object_a": "left_hand_01", "object_b": "apple_quarter_b_01",
+        "participants": {"agent": "left_hand_01", "patient": "apple_quarter_b_01"}}
+     ]},
+
+    {"op": "compound", "label": "core_removal_quarter_c",
+     "participants": {"agent": "paring_knife_01",
+                      "patient": "apple_quarter_c_01",
+                      "co_agent": "left_hand_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_hand_01", "object_b": "apple_quarter_c_01",
+        "contact_type": "hold", "starts_contact": true,
+        "force": {"magnitude_n": 4.0, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.7, "regime": "static"},
+        "participants": {"agent": "left_hand_01", "patient": "apple_quarter_c_01"}},
+       {"op": "contact", "object_a": "paring_knife_01", "object_b": "apple_quarter_c_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 2.0, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.4, "regime": "kinetic"},
+        "participants": {"agent": "paring_knife_01", "patient": "apple_quarter_c_01"}},
+       {"op": "add_object", "object_id": "apple_core_c_01",
+        "template_name": "apple_core",
+        "elements": [
+          {"element_type": "wedge",
+           "parameters": {"size_x_cm": 1.6, "size_y_cm": 2.4, "size_z_cm": 1.2},
+           "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+           "material_override": {"label": "core_wedge"}}
+        ],
+        "material": {"color": "pale_translucent", "material": "apple_core"},
+        "object_transform": {"translate": [-18.0, 18.0, 93.5],
+                             "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "parent_object_id": "cutting_board_01",
+        "mass_grams": null,
+        "participants": {"agent": "paring_knife_01",
+                         "patient": "apple_quarter_c_01",
+                         "source": "apple_quarter_c_01",
+                         "destination": "cutting_board_01"}},
+       {"op": "change_properties", "object_id": "apple_quarter_c_01",
+        "properties": {"core_present": false}, "merge": true,
+        "participants": {"agent": "paring_knife_01",
+                         "patient": "apple_quarter_c_01"}},
+       {"op": "contact", "object_a": "apple_core_c_01", "object_b": "cutting_board_01",
+        "contact_type": "rest_on", "starts_contact": true,
+        "force": {"magnitude_n": 0.2, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.5, "regime": "static"},
+        "participants": {"agent": "apple_core_c_01", "patient": "cutting_board_01"}},
+       {"op": "release", "object_a": "left_hand_01", "object_b": "apple_quarter_c_01",
+        "participants": {"agent": "left_hand_01", "patient": "apple_quarter_c_01"}}
+     ]},
+
+    {"op": "compound", "label": "core_removal_quarter_d",
+     "participants": {"agent": "paring_knife_01",
+                      "patient": "apple_quarter_d_01",
+                      "co_agent": "left_hand_01"},
+     "operations": [
+       {"op": "contact", "object_a": "left_hand_01", "object_b": "apple_quarter_d_01",
+        "contact_type": "hold", "starts_contact": true,
+        "force": {"magnitude_n": 4.0, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.7, "regime": "static"},
+        "participants": {"agent": "left_hand_01", "patient": "apple_quarter_d_01"}},
+       {"op": "contact", "object_a": "paring_knife_01", "object_b": "apple_quarter_d_01",
+        "contact_type": "push", "starts_contact": true,
+        "force": {"magnitude_n": 2.0, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.4, "regime": "kinetic"},
+        "participants": {"agent": "paring_knife_01", "patient": "apple_quarter_d_01"}},
+       {"op": "add_object", "object_id": "apple_core_d_01",
+        "template_name": "apple_core",
+        "elements": [
+          {"element_type": "wedge",
+           "parameters": {"size_x_cm": 1.6, "size_y_cm": 2.4, "size_z_cm": 1.2},
+           "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+           "material_override": {"label": "core_wedge"}}
+        ],
+        "material": {"color": "pale_translucent", "material": "apple_core"},
+        "object_transform": {"translate": [-18.0, 22.0, 93.5],
+                             "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "parent_object_id": "cutting_board_01",
+        "mass_grams": null,
+        "participants": {"agent": "paring_knife_01",
+                         "patient": "apple_quarter_d_01",
+                         "source": "apple_quarter_d_01",
+                         "destination": "cutting_board_01"}},
+       {"op": "change_properties", "object_id": "apple_quarter_d_01",
+        "properties": {"core_present": false}, "merge": true,
+        "participants": {"agent": "paring_knife_01",
+                         "patient": "apple_quarter_d_01"}},
+       {"op": "contact", "object_a": "apple_core_d_01", "object_b": "cutting_board_01",
+        "contact_type": "rest_on", "starts_contact": true,
+        "force": {"magnitude_n": 0.2, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.5, "regime": "static"},
+        "participants": {"agent": "apple_core_d_01", "patient": "cutting_board_01"}},
+       {"op": "release", "object_a": "left_hand_01", "object_b": "apple_quarter_d_01",
+        "participants": {"agent": "left_hand_01", "patient": "apple_quarter_d_01"}}
+     ]},
+
+    {"op": "add_object", "object_id": "apple_seeds_01",
+     "template_name": "apple_seeds",
+     "elements": [
+       {"element_type": "ellipsoid",
+        "parameters": {"radius_x_cm": 0.4, "radius_y_cm": 0.2, "radius_z_cm": 0.2},
+        "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "material_override": {"label": "seed_1"}},
+       {"element_type": "ellipsoid",
+        "parameters": {"radius_x_cm": 0.4, "radius_y_cm": 0.2, "radius_z_cm": 0.2},
+        "transform": {"translate": [1.0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "material_override": {"label": "seed_2"}},
+       {"element_type": "ellipsoid",
+        "parameters": {"radius_x_cm": 0.4, "radius_y_cm": 0.2, "radius_z_cm": 0.2},
+        "transform": {"translate": [2.0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "material_override": {"label": "seed_3"}}
+     ],
+     "material": {"color": "dark_brown", "material": "apple_seed"},
+     "object_transform": {"translate": [-15.0, 20.0, 92.5],
+                          "rotate": [0,0,0,1], "scale": [1,1,1]},
+     "parent_object_id": "cutting_board_01",
+     "mass_grams": null,
+     "participants": {"agent": "paring_knife_01",
+                      "patient": "apple_core_a_01",
+                      "source": "apple_core_a_01",
+                      "destination": "cutting_board_01",
+                      "cause": "seeds_liberated_from_papery_pockets"}},
+
+    {"op": "contact", "object_a": "apple_seeds_01", "object_b": "cutting_board_01",
+     "contact_type": "rest_on", "starts_contact": true,
+     "force": {"magnitude_n": 0.05, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.5, "regime": "static"},
+     "participants": {"agent": "apple_seeds_01", "patient": "cutting_board_01"}},
+
+    {"op": "emit_event", "event_type": "sensory_tactile",
+     "payload": {"qualia": ["fibrous", "pale", "translucent"],
+                 "source": ["apple_core_a_01"]},
+     "participants": {"agent": "left_hand_01", "source": "apple_core_a_01"}},
+
+    {"op": "emit_event", "event_type": "sensory_visual",
+     "payload": {"qualia": ["three_dark_brown_seeds_in_papery_pockets"],
+                 "source": ["apple_seeds_01", "apple_core_a_01"]},
+     "participants": {"agent": "eyes_01", "source": "apple_seeds_01"}}
+  ],
+  "notes": "H10 core removal. Four explicit compounds, one per quarter, each with hold contact plus push contact plus add_object for the core (wedge labeled core_wedge, sized 1.6 x 2.4 x 1.2 cm to match the larger quarter geometry) plus change_properties plus rest_on contact plus release. Seeds gathered into a single object with three ellipsoids labeled seed_1, seed_2, seed_3."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+H11 — flick_object_to_receptacle  (flick seeds into sink)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "reach_arm_rotate", "object_id": "right_arm_01",
+     "target_world": [-15.0, 20.0, 93.0],
+     "participants": {"agent": "person_01", "patient": "right_arm_01",
+                      "destination": "near_apple_seeds_01"}},
+
+    {"op": "attach", "child_id": "apple_seeds_01", "parent_id": "right_hand_01",
+     "preserve_world": true,
+     "participants": {"agent": "right_hand_01", "patient": "apple_seeds_01",
+                      "source": "cutting_board_01", "destination": "right_hand_01"}},
+
+    {"op": "contact", "object_a": "right_hand_01", "object_b": "apple_seeds_01",
+     "contact_type": "grip", "starts_contact": true,
+     "force": {"magnitude_n": 0.5, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.7, "regime": "static"},
+     "participants": {"agent": "right_hand_01", "patient": "apple_seeds_01"}},
+
+    {"op": "detach", "child_id": "apple_seeds_01",
+     "participants": {"agent": "right_hand_01", "patient": "apple_seeds_01",
+                      "source": "right_hand_01"}},
+
+    {"op": "release", "object_a": "right_hand_01", "object_b": "apple_seeds_01",
+     "participants": {"agent": "right_hand_01", "patient": "apple_seeds_01"}},
+
+    {"op": "set_transform", "object_id": "apple_seeds_01",
+     "world_transform": {"translate": [-65.0, 20.0, 80.0],
+                         "rotate": [0,0,0,1], "scale": [1,1,1]},
+     "participants": {"agent": "right_hand_01", "patient": "apple_seeds_01",
+                      "source": "right_hand_01", "destination": "sink_01",
+                      "cause": "ballistic_projection"}},
+
+    {"op": "attach", "child_id": "apple_seeds_01", "parent_id": "sink_01",
+     "preserve_world": true,
+     "participants": {"agent": "gravity_01", "patient": "apple_seeds_01",
+                      "source": "sink_01_surface", "destination": "sink_01_basin"}},
+
+    {"op": "contact", "object_a": "apple_seeds_01", "object_b": "sink_01",
+     "contact_type": "rest_on", "starts_contact": true,
+     "force": {"magnitude_n": 0.05, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.4, "regime": "static"},
+     "participants": {"agent": "apple_seeds_01", "patient": "sink_01"}},
+
+    {"op": "reach_arm_rotate", "object_id": "right_arm_01",
+     "target_world": [25.0, -50.0, 85.0],
+     "participants": {"agent": "person_01", "patient": "right_arm_01",
+                      "source": "near_apple_seeds_01",
+                      "destination": "rest_at_side"}},
+
+    {"op": "emit_event", "event_type": "sensory_auditory",
+     "payload": {"qualia": ["click_against_steel"],
+                 "source": ["apple_seeds_01", "sink_01"]},
+     "participants": {"agent": "apple_seeds_01", "source": "sink_01",
+                      "cause": "N12_1_impact_acoustic"}}
+  ],
+  "notes": "H11 flick seeds. Right arm rotates to reach the seeds, then back to rest. Seeds attached to right hand with grip, detached, released, ballistic trajectory, reattached to sink with rest_on. N12 impact acoustic recorded as event."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+H12 — transfer_pieces_to_container  (put slices into bowl)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "add_object", "object_id": "bowl_destination_01",
+     "template_name": "bowl",
+     "elements": [
+       {"element_type": "frustum",
+        "parameters": {"bottom_radius_cm": 4.0, "top_radius_cm": 7.0,
+                       "height_cm": 6.0},
+        "transform": {"translate": [0,0,3.0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "material_override": {"label": "bowl_body"}},
+       {"element_type": "cylinder",
+        "parameters": {"radius_cm": 4.5, "height_cm": 0.4},
+        "transform": {"translate": [0,0,0.2], "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "material_override": {"label": "footring"}}
+     ],
+     "material": {"color": "white", "material": "ceramic",
+                  "cleanliness": "clean"},
+     "object_transform": {"translate": [30.0, 20.0, 90.0],
+                          "rotate": [0,0,0,1], "scale": [1,1,1]},
+     "parent_object_id": "kitchen_counter_01",
+     "mass_grams": 400.0,
+     "participants": {"agent": "person_01",
+                      "source": "pantry_or_dish_rack",
+                      "destination": "kitchen_counter_01"}},
+
+    {"op": "compound", "label": "transfer_quarter_a",
+     "participants": {"agent": "left_hand_01",
+                      "patient": "apple_quarter_a_01",
+                      "destination": "bowl_destination_01"},
+     "operations": [
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-20.0, 20.0, 100.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01",
+                         "destination": "over_apple_quarter_a_01"}},
+       {"op": "attach", "child_id": "apple_quarter_a_01",
+        "parent_id": "left_hand_01", "preserve_world": true,
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_a_01",
+                         "source": "cutting_board_01",
+                         "destination": "left_hand_01"}},
+       {"op": "contact", "object_a": "left_hand_01",
+        "object_b": "apple_quarter_a_01",
+        "contact_type": "grip", "starts_contact": true,
+        "force": {"magnitude_n": 3.0, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.7, "regime": "static"},
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_a_01"}},
+       {"op": "release", "object_a": "apple_quarter_a_01",
+        "object_b": "cutting_board_01",
+        "participants": {"agent": "apple_quarter_a_01",
+                         "patient": "cutting_board_01"}},
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [30.0, 20.0, 100.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01",
+                         "source": "over_apple_quarter_a_01",
+                         "destination": "over_bowl_destination_01"}},
+       {"op": "set_transform", "object_id": "apple_quarter_a_01",
+        "world_transform": {"translate": [28.0, 20.0, 94.0],
+                            "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_a_01",
+                         "destination": "bowl_destination_01",
+                         "cause": "gravity_settles_in_bowl"}},
+       {"op": "detach", "child_id": "apple_quarter_a_01",
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_a_01"}},
+       {"op": "release", "object_a": "left_hand_01",
+        "object_b": "apple_quarter_a_01",
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_a_01"}},
+       {"op": "attach", "child_id": "apple_quarter_a_01",
+        "parent_id": "bowl_destination_01", "preserve_world": true,
+        "participants": {"agent": "bowl_destination_01",
+                         "patient": "apple_quarter_a_01",
+                         "source": "free_body",
+                         "destination": "bowl_destination_01"}},
+       {"op": "contact", "object_a": "apple_quarter_a_01",
+        "object_b": "bowl_destination_01",
+        "contact_type": "rest_on", "starts_contact": true,
+        "force": {"magnitude_n": 0.5, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.6, "regime": "static"},
+        "participants": {"agent": "apple_quarter_a_01",
+                         "patient": "bowl_destination_01"}},
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-25.0, -50.0, 85.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01",
+                         "source": "over_bowl_destination_01",
+                         "destination": "rest_at_side"}}
+     ]},
+
+    {"op": "compound", "label": "transfer_quarter_b",
+     "participants": {"agent": "left_hand_01",
+                      "patient": "apple_quarter_b_01",
+                      "destination": "bowl_destination_01"},
+     "operations": [
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-20.0, 20.0, 100.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01",
+                         "destination": "over_apple_quarter_b_01"}},
+       {"op": "attach", "child_id": "apple_quarter_b_01",
+        "parent_id": "left_hand_01", "preserve_world": true,
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_b_01",
+                         "source": "cutting_board_01",
+                         "destination": "left_hand_01"}},
+       {"op": "contact", "object_a": "left_hand_01",
+        "object_b": "apple_quarter_b_01",
+        "contact_type": "grip", "starts_contact": true,
+        "force": {"magnitude_n": 3.0, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.7, "regime": "static"},
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_b_01"}},
+       {"op": "release", "object_a": "apple_quarter_b_01",
+        "object_b": "cutting_board_01",
+        "participants": {"agent": "apple_quarter_b_01",
+                         "patient": "cutting_board_01"}},
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [30.0, 20.0, 100.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01",
+                         "source": "over_apple_quarter_b_01",
+                         "destination": "over_bowl_destination_01"}},
+       {"op": "set_transform", "object_id": "apple_quarter_b_01",
+        "world_transform": {"translate": [30.0, 21.0, 94.0],
+                            "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_b_01",
+                         "destination": "bowl_destination_01"}},
+       {"op": "detach", "child_id": "apple_quarter_b_01",
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_b_01"}},
+       {"op": "release", "object_a": "left_hand_01",
+        "object_b": "apple_quarter_b_01",
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_b_01"}},
+       {"op": "attach", "child_id": "apple_quarter_b_01",
+        "parent_id": "bowl_destination_01", "preserve_world": true,
+        "participants": {"agent": "bowl_destination_01",
+                         "patient": "apple_quarter_b_01",
+                         "source": "free_body",
+                         "destination": "bowl_destination_01"}},
+       {"op": "contact", "object_a": "apple_quarter_b_01",
+        "object_b": "bowl_destination_01",
+        "contact_type": "rest_on", "starts_contact": true,
+        "force": {"magnitude_n": 0.5, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.6, "regime": "static"},
+        "participants": {"agent": "apple_quarter_b_01",
+                         "patient": "bowl_destination_01"}}
+     ]},
+
+    {"op": "compound", "label": "transfer_quarter_c",
+     "participants": {"agent": "left_hand_01",
+                      "patient": "apple_quarter_c_01",
+                      "destination": "bowl_destination_01"},
+     "operations": [
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-20.0, 20.0, 100.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01",
+                         "destination": "over_apple_quarter_c_01"}},
+       {"op": "attach", "child_id": "apple_quarter_c_01",
+        "parent_id": "left_hand_01", "preserve_world": true,
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_c_01",
+                         "source": "cutting_board_01",
+                         "destination": "left_hand_01"}},
+       {"op": "contact", "object_a": "left_hand_01",
+        "object_b": "apple_quarter_c_01",
+        "contact_type": "grip", "starts_contact": true,
+        "force": {"magnitude_n": 3.0, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.7, "regime": "static"},
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_c_01"}},
+       {"op": "release", "object_a": "apple_quarter_c_01",
+        "object_b": "cutting_board_01",
+        "participants": {"agent": "apple_quarter_c_01",
+                         "patient": "cutting_board_01"}},
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [30.0, 20.0, 100.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01",
+                         "source": "over_apple_quarter_c_01",
+                         "destination": "over_bowl_destination_01"}},
+       {"op": "set_transform", "object_id": "apple_quarter_c_01",
+        "world_transform": {"translate": [31.0, 19.0, 94.0],
+                            "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_c_01",
+                         "destination": "bowl_destination_01"}},
+       {"op": "detach", "child_id": "apple_quarter_c_01",
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_c_01"}},
+       {"op": "release", "object_a": "left_hand_01",
+        "object_b": "apple_quarter_c_01",
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_c_01"}},
+       {"op": "attach", "child_id": "apple_quarter_c_01",
+        "parent_id": "bowl_destination_01", "preserve_world": true,
+        "participants": {"agent": "bowl_destination_01",
+                         "patient": "apple_quarter_c_01",
+                         "source": "free_body",
+                         "destination": "bowl_destination_01"}},
+       {"op": "contact", "object_a": "apple_quarter_c_01",
+        "object_b": "bowl_destination_01",
+        "contact_type": "rest_on", "starts_contact": true,
+        "force": {"magnitude_n": 0.5, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.6, "regime": "static"},
+        "participants": {"agent": "apple_quarter_c_01",
+                         "patient": "bowl_destination_01"}}
+     ]},
+
+    {"op": "compound", "label": "transfer_quarter_d",
+     "participants": {"agent": "left_hand_01",
+                      "patient": "apple_quarter_d_01",
+                      "destination": "bowl_destination_01"},
+     "operations": [
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-20.0, 20.0, 100.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01",
+                         "destination": "over_apple_quarter_d_01"}},
+       {"op": "attach", "child_id": "apple_quarter_d_01",
+        "parent_id": "left_hand_01", "preserve_world": true,
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_d_01",
+                         "source": "cutting_board_01",
+                         "destination": "left_hand_01"}},
+       {"op": "contact", "object_a": "left_hand_01",
+        "object_b": "apple_quarter_d_01",
+        "contact_type": "grip", "starts_contact": true,
+        "force": {"magnitude_n": 3.0, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.7, "regime": "static"},
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_d_01"}},
+       {"op": "release", "object_a": "apple_quarter_d_01",
+        "object_b": "cutting_board_01",
+        "participants": {"agent": "apple_quarter_d_01",
+                         "patient": "cutting_board_01"}},
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [30.0, 20.0, 100.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01",
+                         "source": "over_apple_quarter_d_01",
+                         "destination": "over_bowl_destination_01"}},
+       {"op": "set_transform", "object_id": "apple_quarter_d_01",
+        "world_transform": {"translate": [29.0, 22.0, 94.0],
+                            "rotate": [0,0,0,1], "scale": [1,1,1]},
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_d_01",
+                         "destination": "bowl_destination_01"}},
+       {"op": "detach", "child_id": "apple_quarter_d_01",
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_d_01"}},
+       {"op": "release", "object_a": "left_hand_01",
+        "object_b": "apple_quarter_d_01",
+        "participants": {"agent": "left_hand_01",
+                         "patient": "apple_quarter_d_01"}},
+       {"op": "attach", "child_id": "apple_quarter_d_01",
+        "parent_id": "bowl_destination_01", "preserve_world": true,
+        "participants": {"agent": "bowl_destination_01",
+                         "patient": "apple_quarter_d_01",
+                         "source": "free_body",
+                         "destination": "bowl_destination_01"}},
+       {"op": "contact", "object_a": "apple_quarter_d_01",
+        "object_b": "bowl_destination_01",
+        "contact_type": "rest_on", "starts_contact": true,
+        "force": {"magnitude_n": 0.5, "direction_world": [0.0, 0.0, -1.0]},
+        "friction": {"coefficient": 0.6, "regime": "static"},
+        "participants": {"agent": "apple_quarter_d_01",
+                         "patient": "bowl_destination_01"}},
+       {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+        "target_world": [-25.0, -50.0, 85.0],
+        "participants": {"agent": "person_01", "patient": "left_arm_01",
+                         "source": "over_bowl_destination_01",
+                         "destination": "rest_at_side"}}
+     ]}
+  ],
+  "notes": "H12 transfer to bowl. Destination bowl created with frustum plus footring. Each of the four quarters gets its own compound with the full reach-rotate/grasp/transfer/release sequence and rest_on contact into the bowl."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+H13 — dispose_waste_to_receptacle  (put peels into compost crock)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [-20.0, 20.0, 92.5],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "destination": "near_peel_strip_01"}},
+
+    {"op": "attach", "child_id": "peel_strip_01", "parent_id": "left_hand_01",
+     "preserve_world": true,
+     "participants": {"agent": "left_hand_01", "patient": "peel_strip_01",
+                      "source": "cutting_board_01",
+                      "destination": "left_hand_01"}},
+
+    {"op": "contact", "object_a": "left_hand_01", "object_b": "peel_strip_01",
+     "contact_type": "grip", "starts_contact": true,
+     "force": {"magnitude_n": 1.0, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.6, "regime": "static"},
+     "participants": {"agent": "left_hand_01", "patient": "peel_strip_01"}},
+
+    {"op": "release", "object_a": "peel_strip_01", "object_b": "cutting_board_01",
+     "participants": {"agent": "peel_strip_01", "patient": "cutting_board_01"}},
+
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [60.0, 30.0, 92.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "source": "near_peel_strip_01",
+                      "destination": "over_compost_crock_01"}},
+
+    {"op": "detach", "child_id": "peel_strip_01",
+     "participants": {"agent": "left_hand_01", "patient": "peel_strip_01",
+                      "source": "left_hand_01"}},
+
+    {"op": "release", "object_a": "left_hand_01", "object_b": "peel_strip_01",
+     "participants": {"agent": "left_hand_01", "patient": "peel_strip_01"}},
+
+    {"op": "set_transform", "object_id": "peel_strip_01",
+     "world_transform": {"translate": [60.0, 30.0, 96.0],
+                         "rotate": [0,0,0,1], "scale": [1,1,1]},
+     "participants": {"agent": "left_hand_01", "patient": "peel_strip_01",
+                      "destination": "compost_crock_01",
+                      "cause": "gravity"}},
+
+    {"op": "attach", "child_id": "peel_strip_01", "parent_id": "compost_crock_01",
+     "preserve_world": true,
+     "participants": {"agent": "compost_crock_01",
+                      "patient": "peel_strip_01",
+                      "source": "free_body",
+                      "destination": "compost_crock_01"}},
+
+    {"op": "contact", "object_a": "peel_strip_01", "object_b": "compost_crock_01",
+     "contact_type": "rest_on", "starts_contact": true,
+     "force": {"magnitude_n": 0.3, "direction_world": [0.0, 0.0, -1.0]},
+     "friction": {"coefficient": 0.5, "regime": "static"},
+     "participants": {"agent": "peel_strip_01", "patient": "compost_crock_01"}},
+
+    {"op": "reach_arm_rotate", "object_id": "left_arm_01",
+     "target_world": [-25.0, -50.0, 85.0],
+     "participants": {"agent": "person_01", "patient": "left_arm_01",
+                      "source": "over_compost_crock_01",
+                      "destination": "rest_at_side"}},
+
+    {"op": "change_properties", "object_id": "peel_strip_01",
+     "properties": {"color": "browning_at_edges", "oxidation": "light"},
+     "merge": true,
+     "participants": {"agent": "air_01", "patient": "peel_strip_01",
+                      "cause": "N13_post_disposal_oxidative_deterioration"}},
+
+    {"op": "wait", "duration": 600.0,
+     "note": "N13 continues over minutes",
+     "participants": {"agent": "time", "patient": "peel_strip_01",
+                      "cause": "N13_progressive_browning_and_dehydration"}}
+  ],
+  "notes": "H13 dispose waste. Arm rotations carry the peel to the crock and back. Peel transferred with grip contact, released from cutting board, ballistic into crock, reattached with rest_on. N13 recorded as change_properties plus wait."
+}
+
+═══════════════════════════════════════════════════════════════════════
+H14 — lingering_sensory_residue  (hands smell like apple for the morning)
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "operations": [
+    {"op": "change_properties", "object_id": "left_hand_01",
+     "properties": {"volatiles": "apple_aroma",
+                    "residue": "tacky_apple_juice_residue"}, "merge": true,
+     "participants": {"agent": "apple_01", "patient": "left_hand_01",
+                      "cause": "N14_1_volatile_absorption_into_skin_oils"}},
+
+    {"op": "change_properties", "object_id": "right_hand_01",
+     "properties": {"volatiles": "apple_aroma",
+                    "residue": "tacky_apple_juice_residue"}, "merge": true,
+     "participants": {"agent": "apple_01", "patient": "right_hand_01",
+                      "cause": "N14_1_volatile_absorption_into_skin_oils"}},
+
+    {"op": "wait", "duration": 3600.0,
+     "note": "N14 volatile retention and slow release over hours",
+     "participants": {"agent": "time",
+                      "patient": ["left_hand_01", "right_hand_01"],
+                      "cause": "N14_2_slow_desorption_from_skin_oils"}},
+
+    {"op": "emit_event", "event_type": "sensory_olfactory",
+     "payload": {"qualia": ["apple_smell_persistent"],
+                 "source": ["left_hand_01", "right_hand_01"],
+                 "time_scale": "hours"},
+     "participants": {"agent": "left_hand_01",
+                      "source": ["left_hand_01", "right_hand_01"],
+                      "cause": "N14_3_intermittent_olfactory_detection"}}
+  ],
+  "notes": "H14 lingering residue. Two change_properties on the hands, a long wait, and an olfactory event for the perceived persistence."
+}

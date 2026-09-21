@@ -1,0 +1,942 @@
+[
+  {
+    "sub_action_name": "acid_odor_release",
+    "new_general_template": "acid_odor_release",
+    "new_alt_name": "acid_odor_release_01"
+  },
+  {
+    "sub_action_name": "acid_penetration_of_protein",
+    "new_general_template": "acid_penetration_of_protein",
+    "new_alt_name": "acid_penetration_of_protein_01"
+  },
+  {
+    "sub_action_name": "acid_vapor_intensifying",
+    "new_general_template": "acid_vapor_intensifying",
+    "new_alt_name": "acid_vapor_intensifying_01"
+  },
+  {
+    "sub_action_name": "acoustic_energy_reaches_ears",
+    "new_general_template": "acoustic_energy_reaches_ears",
+    "new_alt_name": "acoustic_energy_reaches_ears_01"
+  },
+  {
+    "sub_action_name": "actuator_current_stabilizes",
+    "new_general_template": "actuator_current_stabilizes",
+    "new_alt_name": "actuator_current_stabilizes_01"
+  },
+  {
+    "sub_action_name": "actuator_rotors_rotate",
+    "new_general_template": "actuator_rotors_rotate",
+    "new_alt_name": "actuator_rotors_rotate_01"
+  },
+  {
+    "sub_action_name": "actuators_energize",
+    "new_general_template": "actuators_energize",
+    "new_alt_name": "actuators_energize_01"
+  },
+  {
+    "sub_action_name": "adjust_faucet_to_thin_stream",
+    "new_general_template": "adjust_faucet_to_thin_stream",
+    "new_alt_name": "adjust_faucet_to_thin_stream_01"
+  },
+  {
+    "sub_action_name": "adjust_pour_speed",
+    "new_general_template": "adjust_pour_speed",
+    "new_alt_name": "adjust_pour_speed_01"
+  },
+  {
+    "sub_action_name": "air_pressure_waves_form",
+    "new_general_template": "air_pressure_waves_form",
+    "new_alt_name": "air_pressure_waves_form_01"
+  },
+  {
+    "sub_action_name": "ambient_light_distribution_changes",
+    "new_general_template": "ambient_light_distribution_changes",
+    "new_alt_name": "ambient_light_distribution_changes_01"
+  },
+  {
+    "sub_action_name": "apply_pressure_with_palms",
+    "new_general_template": "apply_pressure_with_palms",
+    "new_alt_name": "apply_pressure_with_palms_01"
+  },
+  {
+    "sub_action_name": "apply_tension_to_fragment",
+    "new_general_template": "apply_tension_to_fragment",
+    "new_alt_name": "apply_tension_to_fragment_01"
+  },
+  {
+    "sub_action_name": "attend_to_auditory_channel",
+    "new_general_template": "attend_to_auditory_channel",
+    "new_alt_name": "attend_to_auditory_channel_01"
+  },
+  {
+    "sub_action_name": "attend_to_device_speaker",
+    "new_general_template": "attend_to_device_speaker",
+    "new_alt_name": "attend_to_device_speaker_01"
+  },
+  {
+    "sub_action_name": "auditory_system_detects_tone",
+    "new_general_template": "auditory_system_detects_tone",
+    "new_alt_name": "auditory_system_detects_tone_01"
+  },
+  {
+    "sub_action_name": "background_sound_level_remains_stable",
+    "new_general_template": "background_sound_level_remains_stable",
+    "new_alt_name": "background_sound_level_remains_stable_01"
+  },
+  {
+    "sub_action_name": "bell_strikes",
+    "new_general_template": "bell_strikes",
+    "new_alt_name": "bell_strikes_01"
+  },
+  {
+    "sub_action_name": "blue_component_intensity_increases",
+    "new_general_template": "blue_component_intensity_increases",
+    "new_alt_name": "blue_component_intensity_increases_01"
+  },
+  {
+    "sub_action_name": "bubbles_rising_along_sides",
+    "new_general_template": "bubbles_rising_along_sides",
+    "new_alt_name": "bubbles_rising_along_sides_01"
+  },
+  {
+    "sub_action_name": "bud_emergence_from_surface",
+    "new_general_template": "bud_emergence_from_surface",
+    "new_alt_name": "bud_emergence_from_surface_01"
+  },
+  {
+    "sub_action_name": "cell_elongation_in_bud_tissue",
+    "new_general_template": "cell_elongation_in_bud_tissue",
+    "new_alt_name": "cell_elongation_in_bud_tissue_01"
+  },
+  {
+    "sub_action_name": "chemical_reaction_between_acid_and_protein",
+    "new_general_template": "chemical_reaction_between_acid_and_protein",
+    "new_alt_name": "chemical_reaction_between_acid_and_protein_01"
+  },
+  {
+    "sub_action_name": "classify_as_background_noise",
+    "new_general_template": "classify_as_background_noise",
+    "new_alt_name": "classify_as_background_noise_01"
+  },
+  {
+    "sub_action_name": "cold_liquid_inflow",
+    "new_general_template": "cold_liquid_inflow",
+    "new_alt_name": "cold_liquid_inflow_01"
+  },
+  {
+    "sub_action_name": "collect_loose_fragments",
+    "new_general_template": "collect_loose_fragments",
+    "new_alt_name": "collect_loose_fragments_01"
+  },
+  {
+    "sub_action_name": "combined_photons_shift_to_target_color",
+    "new_general_template": "combined_photons_shift_to_target_color",
+    "new_alt_name": "combined_photons_shift_to_target_color_01"
+  },
+  {
+    "sub_action_name": "compressor_vibrates",
+    "new_general_template": "compressor_vibrates",
+    "new_alt_name": "compressor_vibrates_01"
+  },
+  {
+    "sub_action_name": "compressor_vibrates_steadily",
+    "new_general_template": "compressor_vibrates_steadily",
+    "new_alt_name": "compressor_vibrates_steadily_01"
+  },
+  {
+    "sub_action_name": "concentration_gradient_formation",
+    "new_general_template": "concentration_gradient_formation",
+    "new_alt_name": "concentration_gradient_formation_01"
+  },
+  {
+    "sub_action_name": "condensation_beading_on_container",
+    "new_general_template": "condensation_beading_on_container",
+    "new_alt_name": "condensation_beading_on_container_01"
+  },
+  {
+    "sub_action_name": "conductive_heat_loss_to_liquid",
+    "new_general_template": "conductive_heat_loss_to_liquid",
+    "new_alt_name": "conductive_heat_loss_to_liquid_01"
+  },
+  {
+    "sub_action_name": "crack_propagation_network",
+    "new_general_template": "crack_propagation_network",
+    "new_alt_name": "crack_propagation_network_01"
+  },
+  {
+    "sub_action_name": "cup_object_between_palms",
+    "new_general_template": "cup_object_between_palms",
+    "new_alt_name": "cup_object_between_palms_01"
+  },
+  {
+    "sub_action_name": "density_change_from_liquid_absorption",
+    "new_general_template": "density_change_from_liquid_absorption",
+    "new_alt_name": "density_change_from_liquid_absorption_01"
+  },
+  {
+    "sub_action_name": "detect_hum_pitch_rise",
+    "new_general_template": "detect_hum_pitch_rise",
+    "new_alt_name": "detect_hum_pitch_rise_01"
+  },
+  {
+    "sub_action_name": "device_surface_contacts_support",
+    "new_general_template": "device_surface_contacts_support",
+    "new_alt_name": "device_surface_contacts_support_01"
+  },
+  {
+    "sub_action_name": "display_controller_activates",
+    "new_general_template": "display_controller_activates",
+    "new_alt_name": "display_controller_activates_01"
+  },
+  {
+    "sub_action_name": "display_pixels_illuminate_uniformly",
+    "new_general_template": "display_pixels_illuminate_uniformly",
+    "new_alt_name": "display_pixels_illuminate_uniformly_01"
+  },
+  {
+    "sub_action_name": "drop_aromatic_seeds_into_gaps",
+    "new_general_template": "drop_aromatic_seeds_into_gaps",
+    "new_alt_name": "drop_aromatic_seeds_into_gaps_01"
+  },
+  {
+    "sub_action_name": "drop_object_into_container",
+    "new_general_template": "drop_object_into_container",
+    "new_alt_name": "drop_object_into_container_01"
+  },
+  {
+    "sub_action_name": "eccentric_mass_rotates",
+    "new_general_template": "eccentric_mass_rotates",
+    "new_alt_name": "eccentric_mass_rotates_01"
+  },
+  {
+    "sub_action_name": "extend_index_finger_to_tab",
+    "new_general_template": "extend_index_finger_to_tab",
+    "new_alt_name": "extend_index_finger_to_tab_01"
+  },
+  {
+    "sub_action_name": "eyelid_shape_dims",
+    "new_general_template": "eyelid_shape_dims",
+    "new_alt_name": "eyelid_shape_dims_01"
+  },
+  {
+    "sub_action_name": "eyelid_shape_returns_to_open",
+    "new_general_template": "eyelid_shape_returns_to_open",
+    "new_alt_name": "eyelid_shape_returns_to_open_01"
+  },
+  {
+    "sub_action_name": "feel_haptic_ticks",
+    "new_general_template": "feel_haptic_ticks",
+    "new_alt_name": "feel_haptic_ticks_01"
+  },
+  {
+    "sub_action_name": "fixate_on_calm_display",
+    "new_general_template": "fixate_on_calm_display",
+    "new_alt_name": "fixate_on_calm_display_01"
+  },
+  {
+    "sub_action_name": "fixate_on_display_color_light",
+    "new_general_template": "fixate_on_display_color_light",
+    "new_alt_name": "fixate_on_display_color_light_01"
+  },
+  {
+    "sub_action_name": "fixate_on_display_eyebrows",
+    "new_general_template": "fixate_on_display_eyebrows",
+    "new_alt_name": "fixate_on_display_eyebrows_01"
+  },
+  {
+    "sub_action_name": "fixate_on_display_eyelids",
+    "new_general_template": "fixate_on_display_eyelids",
+    "new_alt_name": "fixate_on_display_eyelids_01"
+  },
+  {
+    "sub_action_name": "fixate_on_model_expression",
+    "new_general_template": "fixate_on_model_expression",
+    "new_alt_name": "fixate_on_model_expression_01"
+  },
+  {
+    "sub_action_name": "fixate_on_object_body",
+    "new_general_template": "fixate_on_object_body",
+    "new_alt_name": "fixate_on_object_body_01"
+  },
+  {
+    "sub_action_name": "fixate_on_object_casing_surface",
+    "new_general_template": "fixate_on_object_casing_surface",
+    "new_alt_name": "fixate_on_object_casing_surface_01"
+  },
+  {
+    "sub_action_name": "fixate_on_screen_flash",
+    "new_general_template": "fixate_on_screen_flash",
+    "new_alt_name": "fixate_on_screen_flash_01"
+  },
+  {
+    "sub_action_name": "fixate_on_sheet_surface",
+    "new_general_template": "fixate_on_sheet_surface",
+    "new_alt_name": "fixate_on_sheet_surface_01"
+  },
+  {
+    "sub_action_name": "flavor_extraction_from_seasonings",
+    "new_general_template": "flavor_extraction_from_seasonings",
+    "new_alt_name": "flavor_extraction_from_seasonings_01"
+  },
+  {
+    "sub_action_name": "fragment_popping_off",
+    "new_general_template": "fragment_popping_off",
+    "new_alt_name": "fragment_popping_off_01"
+  },
+  {
+    "sub_action_name": "fragments_washed_away",
+    "new_general_template": "fragments_washed_away",
+    "new_alt_name": "fragments_washed_away_01"
+  },
+  {
+    "sub_action_name": "gradual_darkening_of_outer_layers",
+    "new_general_template": "gradual_darkening_of_outer_layers",
+    "new_alt_name": "gradual_darkening_of_outer_layers_01"
+  },
+  {
+    "sub_action_name": "grasp_fragment_between_thumb_and_finger",
+    "new_general_template": "grasp_fragment_between_thumb_and_finger",
+    "new_alt_name": "grasp_fragment_between_thumb_and_finger_01"
+  },
+  {
+    "sub_action_name": "gravitational_force_rebalancing",
+    "new_general_template": "gravitational_force_rebalancing",
+    "new_alt_name": "gravitational_force_rebalancing_01"
+  },
+  {
+    "sub_action_name": "gravity_driven_flow",
+    "new_general_template": "gravity_driven_flow",
+    "new_alt_name": "gravity_driven_flow_01"
+  },
+  {
+    "sub_action_name": "green_component_intensity_increases",
+    "new_general_template": "green_component_intensity_increases",
+    "new_alt_name": "green_component_intensity_increases_01"
+  },
+  {
+    "sub_action_name": "grip_container_body_with_one_hand",
+    "new_general_template": "grip_container_body_with_one_hand",
+    "new_alt_name": "grip_container_body_with_one_hand_01"
+  },
+  {
+    "sub_action_name": "grip_lid_with_other_hand",
+    "new_general_template": "grip_lid_with_other_hand",
+    "new_alt_name": "grip_lid_with_other_hand_01"
+  },
+  {
+    "sub_action_name": "guide_object_to_container_opening",
+    "new_general_template": "guide_object_to_container_opening",
+    "new_alt_name": "guide_object_to_container_opening_01"
+  },
+  {
+    "sub_action_name": "heat_conducts_from_device_to_surface",
+    "new_general_template": "heat_conducts_from_device_to_surface",
+    "new_alt_name": "heat_conducts_from_device_to_surface_01"
+  },
+  {
+    "sub_action_name": "heat_energy_absorption",
+    "new_general_template": "heat_energy_absorption",
+    "new_alt_name": "heat_energy_absorption_01"
+  },
+  {
+    "sub_action_name": "hold_object_under_faucet",
+    "new_general_template": "hold_object_under_faucet",
+    "new_alt_name": "hold_object_under_faucet_01"
+  },
+  {
+    "sub_action_name": "hold_vessel_under_stream",
+    "new_general_template": "hold_vessel_under_stream",
+    "new_alt_name": "hold_vessel_under_stream_01"
+  },
+  {
+    "sub_action_name": "insert_aromatic_piece_into_gap_between_objects",
+    "new_general_template": "insert_aromatic_piece_into_gap_between_objects",
+    "new_alt_name": "insert_aromatic_piece_into_gap_between_objects_01"
+  },
+  {
+    "sub_action_name": "insert_fresh_herb_into_gap",
+    "new_general_template": "insert_fresh_herb_into_gap",
+    "new_alt_name": "insert_fresh_herb_into_gap_01"
+  },
+  {
+    "sub_action_name": "inspect_container_contents",
+    "new_general_template": "inspect_container_contents",
+    "new_alt_name": "inspect_container_contents_01"
+  },
+  {
+    "sub_action_name": "inspect_model_appearance",
+    "new_general_template": "inspect_model_appearance",
+    "new_alt_name": "inspect_model_appearance_01"
+  },
+  {
+    "sub_action_name": "inspect_model_expression",
+    "new_general_template": "inspect_model_expression",
+    "new_alt_name": "inspect_model_expression_01"
+  },
+  {
+    "sub_action_name": "integrate_spatial_location",
+    "new_general_template": "integrate_spatial_location",
+    "new_alt_name": "integrate_spatial_location_01"
+  },
+  {
+    "sub_action_name": "integrate_visual_cues",
+    "new_general_template": "integrate_visual_cues",
+    "new_alt_name": "integrate_visual_cues_01"
+  },
+  {
+    "sub_action_name": "keep_hands_cupped_around_object",
+    "new_general_template": "keep_hands_cupped_around_object",
+    "new_alt_name": "keep_hands_cupped_around_object_01"
+  },
+  {
+    "sub_action_name": "led_controller_alters_duty_cycles",
+    "new_general_template": "led_controller_alters_duty_cycles",
+    "new_alt_name": "led_controller_alters_duty_cycles_01"
+  },
+  {
+    "sub_action_name": "led_controller_maintains_duty_cycle",
+    "new_general_template": "led_controller_maintains_duty_cycle",
+    "new_alt_name": "led_controller_maintains_duty_cycle_01"
+  },
+  {
+    "sub_action_name": "lift_hand_up",
+    "new_general_template": "lift_hand_up",
+    "new_alt_name": "lift_hand_up_01"
+  },
+  {
+    "sub_action_name": "lift_outer_layer_edge",
+    "new_general_template": "lift_outer_layer_edge",
+    "new_alt_name": "lift_outer_layer_edge_01"
+  },
+  {
+    "sub_action_name": "light_diffuses_into_air",
+    "new_general_template": "light_diffuses_into_air",
+    "new_alt_name": "light_diffuses_into_air_01"
+  },
+  {
+    "sub_action_name": "light_intensity_decays",
+    "new_general_template": "light_intensity_decays",
+    "new_alt_name": "light_intensity_decays_01"
+  },
+  {
+    "sub_action_name": "light_passage_through_container",
+    "new_general_template": "light_passage_through_container",
+    "new_alt_name": "light_passage_through_container_01"
+  },
+  {
+    "sub_action_name": "light_scatters_in_air",
+    "new_general_template": "light_scatters_in_air",
+    "new_alt_name": "light_scatters_in_air_01"
+  },
+  {
+    "sub_action_name": "liquid_convection_and_simmering",
+    "new_general_template": "liquid_convection_and_simmering",
+    "new_alt_name": "liquid_convection_and_simmering_01"
+  },
+  {
+    "sub_action_name": "liquid_diffusion_through_membrane",
+    "new_general_template": "liquid_diffusion_through_membrane",
+    "new_alt_name": "liquid_diffusion_through_membrane_01"
+  },
+  {
+    "sub_action_name": "liquid_flooding_and_air_bubbles_escaping",
+    "new_general_template": "liquid_flooding_and_air_bubbles_escaping",
+    "new_alt_name": "liquid_flooding_and_air_bubbles_escaping_01"
+  },
+  {
+    "sub_action_name": "liquid_flow_around_objects",
+    "new_general_template": "liquid_flow_around_objects",
+    "new_alt_name": "liquid_flow_around_objects_01"
+  },
+  {
+    "sub_action_name": "liquid_sloshing_inside",
+    "new_general_template": "liquid_sloshing_inside",
+    "new_alt_name": "liquid_sloshing_inside_01"
+  },
+  {
+    "sub_action_name": "liquid_splash_into_basin",
+    "new_general_template": "liquid_splash_into_basin",
+    "new_alt_name": "liquid_splash_into_basin_01"
+  },
+  {
+    "sub_action_name": "liquid_stream_emergence",
+    "new_general_template": "liquid_stream_emergence",
+    "new_alt_name": "liquid_stream_emergence_01"
+  },
+  {
+    "sub_action_name": "locate_stubborn_fragment",
+    "new_general_template": "locate_stubborn_fragment",
+    "new_alt_name": "locate_stubborn_fragment_01"
+  },
+  {
+    "sub_action_name": "locate_tear",
+    "new_general_template": "locate_tear",
+    "new_alt_name": "locate_tear_01"
+  },
+  {
+    "sub_action_name": "lower_arm_to_side",
+    "new_general_template": "lower_arm_to_side",
+    "new_alt_name": "lower_arm_to_side_01"
+  },
+  {
+    "sub_action_name": "maintain_fixation_on_object",
+    "new_general_template": "maintain_fixation_on_object",
+    "new_alt_name": "maintain_fixation_on_object_01"
+  },
+  {
+    "sub_action_name": "maintain_waiting_posture",
+    "new_general_template": "maintain_waiting_posture",
+    "new_alt_name": "maintain_waiting_posture_01"
+  },
+  {
+    "sub_action_name": "monitor_liquid_and_aroma",
+    "new_general_template": "monitor_liquid_and_aroma",
+    "new_alt_name": "monitor_liquid_and_aroma_01"
+  },
+  {
+    "sub_action_name": "move_container_back_and_forth",
+    "new_general_template": "move_container_back_and_forth",
+    "new_alt_name": "move_container_back_and_forth_01"
+  },
+  {
+    "sub_action_name": "move_hand_away_from_device",
+    "new_general_template": "move_hand_away_from_device",
+    "new_alt_name": "move_hand_away_from_device_01"
+  },
+  {
+    "sub_action_name": "neck_and_spine_articulate",
+    "new_general_template": "neck_and_spine_articulate",
+    "new_alt_name": "neck_and_spine_articulate_01"
+  },
+  {
+    "sub_action_name": "object_cooling",
+    "new_general_template": "object_cooling",
+    "new_alt_name": "object_cooling_01"
+  },
+  {
+    "sub_action_name": "object_movement_toward_surface",
+    "new_general_template": "object_movement_toward_surface",
+    "new_alt_name": "object_movement_toward_surface_01"
+  },
+  {
+    "sub_action_name": "object_rolling_on_vessel_bottom",
+    "new_general_template": "object_rolling_on_vessel_bottom",
+    "new_alt_name": "object_rolling_on_vessel_bottom_01"
+  },
+  {
+    "sub_action_name": "object_settling",
+    "new_general_template": "object_settling",
+    "new_alt_name": "object_settling_01"
+  },
+  {
+    "sub_action_name": "open_cold_faucet",
+    "new_general_template": "open_cold_faucet",
+    "new_alt_name": "open_cold_faucet_01"
+  },
+  {
+    "sub_action_name": "osmotic_pressure_drive",
+    "new_general_template": "osmotic_pressure_drive",
+    "new_alt_name": "osmotic_pressure_drive_01"
+  },
+  {
+    "sub_action_name": "outer_layer_crumbling",
+    "new_general_template": "outer_layer_crumbling",
+    "new_alt_name": "outer_layer_crumbling_01"
+  },
+  {
+    "sub_action_name": "peel_advance_along_object",
+    "new_general_template": "peel_advance_along_object",
+    "new_alt_name": "peel_advance_along_object_01"
+  },
+  {
+    "sub_action_name": "perceive_blink_motion",
+    "new_general_template": "perceive_blink_motion",
+    "new_alt_name": "perceive_blink_motion_01"
+  },
+  {
+    "sub_action_name": "perceive_brightness_change",
+    "new_general_template": "perceive_brightness_change",
+    "new_alt_name": "perceive_brightness_change_01"
+  },
+  {
+    "sub_action_name": "perceive_brightness_dimming",
+    "new_general_template": "perceive_brightness_dimming",
+    "new_alt_name": "perceive_brightness_dimming_01"
+  },
+  {
+    "sub_action_name": "perceive_brow_height_change",
+    "new_general_template": "perceive_brow_height_change",
+    "new_alt_name": "perceive_brow_height_change_01"
+  },
+  {
+    "sub_action_name": "perceive_color_change",
+    "new_general_template": "perceive_color_change",
+    "new_alt_name": "perceive_color_change_01"
+  },
+  {
+    "sub_action_name": "perceive_color_saturation_decrease",
+    "new_general_template": "perceive_color_saturation_decrease",
+    "new_alt_name": "perceive_color_saturation_decrease_01"
+  },
+  {
+    "sub_action_name": "perceive_emotional_affordance",
+    "new_general_template": "perceive_emotional_affordance",
+    "new_alt_name": "perceive_emotional_affordance_01"
+  },
+  {
+    "sub_action_name": "perceive_emotional_calm",
+    "new_general_template": "perceive_emotional_calm",
+    "new_alt_name": "perceive_emotional_calm_01"
+  },
+  {
+    "sub_action_name": "perceive_expression_change",
+    "new_general_template": "perceive_expression_change",
+    "new_alt_name": "perceive_expression_change_01"
+  },
+  {
+    "sub_action_name": "perceive_expression_softening",
+    "new_general_template": "perceive_expression_softening",
+    "new_alt_name": "perceive_expression_softening_01"
+  },
+  {
+    "sub_action_name": "perceive_head_height_decrease",
+    "new_general_template": "perceive_head_height_decrease",
+    "new_alt_name": "perceive_head_height_decrease_01"
+  },
+  {
+    "sub_action_name": "perceive_neck_retraction",
+    "new_general_template": "perceive_neck_retraction",
+    "new_alt_name": "perceive_neck_retraction_01"
+  },
+  {
+    "sub_action_name": "perceive_pitch_settle",
+    "new_general_template": "perceive_pitch_settle",
+    "new_alt_name": "perceive_pitch_settle_01"
+  },
+  {
+    "sub_action_name": "perceive_residual_heat",
+    "new_general_template": "perceive_residual_heat",
+    "new_alt_name": "perceive_residual_heat_01"
+  },
+  {
+    "sub_action_name": "perceive_voice_pitch",
+    "new_general_template": "perceive_voice_pitch",
+    "new_alt_name": "perceive_voice_pitch_01"
+  },
+  {
+    "sub_action_name": "perceive_voice_volume",
+    "new_general_template": "perceive_voice_volume",
+    "new_alt_name": "perceive_voice_volume_01"
+  },
+  {
+    "sub_action_name": "peripheral_retina_detects_control_position",
+    "new_general_template": "peripheral_retina_detects_control_position",
+    "new_alt_name": "peripheral_retina_detects_control_position_01"
+  },
+  {
+    "sub_action_name": "photons_diffuse_in_air",
+    "new_general_template": "photons_diffuse_in_air",
+    "new_alt_name": "photons_diffuse_in_air_01"
+  },
+  {
+    "sub_action_name": "photons_emit_brightly",
+    "new_general_template": "photons_emit_brightly",
+    "new_alt_name": "photons_emit_brightly_01"
+  },
+  {
+    "sub_action_name": "photons_emit_target_wavelength",
+    "new_general_template": "photons_emit_target_wavelength",
+    "new_alt_name": "photons_emit_target_wavelength_01"
+  },
+  {
+    "sub_action_name": "photons_emit_wavelength",
+    "new_general_template": "photons_emit_wavelength",
+    "new_alt_name": "photons_emit_wavelength_01"
+  },
+  {
+    "sub_action_name": "pick_up_aromatic_piece",
+    "new_general_template": "pick_up_aromatic_piece",
+    "new_alt_name": "pick_up_aromatic_piece_01"
+  },
+  {
+    "sub_action_name": "pick_up_scoop",
+    "new_general_template": "pick_up_scoop",
+    "new_alt_name": "pick_up_scoop_01"
+  },
+  {
+    "sub_action_name": "pigment_absorption_from_seasonings",
+    "new_general_template": "pigment_absorption_from_seasonings",
+    "new_alt_name": "pigment_absorption_from_seasonings_01"
+  },
+  {
+    "sub_action_name": "position_digit_at_tear",
+    "new_general_template": "position_digit_at_tear",
+    "new_alt_name": "position_digit_at_tear_01"
+  },
+  {
+    "sub_action_name": "position_nail_under_fragment",
+    "new_general_template": "position_nail_under_fragment",
+    "new_alt_name": "position_nail_under_fragment_01"
+  },
+  {
+    "sub_action_name": "position_vessel_under_faucet",
+    "new_general_template": "position_vessel_under_faucet",
+    "new_alt_name": "position_vessel_under_faucet_01"
+  },
+  {
+    "sub_action_name": "press_digit_into_gap",
+    "new_general_template": "press_digit_into_gap",
+    "new_alt_name": "press_digit_into_gap_01"
+  },
+  {
+    "sub_action_name": "press_seasonings_down_gently",
+    "new_general_template": "press_seasonings_down_gently",
+    "new_alt_name": "press_seasonings_down_gently_01"
+  },
+  {
+    "sub_action_name": "press_touch_surface",
+    "new_general_template": "press_touch_surface",
+    "new_alt_name": "press_touch_surface_01"
+  },
+  {
+    "sub_action_name": "protein_coagulation",
+    "new_general_template": "protein_coagulation",
+    "new_alt_name": "protein_coagulation_01"
+  },
+  {
+    "sub_action_name": "protein_structure_modification",
+    "new_general_template": "protein_structure_modification",
+    "new_alt_name": "protein_structure_modification_01"
+  },
+  {
+    "sub_action_name": "protein_unfolding",
+    "new_general_template": "protein_unfolding",
+    "new_alt_name": "protein_unfolding_01"
+  },
+  {
+    "sub_action_name": "raise_object_to_container",
+    "new_general_template": "raise_object_to_container",
+    "new_alt_name": "raise_object_to_container_01"
+  },
+  {
+    "sub_action_name": "rearrange_objects_with_fingers",
+    "new_general_template": "rearrange_objects_with_fingers",
+    "new_alt_name": "rearrange_objects_with_fingers_01"
+  },
+  {
+    "sub_action_name": "recall_absence_of_heat",
+    "new_general_template": "recall_absence_of_heat",
+    "new_alt_name": "recall_absence_of_heat_01"
+  },
+  {
+    "sub_action_name": "recognize_hum_pattern",
+    "new_general_template": "recognize_hum_pattern",
+    "new_alt_name": "recognize_hum_pattern_01"
+  },
+  {
+    "sub_action_name": "red_component_intensity_decreases",
+    "new_general_template": "red_component_intensity_decreases",
+    "new_alt_name": "red_component_intensity_decreases_01"
+  },
+  {
+    "sub_action_name": "reflected_light_from_object_shifts_wavelength",
+    "new_general_template": "reflected_light_from_object_shifts_wavelength",
+    "new_alt_name": "reflected_light_from_object_shifts_wavelength_01"
+  },
+  {
+    "sub_action_name": "reflected_photons_scatter_toward_observer",
+    "new_general_template": "reflected_photons_scatter_toward_observer",
+    "new_alt_name": "reflected_photons_scatter_toward_observer_01"
+  },
+  {
+    "sub_action_name": "release_object_into_container",
+    "new_general_template": "release_object_into_container",
+    "new_alt_name": "release_object_into_container_01"
+  },
+  {
+    "sub_action_name": "remove_vessel_from_heat_source",
+    "new_general_template": "remove_vessel_from_heat_source",
+    "new_alt_name": "remove_vessel_from_heat_source_01"
+  },
+  {
+    "sub_action_name": "repeat_scoop_and_pour_until_container_full",
+    "new_general_template": "repeat_scoop_and_pour_until_container_full",
+    "new_alt_name": "repeat_scoop_and_pour_until_container_full_01"
+  },
+  {
+    "sub_action_name": "rising_liquid_level",
+    "new_general_template": "rising_liquid_level",
+    "new_alt_name": "rising_liquid_level_01"
+  },
+  {
+    "sub_action_name": "roll_object_back_and_forth",
+    "new_general_template": "roll_object_back_and_forth",
+    "new_alt_name": "roll_object_back_and_forth_01"
+  },
+  {
+    "sub_action_name": "rotate_object_under_stream",
+    "new_general_template": "rotate_object_under_stream",
+    "new_alt_name": "rotate_object_under_stream_01"
+  },
+  {
+    "sub_action_name": "saccade_to_cheek_area",
+    "new_general_template": "saccade_to_cheek_area",
+    "new_alt_name": "saccade_to_cheek_area_01"
+  },
+  {
+    "sub_action_name": "saccade_to_eyebrow_area",
+    "new_general_template": "saccade_to_eyebrow_area",
+    "new_alt_name": "saccade_to_eyebrow_area_01"
+  },
+  {
+    "sub_action_name": "saccade_to_model_display",
+    "new_general_template": "saccade_to_model_display",
+    "new_alt_name": "saccade_to_model_display_01"
+  },
+  {
+    "sub_action_name": "saccade_to_object_casing",
+    "new_general_template": "saccade_to_object_casing",
+    "new_alt_name": "saccade_to_object_casing_01"
+  },
+  {
+    "sub_action_name": "saccade_to_object_head",
+    "new_general_template": "saccade_to_object_head",
+    "new_alt_name": "saccade_to_object_head_01"
+  },
+  {
+    "sub_action_name": "saccade_to_status_indicator",
+    "new_general_template": "saccade_to_status_indicator",
+    "new_alt_name": "saccade_to_status_indicator_01"
+  },
+  {
+    "sub_action_name": "scan_object_static_posture",
+    "new_general_template": "scan_object_static_posture",
+    "new_alt_name": "scan_object_static_posture_01"
+  },
+  {
+    "sub_action_name": "scoop_liquid_with_scoop",
+    "new_general_template": "scoop_liquid_with_scoop",
+    "new_alt_name": "scoop_liquid_with_scoop_01"
+  },
+  {
+    "sub_action_name": "scrape_fragment_off",
+    "new_general_template": "scrape_fragment_off",
+    "new_alt_name": "scrape_fragment_off_01"
+  },
+  {
+    "sub_action_name": "scrape_vessel_for_remaining_liquid",
+    "new_general_template": "scrape_vessel_for_remaining_liquid",
+    "new_alt_name": "scrape_vessel_for_remaining_liquid_01"
+  },
+  {
+    "sub_action_name": "seasonings_float_then_settle",
+    "new_general_template": "seasonings_float_then_settle",
+    "new_alt_name": "seasonings_float_then_settle_01"
+  },
+  {
+    "sub_action_name": "set_scoop_down",
+    "new_general_template": "set_scoop_down",
+    "new_alt_name": "set_scoop_down_01"
+  },
+  {
+    "sub_action_name": "shift_weight_to_center",
+    "new_general_template": "shift_weight_to_center",
+    "new_alt_name": "shift_weight_to_center_01"
+  },
+  {
+    "sub_action_name": "shoot_extension_and_greening",
+    "new_general_template": "shoot_extension_and_greening",
+    "new_alt_name": "shoot_extension_and_greening_01"
+  },
+  {
+    "sub_action_name": "solute_and_flavor_compound_transport",
+    "new_general_template": "solute_and_flavor_compound_transport",
+    "new_alt_name": "solute_and_flavor_compound_transport_01"
+  },
+  {
+    "sub_action_name": "sound_wave_amplitude_attenuates",
+    "new_general_template": "sound_wave_amplitude_attenuates",
+    "new_alt_name": "sound_wave_amplitude_attenuates_01"
+  },
+  {
+    "sub_action_name": "sound_waves_propagate_to_ears",
+    "new_general_template": "sound_waves_propagate_to_ears",
+    "new_alt_name": "sound_waves_propagate_to_ears_01"
+  },
+  {
+    "sub_action_name": "speaker_cone_oscillates_in_voice_pattern",
+    "new_general_template": "speaker_cone_oscillates_in_voice_pattern",
+    "new_alt_name": "speaker_cone_oscillates_in_voice_pattern_01"
+  },
+  {
+    "sub_action_name": "speaker_cone_oscillation_decays",
+    "new_general_template": "speaker_cone_oscillation_decays",
+    "new_alt_name": "speaker_cone_oscillation_decays_01"
+  },
+  {
+    "sub_action_name": "status_led_diodes_activate",
+    "new_general_template": "status_led_diodes_activate",
+    "new_alt_name": "status_led_diodes_activate_01"
+  },
+  {
+    "sub_action_name": "take_object_from_container",
+    "new_general_template": "take_object_from_container",
+    "new_alt_name": "take_object_from_container_01"
+  },
+  {
+    "sub_action_name": "temperature_gradient_decreases",
+    "new_general_template": "temperature_gradient_decreases",
+    "new_alt_name": "temperature_gradient_decreases_01"
+  },
+  {
+    "sub_action_name": "textural_tenderization",
+    "new_general_template": "textural_tenderization",
+    "new_alt_name": "textural_tenderization_01"
+  },
+  {
+    "sub_action_name": "thermoreceptors_in_palm_detect_warmth",
+    "new_general_template": "thermoreceptors_in_palm_detect_warmth",
+    "new_alt_name": "thermoreceptors_in_palm_detect_warmth_01"
+  },
+  {
+    "sub_action_name": "timer_dial_resets",
+    "new_general_template": "timer_dial_resets",
+    "new_alt_name": "timer_dial_resets_01"
+  },
+  {
+    "sub_action_name": "track_color_hue_transition",
+    "new_general_template": "track_color_hue_transition",
+    "new_alt_name": "track_color_hue_transition_01"
+  },
+  {
+    "sub_action_name": "track_object_head_lowering_trajectory",
+    "new_general_template": "track_object_head_lowering_trajectory",
+    "new_alt_name": "track_object_head_lowering_trajectory_01"
+  },
+  {
+    "sub_action_name": "turn_on_heat",
+    "new_general_template": "turn_on_heat",
+    "new_alt_name": "turn_on_heat_01"
+  },
+  {
+    "sub_action_name": "vibration_transmits_through_device",
+    "new_general_template": "vibration_transmits_through_device",
+    "new_alt_name": "vibration_transmits_through_device_01"
+  },
+  {
+    "sub_action_name": "wait_for_temperature_drop",
+    "new_general_template": "wait_for_temperature_drop",
+    "new_alt_name": "wait_for_temperature_drop_01"
+  },
+  {
+    "sub_action_name": "watch_tab_selection_highlight",
+    "new_general_template": "watch_tab_selection_highlight",
+    "new_alt_name": "watch_tab_selection_highlight_01"
+  },
+  {
+    "sub_action_name": "watch_ui_refresh",
+    "new_general_template": "watch_ui_refresh",
+    "new_alt_name": "watch_ui_refresh_01"
+  }
+]

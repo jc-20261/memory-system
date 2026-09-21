@@ -1,0 +1,1428 @@
+[
+  {
+    "memory_id": "mem_000000",
+    "activity": "pinching off tomato suckers",
+    "total_actions": 130,
+    "root_actions": 1,
+    "max_end_time": 1955.1,
+    "temporal_counts": {
+      "sequential": 107,
+      "parallel": 2,
+      "cyclical": 10,
+      "continuous": 6,
+      "conditional": 5
+    },
+    "zero_duration_count": 77
+  },
+  {
+    "memory_id": "mem_000001",
+    "activity": "planting a window box",
+    "total_actions": 60,
+    "root_actions": 1,
+    "max_end_time": 1590.0,
+    "temporal_counts": {
+      "sequential": 46,
+      "parallel": 12,
+      "repeat": 1,
+      "future": 1
+    },
+    "zero_duration_count": 11
+  },
+  {
+    "memory_id": "mem_000002",
+    "activity": "composting kitchen scraps",
+    "total_actions": 85,
+    "root_actions": 1,
+    "max_end_time": 605580.0,
+    "temporal_counts": {
+      "sequential": 60,
+      "parallel": 16,
+      "cyclical": 2,
+      "continuous": 7
+    },
+    "zero_duration_count": 10
+  },
+  {
+    "memory_id": "mem_000003",
+    "activity": "simmering tomato sauce",
+    "total_actions": 29,
+    "root_actions": 1,
+    "max_end_time": 3120.0,
+    "temporal_counts": {
+      "sequential": 22,
+      "parallel": 4,
+      "cyclical": 2,
+      "recurring": 1
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000004",
+    "activity": "toasting nuts for a salad",
+    "total_actions": 172,
+    "root_actions": 1,
+    "max_end_time": 481.0,
+    "temporal_counts": {
+      "sequential": 65,
+      "parallel": 7,
+      "continuous": 73,
+      "cyclical": 17,
+      "sporadic": 3,
+      "conditional": 4,
+      "once": 3
+    },
+    "zero_duration_count": 71
+  },
+  {
+    "memory_id": "mem_000005",
+    "activity": "thinning carrot seedlings",
+    "total_actions": 225,
+    "root_actions": 1,
+    "max_end_time": 606680.0,
+    "temporal_counts": {
+      "sequential": 190,
+      "parallel": 20,
+      "cyclical": 9,
+      "sporadic": 6
+    },
+    "zero_duration_count": 39
+  },
+  {
+    "memory_id": "mem_000006",
+    "activity": "dehydrating apple slices",
+    "total_actions": 167,
+    "root_actions": 1,
+    "max_end_time": 26100.0,
+    "temporal_counts": {
+      "sequential": 141,
+      "parallel": 3,
+      "cyclical": 9,
+      "continuous": 14
+    },
+    "zero_duration_count": 39
+  },
+  {
+    "memory_id": "mem_000007",
+    "activity": "painting the fence",
+    "total_actions": 71,
+    "root_actions": 1,
+    "max_end_time": 2700.0,
+    "temporal_counts": {
+      "sequential": 65,
+      "parallel": 3,
+      "cyclical": 3
+    },
+    "zero_duration_count": 18
+  },
+  {
+    "memory_id": "mem_000008",
+    "activity": "repairing a wooden gate hinge",
+    "total_actions": 237,
+    "root_actions": 1,
+    "max_end_time": 300.0,
+    "temporal_counts": {
+      "sequential": 222,
+      "parallel": 9,
+      "cyclical": 4,
+      "event": 2
+    },
+    "zero_duration_count": 34
+  },
+  {
+    "memory_id": "mem_000009",
+    "activity": "rendering bacon fat",
+    "total_actions": 195,
+    "root_actions": 1,
+    "max_end_time": 4710.0,
+    "temporal_counts": {
+      "sequential": 156,
+      "parallel": 10,
+      "cyclical": 7,
+      "continuous": 21,
+      "conditional": 1
+    },
+    "zero_duration_count": 71
+  },
+  {
+    "memory_id": "mem_000010",
+    "activity": "cleaning the washing machine",
+    "total_actions": 91,
+    "root_actions": 1,
+    "max_end_time": 3060.0,
+    "temporal_counts": {
+      "sequential": 57,
+      "continuous": 18,
+      "cyclical": 9,
+      "parallel": 4,
+      "once": 3
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000011",
+    "activity": "descaling the electric kettle",
+    "total_actions": 203,
+    "root_actions": 1,
+    "max_end_time": 420.0,
+    "temporal_counts": {
+      "sequential": 184,
+      "cyclical": 3,
+      "parallel": 16
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000012",
+    "activity": "deadheading the petunias",
+    "total_actions": 194,
+    "root_actions": 1,
+    "max_end_time": 195.0,
+    "temporal_counts": {
+      "sequential": 169,
+      "continuous": 10,
+      "parallel": 9,
+      "cyclical": 4,
+      "ongoing": 1,
+      "instant": 1
+    },
+    "zero_duration_count": 81
+  },
+  {
+    "memory_id": "mem_000013",
+    "activity": "pruning the grapevines",
+    "total_actions": 206,
+    "root_actions": 1,
+    "max_end_time": 1620.0,
+    "temporal_counts": {
+      "sequential": 179,
+      "cyclical": 8,
+      "parallel": 7,
+      "conditional": 4,
+      "continuous": 8
+    },
+    "zero_duration_count": 47
+  },
+  {
+    "memory_id": "mem_000014",
+    "activity": "hardening off seedlings",
+    "total_actions": 231,
+    "root_actions": 1,
+    "max_end_time": 3054300.0,
+    "temporal_counts": {
+      "sequential": 187,
+      "cyclical": 11,
+      "parallel": 6,
+      "conditional": 4,
+      "daily": 1,
+      "continuous": 20,
+      "sporadic": 2
+    },
+    "zero_duration_count": 151
+  },
+  {
+    "memory_id": "mem_000015",
+    "activity": "making granola",
+    "total_actions": 83,
+    "root_actions": 1,
+    "max_end_time": 1805.0,
+    "temporal_counts": {
+      "sequential": 60,
+      "parallel": 7,
+      "cyclical": 3,
+      "continuous": 11,
+      "sporadic": 2
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000016",
+    "activity": "making pickled eggs",
+    "total_actions": 51,
+    "root_actions": 1,
+    "max_end_time": 261420.0,
+    "temporal_counts": {
+      "sequential": 41,
+      "parallel": 9,
+      "cyclical": 1
+    },
+    "zero_duration_count": 8
+  },
+  {
+    "memory_id": "mem_000017",
+    "activity": "cleaning the toaster crumb tray",
+    "total_actions": 228,
+    "root_actions": 1,
+    "max_end_time": 90.0,
+    "temporal_counts": {
+      "sequential": 39,
+      "once": 130,
+      "parallel": 18,
+      "continuous": 31,
+      "cyclical": 9,
+      "conditional": 1
+    },
+    "zero_duration_count": 29
+  },
+  {
+    "memory_id": "mem_000018",
+    "activity": "cleaning the bird bath",
+    "total_actions": 240,
+    "root_actions": 1,
+    "max_end_time": 540.0,
+    "temporal_counts": {
+      "sequential": 136,
+      "parallel": 18,
+      "cyclical": 35,
+      "continuous": 47,
+      "conditional": 2,
+      "once": 2
+    },
+    "zero_duration_count": 62
+  },
+  {
+    "memory_id": "mem_000019",
+    "activity": "sanitizing the cutting boards",
+    "total_actions": 95,
+    "root_actions": 1,
+    "max_end_time": 1456.0,
+    "temporal_counts": {
+      "sequential": 55,
+      "parallel": 5,
+      "continuous": 29,
+      "cyclical": 6
+    },
+    "zero_duration_count": 3
+  },
+  {
+    "memory_id": "mem_000020",
+    "activity": "dividing daylilies",
+    "total_actions": 235,
+    "root_actions": 1,
+    "max_end_time": 1560.0,
+    "temporal_counts": {
+      "sequential": 184,
+      "cyclical": 20,
+      "parallel": 4,
+      "continuous": 18,
+      "intermittent": 2,
+      "repeated": 6,
+      "conditional": 1
+    },
+    "zero_duration_count": 103
+  },
+  {
+    "memory_id": "mem_000021",
+    "activity": "rotating the potted plants",
+    "total_actions": 250,
+    "root_actions": 1,
+    "max_end_time": 10885.0,
+    "temporal_counts": {
+      "parallel": 19,
+      "sequential": 220,
+      "cyclical": 2,
+      "continuous": 6,
+      "once": 3
+    },
+    "zero_duration_count": 30
+  },
+  {
+    "memory_id": "mem_000022",
+    "activity": "making fresh pasta sauce",
+    "total_actions": 321,
+    "root_actions": 1,
+    "max_end_time": 2840.0,
+    "temporal_counts": {
+      "sequential": 266,
+      "cyclical": 15,
+      "parallel": 23,
+      "continuous": 15,
+      "once": 2
+    },
+    "zero_duration_count": 66
+  },
+  {
+    "memory_id": "mem_000023",
+    "activity": "repotting a fern",
+    "total_actions": 238,
+    "root_actions": 1,
+    "max_end_time": 2592000.0,
+    "temporal_counts": {
+      "sequential": 38,
+      "parallel": 7,
+      "once": 129,
+      "continuous": 55,
+      "cyclical": 6,
+      "conditional": 3
+    },
+    "zero_duration_count": 76
+  },
+  {
+    "memory_id": "mem_000024",
+    "activity": "transplanting a rose bush",
+    "total_actions": 275,
+    "root_actions": 1,
+    "max_end_time": 2460.0,
+    "temporal_counts": {
+      "sequential": 228,
+      "parallel": 21,
+      "cyclical": 17,
+      "continuous": 6,
+      "conditional": 1,
+      "once": 2
+    },
+    "zero_duration_count": 22
+  },
+  {
+    "memory_id": "mem_000025",
+    "activity": "pouring a concrete stepping stone",
+    "total_actions": 283,
+    "root_actions": 1,
+    "max_end_time": 6308.0,
+    "temporal_counts": {
+      "sequential": 121,
+      "parallel": 36,
+      "cyclical": 58,
+      "continuous": 44,
+      "result": 9,
+      "gradual": 13,
+      "end": 1,
+      "sequencial": 1
+    },
+    "zero_duration_count": 70
+  },
+  {
+    "memory_id": "mem_000026",
+    "activity": "making sourdough starter",
+    "total_actions": 265,
+    "root_actions": 1,
+    "max_end_time": 432000.0,
+    "temporal_counts": {
+      "sequential": 237,
+      "parallel": 22,
+      "cyclical": 6
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000027",
+    "activity": "tying up climbing beans",
+    "total_actions": 234,
+    "root_actions": 1,
+    "max_end_time": 300.0,
+    "temporal_counts": {
+      "sequential": 189,
+      "parallel": 15,
+      "continuous": 14,
+      "cyclical": 11,
+      "once": 4,
+      "conditional": 1
+    },
+    "zero_duration_count": 89
+  },
+  {
+    "memory_id": "mem_000028",
+    "activity": "segmenting oranges",
+    "total_actions": 238,
+    "root_actions": 1,
+    "max_end_time": 160.0,
+    "temporal_counts": {
+      "sequential": 141,
+      "once": 14,
+      "parallel": 8,
+      "cyclical": 22,
+      "continuous": 52,
+      "conditional": 1
+    },
+    "zero_duration_count": 111
+  },
+  {
+    "memory_id": "mem_000029",
+    "activity": "making a quiche",
+    "total_actions": 72,
+    "root_actions": 1,
+    "max_end_time": 8880.0,
+    "temporal_counts": {
+      "sequential": 50,
+      "parallel": 7,
+      "continuous": 14,
+      "conditional": 1
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000030",
+    "activity": "grafting a fruit tree",
+    "total_actions": 206,
+    "root_actions": 1,
+    "max_end_time": 191.0,
+    "temporal_counts": {
+      "sequential": 166,
+      "parallel": 18,
+      "continuous": 12,
+      "cyclical": 4,
+      "once": 6
+    },
+    "zero_duration_count": 36
+  },
+  {
+    "memory_id": "mem_000031",
+    "activity": "churning butter",
+    "total_actions": 336,
+    "root_actions": 1,
+    "max_end_time": 900.0,
+    "temporal_counts": {
+      "sequential": 314,
+      "parallel": 10,
+      "cyclical": 6,
+      "continuous": 5,
+      "once": 1
+    },
+    "zero_duration_count": 44
+  },
+  {
+    "memory_id": "mem_000032",
+    "activity": "refilling the bird feeder",
+    "total_actions": 188,
+    "root_actions": 1,
+    "max_end_time": 135.0,
+    "temporal_counts": {
+      "sequential": 142,
+      "parallel": 6,
+      "continuous": 4,
+      "cyclical": 36
+    },
+    "zero_duration_count": 35
+  },
+  {
+    "memory_id": "mem_000033",
+    "activity": "weeding between patio stones",
+    "total_actions": 72,
+    "root_actions": 1,
+    "max_end_time": 2700.0,
+    "temporal_counts": {
+      "sequential": 47,
+      "cyclical": 3,
+      "parallel": 21,
+      "event": 1
+    },
+    "zero_duration_count": 3
+  },
+  {
+    "memory_id": "mem_000034",
+    "activity": "pruning the butterfly bush",
+    "total_actions": 239,
+    "root_actions": 1,
+    "max_end_time": 2529.0,
+    "temporal_counts": {
+      "sequential": 214,
+      "parallel": 9,
+      "continuous": 8,
+      "cyclical": 6,
+      "conditional": 2
+    },
+    "zero_duration_count": 89
+  },
+  {
+    "memory_id": "mem_000035",
+    "activity": "top-dressing the lawn with compost",
+    "total_actions": 314,
+    "root_actions": 1,
+    "max_end_time": 1035.0,
+    "temporal_counts": {
+      "sequential": 158,
+      "cyclical": 33,
+      "once": 9,
+      "parallel": 15,
+      "continuous": 69,
+      "periodic": 30
+    },
+    "zero_duration_count": 150
+  },
+  {
+    "memory_id": "mem_000036",
+    "activity": "making herbed compound butter",
+    "total_actions": 211,
+    "root_actions": 1,
+    "max_end_time": 4870.0,
+    "temporal_counts": {
+      "sequential": 187,
+      "parallel": 14,
+      "cyclical": 6,
+      "continuous": 3,
+      "future": 1
+    },
+    "zero_duration_count": 54
+  },
+  {
+    "memory_id": "mem_000037",
+    "activity": "making croutons from stale bread",
+    "total_actions": 90,
+    "root_actions": 1,
+    "max_end_time": 8250.0,
+    "temporal_counts": {
+      "parallel": 7,
+      "sequential": 82,
+      "continuous": 1
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000038",
+    "activity": "building a trellis for cucumbers",
+    "total_actions": 62,
+    "root_actions": 1,
+    "max_end_time": 1245.0,
+    "temporal_counts": {
+      "sequential": 38,
+      "cyclical": 11,
+      "parallel": 5,
+      "continuous": 8
+    },
+    "zero_duration_count": 3
+  },
+  {
+    "memory_id": "mem_000039",
+    "activity": "sectioning grapefruit",
+    "total_actions": 257,
+    "root_actions": 1,
+    "max_end_time": 200.0,
+    "temporal_counts": {
+      "sequential": 154,
+      "parallel": 62,
+      "cyclical": 14,
+      "continuous": 25,
+      "state": 2
+    },
+    "zero_duration_count": 139
+  },
+  {
+    "memory_id": "mem_000040",
+    "activity": "sowing radish seeds",
+    "total_actions": 223,
+    "root_actions": 1,
+    "max_end_time": 880.0,
+    "temporal_counts": {
+      "sequential": 133,
+      "parallel": 20,
+      "continuous": 52,
+      "cyclical": 16,
+      "conditional": 2
+    },
+    "zero_duration_count": 83
+  },
+  {
+    "memory_id": "mem_000041",
+    "activity": "replacing the door sweep",
+    "total_actions": 185,
+    "root_actions": 1,
+    "max_end_time": 900.0,
+    "temporal_counts": {
+      "sequential": 117,
+      "parallel": 7,
+      "cyclical": 15,
+      "continuous": 42,
+      "once": 4
+    },
+    "zero_duration_count": 50
+  },
+  {
+    "memory_id": "mem_000042",
+    "activity": "making fruit leather",
+    "total_actions": 85,
+    "root_actions": 1,
+    "max_end_time": 13200.0,
+    "temporal_counts": {
+      "sequential": 75,
+      "parallel": 5,
+      "cyclical": 5
+    },
+    "zero_duration_count": 11
+  },
+  {
+    "memory_id": "mem_000043",
+    "activity": "edging the sidewalk with a spade",
+    "total_actions": 378,
+    "root_actions": 1,
+    "max_end_time": 2515.0,
+    "temporal_counts": {
+      "sequential": 329,
+      "parallel": 18,
+      "cyclical": 10,
+      "continuous": 17,
+      "sporadic": 4
+    },
+    "zero_duration_count": 82
+  },
+  {
+    "memory_id": "mem_000044",
+    "activity": "brewing kombucha",
+    "total_actions": 52,
+    "root_actions": 1,
+    "max_end_time": 611520.0,
+    "temporal_counts": {
+      "sequential": 45,
+      "parallel": 7
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000045",
+    "activity": "weatherstripping windows",
+    "total_actions": 332,
+    "root_actions": 1,
+    "max_end_time": 695.0,
+    "temporal_counts": {
+      "sequential": 295,
+      "parallel": 7,
+      "cyclical": 15,
+      "continuous": 14,
+      "once": 1
+    },
+    "zero_duration_count": 83
+  },
+  {
+    "memory_id": "mem_000046",
+    "activity": "making chicken salad",
+    "total_actions": 345,
+    "root_actions": 1,
+    "max_end_time": 4210.0,
+    "temporal_counts": {
+      "sequential": 298,
+      "parallel": 30,
+      "cyclical": 15,
+      "once": 1,
+      "ongoing": 1
+    },
+    "zero_duration_count": 61
+  },
+  {
+    "memory_id": "mem_000047",
+    "activity": "making lemon curd",
+    "total_actions": 320,
+    "root_actions": 1,
+    "max_end_time": 4723.0,
+    "temporal_counts": {
+      "sequential": 251,
+      "parallel": 48,
+      "cyclical": 19,
+      "conditional": 1,
+      "once": 1
+    },
+    "zero_duration_count": 58
+  },
+  {
+    "memory_id": "mem_000048",
+    "activity": "making French fries from scratch",
+    "total_actions": 343,
+    "root_actions": 1,
+    "max_end_time": 3900.0,
+    "temporal_counts": {
+      "sequential": 285,
+      "prior_offscreen": 1,
+      "parallel": 15,
+      "cyclical": 14,
+      "continuous": 27,
+      "intermittent": 1
+    },
+    "zero_duration_count": 125
+  },
+  {
+    "memory_id": "mem_000049",
+    "activity": "cleaning the refrigerator door gasket",
+    "total_actions": 326,
+    "root_actions": 1,
+    "max_end_time": 255.0,
+    "temporal_counts": {
+      "sequential": 277,
+      "parallel": 37,
+      "cyclical": 9,
+      "continuous": 3
+    },
+    "zero_duration_count": 13
+  },
+  {
+    "memory_id": "mem_000050",
+    "activity": "blanching broccoli",
+    "total_actions": 130,
+    "root_actions": 1,
+    "max_end_time": 502.0,
+    "temporal_counts": {
+      "sequential": 82,
+      "parallel": 25,
+      "continuous": 14,
+      "cyclical": 9
+    },
+    "zero_duration_count": 23
+  },
+  {
+    "memory_id": "mem_000051",
+    "activity": "baking sugar cookies",
+    "total_actions": 78,
+    "root_actions": 1,
+    "max_end_time": 7860.0,
+    "temporal_counts": {
+      "sequential": 37,
+      "parallel": 11,
+      "continuous": 25,
+      "cyclical": 3,
+      "conditional": 1,
+      "once": 1
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000052",
+    "activity": "whipping up a batch of hummus",
+    "total_actions": 343,
+    "root_actions": 1,
+    "max_end_time": 430.0,
+    "temporal_counts": {
+      "sequential": 292,
+      "parallel": 36,
+      "cyclical": 11,
+      "continuous": 4
+    },
+    "zero_duration_count": 28
+  },
+  {
+    "memory_id": "mem_000053",
+    "activity": "planting a shade tree",
+    "total_actions": 297,
+    "root_actions": 1,
+    "max_end_time": 3150.0,
+    "temporal_counts": {
+      "sequential": 229,
+      "cyclical": 12,
+      "parallel": 7,
+      "continuous": 42,
+      "sporadic": 6,
+      "recurring": 1
+    },
+    "zero_duration_count": 69
+  },
+  {
+    "memory_id": "mem_000054",
+    "activity": "crushing ice for cocktails",
+    "total_actions": 46,
+    "root_actions": 1,
+    "max_end_time": 75.0,
+    "temporal_counts": {
+      "sequential": 39,
+      "parallel": 5,
+      "cyclical": 1,
+      "once": 1
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000055",
+    "activity": "shredding cheese for the freezer",
+    "total_actions": 268,
+    "root_actions": 1,
+    "max_end_time": 841.0,
+    "temporal_counts": {
+      "sequential": 230,
+      "parallel": 21,
+      "cyclical": 17
+    },
+    "zero_duration_count": 42
+  },
+  {
+    "memory_id": "mem_000056",
+    "activity": "making leaf mold",
+    "total_actions": 284,
+    "root_actions": 1,
+    "max_end_time": 94662362.0,
+    "temporal_counts": {
+      "sequential": 245,
+      "cyclical": 9,
+      "parallel": 15,
+      "continuous": 9,
+      "repeated": 1,
+      "once": 5
+    },
+    "zero_duration_count": 106
+  },
+  {
+    "memory_id": "mem_000057",
+    "activity": "spreading mulch in the flower bed",
+    "total_actions": 321,
+    "root_actions": 1,
+    "max_end_time": 1380.0,
+    "temporal_counts": {
+      "sequential": 302,
+      "parallel": 7,
+      "cyclical": 11,
+      "conditional": 1
+    },
+    "zero_duration_count": 30
+  },
+  {
+    "memory_id": "mem_000058",
+    "activity": "Setting the smart planner's daily intention to None to allow spontaneous scheduling without a fixed goal",
+    "total_actions": 160,
+    "root_actions": 1,
+    "max_end_time": 85.0,
+    "temporal_counts": {
+      "sequential": 145,
+      "parallel": 9,
+      "continuous": 4,
+      "intermittent": 2
+    },
+    "zero_duration_count": 22
+  },
+  {
+    "memory_id": "mem_000059",
+    "activity": "Configuring the smart wellness app to set person.breathing_rate=normal as the baseline for its guided breathing exercise.",
+    "total_actions": 249,
+    "root_actions": 1,
+    "max_end_time": 96.8,
+    "temporal_counts": {
+      "sequential": 220,
+      "parallel": 22,
+      "cyclical": 3,
+      "continuous": 4
+    },
+    "zero_duration_count": 25
+  },
+  {
+    "memory_id": "mem_000060",
+    "activity": "Adjusting the AI-driven interview coach's tone to cheerfulness=0.5, providing balanced encouragement and constructive criticism during a mock job interview.",
+    "total_actions": 196,
+    "root_actions": 1,
+    "max_end_time": 60.0,
+    "temporal_counts": {
+      "parallel": 15,
+      "sequential": 178,
+      "cyclical": 3
+    },
+    "zero_duration_count": 8
+  },
+  {
+    "memory_id": "mem_000061",
+    "activity": "Configuring the camera's autofocus custom setting to focus=0.8 for precise focus tracking during a bird photography session",
+    "total_actions": 59,
+    "root_actions": 1,
+    "max_end_time": 97.0,
+    "temporal_counts": {
+      "sequential": 51,
+      "parallel": 3,
+      "cyclical": 5
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000062",
+    "activity": "Setting the smart home gym's exhaust fan to run until person.sweat_level=0.0 is detected, ensuring the room is dry after a session",
+    "total_actions": 157,
+    "root_actions": 1,
+    "max_end_time": 80.0,
+    "temporal_counts": {
+      "parallel": 13,
+      "sequential": 96,
+      "continuous": 34,
+      "cyclical": 14
+    },
+    "zero_duration_count": 9
+  },
+  {
+    "memory_id": "mem_000063",
+    "activity": "Configuring the smartwatch's sweat detection to use a sweat_level=0.0 baseline for accurate electrolyte loss monitoring during indoor cycling",
+    "total_actions": 153,
+    "root_actions": 1,
+    "max_end_time": 161.0,
+    "temporal_counts": {
+      "sequential": 106,
+      "parallel": 8,
+      "continuous": 30,
+      "cyclical": 9
+    },
+    "zero_duration_count": 25
+  },
+  {
+    "memory_id": "mem_000064",
+    "activity": "Programming the smartwatch to log a deep-focus session when person.focus=0.8 is sustained for 25 minutes",
+    "total_actions": 233,
+    "root_actions": 1,
+    "max_end_time": 150.0,
+    "temporal_counts": {
+      "sequential": 183,
+      "parallel": 18,
+      "cyclical": 32
+    },
+    "zero_duration_count": 34
+  },
+  {
+    "memory_id": "mem_000065",
+    "activity": "Configuring the biofeedback ring's app to alert when person.breathing_rate deviates from normal during a stress-reduction session",
+    "total_actions": 46,
+    "root_actions": 1,
+    "max_end_time": 120.0,
+    "temporal_counts": {
+      "sequential": 30,
+      "parallel": 14,
+      "cyclical": 2
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000066",
+    "activity": "Activating the browser's distraction-blocking extension when person.focus=0.8 is measured by the wearable, automatically whitelisting only work-related sites.",
+    "total_actions": 214,
+    "root_actions": 1,
+    "max_end_time": 124.89999999999999,
+    "temporal_counts": {
+      "sequential": 161,
+      "parallel": 21,
+      "continuous": 21,
+      "cyclical": 8,
+      "state": 3
+    },
+    "zero_duration_count": 30
+  },
+  {
+    "memory_id": "mem_000067",
+    "activity": "Programming the time-tracking software to mark a task as 'high focus' and extend its estimated duration when person.focus=0.8 is measured for 10 minutes.",
+    "total_actions": 266,
+    "root_actions": 1,
+    "max_end_time": 2890.0,
+    "temporal_counts": {
+      "parallel": 8,
+      "sequential": 234,
+      "cyclical": 6,
+      "continuous": 5,
+      "once": 13
+    },
+    "zero_duration_count": 61
+  },
+  {
+    "memory_id": "mem_000068",
+    "activity": "Adjusting the studio monitor's focus control to 0.8 to enhance mid-range clarity while mixing a podcast.",
+    "total_actions": 161,
+    "root_actions": 1,
+    "max_end_time": 53.0,
+    "temporal_counts": {
+      "sequential": 138,
+      "parallel": 9,
+      "continuous": 7,
+      "cyclical": 6,
+      "ongoing": 1
+    },
+    "zero_duration_count": 28
+  },
+  {
+    "memory_id": "mem_000069",
+    "activity": "Adjusting the smart thermostat to lower the room temperature by 2 degrees when fatigue=0.2 triggers a need for alertness",
+    "total_actions": 194,
+    "root_actions": 1,
+    "max_end_time": 88.0,
+    "temporal_counts": {
+      "sequential": 23,
+      "parallel": 32,
+      "continuous": 43,
+      "cyclical": 9,
+      "once": 85,
+      "sporadic": 2
+    },
+    "zero_duration_count": 22
+  },
+  {
+    "memory_id": "mem_000070",
+    "activity": "Configuring the smart bike trainer to automatically increase resistance when fatigue=0.2 is detected, maximizing the training stimulus during a 20-minute interval session",
+    "total_actions": 43,
+    "root_actions": 1,
+    "max_end_time": 2537.0,
+    "temporal_counts": {
+      "sequential": 39,
+      "parallel": 3,
+      "cyclical": 1
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000071",
+    "activity": "mopping the kitchen floor",
+    "total_actions": 268,
+    "root_actions": 1,
+    "max_end_time": 2025.0,
+    "temporal_counts": {
+      "sequential": 242,
+      "cyclical": 16,
+      "parallel": 9,
+      "continuous": 1
+    },
+    "zero_duration_count": 39
+  },
+  {
+    "memory_id": "mem_000072",
+    "activity": "Taking a 10-minute power nap when a wearable indicates fatigue=0.2 during an afternoon work session",
+    "total_actions": 249,
+    "root_actions": 1,
+    "max_end_time": 813.0,
+    "temporal_counts": {
+      "sequential": 215,
+      "parallel": 23,
+      "cyclical": 6,
+      "continuous": 4,
+      "ongoing": 1
+    },
+    "zero_duration_count": 25
+  },
+  {
+    "memory_id": "mem_000073",
+    "activity": "Resetting the wearable's respiration sensor to person.breathing_rate=normal before starting a mindful walking session.",
+    "total_actions": 192,
+    "root_actions": 1,
+    "max_end_time": 60.0,
+    "temporal_counts": {
+      "sequential": 140,
+      "continuous": 19,
+      "cyclical": 28,
+      "parallel": 5
+    },
+    "zero_duration_count": 44
+  },
+  {
+    "memory_id": "mem_000074",
+    "activity": "Configuring the smart desk lamp to automatically adjust brightness to 0.8 when person.focus=0.8, enhancing concentration with optimal lighting",
+    "total_actions": 256,
+    "root_actions": 2,
+    "max_end_time": 115.0,
+    "temporal_counts": {
+      "parallel": 24,
+      "continuous": 62,
+      "cyclical": 11,
+      "sequential": 159
+    },
+    "zero_duration_count": 34
+  },
+  {
+    "memory_id": "mem_000075",
+    "activity": "Setting a weekly intention with a five-minute visualization exercise",
+    "total_actions": 181,
+    "root_actions": 1,
+    "max_end_time": 955.0,
+    "temporal_counts": {
+      "sequential": 176,
+      "parallel": 5
+    },
+    "zero_duration_count": 1
+  },
+  {
+    "memory_id": "mem_000076",
+    "activity": "Configuring the virtual coach to use intention=None for an exploratory brainstorming session",
+    "total_actions": 187,
+    "root_actions": 1,
+    "max_end_time": 70.0,
+    "temporal_counts": {
+      "sequential": 77,
+      "parallel": 88,
+      "cyclical": 3,
+      "continuous": 19
+    },
+    "zero_duration_count": 6
+  },
+  {
+    "memory_id": "mem_000077",
+    "activity": "Writing a one-sentence intention for the day in a journal",
+    "total_actions": 170,
+    "root_actions": 1,
+    "max_end_time": 127.0,
+    "temporal_counts": {
+      "sequential": 35,
+      "single": 76,
+      "parallel": 6,
+      "continuous": 43,
+      "cyclical": 8,
+      "once": 1,
+      "future": 1
+    },
+    "zero_duration_count": 53
+  },
+  {
+    "memory_id": "mem_000078",
+    "activity": "Configuring the mindfulness app to set person.intention=None for a non-striving meditation session that avoids goal-oriented focus",
+    "total_actions": 231,
+    "root_actions": 1,
+    "max_end_time": 60.0,
+    "temporal_counts": {
+      "sequential": 208,
+      "parallel": 7,
+      "continuous": 7,
+      "cyclical": 9
+    },
+    "zero_duration_count": 50
+  },
+  {
+    "memory_id": "mem_000079",
+    "activity": "Configuring the social robot's emotional display to cheerfulness=0.5 during an assistive care session, so it appears calm and neutral while reminding the user to take medication.",
+    "total_actions": 66,
+    "root_actions": 1,
+    "max_end_time": 78.0,
+    "temporal_counts": {
+      "sequential": 44,
+      "parallel": 11,
+      "continuous": 6,
+      "once": 4,
+      "cyclical": 1
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000080",
+    "activity": "Adjusting the home battery inverter's disconnect threshold to energy_level=0.8 so it switches to grid power when the storage falls to 80% to preserve battery health",
+    "total_actions": 189,
+    "root_actions": 1,
+    "max_end_time": 30.06,
+    "temporal_counts": {
+      "parallel": 17,
+      "sequential": 151,
+      "cyclical": 13,
+      "continuous": 8
+    },
+    "zero_duration_count": 5
+  },
+  {
+    "memory_id": "mem_000081",
+    "activity": "Configuring the smart charger to stop charging the laptop at an energy_level of 0.8 (80%) to maximize battery lifespan",
+    "total_actions": 191,
+    "root_actions": 1,
+    "max_end_time": 45.0,
+    "temporal_counts": {
+      "sequential": 167,
+      "parallel": 9,
+      "cyclical": 6,
+      "continuous": 8,
+      "once": 1
+    },
+    "zero_duration_count": 27
+  },
+  {
+    "memory_id": "mem_000082",
+    "activity": "Calibrating the new fitness tracker to person.sweat_level=0.0 after toweling off from a swim, to set a dry baseline for subsequent runs",
+    "total_actions": 39,
+    "root_actions": 1,
+    "max_end_time": 80.0,
+    "temporal_counts": {
+      "sequential": 26,
+      "parallel": 8,
+      "once": 1,
+      "cyclical": 4
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000083",
+    "activity": "Using a photo editing app to set the focus blur intensity to 0.8 for a dreamy background effect",
+    "total_actions": 249,
+    "root_actions": 1,
+    "max_end_time": 40.0,
+    "temporal_counts": {
+      "parallel": 13,
+      "continuous": 9,
+      "sequential": 213,
+      "cyclical": 13,
+      "once": 1
+    },
+    "zero_duration_count": 66
+  },
+  {
+    "memory_id": "mem_000084",
+    "activity": "Configuring the noise-cancelling headphones to switch to ambient mode when person.focus=0.8 is detected, allowing the user to stay aware of their surroundings during a work session.",
+    "total_actions": 231,
+    "root_actions": 1,
+    "max_end_time": 240.0,
+    "temporal_counts": {
+      "sequential": 191,
+      "parallel": 21,
+      "continuous": 8,
+      "once": 6,
+      "cyclical": 4,
+      "repeated": 1
+    },
+    "zero_duration_count": 56
+  },
+  {
+    "memory_id": "mem_000085",
+    "activity": "Setting the manual focus distance to 0.8 meters on the camera lens for a sharp macro shot",
+    "total_actions": 148,
+    "root_actions": 1,
+    "max_end_time": 132.00000000000003,
+    "temporal_counts": {
+      "sequential": 116,
+      "parallel": 8,
+      "cyclical": 8,
+      "continuous": 16
+    },
+    "zero_duration_count": 40
+  },
+  {
+    "memory_id": "mem_000086",
+    "activity": "Adjusting the virtual assistant's cheerfulness setting to 0.5 so it gives friendly but professional responses.",
+    "total_actions": 195,
+    "root_actions": 1,
+    "max_end_time": 136.0,
+    "temporal_counts": {
+      "sequential": 141,
+      "parallel": 25,
+      "continuous": 7,
+      "cyclical": 22
+    },
+    "zero_duration_count": 20
+  },
+  {
+    "memory_id": "mem_000087",
+    "activity": "Setting the smart home assistant to interpret person.intention=None as a do-not-disturb cue, silencing all proactive reminders and suggestions",
+    "total_actions": 208,
+    "root_actions": 1,
+    "max_end_time": 70.0,
+    "temporal_counts": {
+      "parallel": 21,
+      "continuous": 12,
+      "cyclical": 3,
+      "sequential": 172
+    },
+    "zero_duration_count": 4
+  },
+  {
+    "memory_id": "mem_000088",
+    "activity": "Configuring the smart scent diffuser to release peppermint oil when person.focus=0.8 is detected, enhancing cognitive performance during a deep work session.",
+    "total_actions": 254,
+    "root_actions": 1,
+    "max_end_time": 234.0,
+    "temporal_counts": {
+      "sequential": 217,
+      "cyclical": 11,
+      "parallel": 23,
+      "continuous": 3
+    },
+    "zero_duration_count": 0
+  },
+  {
+    "memory_id": "mem_000089",
+    "activity": "Configuring the smart mirror's display mood to a cheerfulness level of 0.5 for a balanced morning greeting.",
+    "total_actions": 205,
+    "root_actions": 1,
+    "max_end_time": 60.0,
+    "temporal_counts": {
+      "parallel": 92,
+      "cyclical": 26,
+      "sequential": 87
+    },
+    "zero_duration_count": 14
+  },
+  {
+    "memory_id": "mem_000090",
+    "activity": "Setting the standing desk controller to raise to standing height when person.energy_level=0.8 is detected to encourage active working posture",
+    "total_actions": 258,
+    "root_actions": 5,
+    "max_end_time": 95.0,
+    "temporal_counts": {
+      "parallel": 21,
+      "continuous": 17,
+      "cyclical": 16,
+      "sequential": 203,
+      "sporadic": 1
+    },
+    "zero_duration_count": 47
+  },
+  {
+    "memory_id": "mem_000091",
+    "activity": "washing the car by hand",
+    "total_actions": 277,
+    "root_actions": 1,
+    "max_end_time": 1800.0,
+    "temporal_counts": {
+      "sequential": 215,
+      "parallel": 18,
+      "cyclical": 17,
+      "continuous": 27
+    },
+    "zero_duration_count": 87
+  },
+  {
+    "memory_id": "mem_000092",
+    "activity": "Resetting the treadmill's integrated sweat sensor to sweat_level=0.0 before beginning a low-intensity warm-up walk",
+    "total_actions": 190,
+    "root_actions": 1,
+    "max_end_time": 30.0,
+    "temporal_counts": {
+      "sequential": 165,
+      "parallel": 17,
+      "cyclical": 8
+    },
+    "zero_duration_count": 10
+  },
+  {
+    "memory_id": "mem_000093",
+    "activity": "Setting the laser cutter's focus parameter to 0.8 for fine engraving details on 3mm acrylic sheets.",
+    "total_actions": 226,
+    "root_actions": 1,
+    "max_end_time": 85.0,
+    "temporal_counts": {
+      "sequential": 150,
+      "cyclical": 5,
+      "parallel": 30,
+      "continuous": 40,
+      "withheld": 1
+    },
+    "zero_duration_count": 7
+  },
+  {
+    "memory_id": "mem_000094",
+    "activity": "Setting the smart yoga mat's respiration monitor to use person.breathing_rate=normal as the baseline before a restorative yoga session",
+    "total_actions": 292,
+    "root_actions": 1,
+    "max_end_time": 123.5,
+    "temporal_counts": {
+      "sequential": 274,
+      "parallel": 3,
+      "continuous": 4,
+      "cyclical": 11
+    },
+    "zero_duration_count": 48
+  },
+  {
+    "memory_id": "mem_000095",
+    "activity": "Programming the smart speaker to auto-play a high-energy workout playlist when person.energy_level=0.8 is detected during exercise",
+    "total_actions": 297,
+    "root_actions": 2,
+    "max_end_time": 1800.0,
+    "temporal_counts": {
+      "parallel": 34,
+      "sequential": 244,
+      "cyclical": 17,
+      "continuous": 2
+    },
+    "zero_duration_count": 29
+  },
+  {
+    "memory_id": "mem_000096",
+    "activity": "Setting the smart projector's auto-focus calibration to focus=0.8 to sharpen the image on a curved wall",
+    "total_actions": 248,
+    "root_actions": 1,
+    "max_end_time": 70.3,
+    "temporal_counts": {
+      "sequential": 215,
+      "parallel": 7,
+      "continuous": 20,
+      "cyclical": 6
+    },
+    "zero_duration_count": 27
+  },
+  {
+    "memory_id": "mem_000097",
+    "activity": "Programming the smart office lighting to switch to a high-contrast, cool color temperature when person.fatigue=0.2 to maintain mental alertness during an afternoon deep-work session",
+    "total_actions": 292,
+    "root_actions": 1,
+    "max_end_time": 156.0,
+    "temporal_counts": {
+      "sequential": 267,
+      "parallel": 11,
+      "cyclical": 3,
+      "continuous": 8,
+      "event": 3
+    },
+    "zero_duration_count": 30
+  }
+]

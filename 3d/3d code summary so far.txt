@@ -1,0 +1,432 @@
+# The 3D Module — Comprehensive Summary
+
+This document describes the current state of the 3D module: what each file is for, what each pipeline stage does, and how the pieces fit together. It covers the code as it stands today, including the retry-and-abort semantics, the frame-saving step, the reach_arm_rotate operation, and the initial-state frame.
+
+---
+
+## 1. Overall structure
+
+The 3D module is a parallel v0.2 memory system that grounds memories in geometry rather than text alone. Its root is `F:\New folder (4)\New folder\3d\`. Every artifact it produces lives inside that folder, and every path in the code is relative to the module (via `Path(__file__).parent`), so the scripts run from anywhere.
+
+The module has one orchestrator (`3d_mgen.py`) and eight pure helpers. The orchestrator holds every prompt and every LLM call. The helpers hold no prompts and make no LLM calls. They can be imported and tested in isolation.
+
+| File | Role | Makes LLM calls? |
+|---|---|---|
+| `3d_assembly.py` | Data model | No |
+| `3d_elements_storage.py` | Element registry | No |
+| `3d_assembly_builder.py` | Assembly construction from resolved data | No |
+| `3d_scene_operations.py` | 21 operation types and their apply/validate logic | No |
+| `3d_shape_similarity.py` | Point clouds and shape comparison | No |
+| `3d_render_assembly.py` | Three renderer backends | No |
+| `3d_relation_predicates.py` | Geometric spatial predicates over AABBs | No |
+| `3d_relation_map.py` | Relational structure extraction and similarity | No |
+| `3d_mgen.py` | Pipeline orchestrator, prompts, LLM calls | Yes |
+
+Auxiliary scripts at the module root:
+
+| Script | Purpose |
+|---|---|
+| `render_scene_demo.py` | Load any assembly JSON, correct world→local, render |
+| `render_frames.py` | Parse a text-format operations demo, apply ops, render each frame |
+| `render_mgen_frames.py` | Render per-frame assemblies saved by mgen |
+
+---
+
+## 2. The data model (`3d_assembly.py`)
+
+Every other file in the module depends on the classes defined here.
+
+### `Transform`
+
+A TRS triple: `translate` (3 floats, cm), `rotate` (quaternion `[x,y,z,w]`), `scale` (3 floats). This is the only way transforms are expressed in the model. Quaternions are used rather than Euler angles so that composition and interpolation are unambiguous.
+
+### `Element3D`
+
+One primitive shape instance. Fields:
+
+- `element_type` — one of fourteen types: `sphere`, `ellipsoid`, `box`, `cylinder`, `cone`, `torus`, `capsule`, `plane`, `sheet`, `wedge`, `prism`, `pyramid`, `hemisphere`, `frustum`
+- `parameters` — the numbers defining that shape (radius, height, sizes, etc.)
+- `transform` — positions the element within the parent object's local frame
+- `material_override` — optional per-element material, and the place where Stage 5 stores the element's label
+
+Elements are always leaves. There is no nesting. An object's geometry is exactly the union of its elements, each placed by its own transform.
+
+### `Object3D`
+
+One object in an assembly. Fields:
+
+- `object_id`, `template_name`
+- `elements` — list of `Element3D`
+- `material` — free-form dict (color, surface_state, moisture, etc.)
+- `object_transform` — **local** to the parent (or world if the object has no parent)
+- `mass_grams`
+- `parent_object_id`, `children`
+- `metadata` — free-form; stores `clips` for split objects, `label` for object-level labels, and any other attributes the model does not have first-class fields for
+- `world_matrix_override` — a 4×4 matrix stored when the local TRS decomposition was lossy (shear present)
+
+### `TimelineKeyframe`
+
+One segment in the assembly's timeline. Linked to an action instance via `action_instance_id`. Carries per-object transforms and geometry events. In practice the current pipeline does not populate the timeline; it produces per-frame assemblies instead.
+
+### `Assembly3D`
+
+The top-level structure. Holds objects, environment, timeline, metadata, and contacts.
+
+Key methods:
+
+- `get_object(id)`, `has_object(id)`, `get_root_objects()`, `get_children(id)`, `get_descendants(id)`
+- `add_object(obj)`, `remove_object(id)` — keep the children lists consistent
+- `rebuild_children_lists()` — derives each object's children from its `parent_object_id` (the authoritative source of hierarchy)
+- `get_world_matrix(object_id)` — composes the parent chain, honors `world_matrix_override`
+- `get_all_world_matrices()` — single DFS, O(N)
+- `set_world_transform(object_id, world_transform)` — writes a world transform as a local one relative to the parent, preserving the exact matrix as an override when the decomposition is lossy
+- `get_contacts()`, `has_contact(a, b, type)`, `contacts_for(id)` — accessors for the persistent contact list
+- `validate()` — checks object identity, parent references, timeline references, and contact entries
+- `save(path)`, `load(path)`, `to_dict()`, `from_dict()`, `copy()`, `summary()`
+
+### Transform conventions
+
+Two conventions govern the whole module:
+
+1. **World transforms are authored by the LLM.** The scene-layout stage and any operation that carries a `world_transform` field express themselves in world coordinates.
+
+2. **The runtime stores local transforms on children.** When `set_world_transform` is called on a child, it computes `inv(parent_world) @ world_matrix`, decomposes that to a local TRS, and stores it. If the decomposition has residual above tolerance (shear), the exact 4×4 matrix is preserved in `world_matrix_override` and takes precedence for world-space computation.
+
+The practical consequence: rotating a parent rotates its children with it, because the child's transform is expressed relative to the parent.
+
+### Contacts
+
+Contacts are a persistent list on the assembly. Each entry is a dict with `object_a`, `object_b`, `contact_type`, `force`, `friction`, and optional `contact_points`. Once started by a `contact` operation, a contact stays in the list until a `release` operation ends it. Contacts are distinct from parent-child attachment.
+
+---
+
+## 3. Supporting modules
+
+### `3d_elements_storage.py`
+
+The canonical geometry registry. Keyed on `template_name`. Each entry (`ElementEntry`) holds:
+
+- `elements` — the primitive decomposition of that template
+- `default_material` — color, roughness, metalness
+- `default_mass_grams`
+- `default_dimensions_cm`
+- `pointcloud_id`
+- `composite_children_templates` — for composite objects, the sub-template names
+- `notes`
+
+Storage is a regular class, not a singleton, so multiple instances can coexist for testing. `get_default_storage()` provides a module-level convenience instance.
+
+Key methods: `add_template`, `get_template`, `has_geometry`, `get_elements` (returns a deep copy), `get_default_material`, `get_default_mass`, `get_default_dimensions`, `get_composite_children`, `list_templates`, `save`, `load`.
+
+**Crucially, this storage has no concept of categories, functions, aliases, or materials-as-a-list.** Those belong to the v0.1 object storage and were never ported. The 3D model's notion of "what an object is" is its element decomposition plus its material, mass, and dimensions. If Stage 8a tries to call v0.1-style accessors on this storage, it will fail — which is what happened in the most recent run.
+
+### `3d_assembly_builder.py`
+
+Pure builder. No LLM, no prompts, no API. Takes resolved inputs and produces an `Assembly3D`.
+
+Inputs:
+- `memory_id`
+- `protagonist_spec` — `{template, obj_id, overrides, anatomical_features}`
+- `object_specs` — list of object spec dicts from Stage 3a
+- `element_map` — `{template_name: [Element3D, ...]}`
+- `scene_layout` — `{obj_id: world_transform_dict}` from Stage 3c
+- `environment` — dict
+
+Steps:
+
+1. Instantiate the protagonist as a `Protagonist` (a subclass of `Object3D` with anatomical feature tracking).
+2. Instantiate every other object, deep-copying elements from the element map. Merges storage defaults with the spec's overrides.
+3. Add all objects to a fresh assembly. `Assembly3D.__post_init__` rebuilds the children lists from `parent_object_id`.
+4. Apply the scene layout's world transforms in topological order (parents before children) using `set_world_transform`, which converts each world transform to local relative to the parent.
+
+Returns the assembled `Assembly3D`.
+
+### `3d_scene_operations.py`
+
+The operation vocabulary. Twenty-one operation types, each a dataclass with `to_dict` and `from_dict`. Two top-level functions:
+
+- `apply_operation(assembly, op) -> (new_assembly, events)` — returns a copy, never mutates the input
+- `validate_operation(assembly, op) -> (ok, message)`
+- `apply_operation_sequence(assembly, ops)` — convenience wrapper
+
+Registry-based dispatch: `op_from_dict` looks up the operation type in `_OP_REGISTRY` and calls the correct dataclass's `from_dict`.
+
+The operation groups:
+
+**Lifecycle:** `add_object`, `remove_object`
+
+**Element composition:** `add_element`, `remove_element`
+
+**Spatial transform:** `move` (additive translation), `rotate` (multiplicative rotation), `scale` (multiplicative scale), `set_transform` (set world TRS in one shot), `reach_arm_rotate`
+
+**Hierarchy:** `attach` (make A a child of B, preserve world by default), `detach` (make A independent, preserve world)
+
+**Subdivision:** `split` (binary split along a plane), `merge` (combine N objects into one)
+
+**Properties:** `change_properties` (merge or replace an object's property dict)
+
+**Physical interaction:** `contact` (start a contact), `release` (end a contact)
+
+**Annotation:** `label`, `unlabel`
+
+**Temporal:** `wait`, `emit_event`
+
+**Compound:** `compound` (group sub-operations under one action)
+
+### `reach_arm_rotate` semantics
+
+This is the operation that makes articulated limbs work. It takes an `object_id` (typically an arm) and a `target_world` point. Internally:
+
+1. Read the arm's joint world position from `get_world_matrix(object_id)[:3, 3]`.
+2. Compute the world-space direction from the joint to the target.
+3. Transform that direction into the arm's parent frame (so the arm points at the target in world space regardless of the parent's rotation).
+4. Compute the quaternion that rotates the arm's local `-Z` (hanging direction) onto that direction.
+5. Write that quaternion into the arm's `object_transform.rotate`, leaving `translate` untouched.
+
+The result: the arm swings about its shoulder, the shoulder stays welded to the torso, and the hand (a rigid child) follows the arm automatically. The combined shoulder-to-fingertip reach is 70 cm (arm) + 20 cm (hand) = 90 cm.
+
+### Contact-type-to-attachment convention
+
+`ContactOp` supports eight types:
+
+| Type | Implies attachment? | Meaning |
+|---|---|---|
+| `touch` | No | Momentary surface contact |
+| `grip` | Yes | Hand/finger hold |
+| `hold` | Yes | Sustained hold |
+| `push` | Optional | Directed force away from agent |
+| `pull` | Optional | Directed force toward agent |
+| `lean` | No | Rests against another |
+| `support` | No | Held up by another |
+| `rest_on` | No | Rests on another under gravity |
+
+The convention: when the LLM emits a `grip` or `hold`, it should also emit the matching `attach` in the same group. When it emits a release that ends a grip or hold, it should emit the matching `detach`. The validator emits a soft warning (not a failure) if this is missing — the operation still applies, but the object will not follow the hand's motion.
+
+### `3d_shape_similarity.py`
+
+Point-cloud sampling from element decompositions and shape comparison. Provides:
+
+- Per-element-type surface samplers (deterministic given a seed)
+- Clip filtering (reject points on the hidden side of clip planes)
+- Canonical alignment via PCA (makes similarity rotation-invariant)
+- Sign-flip minimization (makes congruent shapes match even when mirrored)
+- Chamfer distance between two point clouds
+- Similarity score in `[0, 1]` derived from Chamfer
+- Disk cache for sampled point clouds, keyed on the geometry hash
+
+Used by the planner (future) and by the relation-predicate module for correct AABBs of clipped objects.
+
+### `3d_render_assembly.py`
+
+Three backends:
+
+**Software** (default) — z-buffered rasterizer written in numpy. Exact per-pixel depth testing, no sorting, no occlusion bugs. Requires only numpy and matplotlib (for the PNG save). Uses a standard pinhole camera with view and perspective matrices, rasterizes each triangle into a framebuffer with a per-pixel z-buffer, and applies Lambertian shading with a fixed light direction. Handles clips via Sutherland-Hodgman triangle clipping before rasterization.
+
+**Matplotlib** (fallback) — one `Poly3DCollection` with every triangle so matplotlib's internal per-triangle depth sort runs. Works but occasionally mis-sorts when a large object overlaps a small one.
+
+**Trimesh** (optional) — needs installation. Higher quality but heavier.
+
+Public API:
+
+```
+render_assembly(assembly, output_path=None, backend="software",
+                mode="solid", show=False, axis=True, **kwargs)
+render_assembly_file(path, output_path=None, **kwargs)
+```
+
+Software-backend kwargs include `image_width`, `image_height`, `fov_deg`, `camera_eye`, `camera_target`, `camera_up`, `light_direction`, `background_color`.
+
+### `3d_relation_predicates.py`
+
+Geometric predicates computed from axis-aligned bounding boxes. Thirteen operators: `on`, `in`, `below`, `above`, `around`, `through`, `contact`, `attached`, `between`, `near`, `apart`, `from`, `none`.
+
+Each predicate has metadata: symmetric, transitive, implies near, arity.
+
+Public API:
+
+- `AABB` class with distance, overlap, containment methods
+- `element_local_aabb(element)` — local AABB of one element
+- `object_world_aabb(obj, world_matrix)` — world AABB; honors clips by sampling the element surface, filtering by clip planes, and taking the AABB of the surviving points
+- `compute_all_predicates(aabb_a, aabb_b, hierarchy_info)` — all predicates holding between two AABBs
+- `predicate_holds(aabb_a, aabb_b, name)` — single-predicate check
+
+Near threshold is size-dependent: `(max_dim(a) + max_dim(b)) / 2 * 3`. Small objects are near within a small distance; large objects within a larger one.
+
+### `3d_relation_map.py`
+
+Extracts a flat relational structure from an assembly, compares two such structures, and generates search terms.
+
+Data structures:
+
+- `RelationPoint` — one object: `point_id`, `template_name`, `categories`, `aabb`, `centroid`
+- `RelationLink` — one predicate between points, with `predicate`, `source_point_id`, `target_point_id`, optional `third_point_id` for `between`, `magnitude`, `verified`, `source`
+- `RelationMap` — the whole map: points, links, keyframe index and time
+
+Public API:
+
+- `extract_relation_map(assembly, category_lookup=None, keyframe_index=None, keyframe_time=None, llm_proposals=None)` — builds a map from an assembly
+- `map_similarity(map_a, map_b)` — structural similarity in `[0, 1]`, combining point alignment and link agreement
+- `map_to_search_terms(relation_map)` — searchable terms at multiple category levels, e.g. `link:on(apple_01,counter_01)`, `link:on(apple,counter)`, `link:on(fruit,counter)`
+- `describe_map(relation_map)` — human-readable summary
+
+---
+
+## 4. The pipeline (`3d_mgen.py`)
+
+The orchestrator. Two modes, one shared chain of 3D stages.
+
+### Retry and abort semantics
+
+Every LLM call is retried up to `LLM_MAX_RETRIES = 3` times on any failure: transport error, empty content, or JSON parse error. The retry loop lives in `LLMCaller`. If all retries fail, the stage raises `StageFailure`.
+
+`StageFailure` carries the stage name, the memory id, and a reason. The batch loop in `_main_async` catches it, records a failure stub with `failed: true`, `failed_stage`, and `failure_reason`, and continues to the next activity. Failed memories are not stored in `memories.jsonl` but appear in `records.jsonl` and `records_readable.txt`.
+
+### Mode A stages
+
+**Stage 0a — Activity generation** (LLM)
+Given a seed prompt, produces a list of specific activity strings. Prompt is inline in the module; no demo file.
+
+**Stage 0b — NL memory generation** (LLM)
+Given one activity, produces 300–600 words of natural-language memory in the style of `3d_nl_examples.txt`.
+
+**Stage 1a — Memory sketch** (LLM)
+Given the NL memory, produces a tiered object list plus an action plot with natural processes in parallel lanes. Guided by `3d_action_plot_demo.txt`.
+
+**Stage 1b — Enhanced sketch** (LLM)
+Given the NL memory and the initial sketch, recursively decomposes every action to atomic or cyclical leaves, extends the object list, and cross-checks against the NL memory. Guided by `3d_decompose_demo.txt`.
+
+**Stage 1c — Generalization** (LLM)
+Renames leaf actions to reusable template names, with `general:` and `alt:` markers for complex actions. Guided by `3d_generalize_demo.txt`.
+
+**Stage 1d — State annotation** (LLM)
+Adds preconditions, state changes (including per-cycle and total for cyclical actions), conditional changes, sensory effects with sources, and natural-process links. Guided by `3d_state_change_demo.txt`.
+
+### Mode B
+
+Loads the NL text and annotated timeline from a v0.1 memory record and joins the pipeline at Stage 2. Everything from Stage 2 onward is identical to Mode A.
+
+### Shared 3D stages
+
+**Stage 2 — Parts prior** (LLM)
+Input: NL memory, memory sketch, enhanced sketch, state-annotated timeline.
+Output: a JSON dict listing expected parts and materials for every object. Used as a guide downstream. Guided by `3d_parts_prior_demo.txt`.
+
+**Stage 3a — Entity extraction** (LLM)
+Input: all four prior artifacts.
+Output: `{protagonist, objects, actions}`. Objects are those present at t=0. Actions are the top-level human actions. Guided by `3d_entity_extraction_demo.txt`.
+
+**Stage 3b — Element resolution** (LLM, one call per uncached template)
+For each unique template in the extraction, if the storage already has geometry, reuse it. Otherwise call the LLM to produce a decomposition. Store the new entry. Guided by `3d_element_decomposition_demo.txt`.
+
+**Stage 3c — Scene layout** (LLM)
+Input: NL memory, entity list, parts prior, and bounding-box summary of resolved template geometry.
+Output: `{object_transforms: {obj_id: world_transform}, environment: {...}}`.
+The prompt now includes the placement constraint: objects the protagonist manipulates should be within 60 cm of a shoulder, inside the 90 cm reach envelope. Guided by `3d_scene_demo.txt`.
+
+**Stage 3d — Build assembly** (deterministic)
+Calls `build_assembly` from `3d_assembly_builder.py`. No LLM. Produces the initial `Assembly3D` and passes the extracted actions forward to Stage 4.
+
+**Stage 4 — Operations per top-level action** (LLM, one call per action)
+For each action, the prompt includes the NL memory, the full annotated timeline, the parts prior, the current assembly state, and every previously emitted operation group. The LLM produces one JSON `{operations: [...], notes: "..."}`. Each operation is parsed and applied to a temporary assembly for validation. On failure, one retry with the error appended. On second failure, raises `StageFailure`. On success, the group is added and the assembly state advances.
+
+Guided by `3d_operations_demo.txt`, which is the only demo the Stage 4 prompt uses.
+
+**Between Stage 4 and Stage 5 — frame construction and persistence** (deterministic)
+`_apply_operation_groups` produces `per_frame_assemblies`: frame 0 is the initial state, frames 1..N correspond to the state after each group. Each frame is saved to `assemblies/frames/{memory_id}/frame_NNNN.3dassembly.json`.
+
+**Stage 5 — Labeling** (LLM, incremental)
+Initial pass labels every element in frame 0. For each subsequent frame that introduces new objects, an incremental pass labels only the new objects. Each label is written to the element's `material_override["label"]`. Guided by `3d_labeling_demo.txt`.
+
+**Stage 6 — Reconstituted annotation** (LLM)
+Input: original annotation, NL memory, parts prior, final assembly summary, operation groups.
+Output: `{reconstituted_object_list, reconstituted_action_timeline, dropped_objects, dropped_actions, notes}`. This is the ground-truth annotation derived from the geometry, not from the original text. Guided by `3d_reconstituted_demo.txt`.
+
+**Stage 7 — Relation maps** (deterministic)
+For each frame in `per_frame_assemblies`, calls `extract_relation_map` and writes the result to `memories/relation_maps/{memory_id}/frame_NNNN.json`. Frame 0 is now included as the initial state.
+
+**Stage 8a — Initial JSON encoding** (LLM)
+Input: reconstituted annotation, object templates, action templates, full operation groups, final assembly summary, relation map summary, NL memory.
+Output: the full v0.2 memory JSON. Guided by `3d_json_encode_demo.txt`.
+
+**Stage 8b — JSON review** (LLM, narrowed scope)
+Input: NL memory, reconstituted annotation, initial JSON, 3D assembly summary.
+Checks: remove spurious references, validate sensory sources, place preconditions correctly, add fine non-geometric details that are in neither the assembly nor the JSON. Does not add geometric details. Guided by `3d_json_review_demo.txt`.
+
+**Stage 8c — Consistency check** (deterministic)
+Compares object IDs in the final JSON against the assembly. Reports discrepancies in the record.
+
+**Stage 9a — Persist** (deterministic)
+Writes:
+- `memories/memories.jsonl` — the final JSON of each successful memory
+- `memories/records.jsonl` — the full pipeline record for every memory (including failures)
+- `memories/records_readable.txt` — human-readable version of the above, with failure headers
+- `memories/token_usage.json` — per-stage token accounting
+- `assemblies/{memory_id}.3dassembly.json` — the final assembly
+- `assemblies/renders/{memory_id}_solid.png` — one render of the final frame
+- `data/3d_elements_storage.json` — the shared element registry, appended to across runs
+
+**Stage 9b — Diff vs v0.1** (Mode B only, deterministic)
+Compares object and action names between the v0.1 memory and the v0.2 output.
+
+### End-of-run summary
+
+The batch loop now prints:
+
+- Succeeded count
+- Failed count
+- Failures grouped by stage, with each failed activity and its reason
+- Token totals
+
+A run that lost memories is no longer silent.
+
+---
+
+## 5. Auxiliary renderers
+
+### `render_scene_demo.py`
+
+Loads any `.3dassembly.json`, reinterprets each object's `object_transform` as a world transform, resets all local transforms to identity, and reapplies in topological order via `set_world_transform`. This corrects files where the author (or the LLM) wrote world transforms into the local-transform field.
+
+Then renders both the raw and corrected assemblies and prints a position comparison. Useful when a demo file looks like it has floating objects.
+
+### `render_frames.py`
+
+Parses a text-format operations demo (`3d_operations_demo.txt`), applies each block's operations to a corrected starting scene, saves a runtime-format assembly per frame, and renders one PNG per frame with a fixed camera. Uses skip-and-continue: a failed operation is logged and skipped, the rest of the block continues.
+
+### `render_mgen_frames.py`
+
+Reads per-frame assemblies from `assemblies/frames/{memory_id}/` and renders each to `assemblies/renders/{memory_id}_frames/`. The camera is derived once from the first frame and reused for every subsequent frame so the view is stable and moving objects are visible as motion.
+
+Flags: `--memory-id`, `--list`, `--start-frame`, `--end-frame`, `--backend`, `--image-width`, `--image-height`, `--eye`, `--target`, `--up`.
+
+Writes a `render_log.txt` recording the camera, frame count, and any failures.
+
+---
+
+## 6. What is built and what is deferred
+
+**Built and working:**
+
+- Data model with world/local transform composition, shear detection, hierarchy consistency, and persistent contacts
+- Element storage with composite children and defaults
+- Assembly builder (pure, no LLM)
+- Twenty-one operation types with validation, application, and events
+- `reach_arm_rotate` for articulated limbs
+- Contact/release with the type-to-attachment convention and soft warnings
+- Point clouds, canonical alignment, Chamfer distance, shape similarity
+- Software z-buffer renderer with exact depth testing and clip-aware triangle culling
+- Spatial predicates over AABBs, including clipped-object AABBs
+- Relation maps with category expansion and structural similarity
+- Full pipeline in two modes, with retry-and-abort semantics, per-frame persistence, and per-frame relation maps
+- Three renderer scripts for different inspection workflows
+
+**Deferred or known incomplete:**
+
+- The Stage 4 prompt replays the full JSON of every prior operation group on every call. This grows the prompt to ~130K tokens by the end of a long memory and needs to be replaced with a compact per-group summary.
+- Records are not preserved when a late stage fails. Threading the record dict down through the stages would fix this.
+- The `_collect_action_templates` stub in Stage 8a always returns an empty dict; the LLM has no source of truth for action templates. Should be populated from `extracted_actions`.
+- Relation map `keyframe_time` is set to `float(i)` (frame index) rather than accumulated real seconds.
+- Actions that fail on first attempt are common (arm references to non-existent objects, missing contact flags, invented element types). The retry fixes them but at token cost. Prompt tightening would reduce the rate.
+- No concurrent generation. Activities are processed one at a time.
+- Timeline field on assemblies is unused. Per-frame assemblies carry the temporal information instead.
+- No physics simulation. Force and friction fields are placeholders.

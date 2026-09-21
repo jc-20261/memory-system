@@ -1,0 +1,1524 @@
+{
+  "reconstituted_object_list": {
+    "objects": [
+      {
+        "obj_id": "person_01",
+        "template_name": "person",
+        "label": "protagonist",
+        "categories": ["person", "physical_object", "object"],
+        "attributes": {"color": "flesh", "posture": "standing"},
+        "parent": null,
+        "children": ["left_hand_01", "right_hand_01", "eyes_01"],
+        "source": "assembly",
+        "status": "confirmed",
+        "notes": "The protagonist."
+      },
+      {
+        "obj_id": "eyes_01",
+        "template_name": "eyes",
+        "label": "eyes",
+        "categories": ["eyes", "body_part", "physical_object", "object"],
+        "attributes": {"color": "white"},
+        "parent": "person_01",
+        "children": [],
+        "source": "assembly",
+        "status": "confirmed",
+        "notes": "Perception organ."
+      },
+      {
+        "obj_id": "left_hand_01",
+        "template_name": "hand",
+        "label": "left_hand",
+        "categories": ["hand", "body_part", "physical_object", "object"],
+        "attributes": {"color": "flesh", "finger_posture": "curled_back", "grip_type": "pin", "residue": "tacky_residue", "volatiles": "apple_aroma"},
+        "parent": "person_01",
+        "children": ["left_thumb_01"],
+        "source": "assembly",
+        "status": "corrected",
+        "notes": "Final grip_type corrected to pin; residue and volatiles added by H8 and H14."
+      },
+      {
+        "obj_id": "left_thumb_01",
+        "template_name": "thumb",
+        "label": "left_thumb",
+        "categories": ["thumb", "body_part", "physical_object", "object"],
+        "attributes": {"color": "flesh"},
+        "parent": "left_hand_01",
+        "children": [],
+        "source": "assembly",
+        "status": "confirmed",
+        "notes": "Pushes the apple forward during peeling."
+      },
+      {
+        "obj_id": "right_hand_01",
+        "template_name": "hand",
+        "label": "right_hand",
+        "categories": ["hand", "body_part", "physical_object", "object"],
+        "attributes": {"color": "flesh", "grip_type": "pinch_grip", "residue": "tacky_residue", "volatiles": "apple_aroma"},
+        "parent": "person_01",
+        "children": [],
+        "source": "assembly",
+        "status": "corrected",
+        "notes": "Residue and volatiles added by H8 and H14."
+      },
+      {
+        "obj_id": "shirt_01",
+        "template_name": "shirt",
+        "label": "shirt",
+        "categories": ["shirt", "clothing", "physical_object", "object"],
+        "attributes": {"color": "blue", "moisture": "damp", "surface_state": "damp"},
+        "parent": "person_01",
+        "children": [],
+        "source": "assembly",
+        "status": "confirmed",
+        "notes": "Absorbs water in H3."
+      },
+      {
+        "obj_id": "kitchen_counter_01",
+        "template_name": "kitchen_counter",
+        "label": "kitchen_counter",
+        "categories": ["kitchen_counter", "furniture", "physical_object", "object"],
+        "attributes": {"color": "wood"},
+        "parent": null,
+        "children": ["bowl_source_01", "paring_knife_01", "cutting_board_01", "sink_01", "faucet_tap_01", "compost_crock_01", "bowl_destination_01"],
+        "source": "assembly",
+        "status": "added",
+        "notes": "The work surface, added as a parent for the kitchen fixtures."
+      },
+      {
+        "obj_id": "refrigerator_01",
+        "template_name": "refrigerator",
+        "label": "refrigerator",
+        "categories": ["refrigerator", "appliance", "physical_object", "object"],
+        "attributes": {"color": "silver", "state": "closed"},
+        "parent": null,
+        "children": [],
+        "source": "assembly",
+        "status": "added",
+        "notes": "Source of cold. Not used after H1."
+      },
+      {
+        "obj_id": "bowl_source_01",
+        "template_name": "bowl",
+        "label": "source_bowl",
+        "categories": ["bowl", "container", "physical_object", "object"],
+        "attributes": {"color": "white", "cleanliness": "clean"},
+        "parent": "kitchen_counter_01",
+        "children": [],
+        "source": "assembly",
+        "status": "confirmed",
+        "notes": "Source bowl the apple is taken from in H1."
+      },
+      {
+        "obj_id": "paring_knife_01",
+        "template_name": "paring_knife",
+        "label": "paring knife",
+        "categories": ["paring_knife", "cutlery", "tool", "physical_object", "object"],
+        "attributes": {"color": "silver"},
+        "parent": "kitchen_counter_01",
+        "children": [],
+        "source": "assembly",
+        "status": "confirmed",
+        "notes": "Used in H6, H7, H9, H10."
+      },
+      {
+        "obj_id": "cutting_board_01",
+        "template_name": "cutting_board",
+        "label": "cutting board",
+        "categories": ["cutting_board", "kitchen_item", "physical_object", "object"],
+        "attributes": {"color": "wood"},
+        "parent": "kitchen_counter_01",
+        "children": ["apple_core_a_01", "apple_core_b_01", "apple_core_c_01", "apple_core_d_01"],
+        "source": "assembly",
+        "status": "confirmed",
+        "notes": "Retains the four extracted cores."
+      },
+      {
+        "obj_id": "sink_01",
+        "template_name": "sink",
+        "label": "sink",
+        "categories": ["sink", "fixture", "physical_object", "object"],
+        "attributes": {"color": "silver"},
+        "parent": "kitchen_counter_01",
+        "children": ["apple_seeds_01"],
+        "source": "assembly",
+        "status": "confirmed",
+        "notes": "Receives the flicked seeds in H11."
+      },
+      {
+        "obj_id": "faucet_tap_01",
+        "template_name": "faucet_tap",
+        "label": "faucet",
+        "categories": ["faucet_tap", "fixture", "physical_object", "object"],
+        "attributes": {"color": "silver", "state": "closed"},
+        "parent": "kitchen_counter_01",
+        "children": [],
+        "source": "assembly",
+        "status": "confirmed",
+        "notes": "Turned on and off in H2."
+      },
+      {
+        "obj_id": "compost_crock_01",
+        "template_name": "compost_crock",
+        "label": "compost crock",
+        "categories": ["compost_crock", "container", "physical_object", "object"],
+        "attributes": {"color": "white"},
+        "parent": "kitchen_counter_01",
+        "children": ["peel_strip_01"],
+        "source": "assembly",
+        "status": "confirmed",
+        "notes": "Receives the discarded peel in H13."
+      },
+      {
+        "obj_id": "bowl_destination_01",
+        "template_name": "bowl",
+        "label": "destination_bowl",
+        "categories": ["bowl", "container", "physical_object", "object"],
+        "attributes": {"color": "white", "cleanliness": "clean"},
+        "parent": "kitchen_counter_01",
+        "children": ["apple_quarter_a_01", "apple_quarter_b_01", "apple_quarter_c_01", "apple_quarter_d_01"],
+        "source": "assembly",
+        "status": "added",
+        "notes": "Introduced in H12 to receive the four quarters."
+      },
+      {
+        "obj_id": "apple_flesh_exposed_01",
+        "template_name": "apple_flesh",
+        "label": "exposed_flesh",
+        "categories": ["apple_flesh", "fruit_flesh", "physical_object", "object"],
+        "attributes": {"color": "light_brown", "surface_state": "wet", "oxidation": "light"},
+        "parent": "apple_quarter_a_01",
+        "children": [],
+        "source": "assembly",
+        "status": "added",
+        "notes": "Created in H6 when the blade breached the skin."
+      },
+      {
+        "obj_id": "juice_01",
+        "template_name": "juice",
+        "label": "juice_pool",
+        "categories": ["apple_juice", "liquid", "physical_object", "object"],
+        "attributes": {"color": "clear_yellowish", "state": "liquid"},
+        "parent": "apple_quarter_a_01",
+        "children": [],
+        "source": "assembly",
+        "status": "added",
+        "notes": "Created in H6 as cell rupture releases vacuolar fluid."
+      },
+      {
+        "obj_id": "juice_on_hand_01",
+        "template_name": "juice",
+        "label": "juice_film",
+        "categories": ["apple_juice", "liquid", "physical_object", "object"],
+        "attributes": {"color": "clear_yellowish", "state": "liquid", "viscosity": "slightly_sticky"},
+        "parent": "left_hand_01",
+        "children": [],
+        "source": "assembly",
+        "status": "added",
+        "notes": "Created in H8 as juice runs down the wrist."
+      },
+      {
+        "obj_id": "peel_strip_01",
+        "template_name": "peel_strip",
+        "label": "peel_ribbon",
+        "categories": ["apple_peel", "fruit_skin", "physical_object", "object"],
+        "attributes": {"color": "browning_at_edges", "oxidation": "light", "material": "apple_skin", "length_cm": 40.0},
+        "parent": "compost_crock_01",
+        "children": [],
+        "source": "assembly",
+        "status": "added",
+        "notes": "Created in H7."
+      },
+      {
+        "obj_id": "apple_quarter_a_01",
+        "template_name": "apple",
+        "label": "peeled_quarter",
+        "categories": ["apple", "fruit", "food", "physical_object", "object"],
+        "attributes": {"color": "light_brown", "skin_present": false, "physical_state": "peeled", "oxidation": "light", "core_present": false},
+        "parent": "bowl_destination_01",
+        "children": ["apple_flesh_exposed_01", "juice_01"],
+        "source": "assembly",
+        "status": "added",
+        "notes": "One of four quarters produced by H9. Clips inherited from the two bisections. Core removed by H10."
+      },
+      {
+        "obj_id": "apple_quarter_b_01",
+        "template_name": "apple",
+        "label": "peeled_quarter",
+        "categories": ["apple", "fruit", "food", "physical_object", "object"],
+        "attributes": {"color": "light_brown", "skin_present": false, "physical_state": "peeled", "oxidation": "light", "core_present": false},
+        "parent": "bowl_destination_01",
+        "children": [],
+        "source": "assembly",
+        "status": "added",
+        "notes": "One of four quarters produced by H9."
+      },
+      {
+        "obj_id": "apple_quarter_c_01",
+        "template_name": "apple",
+        "label": "peeled_quarter",
+        "categories": ["apple", "fruit", "food", "physical_object", "object"],
+        "attributes": {"color": "light_brown", "skin_present": false, "physical_state": "peeled", "oxidation": "light", "core_present": false},
+        "parent": "bowl_destination_01",
+        "children": [],
+        "source": "assembly",
+        "status": "added",
+        "notes": "One of four quarters produced by H9."
+      },
+      {
+        "obj_id": "apple_quarter_d_01",
+        "template_name": "apple",
+        "label": "peeled_quarter",
+        "categories": ["apple", "fruit", "food", "physical_object", "object"],
+        "attributes": {"color": "light_brown", "skin_present": false, "physical_state": "peeled", "oxidation": "light", "core_present": false},
+        "parent": "bowl_destination_01",
+        "children": [],
+        "source": "assembly",
+        "status": "added",
+        "notes": "One of four quarters produced by H9."
+      },
+      {
+        "obj_id": "apple_core_a_01",
+        "template_name": "apple_core",
+        "label": "core_wedge",
+        "categories": ["apple_core", "fruit_core", "physical_object", "object"],
+        "attributes": {"color": "pale_translucent", "material": "apple_core"},
+        "parent": "cutting_board_01",
+        "children": [],
+        "source": "assembly",
+        "status": "added",
+        "notes": "Extracted from apple_quarter_a_01 by H10."
+      },
+      {
+        "obj_id": "apple_core_b_01",
+        "template_name": "apple_core",
+        "label": "core_wedge",
+        "categories": ["apple_core", "fruit_core", "physical_object", "object"],
+        "attributes": {"color": "pale_translucent", "material": "apple_core"},
+        "parent": "cutting_board_01",
+        "children": [],
+        "source": "assembly",
+        "status": "added",
+        "notes": "Core wedge from apple_quarter_b_01."
+      },
+      {
+        "obj_id": "apple_core_c_01",
+        "template_name": "apple_core",
+        "label": "core_wedge",
+        "categories": ["apple_core", "fruit_core", "physical_object", "object"],
+        "attributes": {"color": "pale_translucent", "material": "apple_core"},
+        "parent": "cutting_board_01",
+        "children": [],
+        "source": "assembly",
+        "status": "added",
+        "notes": "Core wedge from apple_quarter_c_01."
+      },
+      {
+        "obj_id": "apple_core_d_01",
+        "template_name": "apple_core",
+        "label": "core_wedge",
+        "categories": ["apple_core", "fruit_core", "physical_object", "object"],
+        "attributes": {"color": "pale_translucent", "material": "apple_core"},
+        "parent": "cutting_board_01",
+        "children": [],
+        "source": "assembly",
+        "status": "added",
+        "notes": "Core wedge from apple_quarter_d_01."
+      },
+      {
+        "obj_id": "apple_seeds_01",
+        "template_name": "apple_seeds",
+        "label": "apple_seeds",
+        "categories": ["apple_seeds", "seed", "physical_object", "object"],
+        "attributes": {"color": "dark_brown", "material": "apple_seed"},
+        "parent": "sink_01",
+        "children": [],
+        "source": "assembly",
+        "status": "added",
+        "notes": "Three dark brown seeds collected from the cores and flicked into the sink in H11."
+      }
+    ],
+    "unresolved": [
+      {"claimed_by": "parts_prior for apple_01", "reason": "stem and calyx claimed but survive only as elements inside the quarters", "status": "corrected"},
+      {"claimed_by": "parts_prior for apple_01", "reason": "cuticle and epidermis claimed but skin modelled as single element", "status": "corrected"},
+      {"claimed_by": "parts_prior for paring_knife_01", "reason": "bolster, rivets, tip claimed but knife modelled as two boxes", "status": "corrected"},
+      {"claimed_by": "parts_prior for apple_01", "reason": "juice claimed as part but only two juice objects instantiated", "status": "corrected"}
+    ]
+  },
+  "reconstituted_action_timeline": {
+    "actions": [
+      {
+        "instance_id": "mem_000011.actions.0",
+        "template_name": "retrieve_object_from_container",
+        "duration": 2.0,
+        "start_time": 0.0,
+        "end_time": 2.0,
+        "status": "confirmed",
+        "preconditions": ["apple in bowl", "actor hand free", "bowl reachable"],
+        "changes": [
+          {"object": "apple_01", "attribute": "position", "old": "in bowl", "new": "in left_hand"},
+          {"object": "left_hand_01", "attribute": "grip_type", "old": "open", "new": "power_grasp"},
+          {"object": "apple_01", "attribute": "temperature", "old": "cold", "new": "cold"},
+          {"object": "apple_01", "attribute": "surface_state", "old": "dry", "new": "dry"},
+          {"object": "apple_01", "attribute": "physical_state", "old": "intact", "new": "intact"}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_visual", "qualia": ["apple_in_bowl"], "source": ["apple_01", "bowl_source_01"]},
+          {"type": "sensory_tactile", "qualia": ["cold", "waxy", "dense"], "source": ["apple_01"]}
+        ],
+        "natural_process_links": ["N1_initial_material_state"],
+        "operations_ref": ["emit_event", "move", "contact", "attach", "contact", "change_properties", "move", "move", "change_properties", "emit_event", "emit_event"],
+        "sub_actions": [
+          {
+            "instance_id": "H1.1",
+            "template_name": "perceive_target_location",
+            "duration": 0.3,
+            "start_time": 0.0,
+            "end_time": 0.3,
+            "status": "confirmed",
+            "preconditions": ["attention directed", "target visible"],
+            "changes": [{"object": "eyes_01", "attribute": "gaze_direction", "old": "ahead", "new": "toward_apple"}],
+            "sensory_effects": [{"type": "sensory_visual", "qualia": ["apple_in_bowl"], "source": ["apple_01", "bowl_source_01"]}],
+            "natural_process_links": [],
+            "operations_ref": ["emit_event"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H1.2",
+            "template_name": "reach_toward_object",
+            "duration": 0.4,
+            "start_time": 0.3,
+            "end_time": 0.7,
+            "status": "confirmed",
+            "preconditions": ["target location known", "arm free"],
+            "changes": [{"object": "left_hand_01", "attribute": "position", "old": "beside_body", "new": "near_apple"}],
+            "sensory_effects": [{"type": "sensory_proprioceptive", "qualia": ["hand_moving"], "source": ["proprioceptors"]}],
+            "natural_process_links": [],
+            "operations_ref": ["move"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H1.3",
+            "template_name": "contact_object",
+            "duration": 0.3,
+            "start_time": 0.7,
+            "end_time": 1.0,
+            "status": "corrected",
+            "preconditions": ["hand near apple"],
+            "changes": [{"object": "left_hand_01", "attribute": "contact_state", "old": "none", "new": "touching_apple"}],
+            "sensory_effects": [{"type": "sensory_tactile", "qualia": ["cold", "waxy"], "source": ["apple_01"]}],
+            "natural_process_links": ["N1_thermal_equilibration_onset"],
+            "operations_ref": ["contact"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H1.4",
+            "template_name": "grasp_object",
+            "duration": 0.4,
+            "start_time": 1.0,
+            "end_time": 1.4,
+            "status": "corrected",
+            "preconditions": ["contact established", "apple within grip span"],
+            "changes": [
+              {"object": "left_hand_01", "attribute": "grip_type", "old": "open", "new": "power_grasp"},
+              {"object": "left_hand_01", "attribute": "grip_force_N", "old": 0.0, "new": 8.0}
+            ],
+            "sensory_effects": [{"type": "sensory_tactile", "qualia": ["pressure", "texture", "cold"], "source": ["apple_01"]}],
+            "natural_process_links": ["N1"],
+            "operations_ref": ["attach", "contact", "change_properties"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H1.5",
+            "template_name": "lift_object",
+            "duration": 0.4,
+            "start_time": 1.4,
+            "end_time": 1.8,
+            "status": "corrected",
+            "preconditions": ["grasp stable"],
+            "changes": [{"object": "apple_01", "attribute": "position.z", "old": 94.0, "new": 119.0}],
+            "sensory_effects": [{"type": "sensory_proprioceptive", "qualia": ["weight", "density"], "source": ["apple_01"]}],
+            "natural_process_links": ["N1_turgor"],
+            "operations_ref": ["move"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H1.6",
+            "template_name": "transport_object_out_of_container",
+            "duration": 0.2,
+            "start_time": 1.8,
+            "end_time": 2.0,
+            "status": "corrected",
+            "preconditions": ["apple lifted"],
+            "changes": [{"object": "apple_01", "attribute": "position", "old": "above_bowl", "new": "workspace_above_counter"}],
+            "sensory_effects": [],
+            "natural_process_links": [],
+            "operations_ref": ["move"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H1.s",
+            "template_name": "sense_object_properties_during_grasp",
+            "duration": 2.0,
+            "start_time": 0.2,
+            "end_time": 2.2,
+            "status": "confirmed",
+            "preconditions": ["grasp contact"],
+            "changes": [],
+            "sensory_effects": [
+              {"type": "sensory_tactile", "qualia": ["cold", "waxy", "dense"], "source": ["apple_01"]},
+              {"type": "sensory_tactile", "qualia": ["cold"], "source": ["apple_01.surface.temperature"]},
+              {"type": "sensory_tactile", "qualia": ["waxy", "tight"], "source": ["apple_01.surface.texture"]},
+              {"type": "sensory_proprioceptive", "qualia": ["heavier_than_looks", "dense_with_water"], "source": ["apple_01.mass.density"]}
+            ],
+            "natural_process_links": ["N1"],
+            "operations_ref": ["emit_event"],
+            "sub_actions": [
+              {
+                "instance_id": "H1.s1",
+                "template_name": "sense_temperature",
+                "duration": 0.5,
+                "start_time": 0.2,
+                "end_time": 0.7,
+                "status": "confirmed",
+                "preconditions": ["contact"],
+                "changes": [],
+                "sensory_effects": [{"type": "sensory_tactile", "qualia": ["cold"], "source": ["apple_01.surface.temperature"]}],
+                "natural_process_links": ["N1.1"],
+                "operations_ref": ["emit_event"],
+                "sub_actions": []
+              },
+              {
+                "instance_id": "H1.s2",
+                "template_name": "sense_surface_texture",
+                "duration": 0.5,
+                "start_time": 0.3,
+                "end_time": 0.8,
+                "status": "confirmed",
+                "preconditions": ["contact"],
+                "changes": [],
+                "sensory_effects": [{"type": "sensory_tactile", "qualia": ["tight", "waxy"], "source": ["apple_01.surface.texture"]}],
+                "natural_process_links": ["N1.3"],
+                "operations_ref": ["emit_event"],
+                "sub_actions": []
+              },
+              {
+                "instance_id": "H1.s3",
+                "template_name": "sense_weight_by_proprioception",
+                "duration": 1.3,
+                "start_time": 0.7,
+                "end_time": 2.0,
+                "status": "confirmed",
+                "preconditions": ["lift/grasp"],
+                "changes": [],
+                "sensory_effects": [{"type": "sensory_proprioceptive", "qualia": ["heavier_than_looks", "dense_with_water"], "source": ["apple_01.mass.density"]}],
+                "natural_process_links": ["N1.2"],
+                "operations_ref": ["emit_event"],
+                "sub_actions": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem_000011.actions.1",
+        "template_name": "wash_object_under_water",
+        "duration": 8.0,
+        "start_time": 2.0,
+        "end_time": 10.0,
+        "status": "corrected",
+        "preconditions": ["apple held", "tap accessible", "water available"],
+        "changes": [
+          {"object": "apple_01", "attribute": "surface_state", "old": "dry", "new": "wet"},
+          {"object": "apple_01", "attribute": "moisture", "old": "dry", "new": "wet"},
+          {"object": "faucet_tap_01", "attribute": "state", "old": "closed", "new": "closed"}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_auditory", "qualia": ["running_water"], "source": ["faucet_tap_01"]},
+          {"type": "sensory_tactile", "qualia": ["stem_dimple", "scar_line"], "source": ["apple_01"]}
+        ],
+        "natural_process_links": ["N2_water_beading_and_runoff"],
+        "operations_ref": ["move", "change_properties", "add_object", "move", "compound", "compound", "compound", "compound", "compound", "change_properties", "remove_object", "move", "emit_event", "emit_event", "emit_event"],
+        "sub_actions": [
+          {
+            "instance_id": "H2.1",
+            "template_name": "transport_object_to_wash_location",
+            "duration": 0.5,
+            "start_time": 2.0,
+            "end_time": 2.5,
+            "status": "confirmed",
+            "preconditions": ["apple held"],
+            "changes": [{"object": "left_hand_01", "attribute": "position", "old": "workspace", "new": "under_faucet"}],
+            "sensory_effects": [],
+            "natural_process_links": [],
+            "operations_ref": ["move"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H2.2",
+            "template_name": "activate_water_flow",
+            "duration": 0.5,
+            "start_time": 2.5,
+            "end_time": 3.0,
+            "status": "confirmed",
+            "preconditions": ["faucet closed"],
+            "changes": [
+              {"object": "faucet_tap_01", "attribute": "state", "old": "closed", "new": "open"},
+              {"object": "water_stream_01", "attribute": "exists", "old": false, "new": true}
+            ],
+            "sensory_effects": [{"type": "sensory_auditory", "qualia": ["running_water"], "source": ["faucet_tap_01"]}],
+            "natural_process_links": ["N2.1"],
+            "operations_ref": ["change_properties", "add_object"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H2.3",
+            "template_name": "position_object_under_stream",
+            "duration": 1.0,
+            "start_time": 3.0,
+            "end_time": 4.0,
+            "status": "confirmed",
+            "preconditions": ["water flowing"],
+            "changes": [{"object": "apple_01", "attribute": "surface_state", "old": "dry", "new": "damp"}],
+            "sensory_effects": [],
+            "natural_process_links": ["N2.1"],
+            "operations_ref": ["move"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H2.4.1",
+            "template_name": "rotate_object_under_water_cycle_1",
+            "duration": 1.0,
+            "start_time": 4.0,
+            "end_time": 5.0,
+            "status": "corrected",
+            "preconditions": ["water flowing", "apple held"],
+            "changes": [
+              {"object": "apple_01", "attribute": "surface_state", "old": "damp", "new": "wet"},
+              {"object": "apple_01", "attribute": "orientation", "old": "0", "new": "90deg"}
+            ],
+            "sensory_effects": [{"type": "sensory_tactile", "qualia": ["wet", "cool"], "source": ["water_stream_01"]}],
+            "natural_process_links": ["N2"],
+            "operations_ref": ["compound"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H2.4.2",
+            "template_name": "rotate_object_under_water_cycle_2",
+            "duration": 1.0,
+            "start_time": 5.0,
+            "end_time": 6.0,
+            "status": "corrected",
+            "preconditions": ["water flowing"],
+            "changes": [
+              {"object": "apple_01", "attribute": "surface_state", "old": "wet", "new": "wet"},
+              {"object": "apple_01", "attribute": "orientation", "old": "90deg", "new": "180deg"}
+            ],
+            "sensory_effects": [],
+            "natural_process_links": ["N2"],
+            "operations_ref": ["compound"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H2.4.3",
+            "template_name": "rotate_object_under_water_cycle_3",
+            "duration": 1.0,
+            "start_time": 6.0,
+            "end_time": 7.0,
+            "status": "corrected",
+            "preconditions": ["water flowing"],
+            "changes": [
+              {"object": "apple_01", "attribute": "surface_state", "old": "wet", "new": "wet"},
+              {"object": "apple_01", "attribute": "orientation", "old": "180deg", "new": "270deg"}
+            ],
+            "sensory_effects": [],
+            "natural_process_links": ["N2"],
+            "operations_ref": ["compound"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H2.4.4",
+            "template_name": "rotate_object_under_water_cycle_4",
+            "duration": 1.0,
+            "start_time": 7.0,
+            "end_time": 8.0,
+            "status": "corrected",
+            "preconditions": ["water flowing"],
+            "changes": [
+              {"object": "apple_01", "attribute": "surface_state", "old": "wet", "new": "wet"},
+              {"object": "apple_01", "attribute": "orientation", "old": "270deg", "new": "360deg"}
+            ],
+            "sensory_effects": [],
+            "natural_process_links": ["N2"],
+            "operations_ref": ["compound"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H2.4.5",
+            "template_name": "rotate_object_under_water_cycle_5",
+            "duration": 1.0,
+            "start_time": 8.0,
+            "end_time": 9.0,
+            "status": "corrected",
+            "preconditions": ["water flowing"],
+            "changes": [
+              {"object": "apple_01", "attribute": "surface_state", "old": "wet", "new": "wet"},
+              {"object": "apple_01", "attribute": "orientation", "old": "360deg", "new": "450deg"}
+            ],
+            "sensory_effects": [],
+            "natural_process_links": ["N2"],
+            "operations_ref": ["compound"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H2.5",
+            "template_name": "complete_rinse_and_remove_from_flow",
+            "duration": 1.0,
+            "start_time": 9.0,
+            "end_time": 10.0,
+            "status": "corrected",
+            "preconditions": ["rinse done"],
+            "changes": [
+              {"object": "faucet_tap_01", "attribute": "state", "old": "open", "new": "closed"},
+              {"object": "water_stream_01", "attribute": "exists", "old": true, "new": false},
+              {"object": "left_hand_01", "attribute": "position", "old": "under_faucet", "new": "workspace"}
+            ],
+            "sensory_effects": [],
+            "natural_process_links": ["N2.4"],
+            "operations_ref": ["change_properties", "remove_object", "move"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H2.s",
+            "template_name": "sense_surface_features_during_washing",
+            "duration": 8.0,
+            "start_time": 2.0,
+            "end_time": 10.0,
+            "status": "confirmed",
+            "preconditions": ["contact"],
+            "changes": [],
+            "sensory_effects": [{"type": "sensory_tactile", "qualia": ["stem_dimple", "scar_line"], "source": ["apple_01.surface.features"]}],
+            "natural_process_links": [],
+            "operations_ref": ["emit_event"],
+            "sub_actions": [
+              {
+                "instance_id": "H2.s1",
+                "template_name": "probe_feature_with_fingers",
+                "duration": 1.0,
+                "start_time": 8.0,
+                "end_time": 9.0,
+                "status": "confirmed",
+                "preconditions": ["finger access"],
+                "changes": [],
+                "sensory_effects": [{"type": "sensory_tactile", "qualia": ["dimple", "crater", "scar"], "source": ["apple_01.surface.features"]}],
+                "natural_process_links": [],
+                "operations_ref": ["emit_event"],
+                "sub_actions": []
+              },
+              {
+                "instance_id": "H2.s2",
+                "template_name": "detect_surface_irregularity",
+                "duration": 1.0,
+                "start_time": 8.5,
+                "end_time": 9.5,
+                "status": "confirmed",
+                "preconditions": ["tactile signals"],
+                "changes": [],
+                "sensory_effects": [{"type": "sensory_tactile", "qualia": ["raised_line", "dimple"], "source": ["apple_01.surface.features"]}],
+                "natural_process_links": [],
+                "operations_ref": ["emit_event"],
+                "sub_actions": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem_000011.actions.2",
+        "template_name": "dry_object_on_fabric",
+        "duration": 4.0,
+        "start_time": 10.0,
+        "end_time": 14.0,
+        "status": "corrected",
+        "preconditions": ["apple wet", "shirt accessible"],
+        "changes": [
+          {"object": "apple_01", "attribute": "surface_state", "old": "wet", "new": "dry"},
+          {"object": "apple_01", "attribute": "moisture", "old": "wet", "new": "dry"},
+          {"object": "apple_01", "attribute": "color", "old": "red_brushed", "new": "red_matte"},
+          {"object": "apple_01", "attribute": "surface_optics", "old": "glossy", "new": "matte"},
+          {"object": "shirt_01", "attribute": "moisture", "old": "dry", "new": "damp"},
+          {"object": "shirt_01", "attribute": "surface_state", "old": "dry", "new": "damp"}
+        ],
+        "sensory_effects": [{"type": "sensory_visual", "qualia": ["glossy_to_matte_red"], "source": ["apple_01"]}],
+        "natural_process_links": ["N3_fabric_drying_and_surface_optical_change"],
+        "operations_ref": ["move", "contact", "compound", "compound", "compound", "compound", "compound", "release", "move", "emit_event", "emit_event"],
+        "sub_actions": [
+          {
+            "instance_id": "H3.1",
+            "template_name": "bring_object_to_absorbent_surface",
+            "duration": 0.5,
+            "start_time": 10.0,
+            "end_time": 10.5,
+            "status": "confirmed",
+            "preconditions": ["shirt accessible"],
+            "changes": [],
+            "sensory_effects": [],
+            "natural_process_links": [],
+            "operations_ref": ["move"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H3.2.1",
+            "template_name": "rub_object_against_fabric_cycle_1",
+            "duration": 0.5,
+            "start_time": 10.5,
+            "end_time": 11.0,
+            "status": "corrected",
+            "preconditions": ["contact with fabric"],
+            "changes": [
+              {"object": "apple_01", "attribute": "surface_state", "old": "wet", "new": "damp"},
+              {"object": "shirt_01", "attribute": "moisture", "old": "dry", "new": "damp"}
+            ],
+            "sensory_effects": [],
+            "natural_process_links": ["N3.1"],
+            "operations_ref": ["compound"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H3.2.2",
+            "template_name": "rub_object_against_fabric_cycle_2",
+            "duration": 0.5,
+            "start_time": 11.0,
+            "end_time": 11.5,
+            "status": "corrected",
+            "preconditions": ["contact with fabric"],
+            "changes": [
+              {"object": "apple_01", "attribute": "surface_state", "old": "damp", "new": "damp"},
+              {"object": "shirt_01", "attribute": "moisture", "old": "damp", "new": "damp"}
+            ],
+            "sensory_effects": [],
+            "natural_process_links": ["N3.1"],
+            "operations_ref": ["compound"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H3.2.3",
+            "template_name": "rub_object_against_fabric_cycle_3",
+            "duration": 0.5,
+            "start_time": 11.5,
+            "end_time": 12.0,
+            "status": "corrected",
+            "preconditions": ["contact with fabric"],
+            "changes": [
+              {"object": "apple_01", "attribute": "surface_state", "old": "damp", "new": "dry"},
+              {"object": "shirt_01", "attribute": "moisture", "old": "damp", "new": "damp"}
+            ],
+            "sensory_effects": [],
+            "natural_process_links": ["N3.2"],
+            "operations_ref": ["compound"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H3.2.4",
+            "template_name": "rub_object_against_fabric_cycle_4",
+            "duration": 0.5,
+            "start_time": 12.0,
+            "end_time": 12.5,
+            "status": "corrected",
+            "preconditions": ["contact with fabric"],
+            "changes": [{"object": "apple_01", "attribute": "surface_state", "old": "dry", "new": "dry"}],
+            "sensory_effects": [],
+            "natural_process_links": [],
+            "operations_ref": ["compound"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H3.2.5",
+            "template_name": "rub_object_against_fabric_cycle_5",
+            "duration": 0.5,
+            "start_time": 12.5,
+            "end_time": 13.0,
+            "status": "corrected",
+            "preconditions": ["contact with fabric"],
+            "changes": [
+              {"object": "apple_01", "attribute": "color", "old": "red_brushed", "new": "red_matte"},
+              {"object": "apple_01", "attribute": "surface_optics", "old": "glossy", "new": "matte"}
+            ],
+            "sensory_effects": [],
+            "natural_process_links": ["N3.3"],
+            "operations_ref": ["compound"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H3.3",
+            "template_name": "inspect_object_for_residual_liquid",
+            "duration": 0.7,
+            "start_time": 13.0,
+            "end_time": 13.7,
+            "status": "confirmed",
+            "preconditions": ["visual attention"],
+            "changes": [],
+            "sensory_effects": [{"type": "sensory_visual", "qualia": ["matte"], "source": ["apple_01.surface.optics"]}],
+            "natural_process_links": ["N3.3"],
+            "operations_ref": ["emit_event"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H3.4",
+            "template_name": "release_absorbent_material",
+            "duration": 0.3,
+            "start_time": 13.7,
+            "end_time": 14.0,
+            "status": "confirmed",
+            "preconditions": ["drying complete"],
+            "changes": [],
+            "sensory_effects": [],
+            "natural_process_links": [],
+            "operations_ref": ["release", "move"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H3.s",
+            "template_name": "surface_drying_and_optical_change",
+            "duration": 4.0,
+            "start_time": 10.0,
+            "end_time": 14.0,
+            "status": "confirmed",
+            "preconditions": ["water film present"],
+            "changes": [
+              {"object": "apple_01", "attribute": "surface_optics", "old": "glossy", "new": "matte"},
+              {"object": "apple_01", "attribute": "moisture", "old": "wet", "new": "dry"}
+            ],
+            "sensory_effects": [{"type": "sensory_visual", "qualia": ["matte_red"], "source": ["apple_01.surface.optics"]}],
+            "natural_process_links": ["N3"],
+            "operations_ref": ["emit_event"],
+            "sub_actions": []
+          }
+        ]
+      },
+      {
+        "instance_id": "mem_000011.actions.3",
+        "template_name": "place_object_on_surface",
+        "duration": 2.0,
+        "start_time": 14.0,
+        "end_time": 16.0,
+        "status": "confirmed",
+        "preconditions": ["apple dry", "cutting board stable"],
+        "changes": [
+          {"object": "apple_01", "attribute": "position", "old": "in left_hand", "new": "on cutting_board"},
+          {"object": "apple_01", "attribute": "orientation", "old": "any", "new": "stem_side_up"},
+          {"object": "apple_01", "attribute": "linear_velocity", "old": null, "new": 0.0},
+          {"object": "apple_01", "attribute": "angular_velocity", "old": null, "new": 0.0}
+        ],
+        "sensory_effects": [],
+        "natural_process_links": ["static_friction"],
+        "operations_ref": ["move", "rotate", "set_transform", "detach", "release", "attach", "contact", "change_properties", "move", "emit_event"],
+        "sub_actions": [
+          {
+            "instance_id": "H4.1",
+            "template_name": "move_object_over_support_surface",
+            "duration": 0.5,
+            "start_time": 14.0,
+            "end_time": 14.5,
+            "status": "confirmed",
+            "preconditions": ["board reachable"],
+            "changes": [],
+            "sensory_effects": [],
+            "natural_process_links": [],
+            "operations_ref": ["move"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H4.2",
+            "template_name": "orient_object_for_task",
+            "duration": 0.5,
+            "start_time": 14.5,
+            "end_time": 15.0,
+            "status": "confirmed",
+            "preconditions": ["can rotate apple"],
+            "changes": [{"object": "apple_01", "attribute": "orientation", "old": "any", "new": "stem_side_up"}],
+            "sensory_effects": [],
+            "natural_process_links": [],
+            "operations_ref": ["rotate"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H4.3",
+            "template_name": "place_object_on_surface",
+            "duration": 0.5,
+            "start_time": 15.0,
+            "end_time": 15.5,
+            "status": "confirmed",
+            "preconditions": ["over board"],
+            "changes": [
+              {"object": "apple_01", "attribute": "position", "old": "in left_hand", "new": "on cutting_board"},
+              {"object": "apple_01", "attribute": "contact_state", "old": "held", "new": "rest_on_board"}
+            ],
+            "sensory_effects": [],
+            "natural_process_links": ["static_friction"],
+            "operations_ref": ["set_transform", "detach", "release", "attach", "contact"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H4.4",
+            "template_name": "stabilize_object_by_pressing",
+            "duration": 0.5,
+            "start_time": 15.5,
+            "end_time": 16.0,
+            "status": "confirmed",
+            "preconditions": ["contact with board"],
+            "changes": [
+              {"object": "apple_01", "attribute": "linear_velocity", "old": null, "new": 0.0},
+              {"object": "apple_01", "attribute": "angular_velocity", "old": null, "new": 0.0}
+            ],
+            "sensory_effects": [],
+            "natural_process_links": ["static_friction"],
+            "operations_ref": ["change_properties", "move"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H4.s1",
+            "template_name": "static_friction_stabilizes_object",
+            "duration": 2.0,
+            "start_time": 15.0,
+            "end_time": 17.0,
+            "status": "confirmed",
+            "preconditions": ["contact", "friction coefficient sufficient"],
+            "changes": [],
+            "sensory_effects": [],
+            "natural_process_links": ["static_friction"],
+            "operations_ref": ["emit_event"],
+            "sub_actions": []
+          }
+        ]
+      },
+      {
+        "instance_id": "mem_000011.actions.4",
+        "template_name": "prepare_tool_and_pin_object",
+        "duration": 2.0,
+        "start_time": 16.0,
+        "end_time": 18.0,
+        "status": "confirmed",
+        "preconditions": ["knife accessible", "hands free"],
+        "changes": [
+          {"object": "right_hand_01", "attribute": "grip_type", "old": "open", "new": "pinch_grip"},
+          {"object": "right_hand_01", "attribute": "grip_force_N", "old": 0.0, "new": 6.0},
+          {"object": "left_hand_01", "attribute": "finger_posture", "old": "relaxed", "new": "curled_back"},
+          {"object": "left_hand_01", "attribute": "grip_type", "old": "open", "new": "pin"},
+          {"object": "left_hand_01", "attribute": "grip_force_N", "old": 0.0, "new": 5.0}
+        ],
+        "sensory_effects": [{"type": "sensory_tactile", "qualia": ["worn_handle", "bolster_brace"], "source": ["paring_knife_01"]}],
+        "natural_process_links": [],
+        "operations_ref": ["move", "attach", "contact", "change_properties", "rotate", "move", "contact", "change_properties", "emit_event"],
+        "sub_actions": [
+          {
+            "instance_id": "H5.1",
+            "template_name": "reach_toward_tool",
+            "duration": 0.5,
+            "start_time": 16.0,
+            "end_time": 16.5,
+            "status": "confirmed",
+            "preconditions": ["knife location known"],
+            "changes": [{"object": "right_hand_01", "attribute": "position", "old": "beside_body", "new": "near_paring_knife"}],
+            "sensory_effects": [],
+            "natural_process_links": [],
+            "operations_ref": ["move"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H5.2",
+            "template_name": "grip_tool_with_precision_brace",
+            "duration": 0.5,
+            "start_time": 16.5,
+            "end_time": 17.0,
+            "status": "corrected",
+            "preconditions": ["contact with handle"],
+            "changes": [
+              {"object": "right_hand_01", "attribute": "grip_type", "old": "open", "new": "pinch_grip"},
+              {"object": "right_hand_01", "attribute": "grip_force_N", "old": 0.0, "new": 6.0},
+              {"object": "paring_knife_01", "attribute": "parent", "old": "kitchen_counter", "new": "right_hand_01"}
+            ],
+            "sensory_effects": [{"type": "sensory_tactile", "qualia": ["worn_handle", "bolster_brace"], "source": ["paring_knife_01"]}],
+            "natural_process_links": [],
+            "operations_ref": ["attach", "contact", "change_properties", "rotate"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H5.3",
+            "template_name": "contact_and_pin_object",
+            "duration": 0.5,
+            "start_time": 17.0,
+            "end_time": 17.5,
+            "status": "corrected",
+            "preconditions": ["apple on board", "left hand free"],
+            "changes": [
+              {"object": "left_hand_01", "attribute": "contact_state", "old": "none", "new": "holding_apple"},
+              {"object": "left_hand_01", "attribute": "grip_force_N", "old": 0.0, "new": 5.0}
+            ],
+            "sensory_effects": [],
+            "natural_process_links": ["static_friction"],
+            "operations_ref": ["move", "contact", "change_properties"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H5.4",
+            "template_name": "adopt_safe_hand_posture",
+            "duration": 0.5,
+            "start_time": 17.5,
+            "end_time": 18.0,
+            "status": "confirmed",
+            "preconditions": ["hands on tool and apple"],
+            "changes": [{"object": "left_hand_01", "attribute": "finger_posture", "old": "relaxed", "new": "curled_back"}],
+            "sensory_effects": [],
+            "natural_process_links": [],
+            "operations_ref": ["change_properties"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H5.s",
+            "template_name": "sense_grip_readiness",
+            "duration": 2.0,
+            "start_time": 16.0,
+            "end_time": 18.0,
+            "status": "confirmed",
+            "preconditions": ["grip established"],
+            "changes": [],
+            "sensory_effects": [{"type": "sensory_proprioceptive", "qualia": ["pressure", "balance"], "source": ["hand", "knife"]}],
+            "natural_process_links": [],
+            "operations_ref": ["emit_event"],
+            "sub_actions": []
+          }
+        ]
+      },
+      {
+        "instance_id": "mem_000011.actions.5",
+        "template_name": "initiate_cut",
+        "duration": 1.0,
+        "start_time": 18.0,
+        "end_time": 19.0,
+        "status": "corrected",
+        "preconditions": ["knife gripped", "apple pinned"],
+        "changes": [
+          {"object": "apple_01", "attribute": "surface_integrity", "old": "intact", "new": "breached"},
+          {"object": "apple_flesh_exposed_01", "attribute": "exists", "old": false, "new": true},
+          {"object": "juice_01", "attribute": "exists", "old": false, "new": true}
+        ],
+        "sensory_effects": [{"type": "sensory_auditory", "qualia": ["soft_pop"], "source": ["apple_01", "paring_knife_01"]}],
+        "natural_process_links": ["N4_cut_induced_tissue_exposure"],
+        "operations_ref": ["move", "set_transform", "contact", "change_properties", "add_object", "change_properties", "add_object", "release", "move", "emit_event"],
+        "sub_actions": [
+          {
+            "instance_id": "H6.1",
+            "template_name": "position_blade_at_target_site",
+            "duration": 0.2,
+            "start_time": 18.0,
+            "end_time": 18.2,
+            "status": "confirmed",
+            "preconditions": ["blade controlled"],
+            "changes": [{"object": "paring_knife_01", "attribute": "position", "old": "in_right_hand", "new": "at_apple_stem"}],
+            "sensory_effects": [],
+            "natural_process_links": [],
+            "operations_ref": ["move", "set_transform"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H6.2",
+            "template_name": "apply_cutting_force",
+            "duration": 0.2,
+            "start_time": 18.2,
+            "end_time": 18.4,
+            "status": "corrected",
+            "preconditions": ["blade positioned"],
+            "changes": [],
+            "sensory_effects": [],
+            "natural_process_links": ["elastic_deformation"],
+            "operations_ref": ["contact"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H6.3",
+            "template_name": "material_deforms_under_blade_pressure",
+            "duration": 0.3,
+            "start_time": 18.4,
+            "end_time": 18.7,
+            "status": "confirmed",
+            "preconditions": ["force applied"],
+            "changes": [],
+            "sensory_effects": [{"type": "sensory_tactile", "qualia": ["resistance"], "source": ["apple_01.skin"]}],
+            "natural_process_links": ["N4.1"],
+            "operations_ref": ["contact"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H6.4",
+            "template_name": "blade_ruptures_surface",
+            "duration": 0.1,
+            "start_time": 18.7,
+            "end_time": 18.8,
+            "status": "corrected",
+            "preconditions": ["stress exceeds skin strength"],
+            "changes": [
+              {"object": "apple_01", "attribute": "surface_integrity", "old": "intact", "new": "breached"},
+              {"object": "apple_flesh_exposed_01", "attribute": "exists", "old": false, "new": true},
+              {"object": "juice_01", "attribute": "exists", "old": false, "new": true}
+            ],
+            "sensory_effects": [{"type": "sensory_auditory", "qualia": ["soft_pop"], "source": ["apple_01"]}],
+            "natural_process_links": ["N4.2"],
+            "operations_ref": ["change_properties", "add_object", "add_object"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H6.5",
+            "template_name": "control_cut_depth_and_retract",
+            "duration": 0.2,
+            "start_time": 18.8,
+            "end_time": 19.0,
+            "status": "confirmed",
+            "preconditions": ["depth reached"],
+            "changes": [],
+            "sensory_effects": [],
+            "natural_process_links": [],
+            "operations_ref": ["release", "move"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H6.s",
+            "template_name": "surface_rupture_exposes_tissue_and_fluid",
+            "duration": 1.0,
+            "start_time": 18.0,
+            "end_time": 19.0,
+            "status": "corrected",
+            "preconditions": ["rupture occurred"],
+            "changes": [
+              {"object": "apple_flesh_exposed_01", "attribute": "color", "old": null, "new": "pale_yellow_white"},
+              {"object": "apple_flesh_exposed_01", "attribute": "surface_state", "old": null, "new": "wet"},
+              {"object": "apple_flesh_exposed_01", "attribute": "oxidation", "old": null, "new": "none"}
+            ],
+            "sensory_effects": [{"type": "sensory_visual", "qualia": ["pale_yellow_white", "juice"], "source": ["apple_flesh_exposed_01"]}],
+            "natural_process_links": ["N4"],
+            "operations_ref": ["change_properties", "emit_event"],
+            "sub_actions": []
+          }
+        ]
+      },
+      {
+        "instance_id": "mem_000011.actions.6",
+        "template_name": "continuous_peel",
+        "duration": 40.0,
+        "start_time": 19.0,
+        "end_time": 59.0,
+        "status": "corrected",
+        "preconditions": ["initial cut made", "apple pinned"],
+        "changes": [
+          {"object": "apple_01", "attribute": "skin_coverage", "old": 1.0, "new": 0.0},
+          {"object": "apple_01", "attribute": "skin_present", "old": true, "new": false},
+          {"object": "apple_01", "attribute": "physical_state", "old": "intact", "new": "peeled"},
+          {"object": "apple_01", "attribute": "surface_state", "old": "dry", "new": "wet"},
+          {"object": "peel_strip_01", "attribute": "length_cm", "old": 0.0, "new": 40.0}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_auditory", "qualia": ["soft_wet_rasping"], "source": ["apple_01", "paring_knife_01"]},
+          {"type": "sensory_olfactory", "qualia": ["green", "sharp", "faintly_floral"], "source": ["apple_01"]},
+          {"type": "sensory_visual", "qualia": ["continuous_spiral_peel_ribbon"], "source": ["peel_strip_01"]}
+        ],
+        "natural_process_links": ["N5_surface_layer_separation", "N6_oxidative_browning", "N7_aroma_release", "N8_acoustic_emission"],
+        "operations_ref": ["add_object", "contact", "contact", "compound x40", "compound_calyx_repositioning", "add_element", "change_properties", "change_properties", "release", "emit_event", "emit_event", "emit_event"],
+        "sub_actions": [
+          {"instance_id": "H7.0", "template_name": "create_peel_object", "duration": 0.5, "start_time": 19.0, "end_time": 19.5, "status": "added", "preconditions": [], "changes": [{"object": "peel_strip_01", "attribute": "exists", "old": false, "new": true}], "sensory_effects": [], "natural_process_links": ["N5"], "operations_ref": ["add_object", "contact", "contact"], "sub_actions": []},
+          {"instance_id": "H7.1.001", "template_name": "peel_cycle_001", "duration": 1.0, "start_time": 19.5, "end_time": 20.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 1.0, "new": 0.975}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 0.0, "new": 1.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5", "N6"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.002", "template_name": "peel_cycle_002", "duration": 1.0, "start_time": 20.5, "end_time": 21.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.975, "new": 0.95}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 1.0, "new": 2.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.003", "template_name": "peel_cycle_003", "duration": 1.0, "start_time": 21.5, "end_time": 22.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.95, "new": 0.925}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 2.0, "new": 3.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.004", "template_name": "peel_cycle_004", "duration": 1.0, "start_time": 22.5, "end_time": 23.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.925, "new": 0.9}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 3.0, "new": 4.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.005", "template_name": "peel_cycle_005", "duration": 1.0, "start_time": 23.5, "end_time": 24.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.9, "new": 0.875}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 4.0, "new": 5.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.006", "template_name": "peel_cycle_006", "duration": 1.0, "start_time": 24.5, "end_time": 25.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.875, "new": 0.85}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 5.0, "new": 6.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.007", "template_name": "peel_cycle_007", "duration": 1.0, "start_time": 25.5, "end_time": 26.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.85, "new": 0.825}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 6.0, "new": 7.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.008", "template_name": "peel_cycle_008", "duration": 1.0, "start_time": 26.5, "end_time": 27.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.825, "new": 0.8}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 7.0, "new": 8.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.009", "template_name": "peel_cycle_009", "duration": 1.0, "start_time": 27.5, "end_time": 28.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.8, "new": 0.775}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 8.0, "new": 9.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.010", "template_name": "peel_cycle_010", "duration": 1.0, "start_time": 28.5, "end_time": 29.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.775, "new": 0.75}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 9.0, "new": 10.0}, {"object": "apple_flesh_exposed_01", "attribute": "oxidation", "old": "none", "new": "light"}, {"object": "apple_flesh_exposed_01", "attribute": "color", "old": "pale_yellow_white", "new": "light_brown"}], "sensory_effects": [{"type": "sensory_olfactory", "qualia": ["green", "sharp", "faintly_floral"], "source": ["apple_01"]}], "natural_process_links": ["N5", "N6", "N7"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.011", "template_name": "peel_cycle_011", "duration": 1.0, "start_time": 29.5, "end_time": 30.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.75, "new": 0.725}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 10.0, "new": 11.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.012", "template_name": "peel_cycle_012", "duration": 1.0, "start_time": 30.5, "end_time": 31.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.725, "new": 0.7}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 11.0, "new": 12.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.013", "template_name": "peel_cycle_013", "duration": 1.0, "start_time": 31.5, "end_time": 32.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.7, "new": 0.675}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 12.0, "new": 13.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.014", "template_name": "peel_cycle_014", "duration": 1.0, "start_time": 32.5, "end_time": 33.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.675, "new": 0.65}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 13.0, "new": 14.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.015", "template_name": "peel_cycle_015", "duration": 1.0, "start_time": 33.5, "end_time": 34.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.65, "new": 0.625}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 14.0, "new": 15.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.016", "template_name": "peel_cycle_016", "duration": 1.0, "start_time": 34.5, "end_time": 35.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.625, "new": 0.6}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 15.0, "new": 16.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.017", "template_name": "peel_cycle_017", "duration": 1.0, "start_time": 35.5, "end_time": 36.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.6, "new": 0.575}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 16.0, "new": 17.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.018", "template_name": "peel_cycle_018", "duration": 1.0, "start_time": 36.5, "end_time": 37.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.575, "new": 0.55}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 17.0, "new": 18.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.019", "template_name": "peel_cycle_019", "duration": 1.0, "start_time": 37.5, "end_time": 38.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.55, "new": 0.525}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 18.0, "new": 19.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.020", "template_name": "peel_cycle_020", "duration": 1.0, "start_time": 38.5, "end_time": 39.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.525, "new": 0.5}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 19.0, "new": 20.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.021", "template_name": "peel_cycle_021", "duration": 1.0, "start_time": 39.5, "end_time": 40.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.5, "new": 0.475}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 20.0, "new": 21.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.022", "template_name": "peel_cycle_022", "duration": 1.0, "start_time": 40.5, "end_time": 41.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.475, "new": 0.45}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 21.0, "new": 22.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.023", "template_name": "peel_cycle_023", "duration": 1.0, "start_time": 41.5, "end_time": 42.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.45, "new": 0.425}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 22.0, "new": 23.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.024", "template_name": "peel_cycle_024", "duration": 1.0, "start_time": 42.5, "end_time": 43.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.425, "new": 0.4}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 23.0, "new": 24.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.025", "template_name": "peel_cycle_025", "duration": 1.0, "start_time": 43.5, "end_time": 44.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.4, "new": 0.375}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 24.0, "new": 25.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.026", "template_name": "peel_cycle_026", "duration": 1.0, "start_time": 44.5, "end_time": 45.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.375, "new": 0.35}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 25.0, "new": 26.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.027", "template_name": "peel_cycle_027", "duration": 1.0, "start_time": 45.5, "end_time": 46.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.35, "new": 0.325}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 26.0, "new": 27.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.028", "template_name": "peel_cycle_028", "duration": 1.0, "start_time": 46.5, "end_time": 47.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.325, "new": 0.3}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 27.0, "new": 28.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.029", "template_name": "peel_cycle_029", "duration": 1.0, "start_time": 47.5, "end_time": 48.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.3, "new": 0.275}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 28.0, "new": 29.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.030", "template_name": "peel_cycle_030", "duration": 1.0, "start_time": 48.5, "end_time": 49.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.275, "new": 0.25}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 29.0, "new": 30.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.031", "template_name": "peel_cycle_031", "duration": 1.0, "start_time": 49.5, "end_time": 50.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.25, "new": 0.225}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 30.0, "new": 31.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.032", "template_name": "peel_cycle_032", "duration": 1.0, "start_time": 50.5, "end_time": 51.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.225, "new": 0.2}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 31.0, "new": 32.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.033", "template_name": "peel_cycle_033", "duration": 1.0, "start_time": 51.5, "end_time": 52.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.2, "new": 0.175}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 32.0, "new": 33.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.034", "template_name": "peel_cycle_034", "duration": 1.0, "start_time": 52.5, "end_time": 53.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.175, "new": 0.15}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 33.0, "new": 34.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.035", "template_name": "peel_cycle_035", "duration": 1.0, "start_time": 53.5, "end_time": 54.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.15, "new": 0.125}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 34.0, "new": 35.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.036", "template_name": "peel_cycle_036", "duration": 1.0, "start_time": 54.5, "end_time": 55.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.125, "new": 0.1}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 35.0, "new": 36.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.037", "template_name": "peel_cycle_037", "duration": 1.0, "start_time": 55.5, "end_time": 56.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.1, "new": 0.075}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 36.0, "new": 37.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.038", "template_name": "peel_cycle_038", "duration": 1.0, "start_time": 56.5, "end_time": 57.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.075, "new": 0.05}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 37.0, "new": 38.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.039", "template_name": "peel_cycle_039", "duration": 1.0, "start_time": 57.5, "end_time": 58.5, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.05, "new": 0.025}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 38.0, "new": 39.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5"], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H7.1.040", "template_name": "peel_cycle_040", "duration": 1.0, "start_time": 58.5, "end_time": 59.0, "status": "corrected", "preconditions": ["blade engaged"], "changes": [{"object": "apple_01", "attribute": "skin_coverage", "old": 0.025, "new": 0.0}, {"object": "apple_01", "attribute": "skin_present", "old": true, "new": false}, {"object": "peel_strip_01", "attribute": "length_cm", "old": 39.0, "new": 40.0}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["wet_scraping"], "source": ["apple_01", "paring_knife_01"]}], "natural_process_links": ["N5", "N6"], "operations_ref": ["compound", "change_properties", "change_properties"], "sub_actions": []},
+          {"instance_id": "H7.2", "template_name": "adapt_removal_around_irregular_end", "duration": 5.0, "start_time": 53.0, "end_time": 58.0, "status": "corrected", "preconditions": ["peel narrows", "calyx visible"], "changes": [{"object": "apple_01", "attribute": "calyx_cleared", "old": false, "new": true}], "sensory_effects": [], "natural_process_links": ["N5"], "operations_ref": ["compound_calyx_repositioning"], "sub_actions": []},
+          {"instance_id": "H7.s1", "template_name": "peel_curls_under_gravity", "duration": 40.0, "start_time": 19.0, "end_time": 59.0, "status": "added", "preconditions": ["peel attached"], "changes": [{"object": "peel_strip_01", "attribute": "shape", "old": "flat_sheet", "new": "curled_spiral"}], "sensory_effects": [], "natural_process_links": ["gravity", "elastic_relaxation"], "operations_ref": ["add_element"], "sub_actions": []}
+        ]
+      },
+      {
+        "instance_id": "mem_000011.actions.7",
+        "template_name": "manipulate_and_inspect",
+        "duration": 2.0,
+        "start_time": 59.0,
+        "end_time": 61.0,
+        "status": "corrected",
+        "preconditions": ["apple peeled"],
+        "changes": [
+          {"object": "apple_01", "attribute": "surface_state", "old": "dry", "new": "slippery"},
+          {"object": "apple_01", "attribute": "moisture", "old": "dry", "new": "wet"},
+          {"object": "left_hand_01", "attribute": "residue", "old": null, "new": "tacky_residue"},
+          {"object": "juice_on_hand_01", "attribute": "exists", "old": false, "new": true}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_tactile", "qualia": ["slippery"], "source": ["apple_01"]},
+          {"type": "sensory_visual", "qualia": ["shallow_gouge_near_stem"], "source": ["apple_01"]}
+        ],
+        "natural_process_links": ["N9_fluid_runoff_along_skin", "N10_fluid_film_drying"],
+        "operations_ref": ["rotate", "rotate", "rotate", "add_element", "change_properties", "add_object", "contact", "change_properties", "wait", "change_properties", "emit_event", "emit_event"],
+        "sub_actions": [
+          {
+            "instance_id": "H8.1",
+            "template_name": "adjust_grip_support",
+            "duration": 0.5,
+            "start_time": 59.0,
+            "end_time": 59.5,
+            "status": "corrected",
+            "preconditions": ["naked apple slippery"],
+            "changes": [{"object": "apple_01", "attribute": "surface_state", "old": "dry", "new": "slippery"}],
+            "sensory_effects": [{"type": "sensory_tactile", "qualia": ["slippery"], "source": ["apple_01"]}],
+            "natural_process_links": ["N9"],
+            "operations_ref": ["rotate", "change_properties"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H8.2",
+            "template_name": "rotate_and_inspect_object",
+            "duration": 1.0,
+            "start_time": 59.5,
+            "end_time": 60.5,
+            "status": "corrected",
+            "preconditions": ["grip stable"],
+            "changes": [],
+            "sensory_effects": [{"type": "sensory_visual", "qualia": ["shallow_gouge_near_stem"], "source": ["apple_01"]}],
+            "natural_process_links": [],
+            "operations_ref": ["rotate", "rotate", "add_element"],
+            "sub_actions": []
+          },
+          {
+            "instance_id": "H8.3",
+            "template_name": "orient_object_for_next_operation",
+            "duration": 0.5,
+            "start_time": 60.5,
+            "end_time": 61.0,
+            "status": "confirmed",
+            "preconditions": ["inspection done"],
+            "changes": [],
+            "sensory_effects": [],
+            "natural_process_links": [],
+            "operations_ref": ["add_object", "contact", "change_properties", "wait", "change_properties", "emit_event", "emit_event"],
+            "sub_actions": []
+          }
+        ]
+      },
+      {
+        "instance_id": "mem_000011.actions.8",
+        "template_name": "quarter_object_through_core",
+        "duration": 3.0,
+        "start_time": 61.0,
+        "end_time": 64.0,
+        "status": "corrected",
+        "preconditions": ["apple peeled", "knife gripped", "board stable"],
+        "changes": [
+          {"object": "apple_quarter_a_01", "attribute": "exists", "old": false, "new": true},
+          {"object": "apple_quarter_b_01", "attribute": "exists", "old": false, "new": true},
+          {"object": "apple_quarter_c_01", "attribute": "exists", "old": false, "new": true},
+          {"object": "apple_quarter_d_01", "attribute": "exists", "old": false, "new": true}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_auditory", "qualia": ["firm_crunch"], "source": ["apple_01", "paring_knife_01"]},
+          {"type": "sensory_visual", "qualia": ["four_pieces_fall_apart", "core_exposed"], "source": ["apple_01"]}
+        ],
+        "natural_process_links": ["N11_crunch_and_core_exposure", "N6_oxidative_browning"],
+        "operations_ref": ["set_transform", "detach", "release", "split", "split", "split", "change_properties x4", "attach x4", "contact x4", "emit_event", "emit_event"],
+        "sub_actions": [
+          {"instance_id": "H9.1", "template_name": "align_blade_along_axis", "duration": 0.5, "start_time": 61.0, "end_time": 61.5, "status": "confirmed", "preconditions": ["apple oriented"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["set_transform", "detach", "release"], "sub_actions": []},
+          {"instance_id": "H9.2.1", "template_name": "apply_downward_cutting_force", "duration": 0.3, "start_time": 61.5, "end_time": 61.8, "status": "confirmed", "preconditions": ["blade contact"], "changes": [], "sensory_effects": [], "natural_process_links": ["N11.1"], "operations_ref": ["split"], "sub_actions": []},
+          {"instance_id": "H9.2.2", "template_name": "blade_traverses_tissue", "duration": 0.4, "start_time": 61.8, "end_time": 62.2, "status": "confirmed", "preconditions": ["force applied"], "changes": [], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["firm_crunch"], "source": ["apple_01"]}], "natural_process_links": ["N11.1"], "operations_ref": ["split"], "sub_actions": []},
+          {"instance_id": "H9.2.3", "template_name": "object_separates_into_halves", "duration": 0.3, "start_time": 62.2, "end_time": 62.5, "status": "corrected", "preconditions": ["cut complete"], "changes": [], "sensory_effects": [], "natural_process_links": ["gravity"], "operations_ref": ["split"], "sub_actions": []},
+          {"instance_id": "H9.3.1", "template_name": "rotate_reposition_pieces", "duration": 0.3, "start_time": 62.5, "end_time": 62.8, "status": "corrected", "preconditions": ["halves available"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["split"], "sub_actions": []},
+          {"instance_id": "H9.3.2", "template_name": "cut_through_core_again", "duration": 0.4, "start_time": 62.8, "end_time": 63.2, "status": "corrected", "preconditions": ["repositioned"], "changes": [], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["firm_crunch"], "source": ["apple_01"]}], "natural_process_links": ["N11.2"], "operations_ref": ["split"], "sub_actions": []},
+          {"instance_id": "H9.3.3", "template_name": "object_separates_into_quarters", "duration": 0.3, "start_time": 63.2, "end_time": 63.5, "status": "corrected", "preconditions": ["cut complete"], "changes": [{"object": "apple_quarter_a_01", "attribute": "oxidation", "old": null, "new": "light"}, {"object": "apple_quarter_b_01", "attribute": "oxidation", "old": null, "new": "light"}, {"object": "apple_quarter_c_01", "attribute": "oxidation", "old": null, "new": "light"}, {"object": "apple_quarter_d_01", "attribute": "oxidation", "old": null, "new": "light"}], "sensory_effects": [], "natural_process_links": ["gravity", "N6"], "operations_ref": ["change_properties", "change_properties", "change_properties", "change_properties", "attach", "attach", "attach", "attach", "contact", "contact", "contact", "contact"], "sub_actions": []},
+          {"instance_id": "H9.s", "template_name": "crunch_and_core_exposure", "duration": 3.0, "start_time": 61.0, "end_time": 64.0, "status": "confirmed", "preconditions": ["cutting"], "changes": [], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["firm_crunch"], "source": ["apple_01"]}], "natural_process_links": ["N11"], "operations_ref": ["emit_event", "emit_event"], "sub_actions": []}
+        ]
+      },
+      {
+        "instance_id": "mem_000011.actions.9",
+        "template_name": "remove_core_from_quarters",
+        "duration": 30.0,
+        "start_time": 64.0,
+        "end_time": 94.0,
+        "status": "corrected",
+        "preconditions": ["four quarters", "knife gripped"],
+        "changes": [
+          {"object": "apple_core_a_01", "attribute": "exists", "old": false, "new": true},
+          {"object": "apple_core_b_01", "attribute": "exists", "old": false, "new": true},
+          {"object": "apple_core_c_01", "attribute": "exists", "old": false, "new": true},
+          {"object": "apple_core_d_01", "attribute": "exists", "old": false, "new": true},
+          {"object": "apple_seeds_01", "attribute": "exists", "old": false, "new": true},
+          {"object": "apple_quarter_a_01", "attribute": "core_present", "old": true, "new": false},
+          {"object": "apple_quarter_b_01", "attribute": "core_present", "old": true, "new": false},
+          {"object": "apple_quarter_c_01", "attribute": "core_present", "old": true, "new": false},
+          {"object": "apple_quarter_d_01", "attribute": "core_present", "old": true, "new": false}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_tactile", "qualia": ["fibrous", "pale", "translucent"], "source": ["apple_core_a_01"]},
+          {"type": "sensory_visual", "qualia": ["three_dark_brown_seeds_in_papery_pockets"], "source": ["apple_seeds_01", "apple_core_a_01"]}
+        ],
+        "natural_process_links": ["N6_oxidative_browning"],
+        "operations_ref": ["compound x4", "add_object", "contact", "emit_event", "emit_event"],
+        "sub_actions": [
+          {"instance_id": "H10.1.1.a", "template_name": "core_removal_quarter_a_step_1_place_and_stabilize", "duration": 1.0, "start_time": 64.0, "end_time": 65.0, "status": "confirmed", "preconditions": ["quarter available"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.2.a", "template_name": "core_removal_quarter_a_step_2_identify_core", "duration": 1.0, "start_time": 65.0, "end_time": 66.0, "status": "confirmed", "preconditions": ["exposed core"], "changes": [], "sensory_effects": [{"type": "sensory_visual", "qualia": ["core_boundary"], "source": ["apple_quarter_a_01"]}], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.3.a", "template_name": "core_removal_quarter_a_step_3_insert_blade", "duration": 2.0, "start_time": 66.0, "end_time": 68.0, "status": "confirmed", "preconditions": ["core boundary identified"], "changes": [], "sensory_effects": [], "natural_process_links": ["N6.4"], "operations_ref": ["add_object", "contact"], "sub_actions": []},
+          {"instance_id": "H10.1.4.a", "template_name": "core_removal_quarter_a_step_4_cut_around_core", "duration": 2.0, "start_time": 68.0, "end_time": 70.0, "status": "confirmed", "preconditions": ["blade inserted"], "changes": [], "sensory_effects": [], "natural_process_links": ["N6"], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.5.a", "template_name": "core_removal_quarter_a_step_5_extract_core", "duration": 1.0, "start_time": 70.0, "end_time": 71.0, "status": "corrected", "preconditions": ["cut complete"], "changes": [{"object": "apple_quarter_a_01", "attribute": "core_present", "old": true, "new": false}], "sensory_effects": [{"type": "sensory_tactile", "qualia": ["fibrous", "pale", "translucent"], "source": ["apple_core_a_01"]}], "natural_process_links": ["N6"], "operations_ref": ["change_properties", "contact"], "sub_actions": []},
+          {"instance_id": "H10.1.6.a", "template_name": "core_removal_quarter_a_step_6_set_aside", "duration": 0.5, "start_time": 71.0, "end_time": 71.5, "status": "confirmed", "preconditions": ["extracted"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.1.b", "template_name": "core_removal_quarter_b_step_1_place_and_stabilize", "duration": 1.0, "start_time": 71.5, "end_time": 72.5, "status": "confirmed", "preconditions": ["quarter available"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.2.b", "template_name": "core_removal_quarter_b_step_2_identify_core", "duration": 1.0, "start_time": 72.5, "end_time": 73.5, "status": "confirmed", "preconditions": ["exposed core"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.3.b", "template_name": "core_removal_quarter_b_step_3_insert_blade", "duration": 2.0, "start_time": 73.5, "end_time": 75.5, "status": "confirmed", "preconditions": ["core boundary identified"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["add_object", "contact"], "sub_actions": []},
+          {"instance_id": "H10.1.4.b", "template_name": "core_removal_quarter_b_step_4_cut_around_core", "duration": 2.0, "start_time": 75.5, "end_time": 77.5, "status": "confirmed", "preconditions": ["blade inserted"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.5.b", "template_name": "core_removal_quarter_b_step_5_extract_core", "duration": 1.0, "start_time": 77.5, "end_time": 78.5, "status": "corrected", "preconditions": ["cut complete"], "changes": [{"object": "apple_quarter_b_01", "attribute": "core_present", "old": true, "new": false}], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["change_properties", "contact"], "sub_actions": []},
+          {"instance_id": "H10.1.6.b", "template_name": "core_removal_quarter_b_step_6_set_aside", "duration": 0.5, "start_time": 78.5, "end_time": 79.0, "status": "confirmed", "preconditions": ["extracted"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.1.c", "template_name": "core_removal_quarter_c_step_1_place_and_stabilize", "duration": 1.0, "start_time": 79.0, "end_time": 80.0, "status": "confirmed", "preconditions": ["quarter available"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.2.c", "template_name": "core_removal_quarter_c_step_2_identify_core", "duration": 1.0, "start_time": 80.0, "end_time": 81.0, "status": "confirmed", "preconditions": ["exposed core"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.3.c", "template_name": "core_removal_quarter_c_step_3_insert_blade", "duration": 2.0, "start_time": 81.0, "end_time": 83.0, "status": "confirmed", "preconditions": ["core boundary identified"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["add_object", "contact"], "sub_actions": []},
+          {"instance_id": "H10.1.4.c", "template_name": "core_removal_quarter_c_step_4_cut_around_core", "duration": 2.0, "start_time": 83.0, "end_time": 85.0, "status": "confirmed", "preconditions": ["blade inserted"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.5.c", "template_name": "core_removal_quarter_c_step_5_extract_core", "duration": 1.0, "start_time": 85.0, "end_time": 86.0, "status": "corrected", "preconditions": ["cut complete"], "changes": [{"object": "apple_quarter_c_01", "attribute": "core_present", "old": true, "new": false}], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["change_properties", "contact"], "sub_actions": []},
+          {"instance_id": "H10.1.6.c", "template_name": "core_removal_quarter_c_step_6_set_aside", "duration": 0.5, "start_time": 86.0, "end_time": 86.5, "status": "confirmed", "preconditions": ["extracted"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.1.d", "template_name": "core_removal_quarter_d_step_1_place_and_stabilize", "duration": 1.0, "start_time": 86.5, "end_time": 87.5, "status": "confirmed", "preconditions": ["quarter available"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.2.d", "template_name": "core_removal_quarter_d_step_2_identify_core", "duration": 1.0, "start_time": 87.5, "end_time": 88.5, "status": "confirmed", "preconditions": ["exposed core"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.3.d", "template_name": "core_removal_quarter_d_step_3_insert_blade", "duration": 2.0, "start_time": 88.5, "end_time": 90.5, "status": "confirmed", "preconditions": ["core boundary identified"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["add_object", "contact"], "sub_actions": []},
+          {"instance_id": "H10.1.4.d", "template_name": "core_removal_quarter_d_step_4_cut_around_core", "duration": 2.0, "start_time": 90.5, "end_time": 92.5, "status": "confirmed", "preconditions": ["blade inserted"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.1.5.d", "template_name": "core_removal_quarter_d_step_5_extract_core", "duration": 1.0, "start_time": 92.5, "end_time": 93.5, "status": "corrected", "preconditions": ["cut complete"], "changes": [{"object": "apple_quarter_d_01", "attribute": "core_present", "old": true, "new": false}], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["change_properties", "contact"], "sub_actions": []},
+          {"instance_id": "H10.1.6.d", "template_name": "core_removal_quarter_d_step_6_set_aside", "duration": 0.5, "start_time": 93.5, "end_time": 94.0, "status": "confirmed", "preconditions": ["extracted"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["contact"], "sub_actions": []},
+          {"instance_id": "H10.s1", "template_name": "juice_release_and_oxidative_browning", "duration": 30.0, "start_time": 64.0, "end_time": 94.0, "status": "confirmed", "preconditions": ["cell rupture"], "changes": [], "sensory_effects": [], "natural_process_links": ["N6"], "operations_ref": ["change_properties"], "sub_actions": []},
+          {"instance_id": "H10.s2", "template_name": "seeds_gathered_and_rest_on_board", "duration": 1.0, "start_time": 93.0, "end_time": 94.0, "status": "added", "preconditions": ["seeds separated"], "changes": [{"object": "apple_seeds_01", "attribute": "exists", "old": false, "new": true}], "sensory_effects": [{"type": "sensory_visual", "qualia": ["three_dark_brown_seeds"], "source": ["apple_seeds_01"]}], "natural_process_links": [], "operations_ref": ["add_object", "contact", "emit_event", "emit_event"], "sub_actions": []}
+        ]
+      },
+      {
+        "instance_id": "mem_000011.actions.10",
+        "template_name": "flick_object_to_receptacle",
+        "duration": 2.0,
+        "start_time": 94.0,
+        "end_time": 96.0,
+        "status": "corrected",
+        "preconditions": ["seeds gathered", "sink nearby"],
+        "changes": [
+          {"object": "apple_seeds_01", "attribute": "parent", "old": "cutting_board_01", "new": "sink_01"}
+        ],
+        "sensory_effects": [{"type": "sensory_auditory", "qualia": ["click_against_steel"], "source": ["apple_seeds_01", "sink_01"]}],
+        "natural_process_links": ["N12_impact_acoustics"],
+        "operations_ref": ["move", "attach", "contact", "detach", "release", "set_transform", "attach", "contact", "move", "emit_event"],
+        "sub_actions": [
+          {"instance_id": "H11.1", "template_name": "gather_small_items", "duration": 0.5, "start_time": 94.0, "end_time": 94.5, "status": "corrected", "preconditions": ["seeds on board"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["move", "attach", "contact"], "sub_actions": []},
+          {"instance_id": "H11.2", "template_name": "prepare_flicking_grip", "duration": 0.5, "start_time": 94.5, "end_time": 95.0, "status": "confirmed", "preconditions": ["seeds held"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["detach", "release", "set_transform"], "sub_actions": []},
+          {"instance_id": "H11.3", "template_name": "launch_object_by_flicking", "duration": 0.3, "start_time": 95.0, "end_time": 95.3, "status": "confirmed", "preconditions": ["tension ready"], "changes": [], "sensory_effects": [], "natural_process_links": ["projectile_motion"], "operations_ref": ["set_transform"], "sub_actions": []},
+          {"instance_id": "H11.4", "template_name": "object_travels_and_impacts_surface", "duration": 0.7, "start_time": 95.3, "end_time": 96.0, "status": "corrected", "preconditions": ["launched"], "changes": [{"object": "apple_seeds_01", "attribute": "parent", "old": "cutting_board_01", "new": "sink_01"}], "sensory_effects": [{"type": "sensory_auditory", "qualia": ["click_against_steel"], "source": ["apple_seeds_01", "sink_01"]}], "natural_process_links": ["N12"], "operations_ref": ["attach", "contact", "move", "emit_event"], "sub_actions": []}
+        ]
+      },
+      {
+        "instance_id": "mem_000011.actions.11",
+        "template_name": "transfer_pieces_to_container",
+        "duration": 5.0,
+        "start_time": 96.0,
+        "end_time": 101.0,
+        "status": "corrected",
+        "preconditions": ["quarters prepared", "bowl available"],
+        "changes": [
+          {"object": "bowl_destination_01", "attribute": "exists", "old": false, "new": true},
+          {"object": "apple_quarter_a_01", "attribute": "parent", "old": "cutting_board_01", "new": "bowl_destination_01"},
+          {"object": "apple_quarter_b_01", "attribute": "parent", "old": "cutting_board_01", "new": "bowl_destination_01"},
+          {"object": "apple_quarter_c_01", "attribute": "parent", "old": "cutting_board_01", "new": "bowl_destination_01"},
+          {"object": "apple_quarter_d_01", "attribute": "parent", "old": "cutting_board_01", "new": "bowl_destination_01"}
+        ],
+        "sensory_effects": [],
+        "natural_process_links": [],
+        "operations_ref": ["add_object", "compound", "compound", "compound", "compound"],
+        "sub_actions": [
+          {"instance_id": "H12.1", "template_name": "create_destination_bowl", "duration": 0.5, "start_time": 96.0, "end_time": 96.5, "status": "added", "preconditions": [], "changes": [{"object": "bowl_destination_01", "attribute": "exists", "old": false, "new": true}], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["add_object"], "sub_actions": []},
+          {"instance_id": "H12.2.a", "template_name": "transfer_quarter_a", "duration": 1.0, "start_time": 96.5, "end_time": 97.5, "status": "confirmed", "preconditions": ["quarter available"], "changes": [{"object": "apple_quarter_a_01", "attribute": "parent", "old": "cutting_board_01", "new": "bowl_destination_01"}], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H12.2.b", "template_name": "transfer_quarter_b", "duration": 1.0, "start_time": 97.5, "end_time": 98.5, "status": "confirmed", "preconditions": ["quarter available"], "changes": [{"object": "apple_quarter_b_01", "attribute": "parent", "old": "cutting_board_01", "new": "bowl_destination_01"}], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H12.2.c", "template_name": "transfer_quarter_c", "duration": 1.0, "start_time": 98.5, "end_time": 99.5, "status": "confirmed", "preconditions": ["quarter available"], "changes": [{"object": "apple_quarter_c_01", "attribute": "parent", "old": "cutting_board_01", "new": "bowl_destination_01"}], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["compound"], "sub_actions": []},
+          {"instance_id": "H12.2.d", "template_name": "transfer_quarter_d", "duration": 1.0, "start_time": 99.5, "end_time": 100.5, "status": "confirmed", "preconditions": ["quarter available"], "changes": [{"object": "apple_quarter_d_01", "attribute": "parent", "old": "cutting_board_01", "new": "bowl_destination_01"}], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["compound"], "sub_actions": []}
+        ]
+      },
+      {
+        "instance_id": "mem_000011.actions.12",
+        "template_name": "dispose_waste_to_receptacle",
+        "duration": 2.0,
+        "start_time": 101.0,
+        "end_time": 103.0,
+        "status": "corrected",
+        "preconditions": ["peels on board", "compost crock available"],
+        "changes": [
+          {"object": "peel_strip_01", "attribute": "parent", "old": "cutting_board_01", "new": "compost_crock_01"},
+          {"object": "peel_strip_01", "attribute": "color", "old": "red_brushed", "new": "browning_at_edges"},
+          {"object": "peel_strip_01", "attribute": "oxidation", "old": null, "new": "light"}
+        ],
+        "sensory_effects": [],
+        "natural_process_links": ["N13_post_disposal_oxidative_deterioration"],
+        "operations_ref": ["move", "attach", "contact", "release", "move", "detach", "release", "set_transform", "attach", "contact", "move", "change_properties", "wait"],
+        "sub_actions": [
+          {"instance_id": "H13.1", "template_name": "gather_discarded_layer", "duration": 0.5, "start_time": 101.0, "end_time": 101.5, "status": "confirmed", "preconditions": ["peels on board"], "changes": [], "sensory_effects": [], "natural_process_links": [], "operations_ref": ["move", "attach", "contact"], "sub_actions": []},
+          {"instance_id": "H13.2", "template_name": "transfer_waste_to_receptacle", "duration": 0.7, "start_time": 101.5, "end_time": 102.2, "status": "corrected", "preconditions": ["gathered"], "changes": [{"object": "peel_strip_01", "attribute": "parent", "old": "cutting_board_01", "new": "compost_crock_01"}], "sensory_effects": [], "natural_process_links": ["gravity"], "operations_ref": ["release", "move", "detach", "release", "set_transform", "attach", "contact"], "sub_actions": []},
+          {"instance_id": "H13.3", "template_name": "release_and_let_settle", "duration": 0.5, "start_time": 102.2, "end_time": 102.7, "status": "confirmed", "preconditions": ["over crock"], "changes": [], "sensory_effects": [], "natural_process_links": ["gravity"], "operations_ref": ["move"], "sub_actions": []},
+          {"instance_id": "H13.4", "template_name": "clean_work_surface_and_apply_browning", "duration": 0.3, "start_time": 102.7, "end_time": 103.0, "status": "corrected", "preconditions": ["surface debris"], "changes": [{"object": "peel_strip_01", "attribute": "color", "old": "red_brushed", "new": "browning_at_edges"}], "sensory_effects": [], "natural_process_links": ["N13"], "operations_ref": ["change_properties", "wait"], "sub_actions": []}
+        ]
+      },
+      {
+        "instance_id": "mem_000011.actions.13",
+        "template_name": "lingering_sensory_residue",
+        "duration": 3600.0,
+        "start_time": 103.0,
+        "end_time": 3703.0,
+        "status": "corrected",
+        "preconditions": ["task complete"],
+        "changes": [
+          {"object": "left_hand_01", "attribute": "volatiles", "old": null, "new": "apple_aroma"},
+          {"object": "left_hand_01", "attribute": "residue", "old": null, "new": "tacky_apple_juice_residue"},
+          {"object": "right_hand_01", "attribute": "volatiles", "old": null, "new": "apple_aroma"},
+          {"object": "right_hand_01", "attribute": "residue", "old": null, "new": "tacky_apple_juice_residue"}
+        ],
+        "sensory_effects": [{"type": "sensory_olfactory", "qualia": ["apple_smell_persistent"], "source": ["left_hand_01", "right_hand_01"], "time_scale": "hours"}],
+        "natural_process_links": ["N14_lingering_volatile_retention"],
+        "operations_ref": ["change_properties", "change_properties", "wait", "emit_event"],
+        "sub_actions": [
+          {"instance_id": "H14.1", "template_name": "volatile_retention_in_skin_oils", "duration": 0.5, "start_time": 103.0, "end_time": 103.5, "status": "corrected", "preconditions": ["volatiles contact skin"], "changes": [{"object": "left_hand_01", "attribute": "volatiles", "old": null, "new": "apple_aroma"}, {"object": "right_hand_01", "attribute": "volatiles", "old": null, "new": "apple_aroma"}], "sensory_effects": [], "natural_process_links": ["N14.1"], "operations_ref": ["change_properties", "change_properties"], "sub_actions": []},
+          {"instance_id": "H14.2", "template_name": "partial_removal_by_washing", "duration": 60.0, "start_time": 103.5, "end_time": 163.5, "status": "confirmed", "preconditions": ["washing"], "changes": [{"object": "left_hand_01", "attribute": "residue", "old": null, "new": "tacky_apple_juice_residue"}, {"object": "right_hand_01", "attribute": "residue", "old": null, "new": "tacky_apple_juice_residue"}], "sensory_effects": [], "natural_process_links": ["N14.2"], "operations_ref": ["wait"], "sub_actions": []},
+          {"instance_id": "H14.3", "template_name": "olfactory_adaptation_and_intermittent_detection", "duration": 3600.0, "start_time": 103.0, "end_time": 3703.0, "status": "confirmed", "preconditions": ["exposure"], "changes": [], "sensory_effects": [{"type": "sensory_olfactory", "qualia": ["intermittent_apple_smell"], "source": ["olfactory system", "left_hand_01"]}], "natural_process_links": ["N14.3"], "operations_ref": ["emit_event"], "sub_actions": []}
+        ]
+      }
+    ]
+  },
+  "dropped_objects": [
+    {"obj_id": "water_stream_01", "reason": "transient", "status": "dropped", "notes": "Created and removed within H2."},
+    {"obj_id": "apple_half_left_01", "reason": "transient", "status": "dropped", "notes": "Created and consumed within H9 by the second split."},
+    {"obj_id": "apple_half_right_01", "reason": "transient", "status": "dropped", "notes": "Created and consumed within H9 by the second split."}
+  ],
+  "dropped_actions": [],
+  "notes": "All fourteen top-level actions produced operations and appear in the reconstituted timeline. Three transient objects were created and removed within a single action and do not appear in the final assembly. The parts prior claimed several sub-parts (stem, calyx, cuticle, epidermis, bolster, rivets, tip) that the 3D assembly does not model as separate objects; these are recorded in the unresolved list. Natural processes N1 through N14 are represented as change_properties and emit_event operations inside the action that ran them, and are also referenced by sub-actions via natural_process_links. Every sub-action carries a status: confirmed (assembly matches text), corrected (assembly differs from text), added (emerged from assembly), or dropped (text claimed but no operation implemented)."
+}

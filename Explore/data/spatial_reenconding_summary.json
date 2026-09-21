@@ -1,0 +1,1641 @@
+{
+  "total_unique_pairs": 327,
+  "total_occurrences": 6659,
+  "pairs": [
+    {
+      "original_relation": "on",
+      "reencoded_relation": "on",
+      "count": 1943
+    },
+    {
+      "original_relation": "part_of",
+      "reencoded_relation": "in",
+      "count": 932
+    },
+    {
+      "original_relation": "in",
+      "reencoded_relation": "in",
+      "count": 895
+    },
+    {
+      "original_relation": "inside",
+      "reencoded_relation": "in",
+      "count": 604
+    },
+    {
+      "original_relation": "surrounding",
+      "reencoded_relation": "around",
+      "count": 235
+    },
+    {
+      "original_relation": "standing",
+      "reencoded_relation": "on",
+      "count": 138
+    },
+    {
+      "original_relation": "attached_to",
+      "reencoded_relation": "attached",
+      "count": 130
+    },
+    {
+      "original_relation": "at",
+      "reencoded_relation": "near",
+      "count": 109
+    },
+    {
+      "original_relation": "near",
+      "reencoded_relation": "near",
+      "count": 105
+    },
+    {
+      "original_relation": "above",
+      "reencoded_relation": "above",
+      "count": 91
+    },
+    {
+      "original_relation": "displayed_on",
+      "reencoded_relation": "on",
+      "count": 87
+    },
+    {
+      "original_relation": "under",
+      "reencoded_relation": "below",
+      "count": 72
+    },
+    {
+      "original_relation": "within",
+      "reencoded_relation": "in",
+      "count": 66
+    },
+    {
+      "original_relation": "below",
+      "reencoded_relation": "below",
+      "count": 65
+    },
+    {
+      "original_relation": "attached",
+      "reencoded_relation": "attached",
+      "count": 59
+    },
+    {
+      "original_relation": "covering",
+      "reencoded_relation": "on",
+      "count": 59
+    },
+    {
+      "original_relation": "beside",
+      "reencoded_relation": "near",
+      "count": 55
+    },
+    {
+      "original_relation": "front_of",
+      "reencoded_relation": "near",
+      "count": 43
+    },
+    {
+      "original_relation": "around",
+      "reencoded_relation": "around",
+      "count": 33
+    },
+    {
+      "original_relation": "between",
+      "reencoded_relation": "between",
+      "count": 22
+    },
+    {
+      "original_relation": "behind",
+      "reencoded_relation": "near",
+      "count": 21
+    },
+    {
+      "original_relation": "leaning_against",
+      "reencoded_relation": "contact",
+      "count": 21
+    },
+    {
+      "original_relation": "against",
+      "reencoded_relation": "contact",
+      "count": 20
+    },
+    {
+      "original_relation": "overlay",
+      "reencoded_relation": "on",
+      "count": 18
+    },
+    {
+      "original_relation": "top_of",
+      "reencoded_relation": "above",
+      "count": 18
+    },
+    {
+      "original_relation": "contains",
+      "reencoded_relation": "around",
+      "count": 14
+    },
+    {
+      "original_relation": "mounted_in",
+      "reencoded_relation": "in",
+      "count": 14
+    },
+    {
+      "original_relation": "none",
+      "reencoded_relation": "none",
+      "count": 14
+    },
+    {
+      "original_relation": "within_reach",
+      "reencoded_relation": "near",
+      "count": 14
+    },
+    {
+      "original_relation": "in_front_of",
+      "reencoded_relation": "near",
+      "count": 13
+    },
+    {
+      "original_relation": "propagating",
+      "reencoded_relation": "in",
+      "count": 13
+    },
+    {
+      "original_relation": "overlay_on",
+      "reencoded_relation": "on",
+      "count": 12
+    },
+    {
+      "original_relation": "airborne",
+      "reencoded_relation": "above",
+      "count": 11
+    },
+    {
+      "original_relation": "mounted_on",
+      "reencoded_relation": "on",
+      "count": 11
+    },
+    {
+      "original_relation": "over",
+      "reencoded_relation": "on",
+      "count": 11
+    },
+    {
+      "original_relation": "aside",
+      "reencoded_relation": "near",
+      "count": 10
+    },
+    {
+      "original_relation": "bottom_of",
+      "reencoded_relation": "below",
+      "count": 10
+    },
+    {
+      "original_relation": "from",
+      "reencoded_relation": "from",
+      "count": 10
+    },
+    {
+      "original_relation": "seated",
+      "reencoded_relation": "on",
+      "count": 10
+    },
+    {
+      "original_relation": "beneath",
+      "reencoded_relation": "below",
+      "count": 8
+    },
+    {
+      "original_relation": "beside_torso",
+      "reencoded_relation": "near",
+      "count": 8
+    },
+    {
+      "original_relation": "on_screen",
+      "reencoded_relation": "on",
+      "count": 8
+    },
+    {
+      "original_relation": "stored_in",
+      "reencoded_relation": "in",
+      "count": 8
+    },
+    {
+      "original_relation": "wrapping",
+      "reencoded_relation": "around",
+      "count": 8
+    },
+    {
+      "original_relation": "installed_on",
+      "reencoded_relation": "on",
+      "count": 7
+    },
+    {
+      "original_relation": "running_on",
+      "reencoded_relation": "on",
+      "count": 7
+    },
+    {
+      "original_relation": "through",
+      "reencoded_relation": "through",
+      "count": 7
+    },
+    {
+      "original_relation": "adjacent_to",
+      "reencoded_relation": "near",
+      "count": 6
+    },
+    {
+      "original_relation": "connecting",
+      "reencoded_relation": "attached",
+      "count": 6
+    },
+    {
+      "original_relation": "hanging_on",
+      "reencoded_relation": "on",
+      "count": 6
+    },
+    {
+      "original_relation": "leaning_on",
+      "reencoded_relation": "contact",
+      "count": 6
+    },
+    {
+      "original_relation": "outside",
+      "reencoded_relation": "near",
+      "count": 6
+    },
+    {
+      "original_relation": "retained_in",
+      "reencoded_relation": "in",
+      "count": 6
+    },
+    {
+      "original_relation": "base_of",
+      "reencoded_relation": "below",
+      "count": 5
+    },
+    {
+      "original_relation": "dissolved_in",
+      "reencoded_relation": "in",
+      "count": 5
+    },
+    {
+      "original_relation": "fixed",
+      "reencoded_relation": "in",
+      "count": 5
+    },
+    {
+      "original_relation": "mixed_into",
+      "reencoded_relation": "in",
+      "count": 5
+    },
+    {
+      "original_relation": "mounted_on",
+      "reencoded_relation": "attached",
+      "count": 5
+    },
+    {
+      "original_relation": "on_top_of",
+      "reencoded_relation": "on",
+      "count": 5
+    },
+    {
+      "original_relation": "over",
+      "reencoded_relation": "above",
+      "count": 5
+    },
+    {
+      "original_relation": "supporting",
+      "reencoded_relation": "below",
+      "count": 5
+    },
+    {
+      "original_relation": "tied_on",
+      "reencoded_relation": "attached",
+      "count": 5
+    },
+    {
+      "original_relation": "travelling",
+      "reencoded_relation": "in",
+      "count": 5
+    },
+    {
+      "original_relation": "against_wall",
+      "reencoded_relation": "contact",
+      "count": 4
+    },
+    {
+      "original_relation": "ambient",
+      "reencoded_relation": "around",
+      "count": 4
+    },
+    {
+      "original_relation": "at_distance",
+      "reencoded_relation": "apart",
+      "count": 4
+    },
+    {
+      "original_relation": "built_into",
+      "reencoded_relation": "in",
+      "count": 4
+    },
+    {
+      "original_relation": "edge_of",
+      "reencoded_relation": "on",
+      "count": 4
+    },
+    {
+      "original_relation": "fills",
+      "reencoded_relation": "in",
+      "count": 4
+    },
+    {
+      "original_relation": "folded_aside",
+      "reencoded_relation": "on",
+      "count": 4
+    },
+    {
+      "original_relation": "from_above",
+      "reencoded_relation": "above",
+      "count": 4
+    },
+    {
+      "original_relation": "front",
+      "reencoded_relation": "near",
+      "count": 4
+    },
+    {
+      "original_relation": "hosted_on",
+      "reencoded_relation": "on",
+      "count": 4
+    },
+    {
+      "original_relation": "inside_flesh",
+      "reencoded_relation": "in",
+      "count": 4
+    },
+    {
+      "original_relation": "lashed_to",
+      "reencoded_relation": "attached",
+      "count": 4
+    },
+    {
+      "original_relation": "on_floor",
+      "reencoded_relation": "near",
+      "count": 4
+    },
+    {
+      "original_relation": "on_front_panel",
+      "reencoded_relation": "on",
+      "count": 4
+    },
+    {
+      "original_relation": "projected_on",
+      "reencoded_relation": "on",
+      "count": 4
+    },
+    {
+      "original_relation": "propagating_from",
+      "reencoded_relation": "from",
+      "count": 4
+    },
+    {
+      "original_relation": "rear_of",
+      "reencoded_relation": "near",
+      "count": 4
+    },
+    {
+      "original_relation": "removed_from",
+      "reencoded_relation": "apart",
+      "count": 4
+    },
+    {
+      "original_relation": "resting",
+      "reencoded_relation": "on",
+      "count": 4
+    },
+    {
+      "original_relation": "scattered",
+      "reencoded_relation": "on",
+      "count": 4
+    },
+    {
+      "original_relation": "side_of",
+      "reencoded_relation": "near",
+      "count": 4
+    },
+    {
+      "original_relation": "sitting",
+      "reencoded_relation": "on",
+      "count": 4
+    },
+    {
+      "original_relation": "top",
+      "reencoded_relation": "above",
+      "count": 4
+    },
+    {
+      "original_relation": "vertical",
+      "reencoded_relation": "on",
+      "count": 4
+    },
+    {
+      "original_relation": "worn_by",
+      "reencoded_relation": "on",
+      "count": 4
+    },
+    {
+      "original_relation": "adjacent",
+      "reencoded_relation": "near",
+      "count": 3
+    },
+    {
+      "original_relation": "air",
+      "reencoded_relation": "above",
+      "count": 3
+    },
+    {
+      "original_relation": "along",
+      "reencoded_relation": "on",
+      "count": 3
+    },
+    {
+      "original_relation": "at_bottom",
+      "reencoded_relation": "in",
+      "count": 3
+    },
+    {
+      "original_relation": "at_bottom_of",
+      "reencoded_relation": "in",
+      "count": 3
+    },
+    {
+      "original_relation": "below_viewport",
+      "reencoded_relation": "below",
+      "count": 3
+    },
+    {
+      "original_relation": "central",
+      "reencoded_relation": "in",
+      "count": 3
+    },
+    {
+      "original_relation": "fixed",
+      "reencoded_relation": "attached",
+      "count": 3
+    },
+    {
+      "original_relation": "flowing_into",
+      "reencoded_relation": "in",
+      "count": 3
+    },
+    {
+      "original_relation": "held_in",
+      "reencoded_relation": "in",
+      "count": 3
+    },
+    {
+      "original_relation": "installed_in_ground",
+      "reencoded_relation": "on",
+      "count": 3
+    },
+    {
+      "original_relation": "offscreen",
+      "reencoded_relation": "near",
+      "count": 3
+    },
+    {
+      "original_relation": "on_ground_near",
+      "reencoded_relation": "near",
+      "count": 3
+    },
+    {
+      "original_relation": "on_lap",
+      "reencoded_relation": "on",
+      "count": 3
+    },
+    {
+      "original_relation": "outside",
+      "reencoded_relation": "around",
+      "count": 3
+    },
+    {
+      "original_relation": "resting_on",
+      "reencoded_relation": "on",
+      "count": 3
+    },
+    {
+      "original_relation": "right_side_of",
+      "reencoded_relation": "near",
+      "count": 3
+    },
+    {
+      "original_relation": "seated_on",
+      "reencoded_relation": "on",
+      "count": 3
+    },
+    {
+      "original_relation": "stepped_back",
+      "reencoded_relation": "near",
+      "count": 3
+    },
+    {
+      "original_relation": "stored",
+      "reencoded_relation": "in",
+      "count": 3
+    },
+    {
+      "original_relation": "suspended_above",
+      "reencoded_relation": "above",
+      "count": 3
+    },
+    {
+      "original_relation": "suspended_in",
+      "reencoded_relation": "in",
+      "count": 3
+    },
+    {
+      "original_relation": "worn_on",
+      "reencoded_relation": "on",
+      "count": 3
+    },
+    {
+      "original_relation": "along_boundary",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "along_top",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "around_drum_opening",
+      "reencoded_relation": "around",
+      "count": 2
+    },
+    {
+      "original_relation": "around_lens",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "at_base",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "at_base_of",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "at_end",
+      "reencoded_relation": "attached",
+      "count": 2
+    },
+    {
+      "original_relation": "at_end_of_neck",
+      "reencoded_relation": "attached",
+      "count": 2
+    },
+    {
+      "original_relation": "at_feet",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "at_growing_tip_of",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "at_node",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "at_side",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "at_top_edge_right_of_center",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "available_on_person",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "base_of",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "being_lifted",
+      "reencoded_relation": "contact",
+      "count": 2
+    },
+    {
+      "original_relation": "between_handles",
+      "reencoded_relation": "between",
+      "count": 2
+    },
+    {
+      "original_relation": "between_light_source_and_aperture",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "bottom_of",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "boundary_of",
+      "reencoded_relation": "around",
+      "count": 2
+    },
+    {
+      "original_relation": "carried",
+      "reencoded_relation": "contact",
+      "count": 2
+    },
+    {
+      "original_relation": "center_of",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "clamped_to",
+      "reencoded_relation": "attached",
+      "count": 2
+    },
+    {
+      "original_relation": "coating",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "connected_to",
+      "reencoded_relation": "attached",
+      "count": 2
+    },
+    {
+      "original_relation": "connected_to_motor",
+      "reencoded_relation": "attached",
+      "count": 2
+    },
+    {
+      "original_relation": "contained",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "contained_in",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "dispersed_in",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "distant_from",
+      "reencoded_relation": "apart",
+      "count": 2
+    },
+    {
+      "original_relation": "distributed_in",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "distributed_on",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "embedded_in",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "emerging_from",
+      "reencoded_relation": "from",
+      "count": 2
+    },
+    {
+      "original_relation": "emitted_by",
+      "reencoded_relation": "from",
+      "count": 2
+    },
+    {
+      "original_relation": "enclosing",
+      "reencoded_relation": "around",
+      "count": 2
+    },
+    {
+      "original_relation": "end_of",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "escaping",
+      "reencoded_relation": "from",
+      "count": 2
+    },
+    {
+      "original_relation": "extending_from",
+      "reencoded_relation": "from",
+      "count": 2
+    },
+    {
+      "original_relation": "external",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "falling",
+      "reencoded_relation": "none",
+      "count": 2
+    },
+    {
+      "original_relation": "falling_from",
+      "reencoded_relation": "from",
+      "count": 2
+    },
+    {
+      "original_relation": "fixed_to",
+      "reencoded_relation": "attached",
+      "count": 2
+    },
+    {
+      "original_relation": "flanking",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "floating_on",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "flowing_from",
+      "reencoded_relation": "from",
+      "count": 2
+    },
+    {
+      "original_relation": "formed_on",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "from_source_to_surface",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "front_bottom",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "front_edge",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "front_of_head",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "hanging_from",
+      "reencoded_relation": "attached",
+      "count": 2
+    },
+    {
+      "original_relation": "high_concentration",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "illuminating",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "in_bubbles",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "in_front",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "in_front_of_body",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "in_sky",
+      "reencoded_relation": "above",
+      "count": 2
+    },
+    {
+      "original_relation": "incident_from",
+      "reencoded_relation": "from",
+      "count": 2
+    },
+    {
+      "original_relation": "incident_on",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "inside_cells",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "integrated_in",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "integrated_with",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "leaning",
+      "reencoded_relation": "contact",
+      "count": 2
+    },
+    {
+      "original_relation": "left_part_of",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "left_side_of",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "lining",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "located_in",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "mounted",
+      "reencoded_relation": "attached",
+      "count": 2
+    },
+    {
+      "original_relation": "near_console",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "near_counter",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "next",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "off",
+      "reencoded_relation": "apart",
+      "count": 2
+    },
+    {
+      "original_relation": "on_cut_surface",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "on_edge_of",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "on_floor",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "on_floor",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "on_mantel",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "on_side",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "on_surfaces",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "on_table",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "on_top",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "on_track",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "on_wall",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "open_on",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "outer_part_of",
+      "reencoded_relation": "around",
+      "count": 2
+    },
+    {
+      "original_relation": "outer_shell_of",
+      "reencoded_relation": "around",
+      "count": 2
+    },
+    {
+      "original_relation": "outermost",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "passing_through",
+      "reencoded_relation": "through",
+      "count": 2
+    },
+    {
+      "original_relation": "propagating_in",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "removed",
+      "reencoded_relation": "apart",
+      "count": 2
+    },
+    {
+      "original_relation": "right_of",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "right_part_of",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "rising_from",
+      "reencoded_relation": "from",
+      "count": 2
+    },
+    {
+      "original_relation": "rooted_in",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "seated_in",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "separated",
+      "reencoded_relation": "apart",
+      "count": 2
+    },
+    {
+      "original_relation": "set_in_inner_curve",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "shaded_region",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "side_of",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "side_of_head",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "stacked_near",
+      "reencoded_relation": "near",
+      "count": 2
+    },
+    {
+      "original_relation": "stationary",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "stationary",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "surrounding_interface",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "surrounds",
+      "reencoded_relation": "around",
+      "count": 2
+    },
+    {
+      "original_relation": "throughout",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "top",
+      "reencoded_relation": "on",
+      "count": 2
+    },
+    {
+      "original_relation": "top_rear_of",
+      "reencoded_relation": "above",
+      "count": 2
+    },
+    {
+      "original_relation": "trapped",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "traveling",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "traveling_from",
+      "reencoded_relation": "from",
+      "count": 2
+    },
+    {
+      "original_relation": "traveling_through",
+      "reencoded_relation": "through",
+      "count": 2
+    },
+    {
+      "original_relation": "two_doors_down",
+      "reencoded_relation": "apart",
+      "count": 2
+    },
+    {
+      "original_relation": "under_lid",
+      "reencoded_relation": "below",
+      "count": 2
+    },
+    {
+      "original_relation": "upper_part_of",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "upright",
+      "reencoded_relation": "attached",
+      "count": 2
+    },
+    {
+      "original_relation": "wall_mounted",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "within_stereo_triangle",
+      "reencoded_relation": "in",
+      "count": 2
+    },
+    {
+      "original_relation": "1_meter_back",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "absorbed",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "along",
+      "reencoded_relation": "contact",
+      "count": 1
+    },
+    {
+      "original_relation": "along_curb",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "anchored_at",
+      "reencoded_relation": "attached",
+      "count": 1
+    },
+    {
+      "original_relation": "at_node",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "at_right_side",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "at_waterline",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "at_waterline",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "away_from",
+      "reencoded_relation": "apart",
+      "count": 1
+    },
+    {
+      "original_relation": "baked_into",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "base_of",
+      "reencoded_relation": "attached",
+      "count": 1
+    },
+    {
+      "original_relation": "bottom",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "bottom",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "briefly_out",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "buried_under",
+      "reencoded_relation": "below",
+      "count": 1
+    },
+    {
+      "original_relation": "center_of_room",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "clipped",
+      "reencoded_relation": "attached",
+      "count": 1
+    },
+    {
+      "original_relation": "clipped_on",
+      "reencoded_relation": "attached",
+      "count": 1
+    },
+    {
+      "original_relation": "crumpled_on",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "diagonal_in",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "discarded",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "dispersed",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "dispersed_into",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "displaced",
+      "reencoded_relation": "apart",
+      "count": 1
+    },
+    {
+      "original_relation": "dissipated",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "distal_part_of",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "distributed",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "docked",
+      "reencoded_relation": "attached",
+      "count": 1
+    },
+    {
+      "original_relation": "drained_from",
+      "reencoded_relation": "from",
+      "count": 1
+    },
+    {
+      "original_relation": "dried",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "edge",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "edge",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "escaped",
+      "reencoded_relation": "from",
+      "count": 1
+    },
+    {
+      "original_relation": "flushed",
+      "reencoded_relation": "from",
+      "count": 1
+    },
+    {
+      "original_relation": "folded",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "free",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "hanging_at_side",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "held",
+      "reencoded_relation": "contact",
+      "count": 1
+    },
+    {
+      "original_relation": "held_by",
+      "reencoded_relation": "contact",
+      "count": 1
+    },
+    {
+      "original_relation": "held_by",
+      "reencoded_relation": "between",
+      "count": 1
+    },
+    {
+      "original_relation": "horizontal",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "horizontal",
+      "reencoded_relation": "above",
+      "count": 1
+    },
+    {
+      "original_relation": "illuminating",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "illuminating",
+      "reencoded_relation": "above",
+      "count": 1
+    },
+    {
+      "original_relation": "in_air",
+      "reencoded_relation": "above",
+      "count": 1
+    },
+    {
+      "original_relation": "in_hand",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "in_solution",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "in_use",
+      "reencoded_relation": "attached",
+      "count": 1
+    },
+    {
+      "original_relation": "in_viewport",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "inserted_in",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "inside_solution",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "kitchen_counter",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "left_of",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "lifted_away",
+      "reencoded_relation": "apart",
+      "count": 1
+    },
+    {
+      "original_relation": "lower_edge",
+      "reencoded_relation": "below",
+      "count": 1
+    },
+    {
+      "original_relation": "moist_column",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "not_near",
+      "reencoded_relation": "apart",
+      "count": 1
+    },
+    {
+      "original_relation": "on_edge",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "on_edge",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "on_wrist",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "opposable",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "outside",
+      "reencoded_relation": "apart",
+      "count": 1
+    },
+    {
+      "original_relation": "overhanging",
+      "reencoded_relation": "above",
+      "count": 1
+    },
+    {
+      "original_relation": "partially_in",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "partly_in",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "planted_in",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "pooled_in",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "refrigerator",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "released_into",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "rest",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "rolled",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "seated_at",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "settled",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "sides",
+      "reencoded_relation": "around",
+      "count": 1
+    },
+    {
+      "original_relation": "sides",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "sitting",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "standing",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "standing",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "standing_behind",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "standing_facing",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "standing_near_cushion",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "tip_of",
+      "reencoded_relation": "below",
+      "count": 1
+    },
+    {
+      "original_relation": "tip_of",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "to",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "top_left",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "top_left_of",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "top_left_of",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "top_right",
+      "reencoded_relation": "on",
+      "count": 1
+    },
+    {
+      "original_relation": "trimmed_edge",
+      "reencoded_relation": "near",
+      "count": 1
+    },
+    {
+      "original_relation": "under_mulch",
+      "reencoded_relation": "below",
+      "count": 1
+    },
+    {
+      "original_relation": "unknown",
+      "reencoded_relation": "none",
+      "count": 1
+    },
+    {
+      "original_relation": "upper_edge",
+      "reencoded_relation": "above",
+      "count": 1
+    },
+    {
+      "original_relation": "wedged_in",
+      "reencoded_relation": "in",
+      "count": 1
+    },
+    {
+      "original_relation": "worn_on",
+      "reencoded_relation": "around",
+      "count": 1
+    },
+    {
+      "original_relation": "wound_on",
+      "reencoded_relation": "around",
+      "count": 1
+    },
+    {
+      "original_relation": "wrapped_around",
+      "reencoded_relation": "around",
+      "count": 1
+    }
+  ]
+}

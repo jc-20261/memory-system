@@ -1,0 +1,347 @@
+--- enhanced_sketch ---
+## MEMORY SKETCH — ENHANCED / RECURSIVELY DECOMPOSED
+
+**Assumptions:** `T0` = first contact with the apple in the bowl. Durations are approximate. Offsets are relative to `T0`. Natural/material processes are placed in a parallel lane at matching offsets.  
+**Notation:** `[offset, temporal type, duration]`. Temporal types: `seq`, `parallel`, `cyclical`, `iterative`, `delayed`, `state`, `lingering`.  
+**Leaf definition:** a leaf is atomic at this resolution — either an indivisible muscle/joint/contact event or an indivisible physicochemical step. Parent durations are approximate; parallel branches are not additive.
+
+---
+
+## 1. OBJECT LIST (tiered, extended)
+
+- **Apple** — Honeycrisp, cold from refrigerator, dense with water
+  - **Skin**
+    - Waxy cuticle / tight glossy surface
+      - Surface-tension boundary
+      - Specular gloss layer
+      - Water droplets / water film — transient
+    - Epidermis
+    - Stem
+    - Stem crater / shallow dimple
+    - Scar line — faint raised mark from branch rub
+    - Calyx end — five small puckered points
+  - **Flesh**
+    - Cortical parenchyma
+      - Cells
+        - Cell walls
+        - Middle lamella / pectin
+        - Vacuoles
+        - Juice — water, sugars, acids, phenolics
+      - Vascular strands
+    - Exposed cut surfaces — pale yellow-white / faintly green-white
+      - Juice film weeping
+      - Oxidation front / browning
+    - Shallow gouge near stem — from pressing too hard
+  - **Juice**
+    - Thin film weeping from cut flesh
+    - Droplets / beads
+    - Run-down on wrist and heel of palm
+    - Dried tacky residue on skin
+  - **Core**
+    - Core wedge — triangular, fibrous, pale, slightly translucent
+      - Fibrous tissue
+      - Vascular strands
+    - Seeds — 3, dark brown, pointed at both ends
+      - Seed coats
+      - Papery seed pockets
+  - **Peel**
+    - Continuous ribbon — about 1 inch wide
+    - Loose spiral on cutting board
+    - Narrowed calyx-end pieces
+    - Cut edges — browning
+  - **Quarters** — 4 pieces after quartering
+  - **Slices** — final cut pieces
+- **Bowl**
+  - Initial apples — implied source
+  - Bowl rim
+  - Later — receives apple slices
+- **Refrigerator** — cold source / thermal reservoir
+- **Sink**
+  - Steel basin / steel surface
+  - Drain
+  - Discarded seeds
+- **Tap / water**
+  - Faucet handle
+  - Water stream
+  - Water beads / droplets
+  - Water film
+- **Hands**
+  - Right hand
+    - Right thumb — braced against bolster
+    - Right index / middle / ring / little fingers
+    - Right palm / heel of palm
+    - Right wrist / forearm
+    - Skin
+      - Stratum corneum
+      - Sebum
+      - Juice tack
+      - Apple odor volatiles
+  - Left hand
+    - Left thumb — pushes fruit forward
+    - Left index / middle / ring / little fingers
+    - Left palm / heel of palm
+    - Left wrist
+    - Fingertips — curled back
+- **Shirt**
+  - Cotton fibers / weave
+  - Drying surface
+  - Absorbed water / damp patch
+- **Cutting board**
+  - Board surface
+  - Wood grain
+  - Juice film / droplets
+  - Seed debris
+  - Temporary slices
+- **Paring knife**
+  - Blade — short
+    - Edge — cuts skin and flesh
+    - Tip
+    - Spine
+  - Bolster
+  - Handle
+    - Rivets — worn pale
+- **Compost crock**
+  - Peel pieces — already browning at edges
+  - Cut edges / oxidation front
+- **Ambient air / aroma**
+  - Apple volatiles — green, sharp, faintly floral
+    - Esters
+    - Alcohols
+    - Aldehydes
+  - Oxygen
+  - Humidity
+  - Sound waves
+- **Environment / forces / processes**
+  - Gravity
+  - Friction
+  - Surface tension
+  - Capillary action
+  - Thermal energy
+  - Oxidation
+    - Polyphenol oxidase (PPO)
+    - Phenolics
+    - Quinones
+    - Brown pigments / melanins
+  - Acoustic responses — rasp, crunch, click
+- **Human sensorium**
+  - Thermoreceptors
+  - Mechanoreceptors
+  - Proprioceptors
+  - Olfactory epithelium
+  - Auditory system
+
+---
+
+## 2. ACTION PLOT
+
+### LANE H — Human actions
+
+- `[T0, seq, ~2 s]` Take apple from bowl.
+  - `[T0, seq, ~0.3 s]` Locate apple: visual fixation / tactile search in bowl. *(leaf: perceptual atomic)*
+  - `[T0+0.3, seq, ~0.4 s]` Reach right hand into bowl; extend fingers toward apple. *(leaf: transport atomic)*
+  - `[T0+0.7, seq, ~0.3 s]` Contact: fingertips touch skin; thumb opposes. *(leaf: contact atomic)*
+  - `[T0+1.0, seq, ~0.4 s]` Close grip: flex fingers, adduct thumb; compress skin slightly. *(leaf: muscle atomic)*
+  - `[T0+1.4, seq, ~0.4 s]` Lift: flex elbow/wrist; overcome gravity and bowl friction. *(leaf: muscle atomic)*
+  - `[T0+1.8, seq, ~0.2 s]` Withdraw: hand clears bowl rim; apple free. *(leaf: transport atomic)*
+  - `[T0+0.2, parallel, ~2 s]` Feel cold, tight/waxy skin, weight/density under thumb.
+    - `[T0+0.2, parallel, ~0.5 s]` Thermoreception: cold from refrigerator. *(leaf: sensory)*
+    - `[T0+0.3, parallel, ~0.5 s]` Tactile texture: waxy cuticle, smooth, tight. *(leaf: sensory)*
+    - `[T0+0.7, parallel, ~1.3 s]` Proprioception: weight/density, grip force. *(leaf: sensory)*
+
+- `[T0+2, seq, ~8 s]` Turn apple under tap; run palm over entire surface.
+  - `[T0+2, seq, ~0.5 s]` Transport apple to sink; extend arms. *(leaf: transport)*
+  - `[T0+2.5, seq, ~0.5 s]` Turn faucet handle / activate water stream. *(leaf: tool atomic)*
+  - `[T0+3, seq, ~1 s]` Position apple under stream; water contacts top. *(leaf: positioning)*
+  - `[T0+4, cyclical, ~5 s]` Rotate apple under water: wrist supination/pronation; fingers index.
+    - `[T0+4, cyclical, ~5 s]` Left hand rotates apple while right palm/fingers support. *(leaf: cyclical)*
+    - `[T0+4, parallel/cyclical, ~5 s]` Water stream hits different surfaces; beads coalesce and fall. *(see N2)*
+    - `[T0+4, parallel/cyclical, ~5 s]` Run palm/heel over entire surface; feel stem dimple, scar line. *(leaf: tactile scan)*
+  - `[T0+9, seq, ~1 s]` Final rinse; check all sides; remove from stream. *(leaf: completion)*
+  - `[T0+2, parallel, ~8 s]` Feel stem dimple/crater and faint scar line.
+    - `[T0+8, parallel, ~1 s]` Left index traces stem crater; thumb presses dimple. *(leaf: sensory)*
+    - `[T0+8.5, parallel, ~1 s]` Fingertip catches scar line. *(leaf: sensory)*
+
+- `[T0+10, seq, ~4 s]` Dry apple on shirt.
+  - `[T0+10, seq, ~0.5 s]` Lift shirt hem/use front; bring apple to fabric. *(leaf: transport)*
+  - `[T0+10.5, seq, ~2.5 s]` Press apple against shirt; wipe/rotate with palm. *(leaf: cyclical)*
+    - `[T0+10.5, cyclical, ~2.5 s]` Back-and-forth/rotary rub: apple contacts cotton; water transfers. *(leaf: cyclical)*
+  - `[T0+13, seq, ~0.7 s]` Inspect surface; rotate for missed drops. *(leaf: check)*
+  - `[T0+13.7, seq, ~0.3 s]` Release shirt; apple in hand. *(leaf: release)*
+  - `[T0+10, parallel, ~4 s]` Drying changes skin from glossy to dull matte red. *(see N3)*
+
+- `[T0+14, seq, ~2 s]` Set apple on cutting board, stem-side up; press down.
+  - `[T0+14, seq, ~0.5 s]` Move apple over board; locate center. *(leaf: transport)*
+  - `[T0+14.5, seq, ~0.5 s]` Orient: stem-side up; rotate in fingers. *(leaf: orient)*
+  - `[T0+15, seq, ~0.5 s]` Lower apple to board; release grip. *(leaf: place)*
+  - `[T0+15.5, seq, ~0.5 s]` Press down with palm/fingers to stabilize. *(leaf: force)*
+  - `[T0+14, parallel, ~2 s]` Apple does not roll.
+    - `[T0+15, state, ~2 s]` Static friction/board contact; calyx/stem asymmetry; board surface/wood grain supports. *(leaf: material)*
+
+- `[T0+16, seq, ~2 s]` Hold paring knife in right hand, thumb braced on bolster; left hand pins apple, fingertips curled back.
+  - `[T0+16, seq, ~0.5 s]` Right hand reaches knife handle. *(leaf: transport)*
+  - `[T0+16.5, seq, ~0.5 s]` Wrap fingers around handle/rivets; thumb braces bolster; spine rests along index. *(leaf: grip)*
+  - `[T0+17, seq, ~0.5 s]` Left hand contacts apple; palm/fingers pin. *(leaf: contact)*
+  - `[T0+17.5, seq, ~0.5 s]` Curl left fingertips back; establish safe guard. *(leaf: posture)*
+  - `[T0+16, parallel, ~2 s]` Grip pressure and blade readiness. *(leaf: proprioceptive)*
+
+- `[T0+18, seq, ~1 s]` First cut: sink blade just beside stem, ~1/4 inch deep, until pop through skin into flesh.
+  - `[T0+18, seq, ~0.2 s]` Position blade/tip beside stem; align angle; near shallow gouge from prior pressing. *(leaf: positioning)*
+  - `[T0+18.2, seq, ~0.2 s]` Apply downward/forward force; edge contacts skin. *(leaf: force)*
+  - `[T0+18.4, seq, ~0.3 s]` Increase pressure; skin resists; cuticle/epidermis deforms. *(leaf: material response)*
+  - `[T0+18.7, seq, ~0.1 s]` Pop through skin; blade enters flesh. *(leaf: rupture)*
+  - `[T0+18.8, seq, ~0.2 s]` Stop at ~1/4 inch depth; withdraw slightly. *(leaf: control)*
+  - `[T0+18, parallel, immediate]` Cut breaks skin; exposed flesh is pale yellow-white; thin juice film weeps immediately. *(see N4)*
+
+- `[T0+19, cyclical, ~35–45 s]` Peel: rotate apple against blade; left thumb pushes fruit forward in small increments; knife stays nearly still.
+  - `[T0+19, cyclical, ~35–45 s]` Peel cycle:
+    - `[per cycle, seq, ~0.5–1 s]` Left thumb pushes apple forward a few mm. *(leaf: cyclical atomic)*
+    - `[per cycle, seq, ~0.2 s]` Right hand rotates apple against blade. *(leaf: cyclical atomic)*
+    - `[per cycle, seq, ~0.2 s]` Blade edge engages skin; peel separates. *(leaf: rupture)*
+    - `[per cycle, seq, ~0.2 s]` Peel ribbon curls away; tension releases. *(leaf: material)*
+    - `[per cycle, seq, ~0.1 s]` Reset: knife nearly still; left thumb repositions. *(leaf: cyclical atomic)*
+  - `[T0+~50, seq, ~5 s]` At bottom, peel narrows; lift knife and reposition twice around calyx end.
+    - `[T0+~50, seq, ~1.5 s]` First calyx reposition: lift blade, angle around pucker. *(leaf: positioning)*
+    - `[T0+~51.5, seq, ~1.5 s]` Second calyx reposition: cut narrow strip; release. *(leaf: cut)*
+    - `[T0+~53, seq, ~2 s]` Detach peel; let ribbon drop. *(leaf: release)*
+  - `[T0+19, parallel/cyclical]` Peel ribbon forms: continuous, ~1 inch wide, curls away, drops in loose spiral onto board. *(see N5)*
+    - `[T0+19, cyclical, ~35–45 s]` Ribbon lengthens; edge curls; gravity pulls. *(leaf: material)*
+    - `[T0+~50, seq, ~5 s]` Narrowed calyx pieces separate. *(leaf: material)*
+
+- `[T0+~55, seq, ~2 s]` Turn naked apple in hand.
+  - `[T0+~55, seq, ~0.5 s]` Adjust grip; support peeled fruit. *(leaf: grip)*
+  - `[T0+~55.5, seq, ~1 s]` Rotate apple; inspect for remaining peel/eyes. *(leaf: orient/check)*
+  - `[T0+~56.5, seq, ~0.5 s]` Set orientation for quartering. *(leaf: orient)*
+
+- `[T0+~57, seq, ~3 s]` Quarter apple: blade down through core, firm crunch; second cut; four pieces fall apart.
+  - `[T0+~57, seq, ~0.5 s]` Orient apple; place blade at stem axis. *(leaf: positioning)*
+  - `[T0+~57.5, seq, ~1 s]` First bisection: press/cut down through core; firm crunch.
+    - `[T0+~57.5, seq, ~0.3 s]` Apply downward force. *(leaf: force)*
+    - `[T0+~57.8, seq, ~0.4 s]` Blade passes through flesh/core; cells rupture. *(leaf: rupture)*
+    - `[T0+~58.2, seq, ~0.3 s]` Apple splits into two halves. *(leaf: split)*
+  - `[T0+~58.5, seq, ~1 s]` Second cut: rotate/reposition halves; cut through core again.
+    - `[T0+~58.5, seq, ~0.3 s]` Rotate/reposition. *(leaf: orient)*
+    - `[T0+~58.8, seq, ~0.4 s]` Cut through core again. *(leaf: cut)*
+    - `[T0+~59.2, seq, ~0.3 s]` Four pieces fall apart. *(leaf: split)*
+  - `[T0+~57, parallel]` Quartering produces firm crunch; core wedge is fibrous, pale, slightly translucent. *(see N11)*
+
+- `[T0+~60, iterative/cyclical, ~30 s]` For each quarter: lay flat and slice out core.
+  - `[T0+~60, repeated 4×, ~7.5 s each]` Quarter-core cycle:
+    - `[per quarter, seq, ~1 s]` Lay quarter flat; stabilize with left hand. *(leaf: place)*
+    - `[per quarter, seq, ~1 s]` Identify core line/seeds. *(leaf: perceptual)*
+    - `[per quarter, seq, ~2 s]` Insert blade along core boundary. *(leaf: cut)*
+    - `[per quarter, seq, ~2 s]` Slice down/around core; separate wedge. *(leaf: cut)*
+    - `[per quarter, seq, ~1 s]` Extract triangular core wedge with 3 seeds in papery pockets; seed coats visible. *(leaf: extract)*
+    - `[per quarter, seq, ~0.5 s]` Set wedge aside. *(leaf: place)*
+  - `[T0+~60, repeated 4×]` Extract triangular core wedge with 3 seeds in papery pockets.
+    - `[per quarter, parallel]` Juice release; browning begins on new cuts. *(see N6)*
+    - `[per quarter, parallel]` Seed pockets tear/separate. *(leaf: material)*
+
+- `[T0+~90, seq, ~2 s]` Flick seeds into sink; they click against steel.
+  - `[T0+~90, seq, ~0.5 s]` Gather seeds from board/wedge. *(leaf: gather)*
+  - `[T0+~90.5, seq, ~0.5 s]` Position thumb/index; build tension. *(leaf: posture)*
+  - `[T0+~91, seq, ~0.3 s]` Flick: release thumb; seeds launch. *(leaf: ballistic)*
+  - `[T0+~91.3, seq, ~0.7 s]` Seeds travel arc; hit steel sink; click. *(leaf: impact)*
+  - `[T0+~90, parallel]` Seeds click against steel sink. *(see N12)*
+
+- `[T0+~92, seq, ~5 s]` Put slices into bowl.
+  - `[T0+~92, seq, ~1 s]` Gather slices from board. *(leaf: gather)*
+  - `[T0+~93, seq, ~2 s]` Lift and transfer to bowl. *(leaf: transport)*
+  - `[T0+~95, seq, ~1.5 s]` Place/release slices; arrange loosely. *(leaf: place)*
+  - `[T0+~96.5, seq, ~0.5 s]` Withdraw hand; check bowl. *(leaf: completion)*
+
+- `[T0+~97, seq, ~2 s]` Put peels into compost crock.
+  - `[T0+~97, seq, ~0.5 s]` Gather peel spiral. *(leaf: gather)*
+  - `[T0+~97.5, seq, ~0.7 s]` Lift and transfer to crock. *(leaf: transport)*
+  - `[T0+~98.2, seq, ~0.5 s]` Drop/release; peels settle. *(leaf: release)*
+  - `[T0+~98.7, seq, ~0.3 s]` Wipe/brush board if needed. *(leaf: cleanup)*
+
+- `[T0+~99, lingering/parallel, hours]` Hands smell like apple for rest of morning, even after washing.
+  - `[T0+~99, state, hours]` Volatile retention in skin/sebum. *(leaf: material/sensory)*
+  - `[T0+~99, delayed, ~minutes]` Wash removes some surface volatiles; residual remains. *(leaf: material)*
+  - `[T0+~99, parallel, hours]` Olfactory adaptation/periodic detection. *(leaf: sensory)*
+
+---
+
+### LANE N — Natural / material processes in parallel
+
+- `[T0, state, continuous]` Apple is cold from refrigerator; dense with water.
+  - `[T0, state, continuous]` Thermal equilibration: apple near refrigerator temp; heat transfer to hand begins. *(leaf: thermal)*
+  - `[T0, state, continuous]` Turgor: cells water-filled; dense mass. *(leaf: mechanical)*
+  - `[T0, state, continuous]` Waxy cuticle intact; glossy, low friction. *(leaf: surface)*
+
+- `[T0+2, parallel, ~8 s]` Water beads and rolls off waxy skin immediately during washing.
+  - `[T0+2, seq, ~0.5 s]` Water contacts cuticle; film wets high-energy spots. *(leaf: wetting)*
+  - `[T0+2.5, cyclical, ~5 s]` Droplets coalesce; surface tension pulls into beads. *(leaf: cyclical)*
+  - `[T0+3, parallel, ~5 s]` Gravity/capillary runoff: beads roll down apple, drip from calyx/stem. *(leaf: runoff)*
+  - `[T0+4, delayed, ~minutes]` Residual droplets evaporate; some enter stem crater; ambient humidity affects rate. *(leaf: evaporation)*
+
+- `[T0+10, parallel, ~4 s]` Drying on shirt changes skin from glossy to dull matte red.
+  - `[T0+10, parallel, ~2.5 s]` Cotton fibers contact water film; capillary wicking. *(leaf: wicking)*
+  - `[T0+10.5, parallel, ~2.5 s]` Water absorbed into fabric; skin surface water reduced. *(leaf: absorption)*
+  - `[T0+12, delayed, ~minutes]` Evaporation of remaining film; cuticle loses specular gloss. *(leaf: evaporation)*
+  - `[T0+13, delayed, ~minutes]` Matte appearance: wax microtexture exposed; no continuous water layer. *(leaf: optical)*
+
+- `[T0+18, parallel, immediate]` Cut breaks skin; exposed flesh is pale yellow-white; thin juice film weeps immediately.
+  - `[T0+18, seq, immediate]` Blade edge parts cuticle/epidermis. *(leaf: rupture)*
+  - `[T0+18.1, seq, immediate]` Cell walls rupture along cut; vacuoles release juice. *(leaf: rupture)*
+  - `[T0+18.2, parallel, immediate]` Juice film forms: water, sugars, acids, phenolics on cut surface. *(leaf: fluid)*
+  - `[T0+18.2, parallel, immediate]` Color changes: pale yellow-white/green-white due to light scattering/air. *(leaf: optical)*
+  - `[T0+18.3, delayed, +10 s]` Oxidation begins. *(see N6)*
+
+- `[T0+19, parallel, ~35–45 s]` Peel separation exposes wet, faintly green-white flesh.
+  - `[T0+19, cyclical, ~35–45 s]` Blade shears middle lamella/pectin between epidermal and cortical cells. *(leaf: shear)*
+  - `[T0+19, parallel/cyclical]` Peel ribbon separates; wet cortex exposed. *(leaf: separation)*
+  - `[T0+19, parallel/cyclical]` Juice films exposed flesh; some runs down apple. *(leaf: fluid)*
+  - `[T0+19, delayed]` Browning of exposed flesh. *(see N6)*
+
+- `[T0+29, delayed, +10 s after first exposure, ongoing]` Exposed flesh begins dulling toward tan; oxidation/browning repeats for every new cut surface.
+  - `[T0+29, seq, +10 s]` Oxygen diffuses into cut cells. *(leaf: diffusion)*
+  - `[T0+29, parallel, ongoing]` Polyphenol oxidase (PPO) catalyzes phenolics to quinones. *(leaf: enzymatic)*
+  - `[T0+29, delayed, seconds–minutes]` Quinones polymerize to brown pigments/melanins. *(leaf: chemical)*
+  - `[T0+29, parallel, ongoing]` Every new cut (quartering, coring, slices) resets local browning clock. *(leaf: chemical)*
+
+- `[T0+19, parallel, continuous]` Aroma volatiles rise — green, sharp, faintly floral.
+  - `[T0+19, parallel, continuous]` Ruptured cells release esters, alcohols, aldehydes. *(leaf: release)*
+  - `[T0+19, parallel, continuous]` Volatiles diffuse into ambient air; air currents disperse. *(leaf: diffusion)*
+  - `[T0+19, parallel, continuous]` Olfactory epithelium detects green/sharp/floral notes. *(leaf: sensory)*
+
+- `[T0+19, parallel]` Blade makes soft, wet, rasping sound, like paper tearing slowly. *(material/acoustic response)*
+  - `[T0+19, cyclical]` Blade edge friction against skin/flesh. *(leaf: friction)*
+  - `[T0+19, parallel]` Cell wall rupture emits small acoustic bursts. *(leaf: acoustic)*
+  - `[T0+19, parallel]` Sound waves travel through air to ear/auditory system. *(leaf: acoustic)*
+  - `[T0+19, parallel]` Perceived as soft, wet, rasping/paper-tearing. *(leaf: sensory)*
+
+- `[T0+~55, parallel/after peeling]` Juice runs down wrist to heel of palm.
+  - `[T0+~55, seq]` Juice accumulates at hand/fruit contact. *(leaf: fluid)*
+  - `[T0+~55, parallel]` Gravity/capillary spread along skin. *(leaf: fluid)*
+  - `[T0+~55, delayed]` Reaches wrist/heel of palm. *(leaf: fluid)*
+
+- `[T0+~55 to +minutes, delayed]` Juice dries tacky on skin.
+  - `[T0+~55, delayed, minutes]` Water evaporates from film. *(leaf: evaporation)*
+  - `[T0+~55, delayed, minutes]` Sugars/acid/phenolics concentrate; tacky residue. *(leaf: chemical)*
+  - `[T0+~55, delayed, minutes]` Residue adheres to skin/sebum. *(leaf: adhesion)*
+
+- `[T0+~57, parallel]` Quartering produces firm crunch; core wedge is fibrous, pale, slightly translucent.
+  - `[T0+~57, seq]` Blade fractures parenchyma; cell walls snap. *(leaf: fracture)*
+  - `[T0+~57, parallel]` Acoustic crunch: multiple micro-fractures. *(leaf: acoustic)*
+  - `[T0+~57, parallel]` Core wedge: vascular/fibrous tissue, pale, translucent. *(leaf: material)*
+
+- `[T0+~90, parallel]` Seeds click against steel sink.
+  - `[T0+~90, seq]` Seed impacts steel; elastic deformation. *(leaf: impact)*
+  - `[T0+~90, parallel]` Acoustic click; steel resonance. *(leaf: acoustic)*
+  - `[T0+~90, parallel]` Seeds settle in basin/drain area. *(leaf: material)*
+
+- `[T0+~97, parallel]` Peel edges in compost crock are already browning.
+  - `[T0+~97, parallel]` Cut edges exposed to oxygen. *(leaf: chemical)*
+  - `[T0+~97, delayed]` PPO browning; dehydration at edges. *(leaf: chemical)*
+  - `[T0+~97, ongoing]` Browning spreads slowly; edges darken. *(leaf: chemical)*
+
+- `[T0+~99, lingering, hours]` Apple odor persists on hands after washing.
+  - `[T0+~99, state, hours]` Volatile molecules absorb into stratum corneum/sebum. *(leaf: absorption)*
+  - `[T0+~99, delayed, hours]` Slow release from skin oils; washing removes only surface fraction. *(leaf: diffusion)*
+  - `[T0+~99, parallel, hours]` Olfactory detection persists, fades intermittently. *(leaf: sensory)*
+
+---
+
+**Synchronization note:** Newly decomposed objects are integrated above — cortical parenchyma, cell walls, vacuoles, middle lamella/pectin, vascular strands, PPO, phenolics, quinones, brown pigments, oxygen, cotton fibers, absorbed water, faucet handle, water stream/droplets/film, drain, steel basin, stratum corneum, sebum, olfactory epithelium, auditory system, sound waves, gravity, friction, surface tension, capillary action, and thermal energy. Every object in the action plot appears in the object list, and every newly introduced object is tied to at least one decomposed action or natural process.
+

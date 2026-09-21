@@ -1,0 +1,307 @@
+═══════════════════════════════════════════════════════════════════════
+ELEMENT DECOMPOSITION DEMO — Primitive geometry for object templates
+═══════════════════════════════════════════════════════════════════════
+
+INSTRUCTIONS
+
+You are given an object template's semantic description. Produce a
+compact decomposition of the object into primitive elements that
+approximates its shape. This decomposition is stored in the element
+registry and reused across all future memories that involve the same
+template.
+
+Coordinate convention:
+    - Z is up (right-handed).
+    - The ground is at z=0.
+    - Lengths are in centimetres.
+    - Each element's transform positions the element relative to the
+      object's local origin (its centroid), not relative to world.
+    - Rotations are quaternions [x, y, z, w].
+
+Available element types and their required parameters:
+
+    sphere       radius_cm
+    ellipsoid    radius_x_cm, radius_y_cm, radius_z_cm
+    box          size_x_cm, size_y_cm, size_z_cm
+    cylinder     radius_cm, height_cm
+    cone         radius_cm, height_cm
+    torus        major_radius_cm, minor_radius_cm
+    capsule      radius_cm, height_cm
+    plane        size_x_cm, size_y_cm       (both optional)
+    sheet        size_x_cm, size_y_cm, thickness_cm
+    wedge        size_x_cm, size_y_cm, size_z_cm
+    prism        size_x_cm, size_y_cm, num_sides
+    pyramid      base_size_x_cm, base_size_y_cm, height_cm
+    hemisphere   radius_cm
+    frustum      bottom_radius_cm, top_radius_cm, height_cm
+
+Element transform (optional, identity if omitted):
+    {"translate": [x, y, z], "rotate": [x, y, z, w], "scale": [sx, sy, sz]}
+
+Guidelines:
+
+- Keep decompositions compact. 1 to 6 elements per object.
+- Use a single primitive when it captures the shape well (a ball is
+  a sphere; a board is a box; a rope is a capsule).
+- Compose when needed (an apple is a sphere, a short cylinder for the
+  stem, and a torus for the calyx).
+- Do NOT model surface details, textures, or internal structure
+  beyond what is needed for the object's overall geometry.
+- Do NOT model parts that are separate objects in the memory. If an
+  apple's flesh is its own template, do not add flesh as an element
+  of the apple.
+- Provide a plausible default material dict, mass in grams, and a
+  short notes string.
+
+Output format (exact):
+
+{
+  "elements": [
+    {"element_type": "...", "parameters": {...}, "transform": {...}},
+    ...
+  ],
+  "default_material": {"color": "...", "roughness": 0.0-1.0, "metalness": 0.0-1.0},
+  "default_mass_grams": <number>,
+  "notes": "..."
+}
+
+Only the JSON. No commentary, no markdown fences.
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 1 — Simple single-primitive decomposition
+Object: ball
+Context: {dimensions: 8cm diameter, shape: spherical, materials: rubber}
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "elements": [
+    {"element_type": "sphere",
+     "parameters": {"radius_cm": 4.0},
+     "transform": {"translate": [0, 0, 0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]}}
+  ],
+  "default_material": {"color": "red", "roughness": 0.5, "metalness": 0.0},
+  "default_mass_grams": 150.0,
+  "notes": "A rubber ball. Single sphere captures the shape."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 2 — Compound decomposition with attached parts
+Object: apple
+Context: {dimensions: 8cm, shape: spherical, materials: apple_skin,
+          apple_flesh, apple_core}
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "elements": [
+    {"element_type": "sphere",
+     "parameters": {"radius_cm": 4.0},
+     "transform": {"translate": [0, 0, 0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "skin"}},
+    {"element_type": "cylinder",
+     "parameters": {"radius_cm": 0.15, "height_cm": 1.6},
+     "transform": {"translate": [0, 0, 4.2], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "stem"}},
+    {"element_type": "torus",
+     "parameters": {"major_radius_cm": 1.0, "minor_radius_cm": 0.25},
+     "transform": {"translate": [0, 0, -3.85], "rotate": [0.7071, 0, 0, 0.7071], "scale": [1, 1, 1]},
+     "material_override": {"label": "calyx"}}
+  ],
+  "default_material": {"color": "red_brushed", "roughness": 0.4, "metalness": 0.0},
+  "default_mass_grams": 200.0,
+  "notes": "Sphere for the body, cylinder for the stem, torus for the calyx. Skin, flesh, and core are separate templates and are not decomposed here."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 3 — Elongated compound
+Object: paring_knife
+Context: {dimensions: 20cm x 3cm x 1.2cm, shape: elongated,
+          materials: stainless_steel, wood}
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "elements": [
+    {"element_type": "box",
+     "parameters": {"size_x_cm": 10.0, "size_y_cm": 2.0, "size_z_cm": 0.2},
+     "transform": {"translate": [-5.0, 0, 0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "blade"}},
+    {"element_type": "box",
+     "parameters": {"size_x_cm": 9.0, "size_y_cm": 2.5, "size_z_cm": 1.5},
+     "transform": {"translate": [5.5, 0, 0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "handle"}}
+  ],
+  "default_material": {"color": "silver", "roughness": 0.2, "metalness": 1.0},
+  "default_mass_grams": 80.0,
+  "notes": "Blade and handle are two box elements along the x axis. The rivets, bolster, and tip are not modeled; they are visual details."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 4 — Container with rim and foot
+Object: bowl
+Context: {dimensions: 14cm diameter x 6cm height, shape: frustum,
+          materials: ceramic}
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "elements": [
+    {"element_type": "frustum",
+     "parameters": {"bottom_radius_cm": 4.0, "top_radius_cm": 7.0, "height_cm": 6.0},
+     "transform": {"translate": [0, 0, 3.0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "bowl_body"}},
+    {"element_type": "cylinder",
+     "parameters": {"radius_cm": 4.5, "height_cm": 0.4},
+     "transform": {"translate": [0, 0, 0.2], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "footring"}}
+  ],
+  "default_material": {"color": "white", "roughness": 0.2, "metalness": 0.0},
+  "default_mass_grams": 400.0,
+  "notes": "Frustum for the tapering body, a short wide cylinder for the footring. The bowl's interior cavity is implicit; it is not modeled as a separate element."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 5 — Multiple similar elements
+Object: apple_seeds
+Context: {shape: ellipsoid, count: 3, dimensions: 0.8cm x 0.4cm x 0.4cm,
+          materials: apple_seed}
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "elements": [
+    {"element_type": "ellipsoid",
+     "parameters": {"radius_x_cm": 0.4, "radius_y_cm": 0.2, "radius_z_cm": 0.2},
+     "transform": {"translate": [0, 0, 0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "seed_1"}},
+    {"element_type": "ellipsoid",
+     "parameters": {"radius_x_cm": 0.4, "radius_y_cm": 0.2, "radius_z_cm": 0.2},
+     "transform": {"translate": [1.0, 0, 0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "seed_2"}},
+    {"element_type": "ellipsoid",
+     "parameters": {"radius_x_cm": 0.4, "radius_y_cm": 0.2, "radius_z_cm": 0.2},
+     "transform": {"translate": [2.0, 0, 0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "seed_3"}}
+  ],
+  "default_material": {"color": "dark_brown", "roughness": 0.7, "metalness": 0.0},
+  "default_mass_grams": 0.5,
+  "notes": "Three identical ellipsoids, one per seed, offset along x so they sit side by side. Each seed gets its own indexed label."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 6 — Wedge primitive
+Object: apple_core
+Context: {shape: wedge, dimensions: 1.2cm x 2.0cm x 1.0cm,
+          materials: apple_core}
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "elements": [
+    {"element_type": "wedge",
+     "parameters": {"size_x_cm": 1.2, "size_y_cm": 2.0, "size_z_cm": 1.0},
+     "transform": {"translate": [0, 0, 0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "core_wedge"}}
+  ],
+  "default_material": {"color": "pale_translucent", "roughness": 0.4, "metalness": 0.0},
+  "default_mass_grams": 10.0,
+  "notes": "A single wedge captures the triangular fibrous core. Seed pockets are internal and not modeled."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 7 — Flexible or curly object
+Object: peel_strip
+Context: {shape: [strip, spiral], dimensions: 40cm x 2.5cm x 0.15cm,
+          materials: apple_skin}
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "elements": [
+    {"element_type": "sheet",
+     "parameters": {"size_x_cm": 2.5, "size_y_cm": 8.0, "thickness_cm": 0.05},
+     "transform": {"translate": [0, 0, 0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "peel_ribbon_sheet"}},
+    {"element_type": "cylinder",
+     "parameters": {"radius_cm": 0.8, "height_cm": 8.0},
+     "transform": {"translate": [0, 0, 0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "peel_curl"}}
+  ],
+  "default_material": {"color": "red_brushed", "roughness": 0.5, "metalness": 0.0},
+  "default_mass_grams": 10.0,
+  "notes": "Two elements model the two phases of the peel: a flat sheet for the initial strip, and a cylinder as a coarse proxy for the curled spiral form it takes under gravity."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 8 — Large, tall, hollow fixture
+Object: refrigerator
+Context: {dimensions: 70cm x 70cm x 180cm, shape: box,
+          materials: steel, plastic}
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "elements": [
+    {"element_type": "box",
+     "parameters": {"size_x_cm": 70.0, "size_y_cm": 70.0, "size_z_cm": 180.0},
+     "transform": {"translate": [0, 0, 90.0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "cabinet"}},
+    {"element_type": "box",
+     "parameters": {"size_x_cm": 60.0, "size_y_cm": 4.0, "size_z_cm": 100.0},
+     "transform": {"translate": [0, 37.0, 105.0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "door"}}
+  ],
+  "default_material": {"color": "silver", "roughness": 0.3, "metalness": 0.9},
+  "default_mass_grams": 80000.0,
+  "notes": "A single box for the cabinet volume and a thin box for the front door. Shelves, compressor, gasket, and interior liner are not modeled."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 9 — Human body part
+Object: hand
+Context: {dimensions: 18cm x 8cm x 2cm, shape: hand,
+          materials: biological}
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "elements": [
+    {"element_type": "box",
+     "parameters": {"size_x_cm": 8.0, "size_y_cm": 2.5, "size_z_cm": 18.0},
+     "transform": {"translate": [0, 0, 0], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "palm"}}
+  ],
+  "default_material": {"color": "flesh", "roughness": 0.6, "metalness": 0.0},
+  "default_mass_grams": 400.0,
+  "notes": "A single box approximates the palm. Fingers are not modeled as individual elements; grasp and finger posture are represented as properties and by separate sub-objects where needed."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 10 — Simple tall fixture with spout
+Object: faucet_tap
+Context: {shape: cylinder, dimensions: 3cm x 3cm x 25cm,
+          materials: chrome_plated_brass}
+═══════════════════════════════════════════════════════════════════════
+
+{
+  "elements": [
+    {"element_type": "cylinder",
+     "parameters": {"radius_cm": 1.5, "height_cm": 25.0},
+     "transform": {"translate": [0, 0, 12.5], "rotate": [0, 0, 0, 1], "scale": [1, 1, 1]},
+     "material_override": {"label": "stem"}},
+    {"element_type": "cylinder",
+     "parameters": {"radius_cm": 1.5, "height_cm": 14.0},
+     "transform": {"translate": [0, -7.0, 25.0], "rotate": [0.7071, 0, 0, 0.7071], "scale": [1, 1, 1]},
+     "material_override": {"label": "spout"}}
+  ],
+  "default_material": {"color": "silver", "roughness": 0.15, "metalness": 1.0},
+  "default_mass_grams": 1800.0,
+  "notes": "A vertical stem cylinder and a horizontal spout cylinder, spout rotated 90 degrees about X and offset forward. The handle and aerator are not modeled."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+END OF DEMO
+═══════════════════════════════════════════════════════════════════════

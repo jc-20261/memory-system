@@ -1,0 +1,2422 @@
+{
+  "pinching off tomato suckers": [
+    {
+      "goal_object": "tomato_plant",
+      "candidates": [
+        {
+          "template": "tomato_plant",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "planting a window box": [
+    {
+      "goal_object": "window_box",
+      "candidates": [
+        {
+          "template": "window_box",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "composting kitchen scraps": [
+    {
+      "goal_object": "kitchen_scraps",
+      "candidates": [
+        {
+          "template": "kitchen_scraps",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    },
+    {
+      "goal_object": "compost",
+      "candidates": [
+        {
+          "template": "compost_pile",
+          "score": 0.8456809520721436,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "compost_material",
+          "score": 0.8418601751327515,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "compost_bin",
+          "score": 0.7837954759597778,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "compost_particle",
+          "score": 0.7705677151679993,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "compost_lump",
+          "score": 0.7586670517921448,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "bedding_compost",
+          "score": 0.7441989183425903,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "compost_pail",
+          "score": 0.6914103031158447,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "compost_bin_lid",
+          "score": 0.6225477457046509,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "simmering tomato sauce": [
+    {
+      "goal_object": "tomato_sauce",
+      "candidates": [
+        {
+          "template": "tomato",
+          "score": 0.8081260919570923,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "sauce",
+          "score": 0.7419468760490417,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "tomato_flesh",
+          "score": 0.6922683119773865,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "tomato_juice",
+          "score": 0.6785128116607666,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "tomato_plant",
+          "score": 0.658693790435791,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "tomato_skin_pieces",
+          "score": 0.6547426581382751,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "saucer",
+          "score": 0.6484185457229614,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "tomato_seeds",
+          "score": 0.6148484349250793,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "toasting nuts for a salad": [
+    {
+      "goal_object": "nuts",
+      "candidates": [],
+      "memory_object_templates": [
+        "left_hand",
+        "right_hand",
+        "forearm",
+        "eyes",
+        "mouth",
+        "tongue",
+        "food_object",
+        "food_piece",
+        "cookware",
+        "heat_source",
+        "utensil",
+        "cooling_plate",
+        "cutting_board",
+        "air"
+      ]
+    }
+  ],
+  "thinning carrot seedlings": [
+    {
+      "goal_object": "carrot_bed",
+      "candidates": [
+        {
+          "template": "carrot_top",
+          "score": 0.7354456186294556,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "carrot_row",
+          "score": 0.7061169147491455,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "carrot_seedling",
+          "score": 0.6887127757072449,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "dehydrating apple slices": [
+    {
+      "goal_object": "apple_slices",
+      "candidates": [
+        {
+          "template": "slice",
+          "score": 0.7253873348236084,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "apple",
+          "score": 0.6619707345962524,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "bread_slice",
+          "score": 0.6043637990951538,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "painting the fence": [
+    {
+      "goal_object": "fence",
+      "candidates": [
+        {
+          "template": "fence",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "repairing a wooden gate hinge": [
+    {
+      "goal_object": "hinge",
+      "candidates": [
+        {
+          "template": "hinge",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    },
+    {
+      "goal_object": "wooden_gate",
+      "candidates": [],
+      "memory_object_templates": [
+        "left_hand",
+        "right_hand",
+        "left_arm",
+        "right_arm",
+        "eyes",
+        "left_index_finger",
+        "right_forearm",
+        "right_shoulder",
+        "left_knee",
+        "left_thumb",
+        "ears",
+        "gate_leaf",
+        "hinge",
+        "fastener",
+        "fastener_hole",
+        "replacement_fastener",
+        "wood_plug",
+        "frame",
+        "driver",
+        "chisel",
+        "pry_tool",
+        "working_surface",
+        "gravel_drive",
+        "ground",
+        "paint_film",
+        "corrosion_layer",
+        "latch",
+        "hinge_pin",
+        "air",
+        "oxygen",
+        "moisture",
+        "water",
+        "corrosion_compound",
+        "metal_atom",
+        "wood_material",
+        "cell_wall",
+        "light_source",
+        "photons"
+      ]
+    }
+  ],
+  "rendering bacon fat": [
+    {
+      "goal_object": "bacon_fat",
+      "candidates": [
+        {
+          "template": "fat",
+          "score": 0.7216682434082031,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "bacon_piece",
+          "score": 0.696611762046814,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "bacon_slice",
+          "score": 0.6457868814468384,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "bacon_package",
+          "score": 0.644135057926178,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "fat_block",
+          "score": 0.6047706007957458,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "cleaning the washing machine": [
+    {
+      "goal_object": "washing_machine",
+      "candidates": [
+        {
+          "template": "washing_machine",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "descaling the electric kettle": [
+    {
+      "goal_object": "electric_kettle",
+      "candidates": [
+        {
+          "template": "kettle",
+          "score": 0.8380606174468994,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "kettle_handle",
+          "score": 0.7233889102935791,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "kettle_interior",
+          "score": 0.7112463116645813,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "kettle_base",
+          "score": 0.7037529349327087,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "kettle_lid",
+          "score": 0.6608901023864746,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "deadheading the petunias": [
+    {
+      "goal_object": "petunia",
+      "candidates": [
+        {
+          "template": "petunia_plant",
+          "score": 0.9023054838180542,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "pruning the grapevines": [
+    {
+      "goal_object": "grapevine",
+      "candidates": [
+        {
+          "template": "grapevine",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "hardening off seedlings": [
+    {
+      "goal_object": "seedling",
+      "candidates": [
+        {
+          "template": "seedling",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "making granola": [
+    {
+      "goal_object": "granola",
+      "candidates": [
+        {
+          "template": "granola",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "making pickled eggs": [
+    {
+      "goal_object": "pickled_eggs",
+      "candidates": [
+        {
+          "template": "eggs",
+          "score": 0.7076430916786194,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "egg",
+          "score": 0.6369902491569519,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "cleaning the toaster crumb tray": [
+    {
+      "goal_object": "toaster_crumb_tray",
+      "candidates": [
+        {
+          "template": "crumb_tray",
+          "score": 0.8531556129455566,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "crumb_tray_opening",
+          "score": 0.8040428757667542,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "crumbs",
+          "score": 0.7011867761611938,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "crumb_particle",
+          "score": 0.6338163614273071,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "toaster",
+          "score": 0.6220734119415283,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "crumb_particles",
+          "score": 0.6215451955795288,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "crumb_fragment",
+          "score": 0.618959903717041,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "cleaning the bird bath": [
+    {
+      "goal_object": "bird_bath",
+      "candidates": [
+        {
+          "template": "bird_bath",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    },
+    {
+      "goal_object": "water",
+      "candidates": [
+        {
+          "template": "water",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "sanitizing the cutting boards": [
+    {
+      "goal_object": "cutting_board",
+      "candidates": [
+        {
+          "template": "cutting_board",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "dividing daylilies": [
+    {
+      "goal_object": "daylily_clump",
+      "candidates": [
+        {
+          "template": "daylily_clump",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    },
+    {
+      "goal_object": "daylily_division",
+      "candidates": [],
+      "memory_object_templates": [
+        "hand",
+        "arm",
+        "leg",
+        "foot",
+        "eyes",
+        "ears",
+        "finger",
+        "ground",
+        "grass",
+        "daylily_clump",
+        "root_system",
+        "crown",
+        "foliage",
+        "leaf",
+        "leaf_sap",
+        "root",
+        "root_hair",
+        "section",
+        "divisions",
+        "container",
+        "liner",
+        "watering_can",
+        "water",
+        "water_droplet",
+        "spray_head",
+        "water_source",
+        "garden_fork",
+        "trowel",
+        "folded_sack",
+        "hole",
+        "soil",
+        "soil_crumb",
+        "soil_particle",
+        "soil_pore",
+        "sap",
+        "sap_vessel",
+        "wound",
+        "natural_seam",
+        "crevice",
+        "shaded_area",
+        "air",
+        "water_vapor",
+        "volatile_compound",
+        "scent",
+        "odor",
+        "odor_compound"
+      ]
+    }
+  ],
+  "rotating the potted plants": [
+    {
+      "goal_object": "potted_plant",
+      "candidates": [
+        {
+          "template": "pot",
+          "score": 0.824633002281189,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "seedling_pot",
+          "score": 0.7315243482589722,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "pot_base",
+          "score": 0.7180402278900146,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "nursery_pot",
+          "score": 0.6958872079849243,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "pot_wall",
+          "score": 0.6788485050201416,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "pot_bottom",
+          "score": 0.6716558933258057,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "cooking_pot",
+          "score": 0.6635719537734985,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "pot_handle",
+          "score": 0.6574721336364746,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "pot_lid",
+          "score": 0.6530144214630127,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "plant",
+          "score": 0.6405555009841919,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "potting_mix",
+          "score": 0.6348700523376465,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "making fresh pasta sauce": [
+    {
+      "goal_object": "pasta_sauce",
+      "candidates": [
+        {
+          "template": "sauce",
+          "score": 0.7451393008232117,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "saucer",
+          "score": 0.645919919013977,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "repotting a fern": [
+    {
+      "goal_object": "fern",
+      "candidates": [],
+      "memory_object_templates": [
+        "left_hand",
+        "right_hand",
+        "left_arm",
+        "right_arm",
+        "eyes",
+        "head",
+        "nose",
+        "left_thumb",
+        "right_thumb",
+        "left_palm",
+        "right_palm",
+        "plant",
+        "plant_crown",
+        "leaves",
+        "root_system",
+        "root_ball",
+        "root_strand",
+        "root_hairs",
+        "xylem",
+        "old_container",
+        "container_rim",
+        "new_container",
+        "old_soil",
+        "fresh_soil",
+        "drainage_cover",
+        "soil_bag",
+        "water",
+        "water_container",
+        "surface",
+        "newspaper",
+        "air",
+        "dust",
+        "light_source",
+        "drainage_water",
+        "sediment_laden_water",
+        "drainage_container"
+      ]
+    },
+    {
+      "goal_object": "pot",
+      "candidates": [
+        {
+          "template": "pot",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "transplanting a rose bush": [
+    {
+      "goal_object": "rose_bush",
+      "candidates": [],
+      "memory_object_templates": [
+        "left_hand",
+        "right_hand",
+        "left_arm",
+        "right_arm",
+        "eyes",
+        "left_foot",
+        "right_foot",
+        "left_glove",
+        "right_glove",
+        "rose_plant",
+        "rose_plant_canopy",
+        "rose_plant_root_ball",
+        "rose_plant_roots",
+        "rose_plant_thorns",
+        "rose_plant_leaves",
+        "rose_plant_canes",
+        "rose_plant_graft_union",
+        "rose_plant_stem_base",
+        "twine",
+        "spade",
+        "spade_handle",
+        "spade_blade",
+        "soil",
+        "old_hole",
+        "new_hole",
+        "bucket",
+        "water",
+        "bedding_compost",
+        "path",
+        "air",
+        "ground"
+      ]
+    }
+  ],
+  "pouring a concrete stepping stone": [
+    {
+      "goal_object": "concrete_stepping_stone",
+      "candidates": [
+        {
+          "template": "stone",
+          "score": 0.667773962020874,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "making sourdough starter": [
+    {
+      "goal_object": "sourdough_starter",
+      "candidates": [],
+      "memory_object_templates": [
+        "container",
+        "culture",
+        "flour",
+        "water",
+        "scoop",
+        "spoon",
+        "measuring_cup",
+        "cotton_cloth",
+        "rubber_band",
+        "flour_bin",
+        "tap",
+        "waste_container",
+        "air",
+        "sink",
+        "light_source",
+        "gas",
+        "liquid",
+        "left_hand",
+        "right_hand",
+        "eyes",
+        "nose"
+      ]
+    }
+  ],
+  "tying up climbing beans": [
+    {
+      "goal_object": "bean_plant",
+      "candidates": [
+        {
+          "template": "bean_row",
+          "score": 0.7045906782150269,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "plant",
+          "score": 0.6520254015922546,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "segmenting oranges": [
+    {
+      "goal_object": "orange",
+      "candidates": [
+        {
+          "template": "orange_droplets",
+          "score": 0.6206656098365784,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "making a quiche": [
+    {
+      "goal_object": "quiche",
+      "candidates": [],
+      "memory_object_templates": [
+        "left_hand",
+        "right_hand",
+        "left_arm",
+        "right_arm",
+        "eyes",
+        "fat",
+        "wrapper",
+        "flour",
+        "flour_container",
+        "scoop",
+        "bowl",
+        "fork",
+        "knife",
+        "knife_blade",
+        "knife_handle",
+        "cutting_board",
+        "work_surface",
+        "dough",
+        "plastic_wrap",
+        "liquid",
+        "liquid_container",
+        "refrigerator",
+        "oven",
+        "rolling_pin",
+        "tart_pan",
+        "pastry_shell",
+        "parchment",
+        "pie_weights",
+        "egg_wash",
+        "pastry_brush",
+        "skillet",
+        "heat_source",
+        "cured_meat",
+        "aromatic_vegetable",
+        "cheese",
+        "grater",
+        "eggs",
+        "dairy_liquid",
+        "dairy_container",
+        "whisk",
+        "salt",
+        "pepper",
+        "spice",
+        "custard",
+        "filling",
+        "tart",
+        "timer",
+        "air",
+        "oven_mitts",
+        "plate",
+        "slice",
+        "spatula"
+      ]
+    }
+  ],
+  "grafting a fruit tree": [
+    {
+      "goal_object": "graft_union",
+      "candidates": [
+        {
+          "template": "rose_plant_graft_union",
+          "score": 0.7826859354972839,
+          "match_type": "fuzzy"
+        }
+      ]
+    },
+    {
+      "goal_object": "scion",
+      "candidates": [
+        {
+          "template": "scion",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "churning butter": [
+    {
+      "goal_object": "butter",
+      "candidates": [
+        {
+          "template": "butter",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    },
+    {
+      "goal_object": "buttermilk",
+      "candidates": [
+        {
+          "template": "buttermilk",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "refilling the bird feeder": [
+    {
+      "goal_object": "bird_feeder",
+      "candidates": [
+        {
+          "template": "bird_feeder",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "weeding between patio stones": [
+    {
+      "goal_object": "patio",
+      "candidates": [
+        {
+          "template": "patio_surface",
+          "score": 0.827501654624939,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "pruning the butterfly bush": [
+    {
+      "goal_object": "butterfly_bush",
+      "candidates": [
+        {
+          "template": "butterfly_bush",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    },
+    {
+      "goal_object": "pruning_waste",
+      "candidates": [
+        {
+          "template": "pruning_pile",
+          "score": 0.7752597332000732,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "top-dressing the lawn with compost": [
+    {
+      "goal_object": "lawn",
+      "candidates": [
+        {
+          "template": "lawn",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "making herbed compound butter": [
+    {
+      "goal_object": "compound_butter",
+      "candidates": [
+        {
+          "template": "butter",
+          "score": 0.7884057760238647,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "butter_mixture",
+          "score": 0.7278451323509216,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "butter_block",
+          "score": 0.6423154473304749,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "butter_wrapped",
+          "score": 0.6260117292404175,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "butter_cube",
+          "score": 0.618590235710144,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "making croutons from stale bread": [
+    {
+      "goal_object": "crouton",
+      "candidates": [
+        {
+          "template": "crouton",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "building a trellis for cucumbers": [
+    {
+      "goal_object": "trellis",
+      "candidates": [
+        {
+          "template": "trellis",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "sectioning grapefruit": [
+    {
+      "goal_object": "grapefruit_segment",
+      "candidates": [
+        {
+          "template": "grapefruit_segment",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "sowing radish seeds": [
+    {
+      "goal_object": "radish_seed",
+      "candidates": [
+        {
+          "template": "radish_seed",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "replacing the door sweep": [
+    {
+      "goal_object": "door_sweep",
+      "candidates": [
+        {
+          "template": "door_sweep_new",
+          "score": 0.9790545701980591,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "door_sweep_old",
+          "score": 0.9060280323028564,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "door",
+          "score": 0.6048892736434937,
+          "match_type": "fuzzy"
+        }
+      ]
+    },
+    {
+      "goal_object": "old_door_sweep",
+      "candidates": [
+        {
+          "template": "door_sweep_old",
+          "score": 0.9999999403953552,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "door_sweep_new",
+          "score": 0.8989050984382629,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "making fruit leather": [
+    {
+      "goal_object": "fruit_leather",
+      "candidates": [
+        {
+          "template": "citrus_fruit",
+          "score": 0.6014356017112732,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "edging the sidewalk with a spade": [
+    {
+      "goal_object": "sidewalk",
+      "candidates": [],
+      "memory_object_templates": [
+        "hand",
+        "arm",
+        "foot",
+        "leg",
+        "hips",
+        "torso",
+        "head",
+        "neck",
+        "eyes",
+        "ears",
+        "nose",
+        "spade",
+        "spade_shaft",
+        "spade_head",
+        "spade_edge",
+        "spade_head_face",
+        "spade_head_step",
+        "spade_head_tip",
+        "hard_surface",
+        "ground_cover",
+        "root_fibers",
+        "soil",
+        "cut_material",
+        "cut_channel",
+        "cut_material_pile",
+        "debris",
+        "detritivore",
+        "odor",
+        "air",
+        "sunlight",
+        "support"
+      ]
+    }
+  ],
+  "brewing kombucha": [
+    {
+      "goal_object": "kombucha",
+      "candidates": [],
+      "memory_object_templates": [
+        "hand",
+        "arm",
+        "eyes",
+        "fingertip",
+        "container",
+        "cover",
+        "liquid",
+        "heat_source",
+        "flame",
+        "fuel",
+        "vapor",
+        "flavoring_agent",
+        "utensil",
+        "solute",
+        "solute_container",
+        "measuring_vessel",
+        "cooling_basin",
+        "coolant_liquid",
+        "coolant_cubes",
+        "cold_storage",
+        "culture_jar",
+        "culture",
+        "starter_liquid",
+        "fermentation_vessel",
+        "funnel",
+        "cloth",
+        "elastic_band",
+        "storage_cabinet",
+        "outlet",
+        "bottle",
+        "bottle_cap",
+        "faucet",
+        "liquid_source",
+        "air",
+        "timekeeping_device",
+        "microbes"
+      ]
+    }
+  ],
+  "weatherstripping windows": [
+    {
+      "goal_object": "window",
+      "candidates": [
+        {
+          "template": "window",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "making chicken salad": [
+    {
+      "goal_object": "chicken_salad",
+      "candidates": [
+        {
+          "template": "chicken_salad",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "making lemon curd": [
+    {
+      "goal_object": "lemon_curd",
+      "candidates": [
+        {
+          "template": "citrus_curd",
+          "score": 0.8242883682250977,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "lemon",
+          "score": 0.7185227870941162,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "lemon_juice",
+          "score": 0.6032536029815674,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "making French fries from scratch": [
+    {
+      "goal_object": "french_fry",
+      "candidates": [],
+      "memory_object_templates": [
+        "left_hand",
+        "right_hand",
+        "left_fingertips",
+        "eyes",
+        "vegetable",
+        "peeler",
+        "chef_knife",
+        "paring_knife",
+        "cutting_board",
+        "cooking_vessel",
+        "burner",
+        "stove_knob",
+        "thermometer",
+        "oil_bottle",
+        "oil",
+        "sink",
+        "cold_tap",
+        "water_supply",
+        "water",
+        "container",
+        "colander",
+        "kitchen_towel",
+        "paper_towel",
+        "tray",
+        "slotted_spoon",
+        "seasoning_shaker",
+        "salt",
+        "cupboard",
+        "peel_strip",
+        "peel_pile",
+        "unwanted_growth",
+        "strip",
+        "slab",
+        "slab_stack",
+        "trimmed_end",
+        "steam",
+        "oil_droplet",
+        "smoke",
+        "aroma",
+        "dirt",
+        "air"
+      ]
+    }
+  ],
+  "cleaning the refrigerator door gasket": [
+    {
+      "goal_object": "refrigerator_door_gasket",
+      "candidates": [
+        {
+          "template": "refrigerator_door",
+          "score": 0.7819705009460449,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "refrigerator",
+          "score": 0.7405945658683777,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "gasket",
+          "score": 0.6980710029602051,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "refrigerator_air",
+          "score": 0.6941708922386169,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "fridge_door",
+          "score": 0.6928706169128418,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "gasket_groove",
+          "score": 0.6075922250747681,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "blanching broccoli": [
+    {
+      "goal_object": "broccoli",
+      "candidates": [
+        {
+          "template": "broccoli",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "baking sugar cookies": [
+    {
+      "goal_object": "sugar_cookie",
+      "candidates": [
+        {
+          "template": "cookie",
+          "score": 0.8355381488800049,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "sugar",
+          "score": 0.755101203918457,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "cookie_cutter",
+          "score": 0.6830247640609741,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "cookie_batch",
+          "score": 0.6652246713638306,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "cookie_dough_shape",
+          "score": 0.663165807723999,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "cookie_cutout",
+          "score": 0.6083217859268188,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "whipping up a batch of hummus": [
+    {
+      "goal_object": "hummus",
+      "candidates": [
+        {
+          "template": "hummus_mixture",
+          "score": 0.8757887482643127,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "planting a shade tree": [
+    {
+      "goal_object": "tree",
+      "candidates": [],
+      "memory_object_templates": [
+        "left_hand",
+        "right_hand",
+        "left_arm",
+        "right_arm",
+        "left_leg",
+        "right_leg",
+        "left_foot",
+        "right_foot",
+        "left_knee",
+        "right_knee",
+        "torso",
+        "eyes",
+        "forehead",
+        "sapling",
+        "sapling_trunk",
+        "root_ball",
+        "root_system",
+        "root_ball_soil",
+        "root_collar",
+        "foliage",
+        "nursery_pot",
+        "pot_rim",
+        "pot_wall",
+        "pot_base",
+        "planting_hole",
+        "hole_wall",
+        "hole_floor",
+        "hole_opening",
+        "soil",
+        "soil_surface",
+        "soil_pile",
+        "soil_amendment",
+        "turf",
+        "sod_strip",
+        "spade",
+        "spade_blade",
+        "spade_edge",
+        "spade_handle",
+        "spade_tip",
+        "watering_can",
+        "can_handle",
+        "spout",
+        "water",
+        "water_ring",
+        "berm",
+        "basin",
+        "stake",
+        "tie",
+        "air",
+        "lawn",
+        "planting_area",
+        "driveway",
+        "wall_surface",
+        "weather",
+        "light",
+        "obstacle",
+        "bag",
+        "sweat_droplet",
+        "soil_particle",
+        "bubble"
+      ]
+    },
+    {
+      "goal_object": "soil",
+      "candidates": [
+        {
+          "template": "soil",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "crushing ice for cocktails": [
+    {
+      "goal_object": "ice",
+      "candidates": [
+        {
+          "template": "ice",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "shredding cheese for the freezer": [
+    {
+      "goal_object": "cheese",
+      "candidates": [
+        {
+          "template": "cheese",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "making leaf mold": [
+    {
+      "goal_object": "leaf_pile",
+      "candidates": [
+        {
+          "template": "leaf",
+          "score": 0.7336775660514832,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "plant_leaf",
+          "score": 0.6700721979141235,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "leaf_litter",
+          "score": 0.635357141494751,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "spreading mulch in the flower bed": [
+    {
+      "goal_object": "flower_bed",
+      "candidates": [
+        {
+          "template": "flower_bed",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "Setting the smart planner's daily intention to None to allow spontaneous scheduling without a fixed goal": [
+    {
+      "goal_object": "smart_planner",
+      "candidates": [],
+      "memory_object_templates": [
+        "left_hand",
+        "right_hand",
+        "left_arm",
+        "left_forearm",
+        "right_forearm",
+        "right_elbow",
+        "right_thumb",
+        "right_index_finger",
+        "right_middle_finger",
+        "right_palm",
+        "eyes",
+        "device",
+        "screen",
+        "backlight_unit",
+        "touch_sensor",
+        "display_pixels",
+        "haptic_motor",
+        "speaker",
+        "processor",
+        "storage",
+        "battery",
+        "controller",
+        "ui_card",
+        "ui_dialog_overlay",
+        "ui_dialog_buttons",
+        "ui_status_icon",
+        "ui_status_label",
+        "ui_schedule_grid",
+        "ui_confirm_button",
+        "ui_cancel_button",
+        "ui_none_option",
+        "desk",
+        "tea_cup",
+        "cable",
+        "cable_tip",
+        "air",
+        "ambient_light",
+        "window"
+      ]
+    }
+  ],
+  "Configuring the smart wellness app to set person.breathing_rate=normal as the baseline for its guided breathing exercise.": [
+    {
+      "goal_object": "smart_wellness_app",
+      "candidates": [],
+      "memory_object_templates": [
+        "hand",
+        "finger",
+        "thumb",
+        "eye",
+        "ear",
+        "eardrum",
+        "auditory_nerve",
+        "cochlea",
+        "photoreceptor",
+        "diaphragm",
+        "chest_wall",
+        "thigh",
+        "device",
+        "screen",
+        "screen_protector",
+        "biometric_sensor",
+        "camera_lens",
+        "haptic_motor",
+        "speaker",
+        "app",
+        "ui_component",
+        "coffee_table",
+        "air",
+        "sound_waves",
+        "photons"
+      ]
+    }
+  ],
+  "Adjusting the AI-driven interview coach's tone to cheerfulness=0.5, providing balanced encouragement and constructive criticism during a mock job interview.": [
+    {
+      "goal_object": "ai_driven_interview_coach",
+      "candidates": [],
+      "memory_object_templates": [
+        "head",
+        "torso",
+        "right_arm",
+        "right_forearm",
+        "right_hand",
+        "right_index_finger",
+        "eyes",
+        "eyelid",
+        "ears",
+        "lungs",
+        "diaphragm",
+        "vocal_folds",
+        "mouth",
+        "tongue",
+        "muscle_group",
+        "environment",
+        "sound_source",
+        "air",
+        "light",
+        "pressure_wave",
+        "chair",
+        "desk",
+        "screen",
+        "display",
+        "ui_system",
+        "ui_parameter",
+        "label",
+        "readout",
+        "slider",
+        "slider_thumb",
+        "cursor",
+        "mouse",
+        "input_sensor",
+        "button",
+        "panel",
+        "waveform_preview",
+        "avatar",
+        "audio_system",
+        "speaker",
+        "ai_voice",
+        "feedback_bubble",
+        "microphone",
+        "audio_buffer",
+        "transcript",
+        "stt_engine",
+        "recognizer",
+        "language_model",
+        "ai",
+        "system",
+        "profile",
+        "content_repository",
+        "session"
+      ]
+    }
+  ],
+  "Configuring the camera's autofocus custom setting to focus=0.8 for precise focus tracking during a bird photography session": [
+    {
+      "goal_object": "camera",
+      "candidates": [
+        {
+          "template": "camera_body",
+          "score": 0.8322830200195312,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "camera_lens",
+          "score": 0.797585129737854,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Setting the smart home gym's exhaust fan to run until person.sweat_level=0.0 is detected, ensuring the room is dry after a session": [
+    {
+      "goal_object": "person",
+      "candidates": [
+        {
+          "template": "person",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    },
+    {
+      "goal_object": "room",
+      "candidates": [
+        {
+          "template": "room",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "Configuring the smartwatch's sweat detection to use a sweat_level=0.0 baseline for accurate electrolyte loss monitoring during indoor cycling": [
+    {
+      "goal_object": "smartwatch",
+      "candidates": [
+        {
+          "template": "smartwatch",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "Programming the smartwatch to log a deep-focus session when person.focus=0.8 is sustained for 25 minutes": [
+    {
+      "goal_object": "smartwatch",
+      "candidates": [
+        {
+          "template": "smartwatch",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "Configuring the biofeedback ring's app to alert when person.breathing_rate deviates from normal during a stress-reduction session": [
+    {
+      "goal_object": "biofeedback_ring_app",
+      "candidates": [
+        {
+          "template": "biofeedback_ring",
+          "score": 0.9236795902252197,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "biofeedback_app",
+          "score": 0.9121825695037842,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Activating the browser's distraction-blocking extension when person.focus=0.8 is measured by the wearable, automatically whitelisting only work-related sites.": [
+    {
+      "goal_object": "distraction_blocking_extension",
+      "candidates": [],
+      "memory_object_templates": [
+        "hand",
+        "arm",
+        "elbow",
+        "forearm",
+        "eyes",
+        "ears",
+        "spine",
+        "lungs",
+        "heart",
+        "blood",
+        "diaphragm",
+        "pressure_receptors",
+        "finger",
+        "chair",
+        "desk",
+        "desk_mat",
+        "keyboard",
+        "keyboard_key",
+        "wearable",
+        "browser",
+        "browser_extension",
+        "extension_ui",
+        "display_monitor",
+        "blocked_page",
+        "air",
+        "room",
+        "ambient_noise_source",
+        "cursor",
+        "mouse",
+        "task_widget"
+      ]
+    }
+  ],
+  "Programming the time-tracking software to mark a task as 'high focus' and extend its estimated duration when person.focus=0.8 is measured for 10 minutes.": [
+    {
+      "goal_object": "automation_rule",
+      "candidates": [
+        {
+          "template": "automation",
+          "score": 0.8127784729003906,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Adjusting the studio monitor's focus control to 0.8 to enhance mid-range clarity while mixing a podcast.": [
+    {
+      "goal_object": "studio_monitor",
+      "candidates": [
+        {
+          "template": "monitor",
+          "score": 0.7922174334526062,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "display_monitor",
+          "score": 0.6835143566131592,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "monitor_cable",
+          "score": 0.6324141025543213,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Adjusting the smart thermostat to lower the room temperature by 2 degrees when fatigue=0.2 triggers a need for alertness": [
+    {
+      "goal_object": "thermostat",
+      "candidates": [
+        {
+          "template": "thermostat",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "Configuring the smart bike trainer to automatically increase resistance when fatigue=0.2 is detected, maximizing the training stimulus during a 20-minute interval session": [
+    {
+      "goal_object": "smart_bike_trainer",
+      "candidates": [
+        {
+          "template": "smart_trainer",
+          "score": 0.8410728573799133,
+          "match_type": "fuzzy"
+        }
+      ]
+    },
+    {
+      "goal_object": "training_session",
+      "candidates": [
+        {
+          "template": "session",
+          "score": 0.8595329523086548,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "mopping the kitchen floor": [
+    {
+      "goal_object": "kitchen_floor",
+      "candidates": [
+        {
+          "template": "kitchen_floor",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "Taking a 10-minute power nap when a wearable indicates fatigue=0.2 during an afternoon work session": [
+    {
+      "goal_object": "power_nap",
+      "candidates": [],
+      "memory_object_templates": [
+        "left_hand",
+        "right_hand",
+        "left_arm",
+        "right_arm",
+        "left_leg",
+        "right_leg",
+        "eyes",
+        "head",
+        "chair",
+        "phone",
+        "eye_mask",
+        "document",
+        "keyboard",
+        "mouse",
+        "monitor",
+        "glasses",
+        "watch",
+        "mousepad",
+        "drawer",
+        "office_air",
+        "ventilator",
+        "printer",
+        "colleague_voice",
+        "shirt",
+        "desk",
+        "light_ray",
+        "sound_wave"
+      ]
+    },
+    {
+      "goal_object": "person",
+      "candidates": [
+        {
+          "template": "person",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "Resetting the wearable's respiration sensor to person.breathing_rate=normal before starting a mindful walking session.": [
+    {
+      "goal_object": "respiration_sensor",
+      "candidates": [
+        {
+          "template": "respiration_monitor",
+          "score": 0.8051219582557678,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Configuring the smart desk lamp to automatically adjust brightness to 0.8 when person.focus=0.8, enhancing concentration with optimal lighting": [
+    {
+      "goal_object": "smart_desk_lamp",
+      "candidates": [
+        {
+          "template": "lamp",
+          "score": 0.6591646671295166,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "desk",
+          "score": 0.6500965356826782,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Setting a weekly intention with a five-minute visualization exercise": [
+    {
+      "goal_object": "intention",
+      "candidates": [
+        {
+          "template": "intention",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    },
+    {
+      "goal_object": "visualization_exercise",
+      "candidates": [],
+      "memory_object_templates": [
+        "left_hand",
+        "right_hand",
+        "right_arm",
+        "head",
+        "shoulders",
+        "shoulder_muscle",
+        "spine",
+        "knees",
+        "forearms",
+        "hands",
+        "eyelids",
+        "eye_muscles",
+        "eyes",
+        "pupils",
+        "visual_cortex",
+        "retina",
+        "eardrum",
+        "ear",
+        "tympanic_membrane",
+        "cochlea",
+        "auditory_cortex",
+        "airway",
+        "diaphragm",
+        "ribcage",
+        "peripheral_vessels",
+        "chest",
+        "skin",
+        "body",
+        "body_heat",
+        "voice",
+        "articulators",
+        "vocal_cords",
+        "intention",
+        "cushion",
+        "lamp",
+        "clock",
+        "timer_device",
+        "switch",
+        "notebook",
+        "page",
+        "pen",
+        "air",
+        "environment",
+        "mental_image",
+        "seed_symbol",
+        "glow"
+      ]
+    }
+  ],
+  "Configuring the virtual coach to use intention=None for an exploratory brainstorming session": [
+    {
+      "goal_object": "virtual_coach",
+      "candidates": [
+        {
+          "template": "virtual_coach_application",
+          "score": 0.8828240633010864,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "virtual_agent",
+          "score": 0.6175380945205688,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Writing a one-sentence intention for the day in a journal": [
+    {
+      "goal_object": "journal",
+      "candidates": [
+        {
+          "template": "journal",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    },
+    {
+      "goal_object": "journal_entry",
+      "candidates": [
+        {
+          "template": "journal",
+          "score": 0.7741750478744507,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "journal_page",
+          "score": 0.6003276705741882,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Configuring the mindfulness app to set person.intention=None for a non-striving meditation session that avoids goal-oriented focus": [
+    {
+      "goal_object": "person",
+      "candidates": [
+        {
+          "template": "person",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "Configuring the social robot's emotional display to cheerfulness=0.5 during an assistive care session, so it appears calm and neutral while reminding the user to take medication.": [
+    {
+      "goal_object": "social_robot",
+      "candidates": [
+        {
+          "template": "robot",
+          "score": 0.8316078186035156,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "robot_head",
+          "score": 0.651943027973175,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "robot_virtual_model",
+          "score": 0.6330134868621826,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "robot_face_display",
+          "score": 0.6198889017105103,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "robot_neck",
+          "score": 0.6096660494804382,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Adjusting the home battery inverter's disconnect threshold to energy_level=0.8 so it switches to grid power when the storage falls to 80% to preserve battery health": [
+    {
+      "goal_object": "inverter",
+      "candidates": [],
+      "memory_object_templates": [
+        "device",
+        "display",
+        "screen_surface",
+        "backlight",
+        "touch_sensor",
+        "framebuffer",
+        "numeric_readout",
+        "status_led",
+        "relay",
+        "flash_memory",
+        "firmware",
+        "transformer",
+        "haptic_actuator",
+        "slider_control",
+        "ui_element",
+        "parameter_marker",
+        "air",
+        "hand",
+        "arm",
+        "finger",
+        "shoulder",
+        "elbow",
+        "wrist",
+        "eyes",
+        "retina",
+        "ear",
+        "auditory_nerve",
+        "foot"
+      ]
+    }
+  ],
+  "Configuring the smart charger to stop charging the laptop at an energy_level of 0.8 (80%) to maximize battery lifespan": [
+    {
+      "goal_object": "smart_charger",
+      "candidates": [
+        {
+          "template": "smart_phone",
+          "score": 0.6252462863922119,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Calibrating the new fitness tracker to person.sweat_level=0.0 after toweling off from a swim, to set a dry baseline for subsequent runs": [
+    {
+      "goal_object": "fitness_tracker",
+      "candidates": [
+        {
+          "template": "fitness_tracker",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "Using a photo editing app to set the focus blur intensity to 0.8 for a dreamy background effect": [
+    {
+      "goal_object": "photo",
+      "candidates": [
+        {
+          "template": "photo_image",
+          "score": 0.9355874061584473,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "photo_app",
+          "score": 0.6800963878631592,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Configuring the noise-cancelling headphones to switch to ambient mode when person.focus=0.8 is detected, allowing the user to stay aware of their surroundings during a work session.": [
+    {
+      "goal_object": "headphone_settings",
+      "candidates": [
+        {
+          "template": "headphones",
+          "score": 0.654903769493103,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Setting the manual focus distance to 0.8 meters on the camera lens for a sharp macro shot": [
+    {
+      "goal_object": "camera_lens",
+      "candidates": [
+        {
+          "template": "camera_lens",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "Adjusting the virtual assistant's cheerfulness setting to 0.5 so it gives friendly but professional responses.": [
+    {
+      "goal_object": "virtual_assistant",
+      "candidates": [
+        {
+          "template": "virtual_agent",
+          "score": 0.7504777908325195,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "virtual_coach_application",
+          "score": 0.6551001071929932,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Setting the smart home assistant to interpret person.intention=None as a do-not-disturb cue, silencing all proactive reminders and suggestions": [
+    {
+      "goal_object": "smart_home_assistant",
+      "candidates": [
+        {
+          "template": "smart_phone",
+          "score": 0.6480972766876221,
+          "match_type": "fuzzy"
+        }
+      ]
+    },
+    {
+      "goal_object": "proactive_reminder",
+      "candidates": [],
+      "memory_object_templates": [
+        "person",
+        "eyes",
+        "ears",
+        "mouth",
+        "vocal_cords",
+        "right_hand",
+        "right_arm",
+        "right_shoulder",
+        "right_forearm",
+        "smartphone",
+        "screen",
+        "app",
+        "ui_screen",
+        "app_data",
+        "ui_icon",
+        "ui_text",
+        "ui_option",
+        "ui_row",
+        "ui_toggle",
+        "ui_button",
+        "notification_banner",
+        "assistant_device",
+        "wall_clock",
+        "lamp",
+        "room",
+        "table",
+        "shelf",
+        "support_surface",
+        "air",
+        "photon",
+        "sound_wave"
+      ]
+    },
+    {
+      "goal_object": "proactive_suggestion",
+      "candidates": [],
+      "memory_object_templates": [
+        "person",
+        "eyes",
+        "ears",
+        "mouth",
+        "vocal_cords",
+        "right_hand",
+        "right_arm",
+        "right_shoulder",
+        "right_forearm",
+        "smartphone",
+        "screen",
+        "app",
+        "ui_screen",
+        "app_data",
+        "ui_icon",
+        "ui_text",
+        "ui_option",
+        "ui_row",
+        "ui_toggle",
+        "ui_button",
+        "notification_banner",
+        "assistant_device",
+        "wall_clock",
+        "lamp",
+        "room",
+        "table",
+        "shelf",
+        "support_surface",
+        "air",
+        "photon",
+        "sound_wave"
+      ]
+    }
+  ],
+  "Configuring the smart scent diffuser to release peppermint oil when person.focus=0.8 is detected, enhancing cognitive performance during a deep work session.": [
+    {
+      "goal_object": "smart_scent_diffuser",
+      "candidates": [
+        {
+          "template": "scent_diffuser",
+          "score": 0.8961509466171265,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "scent",
+          "score": 0.670910120010376,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Configuring the smart mirror's display mood to a cheerfulness level of 0.5 for a balanced morning greeting.": [
+    {
+      "goal_object": "smart_mirror",
+      "candidates": [
+        {
+          "template": "smart_mirror",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "Setting the standing desk controller to raise to standing height when person.energy_level=0.8 is detected to encourage active working posture": [
+    {
+      "goal_object": "standing_desk_controller",
+      "candidates": [
+        {
+          "template": "desk",
+          "score": 0.6359949111938477,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "controller",
+          "score": 0.6136071681976318,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "washing the car by hand": [
+    {
+      "goal_object": "car",
+      "candidates": [
+        {
+          "template": "vehicle",
+          "score": 0.7201601266860962,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "vehicle_chrome",
+          "score": 0.6053535342216492,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "vehicle_wheels",
+          "score": 0.6007782220840454,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Resetting the treadmill's integrated sweat sensor to sweat_level=0.0 before beginning a low-intensity warm-up walk": [
+    {
+      "goal_object": "treadmill_sweat_sensor",
+      "candidates": [
+        {
+          "template": "treadmill",
+          "score": 0.7714407444000244,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "sweat_sensor",
+          "score": 0.7318210601806641,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "treadmill_motor",
+          "score": 0.7084288001060486,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "treadmill_belt",
+          "score": 0.6906679272651672,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "treadmill_console",
+          "score": 0.6803640127182007,
+          "match_type": "fuzzy"
+        },
+        {
+          "template": "treadmill_frame",
+          "score": 0.6691091060638428,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Setting the laser cutter's focus parameter to 0.8 for fine engraving details on 3mm acrylic sheets.": [
+    {
+      "goal_object": "laser_cutter",
+      "candidates": [
+        {
+          "template": "laser_cutter",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "Setting the smart yoga mat's respiration monitor to use person.breathing_rate=normal as the baseline before a restorative yoga session": [
+    {
+      "goal_object": "respiration_monitor",
+      "candidates": [
+        {
+          "template": "respiration_monitor",
+          "score": 1.0,
+          "match_type": "exact_template"
+        }
+      ]
+    }
+  ],
+  "Programming the smart speaker to auto-play a high-energy workout playlist when person.energy_level=0.8 is detected during exercise": [
+    {
+      "goal_object": "automation_rule",
+      "candidates": [
+        {
+          "template": "automation",
+          "score": 0.8127784729003906,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Setting the smart projector's auto-focus calibration to focus=0.8 to sharpen the image on a curved wall": [
+    {
+      "goal_object": "smart_projector",
+      "candidates": [
+        {
+          "template": "projector",
+          "score": 0.7030751705169678,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ],
+  "Programming the smart office lighting to switch to a high-contrast, cool color temperature when person.fatigue=0.2 to maintain mental alertness during an afternoon deep-work session": [
+    {
+      "goal_object": "automation_rule",
+      "candidates": [
+        {
+          "template": "automation",
+          "score": 0.8127784729003906,
+          "match_type": "fuzzy"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "memory_id": "mem_000050",
+    "object": "",
+    "relation": "standing",
+    "relative_to": "floor",
+    "path": "object_templates.person.defaults.position"
+  }
+]

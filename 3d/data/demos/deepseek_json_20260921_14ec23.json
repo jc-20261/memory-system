@@ -1,0 +1,545 @@
+{
+  "assembly_id": "3d_mem3d_peeling_apple_demo",
+  "memory_id": "mem3d_peeling_apple_demo",
+  "unit_system": "cm",
+  "coordinate_frame": "world",
+
+  "environment": {
+    "ground": {
+      "present": true,
+      "material": "tile",
+      "top_z_cm": 0.0
+    }
+  },
+
+  "metadata": {
+    "virtual_causes": [
+      "air_01", "gravity_01", "heat_01", "time", "oxygen_reaction",
+      "static_friction", "surface_tension_and_gravity", "diffuse_reflection",
+      "capillary_action", "thermal_equilibration", "projectile_motion",
+      "elastic_deformation", "cell_rupture", "enzymatic_oxidation",
+      "evaporation", "desorption"
+    ]
+  },
+
+  "objects": [
+    {
+      "object_id": "person_01",
+      "template_name": "person",
+      "number": "single",
+      "parent_object_id": null,
+      "children": ["shirt_01", "neck_01", "left_arm_01", "right_arm_01"],
+      "object_transform": {
+        "translate": [0.0, -50.0, 0.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "box",
+          "parameters": {"size_x_cm": 36.0, "size_y_cm": 22.0, "size_z_cm": 80.0},
+          "transform": {"translate": [0.0, 0.0, 115.0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "torso"}
+        },
+        {
+          "element_type": "box",
+          "parameters": {"size_x_cm": 16.0, "size_y_cm": 22.0, "size_z_cm": 90.0},
+          "transform": {"translate": [-10.0, 0.0, 45.0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "left_leg"}
+        },
+        {
+          "element_type": "box",
+          "parameters": {"size_x_cm": 16.0, "size_y_cm": 22.0, "size_z_cm": 90.0},
+          "transform": {"translate": [10.0, 0.0, 45.0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "right_leg"}
+        }
+      ],
+      "material": {"color": "flesh", "material": "biological"},
+      "mass_grams": 70000.0,
+      "metadata": {"label": "protagonist", "posture": "standing"}
+    },
+    {
+      "object_id": "shirt_01",
+      "template_name": "shirt",
+      "number": "single",
+      "parent_object_id": "person_01",
+      "children": [],
+      "object_transform": {
+        "translate": [0.0, -50.0, 115.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "box",
+          "parameters": {"size_x_cm": 44.0, "size_y_cm": 30.0, "size_z_cm": 80.0},
+          "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "torso_body"}
+        }
+      ],
+      "material": {"color": "blue", "material": "cotton", "moisture": "dry"},
+      "mass_grams": 250.0,
+      "metadata": {"label": "shirt"}
+    },
+    {
+      "object_id": "neck_01",
+      "template_name": "neck",
+      "number": "single",
+      "parent_object_id": "person_01",
+      "children": ["head_01"],
+      "object_transform": {
+        "translate": [0.0, -50.0, 160.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "cylinder",
+          "parameters": {"radius_cm": 7.0, "height_cm": 10.0},
+          "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "neck_cylinder"}
+        }
+      ],
+      "material": {"color": "flesh", "material": "biological"},
+      "mass_grams": 500.0,
+      "metadata": {"label": "neck"}
+    },
+    {
+      "object_id": "head_01",
+      "template_name": "head",
+      "number": "single",
+      "parent_object_id": "neck_01",
+      "children": ["eyes_01"],
+      "object_transform": {
+        "translate": [0.0, -50.0, 176.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "cylinder",
+          "parameters": {"radius_cm": 16.0, "height_cm": 22.0},
+          "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "head_body"}
+        },
+        {
+          "element_type": "hemisphere",
+          "parameters": {"radius_cm": 16.0},
+          "transform": {"translate": [0,0,11.0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "head_dome"}
+        }
+      ],
+      "material": {"color": "flesh", "material": "biological"},
+      "mass_grams": 4000.0,
+      "metadata": {"label": "head"}
+    },
+    {
+      "object_id": "eyes_01",
+      "template_name": "eyes",
+      "number": "single",
+      "parent_object_id": "head_01",
+      "children": [],
+      "object_transform": {
+        "translate": [0.0, -34.0, 180.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "hemisphere",
+          "parameters": {"radius_cm": 1.5},
+          "transform": {"translate": [-6.0, 0.0, 0.0], "rotate": [-0.7071, 0, 0, 0.7071], "scale": [1,1,1]},
+          "material_override": {"label": "left_eye"}
+        },
+        {
+          "element_type": "hemisphere",
+          "parameters": {"radius_cm": 1.5},
+          "transform": {"translate": [6.0, 0.0, 0.0], "rotate": [-0.7071, 0, 0, 0.7071], "scale": [1,1,1]},
+          "material_override": {"label": "right_eye"}
+        }
+      ],
+      "material": {"color": "white", "material": "biological"},
+      "mass_grams": 20.0,
+      "metadata": {"label": "eyes", "gaze_direction": "forward"}
+    },
+    {
+      "object_id": "left_arm_01",
+      "template_name": "arm",
+      "number": "single",
+      "parent_object_id": "person_01",
+      "children": ["left_hand_01"],
+      "object_transform": {
+        "translate": [-25.0, -50.0, 120.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "cylinder",
+          "parameters": {"radius_cm": 4.0, "height_cm": 70.0},
+          "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "left_arm_cylinder"}
+        }
+      ],
+      "material": {"color": "flesh", "material": "biological"},
+      "mass_grams": 3000.0,
+      "metadata": {"label": "left_arm"}
+    },
+    {
+      "object_id": "left_hand_01",
+      "template_name": "hand",
+      "number": "single",
+      "parent_object_id": "left_arm_01",
+      "children": ["left_thumb_01"],
+      "object_transform": {
+        "translate": [-25.0, -50.0, 75.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "box",
+          "parameters": {"size_x_cm": 10.0, "size_y_cm": 4.0, "size_z_cm": 20.0},
+          "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "left_palm"}
+        }
+      ],
+      "material": {"color": "flesh", "material": "biological"},
+      "mass_grams": 400.0,
+      "metadata": {"label": "left_hand", "finger_posture": "relaxed", "grip_type": "open"}
+    },
+    {
+      "object_id": "left_thumb_01",
+      "template_name": "thumb",
+      "number": "single",
+      "parent_object_id": "left_hand_01",
+      "children": [],
+      "object_transform": {
+        "translate": [-31.0, -50.0, 70.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "capsule",
+          "parameters": {"radius_cm": 1.2, "height_cm": 6.0},
+          "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "left_thumb_body"}
+        }
+      ],
+      "material": {"color": "flesh", "material": "biological"},
+      "mass_grams": 40.0,
+      "metadata": {"label": "left_thumb", "position": "extended"}
+    },
+    {
+      "object_id": "right_arm_01",
+      "template_name": "arm",
+      "number": "single",
+      "parent_object_id": "person_01",
+      "children": ["right_hand_01"],
+      "object_transform": {
+        "translate": [25.0, -50.0, 120.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "cylinder",
+          "parameters": {"radius_cm": 4.0, "height_cm": 70.0},
+          "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "right_arm_cylinder"}
+        }
+      ],
+      "material": {"color": "flesh", "material": "biological"},
+      "mass_grams": 3000.0,
+      "metadata": {"label": "right_arm"}
+    },
+    {
+      "object_id": "right_hand_01",
+      "template_name": "hand",
+      "number": "single",
+      "parent_object_id": "right_arm_01",
+      "children": [],
+      "object_transform": {
+        "translate": [25.0, -50.0, 75.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "box",
+          "parameters": {"size_x_cm": 10.0, "size_y_cm": 4.0, "size_z_cm": 20.0},
+          "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "right_palm"}
+        }
+      ],
+      "material": {"color": "flesh", "material": "biological"},
+      "mass_grams": 400.0,
+      "metadata": {"label": "right_hand", "finger_posture": "relaxed", "grip_type": "open"}
+    },
+    {
+      "object_id": "kitchen_counter_01",
+      "template_name": "kitchen_counter",
+      "number": "single",
+      "parent_object_id": null,
+      "children": [
+        "bowl_source_01", "paring_knife_01", "cutting_board_01",
+        "sink_01", "faucet_tap_01", "compost_crock_01"
+      ],
+      "object_transform": {
+        "translate": [0.0, 20.0, 88.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "box",
+          "parameters": {"size_x_cm": 180.0, "size_y_cm": 60.0, "size_z_cm": 4.0},
+          "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "countertop"}
+        }
+      ],
+      "material": {"color": "wood", "material": "laminate"},
+      "mass_grams": 40000.0,
+      "metadata": {"label": "kitchen_counter"}
+    },
+    {
+      "object_id": "refrigerator_01",
+      "template_name": "refrigerator",
+      "number": "single",
+      "parent_object_id": null,
+      "children": [],
+      "object_transform": {
+        "translate": [-100.0, -80.0, 0.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "box",
+          "parameters": {"size_x_cm": 70.0, "size_y_cm": 70.0, "size_z_cm": 180.0},
+          "transform": {"translate": [0, 0, 90.0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "cabinet"}
+        },
+        {
+          "element_type": "box",
+          "parameters": {"size_x_cm": 60.0, "size_y_cm": 4.0, "size_z_cm": 100.0},
+          "transform": {"translate": [0, 37.0, 105.0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "door"}
+        }
+      ],
+      "material": {"color": "silver", "material": "steel"},
+      "mass_grams": 80000.0,
+      "metadata": {"label": "refrigerator", "state": "closed"}
+    },
+    {
+      "object_id": "bowl_source_01",
+      "template_name": "bowl",
+      "number": "single",
+      "parent_object_id": "kitchen_counter_01",
+      "children": [],
+      "object_transform": {
+        "translate": [30.0, 20.0, 90.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "frustum",
+          "parameters": {"bottom_radius_cm": 4.0, "top_radius_cm": 7.0, "height_cm": 6.0},
+          "transform": {"translate": [0,0,3.0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "bowl_body"}
+        },
+        {
+          "element_type": "cylinder",
+          "parameters": {"radius_cm": 4.5, "height_cm": 0.4},
+          "transform": {"translate": [0,0,0.2], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "footring"}
+        }
+      ],
+      "material": {"color": "white", "material": "ceramic"},
+      "mass_grams": 400.0,
+      "metadata": {"label": "source_bowl", "cleanliness": "clean"}
+    },
+    {
+      "object_id": "apple_01",
+      "template_name": "apple",
+      "number": "single",
+      "parent_object_id": null,
+      "children": [],
+      "object_transform": {
+        "translate": [30.0, 20.0, 104.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "sphere",
+          "parameters": {"radius_cm": 8.0},
+          "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "skin"}
+        },
+        {
+          "element_type": "cylinder",
+          "parameters": {"radius_cm": 0.3, "height_cm": 3.2},
+          "transform": {"translate": [0,0,8.4], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "stem"}
+        },
+        {
+          "element_type": "torus",
+          "parameters": {"major_radius_cm": 2.0, "minor_radius_cm": 0.5},
+          "transform": {"translate": [0,0,-7.7], "rotate": [0.7071,0,0,0.7071], "scale": [1,1,1]},
+          "material_override": {"label": "calyx"}
+        }
+      ],
+      "material": {
+        "color": "red_brushed",
+        "surface_state": "dry",
+        "temperature": "cold",
+        "moisture": "dry",
+        "physical_state": "intact",
+        "surface_integrity": "intact",
+        "skin_present": true,
+        "skin_coverage": 1.0,
+        "surface_optics": "glossy"
+      },
+      "mass_grams": 200.0,
+      "metadata": {"label": "Honeycrisp apple"}
+    },
+    {
+      "object_id": "paring_knife_01",
+      "template_name": "paring_knife",
+      "number": "single",
+      "parent_object_id": "kitchen_counter_01",
+      "children": [],
+      "object_transform": {
+        "translate": [10.0, 30.0, 91.5],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "box",
+          "parameters": {"size_x_cm": 20.0, "size_y_cm": 4.0, "size_z_cm": 0.4},
+          "transform": {"translate": [-10.0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "blade"}
+        },
+        {
+          "element_type": "box",
+          "parameters": {"size_x_cm": 18.0, "size_y_cm": 5.0, "size_z_cm": 3.0},
+          "transform": {"translate": [11.0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "handle"}
+        }
+      ],
+      "material": {"color": "silver", "material": "stainless_steel"},
+      "mass_grams": 80.0,
+      "metadata": {"label": "paring knife", "state": "resting"}
+    },
+    {
+      "object_id": "cutting_board_01",
+      "template_name": "cutting_board",
+      "number": "single",
+      "parent_object_id": "kitchen_counter_01",
+      "children": [],
+      "object_transform": {
+        "translate": [-20.0, 20.0, 90.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "box",
+          "parameters": {"size_x_cm": 45.0, "size_y_cm": 30.0, "size_z_cm": 2.0},
+          "transform": {"translate": [0,0,1.0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "top_cutting_surface"}
+        }
+      ],
+      "material": {"color": "wood", "material": "maple"},
+      "mass_grams": 800.0,
+      "metadata": {"label": "cutting board"}
+    },
+    {
+      "object_id": "sink_01",
+      "template_name": "sink",
+      "number": "single",
+      "parent_object_id": "kitchen_counter_01",
+      "children": [],
+      "object_transform": {
+        "translate": [-65.0, 20.0, 82.5],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "frustum",
+          "parameters": {"bottom_radius_cm": 12.0, "top_radius_cm": 16.0, "height_cm": 15.0},
+          "transform": {"translate": [0,0,0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "basin"}
+        }
+      ],
+      "material": {"color": "silver", "material": "stainless_steel"},
+      "mass_grams": 4000.0,
+      "metadata": {"label": "sink"}
+    },
+    {
+      "object_id": "faucet_tap_01",
+      "template_name": "faucet_tap",
+      "number": "single",
+      "parent_object_id": "kitchen_counter_01",
+      "children": [],
+      "object_transform": {
+        "translate": [-65.0, -5.0, 90.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "cylinder",
+          "parameters": {"radius_cm": 1.5, "height_cm": 25.0},
+          "transform": {"translate": [0,0,12.5], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "stem"}
+        },
+        {
+          "element_type": "cylinder",
+          "parameters": {"radius_cm": 1.5, "height_cm": 14.0},
+          "transform": {"translate": [0,-7.0,25.0], "rotate": [0.7071,0,0,0.7071], "scale": [1,1,1]},
+          "material_override": {"label": "spout"}
+        }
+      ],
+      "material": {"color": "silver", "material": "chrome_plated_brass"},
+      "mass_grams": 1800.0,
+      "metadata": {"label": "faucet", "state": "closed"}
+    },
+    {
+      "object_id": "compost_crock_01",
+      "template_name": "compost_crock",
+      "number": "single",
+      "parent_object_id": "kitchen_counter_01",
+      "children": [],
+      "object_transform": {
+        "translate": [60.0, 30.0, 90.0],
+        "rotate": [0.0, 0.0, 0.0, 1.0],
+        "scale": [1.0, 1.0, 1.0]
+      },
+      "elements": [
+        {
+          "element_type": "cylinder",
+          "parameters": {"radius_cm": 8.0, "height_cm": 18.0},
+          "transform": {"translate": [0,0,9.0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "body"}
+        },
+        {
+          "element_type": "cylinder",
+          "parameters": {"radius_cm": 1.5, "height_cm": 2.0},
+          "transform": {"translate": [0,0,19.0], "rotate": [0,0,0,1], "scale": [1,1,1]},
+          "material_override": {"label": "lid_handle"}
+        }
+      ],
+      "material": {"color": "white", "material": "ceramic"},
+      "mass_grams": 1500.0,
+      "metadata": {"label": "compost crock"}
+    }
+  ],
+
+  "timeline": []
+}

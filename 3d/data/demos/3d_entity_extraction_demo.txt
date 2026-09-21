@@ -1,0 +1,461 @@
+═══════════════════════════════════════════════════════════════════════
+ENTITY EXTRACTION DEMO — Peeling a Honeycrisp Apple
+═══════════════════════════════════════════════════════════════════════
+
+The user message contains four blocks:
+
+1. The natural language memory.
+2. The memory sketch (initial object list and action plot).
+3. The enhanced sketch (extended object list and decomposed actions).
+4. The parts prior (exhaustive expected parts per object).
+5. The state-annotated action timeline (with preconditions, changes,
+   sensory effects, natural process links).
+
+The task is to produce a single JSON object with three top-level keys:
+"protagonist", "objects", and "actions".
+
+Rules, restated from the system prompt:
+
+- Only include objects present at the START of the memory (t=0). Do not
+  include objects created by actions later in the memory.
+- Use obj_ids of the form <template>_<NN> or role-specific names for
+  compound objects.
+- Preserve the composite hierarchy from the sketches.
+- Only list top-level human actions, not natural processes or
+  sub-actions.
+- Output only valid JSON.
+
+DEMONSTRATION:
+
+Below is the expected output for the apple-peeling memory. It was
+produced from the memory sketch, enhanced sketch, parts prior, and
+state-annotated sketch shown elsewhere in the demos.
+
+
+Note on the output below (do not output these notes, these are just some more guidelines):
+
+- Objects created mid-memory are deliberately excluded: peel_strip_01,
+  apple_flesh_exposed_01, juice_01, juice_on_hand_01, apple_half_*,
+  apple_quarter_*, apple_core_a_01..d_01, apple_seeds_01, water_stream_01.
+  These will be added by Stage 4 operations.
+- The composite sub-objects of the apple (apple_skin_01, apple_flesh_01,
+  apple_core_01) are included because they exist from the start as parts
+  of the apple, even though the scenes do not physically separate them
+  until later.
+- The destination bowl (bowl_destination_01) is included because it is a
+  static object in the kitchen, even though it is only used in H12.
+- bowl_source_01 and bowl_destination_01 share a template ("bowl") but
+  have distinct obj_ids, matching the scene demo's naming.
+- The top-level actions are the 14 H-lane actions from the annotated
+  sketch. Natural process lanes (N1 through N14) are not listed as
+  top-level actions; they will be handled at Stage 4 as change_properties
+  and emit_event operations.
+
+
+Example of expected output:
+
+{
+  "protagonist": {
+    "template": "person",
+    "obj_id": "person_01",
+    "overrides": {
+      "posture": "standing",
+      "intention": {
+        "target": "apple_01.skin_present",
+        "desired_state": false
+      },
+      "cheerfulness": 0.6,
+      "focus": 0.9,
+      "fatigue": 0.2,
+      "satisfaction": 0.3,
+      "sweat_level": 0.0,
+      "energy_level": 0.8,
+      "mental_state": {},
+      "sensory_perception_touch": [],
+      "sensory_perception_sight": [],
+      "sensory_perception_smell": [],
+      "sensory_perception_taste": [],
+      "sensory_perception_sound": []
+    }
+  },
+  "objects": [
+    {
+      "obj_id": "eyes_01",
+      "template": "eyes",
+      "parent_object_id": "person_01",
+      "number": "single",
+      "position_relative_body": {"relation": "front_of_head"},
+      "overrides": {"gaze_direction": "forward"}
+    },
+    {
+      "obj_id": "left_hand_01",
+      "template": "hand",
+      "parent_object_id": "person_01",
+      "number": "single",
+      "position_relative_body": {"relation": "chest_height"},
+      "shape": "hand",
+      "overrides": {
+        "finger_posture": "relaxed",
+        "grip_type": "open"
+      }
+    },
+    {
+      "obj_id": "left_thumb_01",
+      "template": "thumb",
+      "parent_object_id": "left_hand_01",
+      "number": "single",
+      "shape": "capsule",
+      "overrides": {"position": "extended"}
+    },
+    {
+      "obj_id": "right_hand_01",
+      "template": "hand",
+      "parent_object_id": "person_01",
+      "number": "single",
+      "position_relative_body": {"relation": "chest_height"},
+      "shape": "hand",
+      "overrides": {
+        "finger_posture": "relaxed",
+        "grip_type": "open"
+      }
+    },
+    {
+      "obj_id": "shirt_01",
+      "template": "shirt",
+      "parent_object_id": "person_01",
+      "number": "single",
+      "shape": "box",
+      "overrides": {
+        "color": "blue",
+        "material": "cotton",
+        "moisture": "dry"
+      }
+    },
+    {
+      "obj_id": "kitchen_counter_01",
+      "template": "kitchen_counter",
+      "parent_object_id": null,
+      "number": "single",
+      "position": {"relation": "installed_in", "relative_to": "kitchen"},
+      "shape": "box",
+      "overrides": {
+        "color": "wood",
+        "material": "laminate"
+      }
+    },
+    {
+      "obj_id": "refrigerator_01",
+      "template": "refrigerator",
+      "parent_object_id": null,
+      "number": "single",
+      "position": {"relation": "standing", "relative_to": "floor"},
+      "shape": "box",
+      "overrides": {
+        "color": "silver",
+        "material": "steel",
+        "state": "closed"
+      }
+    },
+    {
+      "obj_id": "bowl_source_01",
+      "template": "bowl",
+      "parent_object_id": "kitchen_counter_01",
+      "number": "single",
+      "position": {"relation": "on", "relative_to": "kitchen_counter_01"},
+      "shape": "frustum",
+      "overrides": {
+        "color": "white",
+        "material": "ceramic",
+        "cleanliness": "clean"
+      }
+    },
+    {
+      "obj_id": "bowl_destination_01",
+      "template": "bowl",
+      "parent_object_id": "kitchen_counter_01",
+      "number": "single",
+      "position": {"relation": "on", "relative_to": "kitchen_counter_01"},
+      "shape": "frustum",
+      "overrides": {
+        "color": "white",
+        "material": "ceramic",
+        "cleanliness": "clean"
+      }
+    },
+    {
+      "obj_id": "paring_knife_01",
+      "template": "paring_knife",
+      "parent_object_id": "kitchen_counter_01",
+      "number": "single",
+      "position": {"relation": "on", "relative_to": "kitchen_counter_01"},
+      "shape": "elongated",
+      "overrides": {
+        "color": "silver",
+        "material": "stainless_steel",
+        "blade_edge": "sharp",
+        "state": "resting"
+      }
+    },
+    {
+      "obj_id": "cutting_board_01",
+      "template": "cutting_board",
+      "parent_object_id": "kitchen_counter_01",
+      "number": "single",
+      "position": {"relation": "on", "relative_to": "kitchen_counter_01"},
+      "shape": "box",
+      "overrides": {
+        "color": "wood",
+        "material": "maple",
+        "surface_state": "clean"
+      }
+    },
+    {
+      "obj_id": "sink_01",
+      "template": "sink",
+      "parent_object_id": "kitchen_counter_01",
+      "number": "single",
+      "shape": "frustum",
+      "overrides": {
+        "color": "silver",
+        "material": "stainless_steel"
+      }
+    },
+    {
+      "obj_id": "faucet_tap_01",
+      "template": "faucet_tap",
+      "parent_object_id": "kitchen_counter_01",
+      "number": "single",
+      "shape": "cylinder",
+      "overrides": {
+        "color": "silver",
+        "material": "chrome_plated_brass",
+        "state": "closed"
+      }
+    },
+    {
+      "obj_id": "compost_crock_01",
+      "template": "compost_crock",
+      "parent_object_id": "kitchen_counter_01",
+      "number": "single",
+      "position": {"relation": "on", "relative_to": "kitchen_counter_01"},
+      "shape": "cylinder",
+      "overrides": {
+        "color": "white",
+        "material": "ceramic"
+      }
+    },
+    {
+      "obj_id": "apple_01",
+      "template": "apple",
+      "parent_object_id": null,
+      "number": "single",
+      "position": {"relation": "in", "relative_to": "bowl_source_01"},
+      "shape": "spherical",
+      "materials": ["apple_skin", "apple_flesh", "apple_core"],
+      "overrides": {
+        "color": "red_brushed",
+        "temperature": "cold",
+        "surface_state": "dry",
+        "physical_state": "intact",
+        "skin_present": true,
+        "skin_coverage": 1.0,
+        "moisture": "dry",
+        "surface_optics": "glossy",
+        "stem_present": true,
+        "calyx_present": true
+      }
+    },
+    {
+      "obj_id": "apple_skin_01",
+      "template": "apple_skin",
+      "parent_object_id": "apple_01",
+      "number": "single",
+      "shape": "sheet",
+      "overrides": {
+        "color_outer": "red_brushed",
+        "color_inner": "pale_white",
+        "surface_moisture": "dry",
+        "surface_friction": "moderate"
+      }
+    },
+    {
+      "obj_id": "apple_flesh_01",
+      "template": "apple_flesh",
+      "parent_object_id": "apple_01",
+      "number": "single",
+      "shape": "spherical",
+      "overrides": {
+        "color": "cream",
+        "texture": "crisp",
+        "surface_state": "dry",
+        "oxidation": "none",
+        "exposure": "unexposed"
+      }
+    },
+    {
+      "obj_id": "apple_core_01",
+      "template": "apple_core",
+      "parent_object_id": "apple_01",
+      "number": "single",
+      "shape": "wedge",
+      "overrides": {
+        "color": "pale_translucent",
+        "contains_seeds": true
+      }
+    }
+  ],
+  "actions": [
+    {
+      "template": "retrieve_object_from_container",
+      "instance_id": "action.0",
+      "duration": 2,
+      "temporal_type": "sequential",
+      "kinematic_trajectory": "curved",
+      "participants": ["left_hand_01", "eyes_01", "apple_01", "bowl_source_01"],
+      "preconditions": [],
+      "changes": []
+    },
+    {
+      "template": "wash_object_under_water",
+      "instance_id": "action.1",
+      "duration": 8,
+      "temporal_type": "cyclical",
+      "cycle_duration": 1.0,
+      "repetitions": 5,
+      "kinematic_trajectory": "cyclical",
+      "participants": ["left_hand_01", "left_thumb_01", "apple_01", "faucet_tap_01", "sink_01"],
+      "preconditions": [],
+      "changes": []
+    },
+    {
+      "template": "dry_object_on_fabric",
+      "instance_id": "action.2",
+      "duration": 4,
+      "temporal_type": "cyclical",
+      "cycle_duration": 0.5,
+      "repetitions": 5,
+      "kinematic_trajectory": "cyclical",
+      "participants": ["left_hand_01", "apple_01", "shirt_01"],
+      "preconditions": [],
+      "changes": []
+    },
+    {
+      "template": "place_object_on_surface",
+      "instance_id": "action.3",
+      "duration": 2,
+      "temporal_type": "sequential",
+      "kinematic_trajectory": "straight",
+      "participants": ["left_hand_01", "apple_01", "cutting_board_01"],
+      "preconditions": [],
+      "changes": []
+    },
+    {
+      "template": "prepare_tool_and_pin_object",
+      "instance_id": "action.4",
+      "duration": 2,
+      "temporal_type": "sequential",
+      "kinematic_trajectory": "straight",
+      "participants": ["right_hand_01", "left_hand_01", "paring_knife_01", "apple_01"],
+      "preconditions": [],
+      "changes": []
+    },
+    {
+      "template": "initiate_cut",
+      "instance_id": "action.5",
+      "duration": 1,
+      "temporal_type": "sequential",
+      "kinematic_trajectory": "linear",
+      "participants": ["right_hand_01", "paring_knife_01", "apple_01"],
+      "preconditions": [
+        {"object": "paring_knife_01", "attribute": "blade_edge", "op": "eq", "value": "sharp"}
+      ],
+      "changes": []
+    },
+    {
+      "template": "continuous_peel",
+      "instance_id": "action.6",
+      "duration": 40,
+      "temporal_type": "cyclical",
+      "cycle_duration": 1.0,
+      "repetitions": 40,
+      "kinematic_trajectory": "helical",
+      "participants": ["left_hand_01", "left_thumb_01", "right_hand_01", "paring_knife_01", "apple_01"],
+      "preconditions": [],
+      "changes": []
+    },
+    {
+      "template": "manipulate_and_inspect",
+      "instance_id": "action.7",
+      "duration": 2,
+      "temporal_type": "sequential",
+      "kinematic_trajectory": "circular",
+      "participants": ["left_hand_01", "eyes_01", "apple_01"],
+      "preconditions": [],
+      "changes": []
+    },
+    {
+      "template": "quarter_object_through_core",
+      "instance_id": "action.8",
+      "duration": 3,
+      "temporal_type": "sequential",
+      "kinematic_trajectory": "straight",
+      "participants": ["right_hand_01", "paring_knife_01", "apple_01", "cutting_board_01"],
+      "preconditions": [],
+      "changes": []
+    },
+    {
+      "template": "remove_core_from_quarters",
+      "instance_id": "action.9",
+      "duration": 30,
+      "temporal_type": "cyclical",
+      "cycle_duration": 7.5,
+      "repetitions": 4,
+      "kinematic_trajectory": "straight",
+      "participants": ["right_hand_01", "paring_knife_01", "apple_01"],
+      "preconditions": [],
+      "changes": []
+    },
+    {
+      "template": "flick_object_to_receptacle",
+      "instance_id": "action.10",
+      "duration": 2,
+      "temporal_type": "sequential",
+      "kinematic_trajectory": "arc",
+      "participants": ["right_hand_01", "sink_01"],
+      "preconditions": [],
+      "changes": []
+    },
+    {
+      "template": "transfer_pieces_to_container",
+      "instance_id": "action.11",
+      "duration": 5,
+      "temporal_type": "sequential",
+      "kinematic_trajectory": "arc",
+      "participants": ["left_hand_01", "bowl_destination_01", "apple_01"],
+      "preconditions": [],
+      "changes": []
+    },
+    {
+      "template": "dispose_waste_to_receptacle",
+      "instance_id": "action.12",
+      "duration": 2,
+      "temporal_type": "sequential",
+      "kinematic_trajectory": "arc",
+      "participants": ["left_hand_01", "compost_crock_01"],
+      "preconditions": [],
+      "changes": []
+    },
+    {
+      "template": "lingering_sensory_residue",
+      "instance_id": "action.13",
+      "duration": 3600,
+      "temporal_type": "sequential",
+      "kinematic_trajectory": "none",
+      "participants": ["left_hand_01", "right_hand_01"],
+      "preconditions": [],
+      "changes": []
+    }
+  ]
+}
+
+

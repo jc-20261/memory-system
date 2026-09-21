@@ -1,0 +1,267 @@
+[
+  {
+    "memory_id": "mem_000003",
+    "relation": "front_of",
+    "relative_to": "burner_01"
+  },
+  {
+    "memory_id": "mem_000010",
+    "relation": "front_of",
+    "relative_to": "washing_machine_01"
+  },
+  {
+    "memory_id": "mem_000023",
+    "relation": "attached",
+    "relative_to": "plant_crown_01"
+  },
+  {
+    "memory_id": "mem_000024",
+    "relation": "between",
+    "relative_to": "old_hole_01 and new_hole_01"
+  },
+  {
+    "memory_id": "mem_000026",
+    "relation": "attached",
+    "relative_to": "sink_01"
+  },
+  {
+    "memory_id": "mem_000026",
+    "relation": "attached",
+    "relative_to": "kitchen_counter"
+  },
+  {
+    "memory_id": "mem_000026",
+    "relation": "attached",
+    "relative_to": "ceiling"
+  },
+  {
+    "memory_id": "mem_000030",
+    "relation": "attached",
+    "relative_to": "rootstock_stem_01"
+  },
+  {
+    "memory_id": "mem_000033",
+    "relation": "between",
+    "relative_to": "patio_surface_01"
+  },
+  {
+    "memory_id": "mem_000035",
+    "relation": "attached",
+    "relative_to": "wheelbarrow_01"
+  },
+  {
+    "memory_id": "mem_000035",
+    "relation": "attached",
+    "relative_to": "wheelbarrow_01"
+  },
+  {
+    "memory_id": "mem_000035",
+    "relation": "between",
+    "relative_to": "['grass_01', 'ground_01']"
+  },
+  {
+    "memory_id": "mem_000035",
+    "relation": "attached",
+    "relative_to": "water_source_01"
+  },
+  {
+    "memory_id": "mem_000035",
+    "relation": "attached",
+    "relative_to": "hose_01"
+  },
+  {
+    "memory_id": "mem_000035",
+    "relation": "attached",
+    "relative_to": "hose_01"
+  },
+  {
+    "memory_id": "mem_000036",
+    "relation": "front_of",
+    "relative_to": "fridge_01"
+  },
+  {
+    "memory_id": "mem_000041",
+    "relation": "attached",
+    "relative_to": "drill_01"
+  },
+  {
+    "memory_id": "mem_000045",
+    "relation": "between",
+    "relative_to": "['window_sash_01', 'window_frame_01']"
+  },
+  {
+    "memory_id": "mem_000048",
+    "relation": "attached",
+    "relative_to": "wall"
+  },
+  {
+    "memory_id": "mem_000051",
+    "relation": "front_of",
+    "relative_to": "oven_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "front_of",
+    "relative_to": "spade_handle_01"
+  },
+  {
+    "memory_id": "mem_000060",
+    "relation": "between",
+    "relative_to": "['screen_01', 'eyes_01']"
+  },
+  {
+    "memory_id": "mem_000061",
+    "relation": "front_of",
+    "relative_to": "camera_body_01"
+  },
+  {
+    "memory_id": "mem_000061",
+    "relation": "front_of",
+    "relative_to": "subject_01"
+  },
+  {
+    "memory_id": "mem_000061",
+    "relation": "front_of",
+    "relative_to": "subject_head_01"
+  },
+  {
+    "memory_id": "mem_000061",
+    "relation": "between",
+    "relative_to": "['device_01', 'subject_01']"
+  },
+  {
+    "memory_id": "mem_000080",
+    "relation": "front_of",
+    "relative_to": "device_01"
+  },
+  {
+    "memory_id": "mem_000080",
+    "relation": "front_of",
+    "relative_to": "display_01"
+  },
+  {
+    "memory_id": "mem_000080",
+    "relation": "front_of",
+    "relative_to": "device_01"
+  },
+  {
+    "memory_id": "mem_000083",
+    "relation": "front_of",
+    "relative_to": "smart_phone_01"
+  },
+  {
+    "memory_id": "mem_000085",
+    "relation": "front_of",
+    "relative_to": "device_01"
+  },
+  {
+    "memory_id": "mem_000085",
+    "relation": "front_of",
+    "relative_to": "lens_01"
+  },
+  {
+    "memory_id": "mem_000086",
+    "relation": "front_of",
+    "relative_to": "device_01"
+  },
+  {
+    "memory_id": "mem_000089",
+    "relation": "front_of",
+    "relative_to": "display_01"
+  },
+  {
+    "memory_id": "mem_000089",
+    "relation": "front_of",
+    "relative_to": "display_01"
+  },
+  {
+    "memory_id": "mem_000089",
+    "relation": "between",
+    "relative_to": "vapor_and_surface"
+  },
+  {
+    "memory_id": "mem_000089",
+    "relation": "between",
+    "relative_to": "hand_and_surface"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "between",
+    "relative_to": "['wearable_band_01', 'controller_01']"
+  },
+  {
+    "memory_id": "mem_000091",
+    "relation": "front_of",
+    "relative_to": "vehicle_01"
+  },
+  {
+    "memory_id": "mem_000092",
+    "relation": "front_of",
+    "relative_to": "treadmill_01"
+  },
+  {
+    "memory_id": "mem_000092",
+    "relation": "front_of",
+    "relative_to": "treadmill_01"
+  },
+  {
+    "memory_id": "mem_000093",
+    "relation": "between",
+    "relative_to": "protective_film_01_and_workpiece_01"
+  },
+  {
+    "memory_id": "mem_000094",
+    "relation": "front_of",
+    "relative_to": "control_pod_01"
+  },
+  {
+    "memory_id": "mem_000095",
+    "relation": "attached",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000095",
+    "relation": "attached",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000095",
+    "relation": "attached",
+    "relative_to": "right_hand_01"
+  },
+  {
+    "memory_id": "mem_000095",
+    "relation": "attached",
+    "relative_to": "right_hand_01"
+  },
+  {
+    "memory_id": "mem_000095",
+    "relation": "attached",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000095",
+    "relation": "attached",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000095",
+    "relation": "attached",
+    "relative_to": "right_arm_01"
+  },
+  {
+    "memory_id": "mem_000095",
+    "relation": "attached",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000095",
+    "relation": "attached",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000096",
+    "relation": "between",
+    "relative_to": "['light_source_01', 'wall_surface_01']"
+  }
+]

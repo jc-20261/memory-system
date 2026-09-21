@@ -1,0 +1,281 @@
+Below demonstrates the generalized action plot, marked "to be generated", after previous steps have been completed (marked "(context - previously generated)").
+
+IMPORTANT:
+
+This is a demonstration (demo), using the peeling an apple activity, not to be confused with the activity or memory that you are currently working on. Use the demonstration as a guide. 
+
+
+
+NL Memory (context - previously generated)
+
+I have peeled an apple so many times that the memory is no longer of any single apple, any single knife, any single hand. What remains is a sequence of physical events.
+
+First, the cold weight in my palm. The skin feels slightly cool and faintly damp. My thumb rests on one side, fingers curled around the other. The surface has a small amount of friction—enough that the apple does not slip when I press gently.
+
+The blade touches the skin just below the stem. I tilt the knife so the flat side angles upward, perhaps ten or fifteen degrees. The edge slides underneath the skin. A thin strip of peel lifts away from the flesh. The strip curls as it comes off, forming a loose spiral. I hear a soft, dry scraping sound, followed by a wetter sound as juice seeps out of the exposed flesh.
+
+I rotate the apple slowly with my thumb and middle finger. The blade continues to cut a shallow channel. The peel runs in a continuous band around the apple. The band narrows and widens slightly depending on how steady my hand is. When the blade cuts too deep, a thicker piece of flesh comes off with the peel, white and wet. When it cuts too shallow, the peel tears, and I see the pale pith underneath.
+
+The apple grows slicker in my hand as more juice coats my skin. The exposed flesh starts as cream-colored, then darkens slightly within seconds. The core becomes visible as a faint five-pointed shape through the thin layer of flesh remaining over it.
+
+The removed peel piles up on the cutting board. It forms a coiled heap. The outer side of each curl is red or green or yellow, depending on the apple. The inner side is pale, almost white. Light passes through the thinnest parts of the peel.
+
+When the blade reaches the bottom of the apple, the last piece of peel detaches. The apple now has no skin. Its entire surface is wet, smooth, and slippery. Small droplets of juice bead up on the flesh. The stem is gone. The calyx at the bottom is empty.
+
+I do not eat it. I hold the naked apple in my palm. My fingers leave faint prints on the wet surface. The peel pile sits to one side. The knife has a thin film of juice along the blade.
+
+
+
+
+Memory Sketch (context - previously generated)
+
+
+- Object List (tiered)
+text
+
+
+
+person_01
+├── left_hand_01
+├── right_hand_01
+├── left_arm_01
+├── right_arm_01
+└── eyes_01
+
+apple_01
+├── apple_skin_01
+├── apple_flesh_01
+├── apple_core_01
+└── juice_01
+
+knife_01
+├── knife_blade_01
+└── knife_handle_01
+
+cutting_board_01
+peel_strip_01      (alias: apple_peel_01)
+peel_pile_01
+air_01
+
+
+
+
+- Action Plot
+text
+
+
+peel_apple (seq, 60s)
+├── prepare_objects (seq, 5s)
+│   ├── grasp_apple_left_hand (2s)               [HUMAN_INTERACTION / MANIPULATION]
+│   ├── grasp_knife_right_hand (2s)              [HUMAN_INTERACTION / MANIPULATION]
+│   └── inspect_apple (1s)                       [HUMAN_INTERACTION / PERCEPTION]
+├── initiate_peel (seq, 10s)
+│   ├── position_knife_at_stem (3s)              [HUMAN_INTERACTION / TOOL_USAGE]
+│   ├── insert_blade_under_skin (2s)             [HUMAN_INTERACTION / TOOL_USAGE]
+│   └── lift_first_peel_strip (parallel, 5s)     [HUMAN_INTERACTION / MANIPULATION]
+│       ├── tilt_knife_upward (2s, start_offset 0)
+│       └── apply_upward_prying_force (3s, start_offset 0.5)
+├── continuous_peeling (parallel, 40s)
+│   ├── HUMAN_INTERACTION
+│   │   ├── rotate_apple_by_hand (cyclical, 40s)
+│   │   └── draw_knife_along_surface (cyclical, 40s)
+│   └── NATURAL_PROCESS
+│       ├── juice_seepage (cyclical, 40s)
+│       ├── flesh_oxidation (once, 30s, starts after flesh_exposed = true)
+│       ├── stress_tear (conditional, sporadic)
+│       ├── light_passage (continuous, 40s)
+│       └── gravity_pull (continuous, 40s)
+└── finish_peel (seq, 5s)
+    ├── detach_last_peel (2s)                    [HUMAN_INTERACTION / TOOL_USAGE]
+    ├── place_knife_down (1s)                    [HUMAN_INTERACTION / MANIPULATION]
+    └── examine_apple (2s)                       [HUMAN_INTERACTION / PERCEPTION]
+
+
+
+Enhanced memory sketch (context - previously generated)
+
+- Enhanced object list
+
+person_01
+├── left_hand_01
+│   ├── left_thumb_01
+│   ├── left_index_finger_01
+│   ├── left_middle_finger_01
+│   └── left_palm_01
+├── right_hand_01
+│   ├── right_thumb_01
+│   ├── right_index_finger_01
+│   ├── right_middle_finger_01
+│   └── right_palm_01
+├── left_arm_01
+│   ├── left_forearm_01
+│   └── left_upper_arm_01
+├── right_arm_01
+│   ├── right_forearm_01
+│   └── right_upper_arm_01
+└── eyes_01
+
+apple_01
+├── apple_skin_01
+│   └── peel_strip_01
+├── apple_flesh_01
+│   └── apple_flesh_surface_01
+├── apple_core_01
+└── juice_01
+
+knife_01
+├── knife_blade_01
+│   └── knife_edge_01
+└── knife_handle_01
+
+cutting_board_01
+peel_pile_01
+air_01
+
+
+
+- Enhanced action plot
+
+peel_apple (seq, 60s)
+├── prepare_objects (seq, 5s)
+│   ├── grasp_apple_left_hand (2s)
+│   │   ├── reach_toward_object (1s)
+│   │   ├── open_palm_and_spread_fingers (0.5s)
+│   │   ├── curl_fingers_around (0.5s)
+│   │   └── apply_gentle_pressure (0.5s)
+│   ├── grasp_knife_right_hand (2s)
+│   │   ├── reach_toward_object (1s)
+│   │   ├── open_palm_and_spread_fingers (0.5s)
+│   │   ├── curl_fingers_around (0.5s)
+│   │   └── apply_gentle_pressure (0.5s)
+│   └── inspect_apple (1s)
+│       ├── saccade_scene (0.3s)
+│       └── fixate_on_surface (0.7s)
+├── initiate_peel (seq, 10s)
+│   ├── position_knife_at_stem (3s)
+│   │   ├── reach_toward_stem (1.5s)
+│   │   └── orient_knife_to_stem (1.5s)
+│   ├── insert_blade_under_skin (2s)
+│   │   └── apply_linear_force (2s)
+│   └── lift_first_peel_strip (parallel, 5s)
+│       ├── tilt_knife_upward (2s, start_offset 0)
+│       │   └── rotate_wrist (2s)
+│       └── apply_upward_prying_force (3s, start_offset 0.5)
+│           └── flex_forearm (3s)
+├── continuous_peeling (parallel, 40s)
+│   ├── HUMAN_INTERACTION
+│   │   ├── rotate_apple_by_hand (cyclical, 40s)
+│   │   │   ├── adjust_grip_for_rotation (2s)
+│   │   │   │   ├── release_slight_pressure (0.5s)
+│   │   │   │   ├── reposition_thumb (1.0s)
+│   │   │   │   └── reapply_pressure (0.5s)
+│   │   │   ├── apply_continuous_torque_thumb (cyclical, 36s)
+│   │   │   │   ├── flex_thumb_interphalangeal_joint (cyclical, 1s)
+│   │   │   │   └── extend_thumb_interphalangeal_joint (cyclical, 1s)
+│   │   │   ├── monitor_rotation_visually (cyclical, 40s)
+│   │   │   │   ├── saccade_scene (cyclical, 0.3s)
+│   │   │   │   └── fixate_on_surface (cyclical, 0.5s)
+│   │   │   └── stop_rotation (2s)
+│   │   │       ├── relax_torque_muscles (1.0s)
+│   │   │       └── return_hand_to_neutral (1.0s)
+│   │   └── draw_knife_along_surface (cyclical, 40s)
+│   │       ├── apply_light_shear_force (cyclical, 1s)
+│   │       ├── guide_knife_along_spiral_path (cyclical, 1s)
+│   │       └── press_blade_into_flesh (cyclical, variable pressing_force)
+│   └── NATURAL_PROCESS
+│       ├── juice_seepage (cyclical, 40s)
+│       │   ├── cell_rupture (triggered by draw_knife)
+│       │   └── liquid_flow (cyclical)
+│       ├── flesh_oxidation (once, 30s, starts after flesh_exposed = true)
+│       ├── stress_tear (conditional, triggered by low pressing_force / thin peel)
+│       ├── light_passage (continuous, 40s)
+│       └── gravity_pull (continuous, 40s)
+└── finish_peel (seq, 5s)
+    ├── detach_last_peel (2s)
+    │   └── draw_knife_through_remaining_skin (2s)
+    ├── place_knife_down (1s)
+    │   ├── lower_knife_to_board (0.5s)
+    │   └── release_grip (0.5s)
+    └── examine_apple (2s)
+        ├── saccade_scene (0.3s)
+        ├── fixate_on_surface (0.7s)
+        └── fixate_on_surface (1.0s)
+
+
+
+
+Generalized action plot (to be generated)
+
+
+
+peel_object (general: peel_object, alt: peel_apple_001)  (seq, 60s)
+├── prepare_objects (seq, 5s)
+│   ├── grasp_object_hand (hand=left_hand, object=apple)  (2s)
+│   │   ├── reach_toward_object (1s)
+│   │   ├── open_palm_and_spread_fingers (0.5s)
+│   │   ├── curl_fingers_around (0.5s)
+│   │   └── apply_gentle_pressure (0.5s)
+│   ├── grasp_object_hand (hand=right_hand, object=knife)  (2s)
+│   │   ├── reach_toward_object (1s)
+│   │   ├── open_palm_and_spread_fingers (0.5s)
+│   │   ├── curl_fingers_around (0.5s)
+│   │   └── apply_gentle_pressure (0.5s)
+│   └── inspect_object (1s)
+│       ├── saccade_scene (0.3s)
+│       └── fixate_on_surface (0.7s)
+├── initiate_peel (seq, 10s)
+│   ├── position_object (3s)
+│   │   ├── reach_toward_object (1.5s)
+│   │   └── orient_tool_to_target (1.5s)
+│   ├── insert_blade (2s)
+│   │   └── apply_linear_force (2s)
+│   └── lift_surface_object_pry (parallel, 5s)
+│       ├── tilt_tool_upward (2s, start_offset 0)
+│       │   └── rotate_wrist (2s)
+│       └── apply_upward_prying_force (3s, start_offset 0.5)
+│           └── flex_forearm (3s)
+├── continuous_peeling (general: continuous_peeling, alt: continuous_peeling_apple_rotational) (parallel, 40s)
+│   ├── HUMAN_INTERACTION
+│   │   ├── rotate_object_by_hand (general: rotate_object_by_hand, alt: rotate_apple_by_hand) (cyclical, 40s)
+│   │   │   ├── adjust_grip_for_rotation (2s)
+│   │   │   │   ├── release_finger_pressure (0.5s)
+│   │   │   │   ├── reposition_thumb (1.0s)
+│   │   │   │   └── reapply_pressure (0.5s)
+│   │   │   ├── apply_continuous_torque (cyclical, 36s)
+│   │   │   │   ├── flex_thumb_interphalangeal_joint (cyclical, 1s)
+│   │   │   │   └── extend_thumb_interphalangeal_joint (cyclical, 1s)
+│   │   │   ├── monitor_visually (cyclical, 40s)
+│   │   │   │   ├── saccade_scene (cyclical, 0.3s)
+│   │   │   │   └── fixate_on_surface (cyclical, 0.5s)
+│   │   │   └── stop_rotation (2s)
+│   │   │       ├── relax_torque_muscles (1.0s)
+│   │   │       └── return_hand_to_neutral (1.0s)
+│   │   └── draw_tool_along_surface (general: draw_tool_along_surface, alt: draw_knife_along_surface) (cyclical, 40s)
+│   │       ├── apply_light_shear_force (cyclical, 1s)
+│   │       ├── guide_tool_along_spiral_path (cyclical, 1s)
+│   │       └── press_tool_into_surface (cyclical, variable pressing_force)
+│   │           ├── apply_downward_pressure (cyclical, 1s)
+│   │           └── maintain_tool_angle (cyclical, 1s)
+│   └── NATURAL_PROCESS
+│       ├── juice_seepage (cyclical, 40s)
+│       │   ├── cell_rupture (triggered by draw_tool_along_surface)
+│       │   └── liquid_flow (cyclical)
+│       ├── flesh_oxidation (once, 30s, starts after flesh_exposed = true)
+│       │   └── oxygen_reaction (once, 30s)
+│       ├── stress_tear (conditional, sporadic)
+│       │   ├── tear_initiation (conditional)
+│       │   └── tear_propagation (conditional)
+│       ├── light_passage (continuous, 40s)
+│       │   └── photon_transmission (continuous, 40s)
+│       └── gravity_pull (continuous, 40s)
+│           └── downward_acceleration (continuous, 40s)
+└── finish_peel (seq, 5s)
+    ├── detach_object (2s)
+    │   └── draw_tool_through_remaining_connection (2s)
+    ├── place_object (1s)
+    │   ├── lower_object_to_surface (0.5s)
+    │   └── release_grip (0.5s)
+    └── inspect_object (2s)
+        ├── saccade_scene (0.3s)
+        ├── fixate_on_surface (0.7s)
+        └── fixate_on_surface (1.0s)

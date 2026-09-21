@@ -1,0 +1,586 @@
+═══════════════════════════════════════════════════════════════════════
+LABELING DEMO — Peeling a Honeycrisp Apple (complete run)
+═══════════════════════════════════════════════════════════════════════
+
+INSTRUCTIONS
+
+You are a labeling engine for 3D scene elements. Given a set of objects
+and their elements, assign a semantic label to each element based on its
+geometry and the context provided in the input.
+
+Rules:
+
+- Every element receives exactly one label.
+- Labels are short, lowercase, words joined by underscores when needed.
+- The label should describe the role the element plays in the object,
+  not just its geometric type. For example, a sphere inside an apple is
+  not "sphere", it is "skin" or "flesh" depending on what it represents.
+- If the element's role cannot be determined from the input, fall back
+  to its geometric type (for example: "sphere", "cylinder").
+- The input may include current material and metadata (properties like
+  skin_present, state, moisture) so the label reflects the element's
+  current role, not just its geometry. For example, an apple sphere with
+  skin_present: false should still be labeled "skin" (the shell is still
+  geometrically present even though the property says it has been
+  removed) unless the element is clearly the exposed interior, in which
+  case the label is "flesh".
+- For split or clipped objects, the elements are inherited from the
+  source but the visible surface includes cut faces. The labels should
+  reflect the roles that the elements play in the split object, not the
+  roles they had in the source.
+- Object groups with multiple similar elements (for example, a group of
+  seeds) should be labeled with the same role name; if the individual
+  elements are distinguishable, append an index (seed_1, seed_2, ...).
+- Output JSON with a single key "labels" containing a list of
+  {object_id, element_index, label} entries, plus a "notes" string.
+
+When labeling is called:
+
+- The pipeline calls the labeling engine once at t=0 (initial scene) and
+  once after any top-level action that introduces at least one new
+  object or new element. Top-level actions that only move, rotate, or
+  change properties of existing objects do not trigger a call.
+- In the apple-peeling memory, the calls are triggered by: the initial
+  scene, and after H2, H6, H7, H8, H9, H10, and H12. All other actions
+  (H1, H3, H4, H5, H11, H13, H14) do not trigger a call.
+- Transient objects that are created and removed within the same
+  top-level action (for example, water_stream_01 in H2, and the two
+  apple halves in H9) are labeled while they exist, but their labels are
+  discarded when the object is removed. They still appear in the
+  labeling call because they are present in the frame at the moment the
+  call is made.
+- Element indices are relative to the object's current element list at
+  the time of the labeling call. If an object gains or loses elements
+  over time, the same label may move to a different index in a later
+  call.
+
+Output format (exact):
+
+{
+  "labels": [
+    {"object_id": "...", "element_index": 0, "label": "..."},
+    {"object_id": "...", "element_index": 1, "label": "..."},
+    ...
+  ],
+  "notes": "..."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 1 — Initial scene labeling (t = 0)
+═══════════════════════════════════════════════════════════════════════
+
+INPUT:
+
+{
+  "objects": [
+    {
+      "object_id": "person_01",
+      "template_name": "person",
+      "elements": [
+        {"element_index": 0, "element_type": "capsule", "parameters": {"radius_cm": 15.0, "height_cm": 80.0}},
+        {"element_index": 1, "element_type": "sphere", "parameters": {"radius_cm": 10.0}}
+      ],
+      "material": {"color": "flesh", "material": "biological"},
+      "metadata": {"label": "protagonist", "posture": "standing"}
+    },
+    {
+      "object_id": "eyes_01",
+      "template_name": "eyes",
+      "elements": [
+        {"element_index": 0, "element_type": "sphere", "parameters": {"radius_cm": 1.5}},
+        {"element_index": 1, "element_type": "sphere", "parameters": {"radius_cm": 1.5}}
+      ],
+      "material": {"color": "white", "material": "biological"},
+      "metadata": {"label": "eyes", "gaze_direction": "forward"}
+    },
+    {
+      "object_id": "left_hand_01",
+      "template_name": "hand",
+      "elements": [
+        {"element_index": 0, "element_type": "box", "parameters": {"size_x_cm": 8.0, "size_y_cm": 2.5, "size_z_cm": 18.0}}
+      ],
+      "material": {"color": "flesh", "material": "biological"},
+      "metadata": {"label": "left_hand", "finger_posture": "relaxed", "grip_type": "open"}
+    },
+    {
+      "object_id": "left_thumb_01",
+      "template_name": "thumb",
+      "elements": [
+        {"element_index": 0, "element_type": "capsule", "parameters": {"radius_cm": 0.9, "height_cm": 5.0}}
+      ],
+      "material": {"color": "flesh", "material": "biological"},
+      "metadata": {"label": "left_thumb", "position": "extended"}
+    },
+    {
+      "object_id": "right_hand_01",
+      "template_name": "hand",
+      "elements": [
+        {"element_index": 0, "element_type": "box", "parameters": {"size_x_cm": 8.0, "size_y_cm": 2.5, "size_z_cm": 18.0}}
+      ],
+      "material": {"color": "flesh", "material": "biological"},
+      "metadata": {"label": "right_hand", "finger_posture": "relaxed", "grip_type": "open"}
+    },
+    {
+      "object_id": "shirt_01",
+      "template_name": "shirt",
+      "elements": [
+        {"element_index": 0, "element_type": "box", "parameters": {"size_x_cm": 45.0, "size_y_cm": 20.0, "size_z_cm": 60.0}}
+      ],
+      "material": {"color": "blue", "material": "cotton", "moisture": "dry"},
+      "metadata": {"label": "shirt"}
+    },
+    {
+      "object_id": "kitchen_counter_01",
+      "template_name": "kitchen_counter",
+      "elements": [
+        {"element_index": 0, "element_type": "box", "parameters": {"size_x_cm": 180.0, "size_y_cm": 60.0, "size_z_cm": 4.0}}
+      ],
+      "material": {"color": "wood", "material": "laminate"},
+      "metadata": {"label": "kitchen_counter"}
+    },
+    {
+      "object_id": "refrigerator_01",
+      "template_name": "refrigerator",
+      "elements": [
+        {"element_index": 0, "element_type": "box", "parameters": {"size_x_cm": 70.0, "size_y_cm": 70.0, "size_z_cm": 180.0}},
+        {"element_index": 1, "element_type": "box", "parameters": {"size_x_cm": 60.0, "size_y_cm": 4.0, "size_z_cm": 100.0}}
+      ],
+      "material": {"color": "silver", "material": "steel"},
+      "metadata": {"label": "refrigerator", "state": "closed"}
+    },
+    {
+      "object_id": "bowl_source_01",
+      "template_name": "bowl",
+      "elements": [
+        {"element_index": 0, "element_type": "frustum", "parameters": {"bottom_radius_cm": 4.0, "top_radius_cm": 7.0, "height_cm": 6.0}},
+        {"element_index": 1, "element_type": "cylinder", "parameters": {"radius_cm": 4.5, "height_cm": 0.4}}
+      ],
+      "material": {"color": "white", "material": "ceramic"},
+      "metadata": {"label": "source_bowl", "cleanliness": "clean"}
+    },
+    {
+      "object_id": "apple_01",
+      "template_name": "apple",
+      "elements": [
+        {"element_index": 0, "element_type": "sphere", "parameters": {"radius_cm": 4.0}},
+        {"element_index": 1, "element_type": "cylinder", "parameters": {"radius_cm": 0.15, "height_cm": 1.6}},
+        {"element_index": 2, "element_type": "torus", "parameters": {"major_radius_cm": 1.0, "minor_radius_cm": 0.25}}
+      ],
+      "material": {"color": "red_brushed", "surface_state": "dry", "temperature": "cold", "skin_present": true, "physical_state": "intact"},
+      "metadata": {"label": "Honeycrisp apple"}
+    },
+    {
+      "object_id": "paring_knife_01",
+      "template_name": "paring_knife",
+      "elements": [
+        {"element_index": 0, "element_type": "box", "parameters": {"size_x_cm": 10.0, "size_y_cm": 2.0, "size_z_cm": 0.2}},
+        {"element_index": 1, "element_type": "box", "parameters": {"size_x_cm": 9.0, "size_y_cm": 2.5, "size_z_cm": 1.5}}
+      ],
+      "material": {"color": "silver", "material": "stainless_steel"},
+      "metadata": {"label": "paring knife", "state": "resting"}
+    },
+    {
+      "object_id": "cutting_board_01",
+      "template_name": "cutting_board",
+      "elements": [
+        {"element_index": 0, "element_type": "box", "parameters": {"size_x_cm": 45.0, "size_y_cm": 30.0, "size_z_cm": 2.0}}
+      ],
+      "material": {"color": "wood", "material": "maple"},
+      "metadata": {"label": "cutting board"}
+    },
+    {
+      "object_id": "sink_01",
+      "template_name": "sink",
+      "elements": [
+        {"element_index": 0, "element_type": "frustum", "parameters": {"bottom_radius_cm": 12.0, "top_radius_cm": 16.0, "height_cm": 15.0}}
+      ],
+      "material": {"color": "silver", "material": "stainless_steel"},
+      "metadata": {"label": "sink"}
+    },
+    {
+      "object_id": "faucet_tap_01",
+      "template_name": "faucet_tap",
+      "elements": [
+        {"element_index": 0, "element_type": "cylinder", "parameters": {"radius_cm": 1.5, "height_cm": 25.0}},
+        {"element_index": 1, "element_type": "cylinder", "parameters": {"radius_cm": 1.5, "height_cm": 14.0}}
+      ],
+      "material": {"color": "silver", "material": "chrome_plated_brass"},
+      "metadata": {"label": "faucet", "state": "closed"}
+    },
+    {
+      "object_id": "compost_crock_01",
+      "template_name": "compost_crock",
+      "elements": [
+        {"element_index": 0, "element_type": "cylinder", "parameters": {"radius_cm": 8.0, "height_cm": 18.0}},
+        {"element_index": 1, "element_type": "cylinder", "parameters": {"radius_cm": 1.5, "height_cm": 2.0}}
+      ],
+      "material": {"color": "white", "material": "ceramic"},
+      "metadata": {"label": "compost crock"}
+    }
+  ]
+}
+
+OUTPUT:
+
+{
+  "labels": [
+    {"object_id": "person_01", "element_index": 0, "label": "torso"},
+    {"object_id": "person_01", "element_index": 1, "label": "head"},
+    {"object_id": "eyes_01", "element_index": 0, "label": "left_eye"},
+    {"object_id": "eyes_01", "element_index": 1, "label": "right_eye"},
+    {"object_id": "left_hand_01", "element_index": 0, "label": "left_palm"},
+    {"object_id": "left_thumb_01", "element_index": 0, "label": "left_thumb_body"},
+    {"object_id": "right_hand_01", "element_index": 0, "label": "right_palm"},
+    {"object_id": "shirt_01", "element_index": 0, "label": "torso_body"},
+    {"object_id": "kitchen_counter_01", "element_index": 0, "label": "countertop"},
+    {"object_id": "refrigerator_01", "element_index": 0, "label": "cabinet"},
+    {"object_id": "refrigerator_01", "element_index": 1, "label": "door"},
+    {"object_id": "bowl_source_01", "element_index": 0, "label": "bowl_body"},
+    {"object_id": "bowl_source_01", "element_index": 1, "label": "footring"},
+    {"object_id": "apple_01", "element_index": 0, "label": "skin"},
+    {"object_id": "apple_01", "element_index": 1, "label": "stem"},
+    {"object_id": "apple_01", "element_index": 2, "label": "calyx"},
+    {"object_id": "paring_knife_01", "element_index": 0, "label": "blade"},
+    {"object_id": "paring_knife_01", "element_index": 1, "label": "handle"},
+    {"object_id": "cutting_board_01", "element_index": 0, "label": "top_cutting_surface"},
+    {"object_id": "sink_01", "element_index": 0, "label": "basin"},
+    {"object_id": "faucet_tap_01", "element_index": 0, "label": "stem"},
+    {"object_id": "faucet_tap_01", "element_index": 1, "label": "spout"},
+    {"object_id": "compost_crock_01", "element_index": 0, "label": "body"},
+    {"object_id": "compost_crock_01", "element_index": 1, "label": "lid_handle"}
+  ],
+  "notes": "All fifteen objects labeled at t=0. Elements labeled by their role in the object, not their geometric type."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 2 — After H2 (wash_object_under_water)
+New object: water_stream_01 (transient, removed at end of H2)
+═══════════════════════════════════════════════════════════════════════
+
+INPUT:
+
+{
+  "objects": [
+    {
+      "object_id": "water_stream_01",
+      "template_name": "water_stream",
+      "elements": [
+        {"element_index": 0, "element_type": "cylinder", "parameters": {"radius_cm": 0.6, "height_cm": 25.0}}
+      ],
+      "material": {"color": "clear", "material": "water", "state": "flowing"},
+      "metadata": {}
+    }
+  ]
+}
+
+OUTPUT:
+
+{
+  "labels": [
+    {"object_id": "water_stream_01", "element_index": 0, "label": "water_stream"}
+  ],
+  "notes": "Transient object created by H2 and removed at the end of the same action. The single element is the visible column of water falling from the spout. The label is discarded when the object is removed."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 3 — After H6 (initiate_cut)
+New objects: apple_flesh_exposed_01, juice_01
+═══════════════════════════════════════════════════════════════════════
+
+INPUT:
+
+{
+  "objects": [
+    {
+      "object_id": "apple_flesh_exposed_01",
+      "template_name": "apple_flesh",
+      "elements": [
+        {"element_index": 0, "element_type": "sphere", "parameters": {"radius_cm": 3.9}}
+      ],
+      "material": {"color": "pale_yellow_white", "moisture": "wet"},
+      "metadata": {"label": "exposed_flesh"}
+    },
+    {
+      "object_id": "juice_01",
+      "template_name": "juice",
+      "elements": [
+        {"element_index": 0, "element_type": "sphere", "parameters": {"radius_cm": 0.3}}
+      ],
+      "material": {"color": "clear_yellowish", "state": "liquid"},
+      "metadata": {}
+    }
+  ]
+}
+
+OUTPUT:
+
+{
+  "labels": [
+    {"object_id": "apple_flesh_exposed_01", "element_index": 0, "label": "flesh"},
+    {"object_id": "juice_01", "element_index": 0, "label": "juice_pool"}
+  ],
+  "notes": "Both objects created by H6. The exposed flesh is a slightly smaller inner sphere representing the interior after the blade breach. The juice object is a small bead of fluid that wept from the cut."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 4 — After H7 (continuous_peel)
+New object: peel_strip_01 (with an additional curl element added mid-action)
+═══════════════════════════════════════════════════════════════════════
+
+INPUT:
+
+{
+  "objects": [
+    {
+      "object_id": "peel_strip_01",
+      "template_name": "peel_strip",
+      "elements": [
+        {"element_index": 0, "element_type": "sheet", "parameters": {"size_x_cm": 2.5, "size_y_cm": 0.8, "thickness_cm": 0.05}},
+        {"element_index": 1, "element_type": "cylinder", "parameters": {"radius_cm": 0.8, "height_cm": 8.0}}
+      ],
+      "material": {"color": "red_brushed", "material": "apple_skin"},
+      "metadata": {"label": "peel_ribbon"}
+    }
+  ]
+}
+
+OUTPUT:
+
+{
+  "labels": [
+    {"object_id": "peel_strip_01", "element_index": 0, "label": "peel_ribbon_sheet"},
+    {"object_id": "peel_strip_01", "element_index": 1, "label": "peel_curl"}
+  ],
+  "notes": "The peel_strip_01 object accumulates geometry during H7. The sheet element represents the initial flat strip; the cylinder element is added mid-action by an add_element operation and represents the curled spiral form the peel takes as it falls under gravity."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 5 — After H8 (manipulate_and_inspect)
+New object: juice_on_hand_01
+═══════════════════════════════════════════════════════════════════════
+
+INPUT:
+
+{
+  "objects": [
+    {
+      "object_id": "juice_on_hand_01",
+      "template_name": "juice",
+      "elements": [
+        {"element_index": 0, "element_type": "sphere", "parameters": {"radius_cm": 0.3}}
+      ],
+      "material": {"color": "clear_yellowish", "state": "liquid", "viscosity": "slightly_sticky"},
+      "metadata": {}
+    }
+  ]
+}
+
+OUTPUT:
+
+{
+  "labels": [
+    {"object_id": "juice_on_hand_01", "element_index": 0, "label": "juice_film"}
+  ],
+  "notes": "Object created by H8 as the juice runs down the wrist to the heel of the palm. The single element is the visible film of fluid on the skin. It adheres to the hand until it dries tacky."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 6 — After H9 (quarter_object_through_core)
+New objects: apple_half_left_01, apple_half_right_01 (both transient,
+             consumed by the second split in the same action),
+             apple_quarter_a_01, apple_quarter_b_01,
+             apple_quarter_c_01, apple_quarter_d_01
+═══════════════════════════════════════════════════════════════════════
+
+INPUT:
+
+{
+  "objects": [
+    {
+      "object_id": "apple_quarter_a_01",
+      "template_name": "apple",
+      "elements": [
+        {"element_index": 0, "element_type": "sphere", "parameters": {"radius_cm": 4.0}},
+        {"element_index": 1, "element_type": "cylinder", "parameters": {"radius_cm": 0.15, "height_cm": 1.6}},
+        {"element_index": 2, "element_type": "torus", "parameters": {"major_radius_cm": 1.0, "minor_radius_cm": 0.25}}
+      ],
+      "material": {"color": "light_brown", "skin_present": false, "physical_state": "peeled"},
+      "metadata": {"clips": [{"point": [-20.0, 20.0, 92.0], "normal": [1.0, 0.0, 0.0]},
+                             {"point": [-20.0, 20.0, 92.0], "normal": [0.0, 1.0, 0.0]}]}
+    },
+    {
+      "object_id": "apple_quarter_b_01",
+      "template_name": "apple",
+      "elements": [
+        {"element_index": 0, "element_type": "sphere", "parameters": {"radius_cm": 4.0}},
+        {"element_index": 1, "element_type": "cylinder", "parameters": {"radius_cm": 0.15, "height_cm": 1.6}},
+        {"element_index": 2, "element_type": "torus", "parameters": {"major_radius_cm": 1.0, "minor_radius_cm": 0.25}}
+      ],
+      "material": {"color": "light_brown", "skin_present": false, "physical_state": "peeled"},
+      "metadata": {"clips": [{"point": [-20.0, 20.0, 92.0], "normal": [1.0, 0.0, 0.0]},
+                             {"point": [-20.0, 20.0, 92.0], "normal": [0.0, -1.0, 0.0]}]}
+    },
+    {
+      "object_id": "apple_quarter_c_01",
+      "template_name": "apple",
+      "elements": [
+        {"element_index": 0, "element_type": "sphere", "parameters": {"radius_cm": 4.0}},
+        {"element_index": 1, "element_type": "cylinder", "parameters": {"radius_cm": 0.15, "height_cm": 1.6}},
+        {"element_index": 2, "element_type": "torus", "parameters": {"major_radius_cm": 1.0, "minor_radius_cm": 0.25}}
+      ],
+      "material": {"color": "light_brown", "skin_present": false, "physical_state": "peeled"},
+      "metadata": {"clips": [{"point": [-20.0, 20.0, 92.0], "normal": [-1.0, 0.0, 0.0]},
+                             {"point": [-20.0, 20.0, 92.0], "normal": [0.0, 1.0, 0.0]}]}
+    },
+    {
+      "object_id": "apple_quarter_d_01",
+      "template_name": "apple",
+      "elements": [
+        {"element_index": 0, "element_type": "sphere", "parameters": {"radius_cm": 4.0}},
+        {"element_index": 1, "element_type": "cylinder", "parameters": {"radius_cm": 0.15, "height_cm": 1.6}},
+        {"element_index": 2, "element_type": "torus", "parameters": {"major_radius_cm": 1.0, "minor_radius_cm": 0.25}}
+      ],
+      "material": {"color": "light_brown", "skin_present": false, "physical_state": "peeled"},
+      "metadata": {"clips": [{"point": [-20.0, 20.0, 92.0], "normal": [-1.0, 0.0, 0.0]},
+                             {"point": [-20.0, 20.0, 92.0], "normal": [0.0, -1.0, 0.0]}]}
+    }
+  ]
+}
+
+OUTPUT:
+
+{
+  "labels": [
+    {"object_id": "apple_quarter_a_01", "element_index": 0, "label": "peeled_body"},
+    {"object_id": "apple_quarter_a_01", "element_index": 1, "label": "stem_fragment"},
+    {"object_id": "apple_quarter_a_01", "element_index": 2, "label": "calyx_fragment"},
+    {"object_id": "apple_quarter_b_01", "element_index": 0, "label": "peeled_body"},
+    {"object_id": "apple_quarter_b_01", "element_index": 1, "label": "stem_fragment"},
+    {"object_id": "apple_quarter_b_01", "element_index": 2, "label": "calyx_fragment"},
+    {"object_id": "apple_quarter_c_01", "element_index": 0, "label": "peeled_body"},
+    {"object_id": "apple_quarter_c_01", "element_index": 1, "label": "stem_fragment"},
+    {"object_id": "apple_quarter_c_01", "element_index": 2, "label": "calyx_fragment"},
+    {"object_id": "apple_quarter_d_01", "element_index": 0, "label": "peeled_body"},
+    {"object_id": "apple_quarter_d_01", "element_index": 1, "label": "stem_fragment"},
+    {"object_id": "apple_quarter_d_01", "element_index": 2, "label": "calyx_fragment"}
+  ],
+  "notes": "Two intermediate halves (apple_half_left_01, apple_half_right_01) were created and consumed within H9 by the second split. They do not appear in the frame at the time of the labeling call, so they are not labeled. Each quarter inherits the three elements of the source apple. Because the apple was already peeled before splitting, the sphere element no longer functions as skin; it is now the peeled body. The stem and calyx survive as fragments on at most one quarter each; the label reflects what those elements represent in the split object, not what they represented in the whole apple."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 7 — After H10 (remove_core_from_quarters)
+New objects: apple_core_a_01, apple_core_b_01, apple_core_c_01,
+             apple_core_d_01, apple_seeds_01
+═══════════════════════════════════════════════════════════════════════
+
+INPUT:
+
+{
+  "objects": [
+    {
+      "object_id": "apple_core_a_01",
+      "template_name": "apple_core",
+      "elements": [
+        {"element_index": 0, "element_type": "wedge", "parameters": {"size_x_cm": 1.2, "size_y_cm": 2.0, "size_z_cm": 1.0}}
+      ],
+      "material": {"color": "pale_translucent", "material": "apple_core"},
+      "metadata": {}
+    },
+    {
+      "object_id": "apple_core_b_01",
+      "template_name": "apple_core",
+      "elements": [
+        {"element_index": 0, "element_type": "wedge", "parameters": {"size_x_cm": 1.2, "size_y_cm": 2.0, "size_z_cm": 1.0}}
+      ],
+      "material": {"color": "pale_translucent", "material": "apple_core"},
+      "metadata": {}
+    },
+    {
+      "object_id": "apple_core_c_01",
+      "template_name": "apple_core",
+      "elements": [
+        {"element_index": 0, "element_type": "wedge", "parameters": {"size_x_cm": 1.2, "size_y_cm": 2.0, "size_z_cm": 1.0}}
+      ],
+      "material": {"color": "pale_translucent", "material": "apple_core"},
+      "metadata": {}
+    },
+    {
+      "object_id": "apple_core_d_01",
+      "template_name": "apple_core",
+      "elements": [
+        {"element_index": 0, "element_type": "wedge", "parameters": {"size_x_cm": 1.2, "size_y_cm": 2.0, "size_z_cm": 1.0}}
+      ],
+      "material": {"color": "pale_translucent", "material": "apple_core"},
+      "metadata": {}
+    },
+    {
+      "object_id": "apple_seeds_01",
+      "template_name": "apple_seeds",
+      "elements": [
+        {"element_index": 0, "element_type": "ellipsoid", "parameters": {"radius_x_cm": 0.4, "radius_y_cm": 0.2, "radius_z_cm": 0.2}},
+        {"element_index": 1, "element_type": "ellipsoid", "parameters": {"radius_x_cm": 0.4, "radius_y_cm": 0.2, "radius_z_cm": 0.2}},
+        {"element_index": 2, "element_type": "ellipsoid", "parameters": {"radius_x_cm": 0.4, "radius_y_cm": 0.2, "radius_z_cm": 0.2}}
+      ],
+      "material": {"color": "dark_brown", "material": "apple_seed"},
+      "metadata": {}
+    }
+  ]
+}
+
+OUTPUT:
+
+{
+  "labels": [
+    {"object_id": "apple_core_a_01", "element_index": 0, "label": "core_wedge"},
+    {"object_id": "apple_core_b_01", "element_index": 0, "label": "core_wedge"},
+    {"object_id": "apple_core_c_01", "element_index": 0, "label": "core_wedge"},
+    {"object_id": "apple_core_d_01", "element_index": 0, "label": "core_wedge"},
+    {"object_id": "apple_seeds_01", "element_index": 0, "label": "seed_1"},
+    {"object_id": "apple_seeds_01", "element_index": 1, "label": "seed_2"},
+    {"object_id": "apple_seeds_01", "element_index": 2, "label": "seed_3"}
+  ],
+  "notes": "Each core wedge is a triangular prism of fibrous pale tissue; the label describes its role as the extracted core. The seeds are grouped into a single object with three ellipsoid elements; each receives an indexed label since the individual seeds are the unit of interest."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+EXAMPLE 8 — After H12 (transfer_pieces_to_container)
+New object: bowl_destination_01
+═══════════════════════════════════════════════════════════════════════
+
+INPUT:
+
+{
+  "objects": [
+    {
+      "object_id": "bowl_destination_01",
+      "template_name": "bowl",
+      "elements": [
+        {"element_index": 0, "element_type": "frustum", "parameters": {"bottom_radius_cm": 4.0, "top_radius_cm": 7.0, "height_cm": 6.0}}
+      ],
+      "material": {"color": "white", "material": "ceramic", "cleanliness": "clean"},
+      "metadata": {"label": "destination_bowl"}
+    }
+  ]
+}
+
+OUTPUT:
+
+{
+  "labels": [
+    {"object_id": "bowl_destination_01", "element_index": 0, "label": "bowl_body"}
+  ],
+  "notes": "The destination bowl is a clean vessel introduced by H12. The single frustum element is the bowl body. No footring element was added to this instance."
+}
+
+
+═══════════════════════════════════════════════════════════════════════
+END OF DEMO
+═══════════════════════════════════════════════════════════════════════

@@ -1,0 +1,1947 @@
+[
+  {
+    "memory_id": "mem_000001",
+    "relation": "leaning_against",
+    "relative_to": "workbench_01"
+  },
+  {
+    "memory_id": "mem_000001",
+    "relation": "planted_in",
+    "relative_to": "window_box_01"
+  },
+  {
+    "memory_id": "mem_000002",
+    "relation": "leaning_against",
+    "relative_to": "support"
+  },
+  {
+    "memory_id": "mem_000003",
+    "relation": "floating_on",
+    "relative_to": "sauce_01"
+  },
+  {
+    "memory_id": "mem_000005",
+    "relation": "from_above",
+    "relative_to": "garden"
+  },
+  {
+    "memory_id": "mem_000005",
+    "relation": "adjacent",
+    "relative_to": "carrot_row_01"
+  },
+  {
+    "memory_id": "mem_000005",
+    "relation": "in_sky",
+    "relative_to": "garden"
+  },
+  {
+    "memory_id": "mem_000006",
+    "relation": "over",
+    "relative_to": "sink_01"
+  },
+  {
+    "memory_id": "mem_000006",
+    "relation": "inside_flesh",
+    "relative_to": "food_item_01"
+  },
+  {
+    "memory_id": "mem_000007",
+    "relation": "standing",
+    "relative_to": "ground_01"
+  },
+  {
+    "memory_id": "mem_000007",
+    "relation": "at_feet",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000007",
+    "relation": "off",
+    "relative_to": "container_01"
+  },
+  {
+    "memory_id": "mem_000007",
+    "relation": "propagating",
+    "relative_to": "air_01"
+  },
+  {
+    "memory_id": "mem_000008",
+    "relation": "removed_from",
+    "relative_to": "fastener_hole_01"
+  },
+  {
+    "memory_id": "mem_000008",
+    "relation": "removed_from",
+    "relative_to": "fastener_hole_02"
+  },
+  {
+    "memory_id": "mem_000008",
+    "relation": "vertical",
+    "relative_to": "ground"
+  },
+  {
+    "memory_id": "mem_000009",
+    "relation": "wrapping",
+    "relative_to": "bacon_package_01"
+  },
+  {
+    "memory_id": "mem_000009",
+    "relation": "trapped",
+    "relative_to": "cracklings_01.interior"
+  },
+  {
+    "memory_id": "mem_000010",
+    "relation": "around_drum_opening",
+    "relative_to": "drum_01"
+  },
+  {
+    "memory_id": "mem_000010",
+    "relation": "on_front_panel",
+    "relative_to": "washing_machine_01"
+  },
+  {
+    "memory_id": "mem_000010",
+    "relation": "on_front_panel",
+    "relative_to": "washing_machine_01"
+  },
+  {
+    "memory_id": "mem_000010",
+    "relation": "drained_from",
+    "relative_to": "drum_01"
+  },
+  {
+    "memory_id": "mem_000010",
+    "relation": "wedged_in",
+    "relative_to": "door_hinge_01"
+  },
+  {
+    "memory_id": "mem_000010",
+    "relation": "flushed",
+    "relative_to": "sink_drain_01"
+  },
+  {
+    "memory_id": "mem_000010",
+    "relation": "dried",
+    "relative_to": "drum_01"
+  },
+  {
+    "memory_id": "mem_000010",
+    "relation": "escaped",
+    "relative_to": "drum_01"
+  },
+  {
+    "memory_id": "mem_000010",
+    "relation": "dispersed",
+    "relative_to": "air_01"
+  },
+  {
+    "memory_id": "mem_000011",
+    "relation": "standing",
+    "relative_to": "floor"
+  },
+  {
+    "memory_id": "mem_000011",
+    "relation": "at_bottom",
+    "relative_to": "kettle_01"
+  },
+  {
+    "memory_id": "mem_000011",
+    "relation": "at_waterline",
+    "relative_to": "kettle_interior_01"
+  },
+  {
+    "memory_id": "mem_000011",
+    "relation": "rising_from",
+    "relative_to": "kettle_01"
+  },
+  {
+    "memory_id": "mem_000011",
+    "relation": "on_surfaces",
+    "relative_to": "kettle_interior_01"
+  },
+  {
+    "memory_id": "mem_000011",
+    "relation": "in_bubbles",
+    "relative_to": "kettle_01"
+  },
+  {
+    "memory_id": "mem_000012",
+    "relation": "upper_part_of",
+    "relative_to": "petunia_plant_01"
+  },
+  {
+    "memory_id": "mem_000012",
+    "relation": "outer_part_of",
+    "relative_to": "spent_bloom_01"
+  },
+  {
+    "memory_id": "mem_000012",
+    "relation": "base_of",
+    "relative_to": "spent_bloom_01"
+  },
+  {
+    "memory_id": "mem_000012",
+    "relation": "connecting",
+    "relative_to": "spent_bloom_01"
+  },
+  {
+    "memory_id": "mem_000012",
+    "relation": "at_base_of",
+    "relative_to": "spent_bloom_01"
+  },
+  {
+    "memory_id": "mem_000012",
+    "relation": "mixed_into",
+    "relative_to": "soil_01"
+  },
+  {
+    "memory_id": "mem_000012",
+    "relation": "at_growing_tip_of",
+    "relative_to": "petunia_plant_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "hanging_at_side",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "between_handles",
+    "relative_to": "secateurs_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "upper_edge",
+    "relative_to": "secateurs_blade_pair_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "lower_edge",
+    "relative_to": "secateurs_blade_pair_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "rooted_in",
+    "relative_to": "ground_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "central",
+    "relative_to": "plant_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "along",
+    "relative_to": "trellis_wire_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "along",
+    "relative_to": "trellis_wire_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "along",
+    "relative_to": "retained_cane_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "at_node",
+    "relative_to": "retained_cane_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "at_node",
+    "relative_to": "retained_cane_02"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "horizontal",
+    "relative_to": "plant_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "shaded_region",
+    "relative_to": "ground_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "illuminating",
+    "relative_to": "sap_droplet_01"
+  },
+  {
+    "memory_id": "mem_000013",
+    "relation": "next",
+    "relative_to": "plant_01"
+  },
+  {
+    "memory_id": "mem_000014",
+    "relation": "installed_in_ground",
+    "relative_to": "porch"
+  },
+  {
+    "memory_id": "mem_000014",
+    "relation": "installed_in_ground",
+    "relative_to": "porch"
+  },
+  {
+    "memory_id": "mem_000014",
+    "relation": "installed_in_ground",
+    "relative_to": "porch"
+  },
+  {
+    "memory_id": "mem_000014",
+    "relation": "adjacent_to",
+    "relative_to": "porch_bench_01"
+  },
+  {
+    "memory_id": "mem_000015",
+    "relation": "mixed_into",
+    "relative_to": "granola_01"
+  },
+  {
+    "memory_id": "mem_000015",
+    "relation": "mixed_into",
+    "relative_to": "granola_01"
+  },
+  {
+    "memory_id": "mem_000015",
+    "relation": "dissolved_in",
+    "relative_to": "mixture_01"
+  },
+  {
+    "memory_id": "mem_000015",
+    "relation": "baked_into",
+    "relative_to": "granola_01"
+  },
+  {
+    "memory_id": "mem_000016",
+    "relation": "removed",
+    "relative_to": "egg_01"
+  },
+  {
+    "memory_id": "mem_000016",
+    "relation": "mounted_on",
+    "relative_to": "sink"
+  },
+  {
+    "memory_id": "mem_000016",
+    "relation": "dissolved_in",
+    "relative_to": "brine_01"
+  },
+  {
+    "memory_id": "mem_000016",
+    "relation": "dissolved_in",
+    "relative_to": "brine_01"
+  },
+  {
+    "memory_id": "mem_000016",
+    "relation": "scattered",
+    "relative_to": "counter"
+  },
+  {
+    "memory_id": "mem_000016",
+    "relation": "dissipated",
+    "relative_to": "kitchen"
+  },
+  {
+    "memory_id": "mem_000017",
+    "relation": "front",
+    "relative_to": "toaster_01"
+  },
+  {
+    "memory_id": "mem_000017",
+    "relation": "front_bottom",
+    "relative_to": "toaster_01"
+  },
+  {
+    "memory_id": "mem_000017",
+    "relation": "at_end",
+    "relative_to": "cord_01"
+  },
+  {
+    "memory_id": "mem_000017",
+    "relation": "inserted_in",
+    "relative_to": "toaster_01"
+  },
+  {
+    "memory_id": "mem_000017",
+    "relation": "front_edge",
+    "relative_to": "crumb_tray_01"
+  },
+  {
+    "memory_id": "mem_000017",
+    "relation": "front",
+    "relative_to": "crumb_tray_01"
+  },
+  {
+    "memory_id": "mem_000017",
+    "relation": "top",
+    "relative_to": "crumb_tray_01"
+  },
+  {
+    "memory_id": "mem_000017",
+    "relation": "sides",
+    "relative_to": "crumb_tray_01"
+  },
+  {
+    "memory_id": "mem_000017",
+    "relation": "bottom",
+    "relative_to": "sink_basin_01"
+  },
+  {
+    "memory_id": "mem_000017",
+    "relation": "edge",
+    "relative_to": "sink_01"
+  },
+  {
+    "memory_id": "mem_000017",
+    "relation": "from",
+    "relative_to": "sink_nozzle_01"
+  },
+  {
+    "memory_id": "mem_000018",
+    "relation": "fixed_to",
+    "relative_to": "ground_01"
+  },
+  {
+    "memory_id": "mem_000018",
+    "relation": "on_top_of",
+    "relative_to": "bird_bath_01"
+  },
+  {
+    "memory_id": "mem_000018",
+    "relation": "top_of",
+    "relative_to": "bird_bath_basin_01"
+  },
+  {
+    "memory_id": "mem_000018",
+    "relation": "outside",
+    "relative_to": "bird_bath_basin_01"
+  },
+  {
+    "memory_id": "mem_000018",
+    "relation": "dissolved_in",
+    "relative_to": "fluid_01"
+  },
+  {
+    "memory_id": "mem_000019",
+    "relation": "leaning_against",
+    "relative_to": "backsplash"
+  },
+  {
+    "memory_id": "mem_000019",
+    "relation": "leaning_against",
+    "relative_to": "backsplash"
+  },
+  {
+    "memory_id": "mem_000019",
+    "relation": "mounted_on",
+    "relative_to": "sink_01"
+  },
+  {
+    "memory_id": "mem_000019",
+    "relation": "built_into",
+    "relative_to": "counter"
+  },
+  {
+    "memory_id": "mem_000019",
+    "relation": "propagating_from",
+    "relative_to": "light_source_01"
+  },
+  {
+    "memory_id": "mem_000019",
+    "relation": "worn_on",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000020",
+    "relation": "removed",
+    "relative_to": "hole_01"
+  },
+  {
+    "memory_id": "mem_000020",
+    "relation": "separated",
+    "relative_to": "section_B_01"
+  },
+  {
+    "memory_id": "mem_000020",
+    "relation": "separated",
+    "relative_to": "section_A_01"
+  },
+  {
+    "memory_id": "mem_000020",
+    "relation": "mounted",
+    "relative_to": "garden_area"
+  },
+  {
+    "memory_id": "mem_000022",
+    "relation": "contains",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000022",
+    "relation": "released_into",
+    "relative_to": "sauce_01"
+  },
+  {
+    "memory_id": "mem_000022",
+    "relation": "airborne",
+    "relative_to": "stovetop_01"
+  },
+  {
+    "memory_id": "mem_000023",
+    "relation": "top",
+    "relative_to": "plant_01"
+  },
+  {
+    "memory_id": "mem_000023",
+    "relation": "top",
+    "relative_to": "old_container_01"
+  },
+  {
+    "memory_id": "mem_000023",
+    "relation": "over",
+    "relative_to": "drainage_hole_of_new_container_01"
+  },
+  {
+    "memory_id": "mem_000024",
+    "relation": "leaning_against",
+    "relative_to": "support"
+  },
+  {
+    "memory_id": "mem_000025",
+    "relation": "within_reach",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000025",
+    "relation": "within_reach",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000025",
+    "relation": "within_reach",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000025",
+    "relation": "within_reach",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000025",
+    "relation": "within_reach",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000025",
+    "relation": "within_reach",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000025",
+    "relation": "none",
+    "relative_to": "none"
+  },
+  {
+    "memory_id": "mem_000025",
+    "relation": "coating",
+    "relative_to": "mold_01"
+  },
+  {
+    "memory_id": "mem_000025",
+    "relation": "none",
+    "relative_to": "none"
+  },
+  {
+    "memory_id": "mem_000026",
+    "relation": "folded_aside",
+    "relative_to": "counter"
+  },
+  {
+    "memory_id": "mem_000026",
+    "relation": "aside",
+    "relative_to": "container_01"
+  },
+  {
+    "memory_id": "mem_000027",
+    "relation": "available_on_person",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000027",
+    "relation": "incident_on",
+    "relative_to": "bean_row_01"
+  },
+  {
+    "memory_id": "mem_000027",
+    "relation": "beneath",
+    "relative_to": "bean_row_01"
+  },
+  {
+    "memory_id": "mem_000027",
+    "relation": "beneath",
+    "relative_to": "bean_row_01"
+  },
+  {
+    "memory_id": "mem_000028",
+    "relation": "within_reach",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000028",
+    "relation": "ambient",
+    "relative_to": "environment"
+  },
+  {
+    "memory_id": "mem_000028",
+    "relation": "airborne",
+    "relative_to": "air_01"
+  },
+  {
+    "memory_id": "mem_000029",
+    "relation": "distributed_in",
+    "relative_to": "dough_01"
+  },
+  {
+    "memory_id": "mem_000029",
+    "relation": "distributed",
+    "relative_to": "dough_01"
+  },
+  {
+    "memory_id": "mem_000029",
+    "relation": "stationary",
+    "relative_to": "kitchen"
+  },
+  {
+    "memory_id": "mem_000030",
+    "relation": "upright",
+    "relative_to": "rootstock_01"
+  },
+  {
+    "memory_id": "mem_000030",
+    "relation": "top_of",
+    "relative_to": "rootstock_stem_01"
+  },
+  {
+    "memory_id": "mem_000030",
+    "relation": "along_top",
+    "relative_to": "rootstock_stem_01"
+  },
+  {
+    "memory_id": "mem_000030",
+    "relation": "end_of",
+    "relative_to": "scion_01"
+  },
+  {
+    "memory_id": "mem_000030",
+    "relation": "base_of",
+    "relative_to": "scion_01"
+  },
+  {
+    "memory_id": "mem_000030",
+    "relation": "edge_of",
+    "relative_to": "grafting_blade_01"
+  },
+  {
+    "memory_id": "mem_000030",
+    "relation": "wrapping",
+    "relative_to": "scion_01"
+  },
+  {
+    "memory_id": "mem_000031",
+    "relation": "none",
+    "relative_to": "none"
+  },
+  {
+    "memory_id": "mem_000031",
+    "relation": "distributed_in",
+    "relative_to": "butter_01"
+  },
+  {
+    "memory_id": "mem_000031",
+    "relation": "ambient",
+    "relative_to": "nose"
+  },
+  {
+    "memory_id": "mem_000032",
+    "relation": "hanging_on",
+    "relative_to": "support_hook_01"
+  },
+  {
+    "memory_id": "mem_000032",
+    "relation": "removed_from",
+    "relative_to": "seed_bag_01.mouth"
+  },
+  {
+    "memory_id": "mem_000032",
+    "relation": "buried_under",
+    "relative_to": "seed_pile_01"
+  },
+  {
+    "memory_id": "mem_000033",
+    "relation": "bottom_of",
+    "relative_to": "weed_dandelion_01"
+  },
+  {
+    "memory_id": "mem_000033",
+    "relation": "base_of",
+    "relative_to": "weed_plantain_01"
+  },
+  {
+    "memory_id": "mem_000033",
+    "relation": "airborne",
+    "relative_to": "work_area"
+  },
+  {
+    "memory_id": "mem_000033",
+    "relation": "incident_from",
+    "relative_to": "sun"
+  },
+  {
+    "memory_id": "mem_000034",
+    "relation": "from_above",
+    "relative_to": "site"
+  },
+  {
+    "memory_id": "mem_000035",
+    "relation": "leaning_against",
+    "relative_to": "fence_01"
+  },
+  {
+    "memory_id": "mem_000035",
+    "relation": "leaning_against",
+    "relative_to": "fence_01"
+  },
+  {
+    "memory_id": "mem_000035",
+    "relation": "contained",
+    "relative_to": "water_source_01"
+  },
+  {
+    "memory_id": "mem_000037",
+    "relation": "scattered",
+    "relative_to": "cutting_board_01"
+  },
+  {
+    "memory_id": "mem_000037",
+    "relation": "fixed",
+    "relative_to": "kitchen"
+  },
+  {
+    "memory_id": "mem_000037",
+    "relation": "folded",
+    "relative_to": "kitchen_counter_01"
+  },
+  {
+    "memory_id": "mem_000038",
+    "relation": "lashed_to",
+    "relative_to": "stake_uprights_at_chest_height"
+  },
+  {
+    "memory_id": "mem_000038",
+    "relation": "lashed_to",
+    "relative_to": "stake_uprights_at_knee_height"
+  },
+  {
+    "memory_id": "mem_000038",
+    "relation": "in_use",
+    "relative_to": "trellis_01"
+  },
+  {
+    "memory_id": "mem_000038",
+    "relation": "tied_on",
+    "relative_to": "netting_01"
+  },
+  {
+    "memory_id": "mem_000038",
+    "relation": "tied_on",
+    "relative_to": "netting_01"
+  },
+  {
+    "memory_id": "mem_000038",
+    "relation": "tied_on",
+    "relative_to": "netting_01"
+  },
+  {
+    "memory_id": "mem_000038",
+    "relation": "tied_on",
+    "relative_to": "netting_01"
+  },
+  {
+    "memory_id": "mem_000038",
+    "relation": "tied_on",
+    "relative_to": "netting_01"
+  },
+  {
+    "memory_id": "mem_000038",
+    "relation": "installed_on",
+    "relative_to": "trellis_01"
+  },
+  {
+    "memory_id": "mem_000038",
+    "relation": "clipped_on",
+    "relative_to": "netting_01_and_cross_member_upper_01"
+  },
+  {
+    "memory_id": "mem_000038",
+    "relation": "from",
+    "relative_to": "sky"
+  },
+  {
+    "memory_id": "mem_000040",
+    "relation": "in_front_of",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000040",
+    "relation": "contained_in",
+    "relative_to": "garden_bed_01"
+  },
+  {
+    "memory_id": "mem_000042",
+    "relation": "retained_in",
+    "relative_to": "left_hand_01"
+  },
+  {
+    "memory_id": "mem_000042",
+    "relation": "retained_in",
+    "relative_to": "left_hand_01"
+  },
+  {
+    "memory_id": "mem_000043",
+    "relation": "leaning_against",
+    "relative_to": "support_01"
+  },
+  {
+    "memory_id": "mem_000043",
+    "relation": "trimmed_edge",
+    "relative_to": "hard_surface_01"
+  },
+  {
+    "memory_id": "mem_000043",
+    "relation": "along_boundary",
+    "relative_to": "hard_surface_01"
+  },
+  {
+    "memory_id": "mem_000043",
+    "relation": "along_curb",
+    "relative_to": "hard_surface_01"
+  },
+  {
+    "memory_id": "mem_000043",
+    "relation": "from",
+    "relative_to": "sun"
+  },
+  {
+    "memory_id": "mem_000043",
+    "relation": "vertical",
+    "relative_to": "porch"
+  },
+  {
+    "memory_id": "mem_000044",
+    "relation": "over",
+    "relative_to": "fermentation_vessel_01.mouth"
+  },
+  {
+    "memory_id": "mem_000045",
+    "relation": "surrounds",
+    "relative_to": "window_sash_01"
+  },
+  {
+    "memory_id": "mem_000046",
+    "relation": "high_concentration",
+    "relative_to": "ingredient"
+  },
+  {
+    "memory_id": "mem_000047",
+    "relation": "fixed",
+    "relative_to": "kitchen"
+  },
+  {
+    "memory_id": "mem_000047",
+    "relation": "none",
+    "relative_to": "none"
+  },
+  {
+    "memory_id": "mem_000048",
+    "relation": "none",
+    "relative_to": "none"
+  },
+  {
+    "memory_id": "mem_000049",
+    "relation": "connecting",
+    "relative_to": "refrigerator_door_01"
+  },
+  {
+    "memory_id": "mem_000049",
+    "relation": "mounted_on",
+    "relative_to": "sink"
+  },
+  {
+    "memory_id": "mem_000050",
+    "relation": "on_top",
+    "relative_to": "broccoli_stalk_01"
+  },
+  {
+    "memory_id": "mem_000050",
+    "relation": "inside_cells",
+    "relative_to": "broccoli_floret_01"
+  },
+  {
+    "memory_id": "mem_000050",
+    "relation": "under_lid",
+    "relative_to": "pot_01"
+  },
+  {
+    "memory_id": "mem_000051",
+    "relation": "against_wall",
+    "relative_to": "floor"
+  },
+  {
+    "memory_id": "mem_000051",
+    "relation": "against_wall",
+    "relative_to": "floor"
+  },
+  {
+    "memory_id": "mem_000051",
+    "relation": "near_counter",
+    "relative_to": "floor"
+  },
+  {
+    "memory_id": "mem_000051",
+    "relation": "none",
+    "relative_to": "none"
+  },
+  {
+    "memory_id": "mem_000051",
+    "relation": "fills",
+    "relative_to": "kitchen_01"
+  },
+  {
+    "memory_id": "mem_000051",
+    "relation": "lining",
+    "relative_to": "baking_pan_01"
+  },
+  {
+    "memory_id": "mem_000052",
+    "relation": "lifted_away",
+    "relative_to": "can_body_01"
+  },
+  {
+    "memory_id": "mem_000052",
+    "relation": "flowing_into",
+    "relative_to": "sink_drain"
+  },
+  {
+    "memory_id": "mem_000052",
+    "relation": "built_into",
+    "relative_to": "counter"
+  },
+  {
+    "memory_id": "mem_000052",
+    "relation": "mounted_on",
+    "relative_to": "sink_01"
+  },
+  {
+    "memory_id": "mem_000052",
+    "relation": "distributed_on",
+    "relative_to": "colander_01"
+  },
+  {
+    "memory_id": "mem_000052",
+    "relation": "dispersed_into",
+    "relative_to": "tahini_paste_01"
+  },
+  {
+    "memory_id": "mem_000052",
+    "relation": "partly_in",
+    "relative_to": "processor_bowl_01"
+  },
+  {
+    "memory_id": "mem_000052",
+    "relation": "discarded",
+    "relative_to": "counter"
+  },
+  {
+    "memory_id": "mem_000052",
+    "relation": "flowing_into",
+    "relative_to": "sink_drain"
+  },
+  {
+    "memory_id": "mem_000052",
+    "relation": "outside",
+    "relative_to": "canned_chickpea_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "base_of",
+    "relative_to": "sapling_trunk_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "top_of",
+    "relative_to": "sapling_trunk_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "top_of",
+    "relative_to": "nursery_pot_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "bottom_of",
+    "relative_to": "nursery_pot_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "boundary_of",
+    "relative_to": "planting_hole_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "bottom_of",
+    "relative_to": "planting_hole_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "top_of",
+    "relative_to": "planting_hole_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "top_of",
+    "relative_to": "soil_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "mixed_into",
+    "relative_to": "soil_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "removed_from",
+    "relative_to": "planting_area_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "stacked_near",
+    "relative_to": "planting_area_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "stacked_near",
+    "relative_to": "planting_area_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "bottom_of",
+    "relative_to": "spade_blade_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "tip_of",
+    "relative_to": "spade_blade_01"
+  },
+  {
+    "memory_id": "mem_000053",
+    "relation": "illuminating",
+    "relative_to": "planting_area_01"
+  },
+  {
+    "memory_id": "mem_000054",
+    "relation": "at_bottom_of",
+    "relative_to": "cocktail_glass_01"
+  },
+  {
+    "memory_id": "mem_000055",
+    "relation": "wrapping",
+    "relative_to": "wedge_01"
+  },
+  {
+    "memory_id": "mem_000056",
+    "relation": "adjacent_to",
+    "relative_to": "enclosure_01"
+  },
+  {
+    "memory_id": "mem_000056",
+    "relation": "external",
+    "relative_to": "garden"
+  },
+  {
+    "memory_id": "mem_000057",
+    "relation": "crumpled_on",
+    "relative_to": "ground_surface_01"
+  },
+  {
+    "memory_id": "mem_000057",
+    "relation": "top_of",
+    "relative_to": "container_01"
+  },
+  {
+    "memory_id": "mem_000057",
+    "relation": "edge_of",
+    "relative_to": "container_01"
+  },
+  {
+    "memory_id": "mem_000057",
+    "relation": "bottom_of",
+    "relative_to": "container_01"
+  },
+  {
+    "memory_id": "mem_000057",
+    "relation": "side_of",
+    "relative_to": "container_01"
+  },
+  {
+    "memory_id": "mem_000057",
+    "relation": "under_mulch",
+    "relative_to": "flower_bed_01"
+  },
+  {
+    "memory_id": "mem_000057",
+    "relation": "supporting",
+    "relative_to": "all_objects"
+  },
+  {
+    "memory_id": "mem_000057",
+    "relation": "from",
+    "relative_to": "sky"
+  },
+  {
+    "memory_id": "mem_000058",
+    "relation": "overlay",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000058",
+    "relation": "overlay",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000058",
+    "relation": "overlay",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000058",
+    "relation": "overlay",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000058",
+    "relation": "overlay",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000058",
+    "relation": "overlay",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000058",
+    "relation": "overlay",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000058",
+    "relation": "overlay",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000058",
+    "relation": "overlay",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000059",
+    "relation": "top_left",
+    "relative_to": "main_view_01"
+  },
+  {
+    "memory_id": "mem_000059",
+    "relation": "stationary",
+    "relative_to": "floor"
+  },
+  {
+    "memory_id": "mem_000059",
+    "relation": "propagating",
+    "relative_to": "air_01"
+  },
+  {
+    "memory_id": "mem_000059",
+    "relation": "traveling",
+    "relative_to": "air_01"
+  },
+  {
+    "memory_id": "mem_000060",
+    "relation": "traveling_through",
+    "relative_to": "air_01"
+  },
+  {
+    "memory_id": "mem_000060",
+    "relation": "hosted_on",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000060",
+    "relation": "connected_to",
+    "relative_to": "audio_system_01"
+  },
+  {
+    "memory_id": "mem_000060",
+    "relation": "hosted_on",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000061",
+    "relation": "top_rear_of",
+    "relative_to": "camera_body_01"
+  },
+  {
+    "memory_id": "mem_000061",
+    "relation": "rear_of",
+    "relative_to": "camera_body_01"
+  },
+  {
+    "memory_id": "mem_000061",
+    "relation": "center_of",
+    "relative_to": "directional_pad_01"
+  },
+  {
+    "memory_id": "mem_000061",
+    "relation": "bottom_of",
+    "relative_to": "subject_01"
+  },
+  {
+    "memory_id": "mem_000061",
+    "relation": "side_of",
+    "relative_to": "subject_head_01"
+  },
+  {
+    "memory_id": "mem_000061",
+    "relation": "extending_from",
+    "relative_to": "environment_01"
+  },
+  {
+    "memory_id": "mem_000062",
+    "relation": "near_console",
+    "relative_to": "console_01"
+  },
+  {
+    "memory_id": "mem_000062",
+    "relation": "contains",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000064",
+    "relation": "throughout",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000064",
+    "relation": "wrapping",
+    "relative_to": "left_wrist_01"
+  },
+  {
+    "memory_id": "mem_000064",
+    "relation": "stored_in",
+    "relative_to": "smartwatch_01"
+  },
+  {
+    "memory_id": "mem_000064",
+    "relation": "on_side",
+    "relative_to": "smartwatch_01"
+  },
+  {
+    "memory_id": "mem_000064",
+    "relation": "in_front_of",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000065",
+    "relation": "installed_on",
+    "relative_to": "phone_001"
+  },
+  {
+    "memory_id": "mem_000066",
+    "relation": "running_on",
+    "relative_to": "display_monitor_01"
+  },
+  {
+    "memory_id": "mem_000066",
+    "relation": "integrated_with",
+    "relative_to": "browser_01"
+  },
+  {
+    "memory_id": "mem_000066",
+    "relation": "integrated_with",
+    "relative_to": "browser_01"
+  },
+  {
+    "memory_id": "mem_000066",
+    "relation": "fixed",
+    "relative_to": "building"
+  },
+  {
+    "memory_id": "mem_000067",
+    "relation": "in_front",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000068",
+    "relation": "within_stereo_triangle",
+    "relative_to": "room_01"
+  },
+  {
+    "memory_id": "mem_000068",
+    "relation": "flanking",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000069",
+    "relation": "connecting",
+    "relative_to": "hvac_system_01"
+  },
+  {
+    "memory_id": "mem_000070",
+    "relation": "seated",
+    "relative_to": "saddle_01"
+  },
+  {
+    "memory_id": "mem_000070",
+    "relation": "emitted_by",
+    "relative_to": "phone_01"
+  },
+  {
+    "memory_id": "mem_000071",
+    "relation": "leaning",
+    "relative_to": "wall"
+  },
+  {
+    "memory_id": "mem_000071",
+    "relation": "fixed",
+    "relative_to": "counter"
+  },
+  {
+    "memory_id": "mem_000071",
+    "relation": "suspended_in",
+    "relative_to": "bucket_01.water"
+  },
+  {
+    "memory_id": "mem_000072",
+    "relation": "in_front_of",
+    "relative_to": "desk_01"
+  },
+  {
+    "memory_id": "mem_000072",
+    "relation": "open_on",
+    "relative_to": "desk_01"
+  },
+  {
+    "memory_id": "mem_000072",
+    "relation": "in_front_of",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000072",
+    "relation": "at_distance",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000072",
+    "relation": "two_doors_down",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000072",
+    "relation": "worn_by",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000072",
+    "relation": "in_front_of",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000072",
+    "relation": "propagating",
+    "relative_to": "office_air_01"
+  },
+  {
+    "memory_id": "mem_000072",
+    "relation": "propagating",
+    "relative_to": "office_air_01"
+  },
+  {
+    "memory_id": "mem_000073",
+    "relation": "standing",
+    "relative_to": "ground"
+  },
+  {
+    "memory_id": "mem_000074",
+    "relation": "on_edge",
+    "relative_to": "device_01"
+  },
+  {
+    "memory_id": "mem_000074",
+    "relation": "at_end_of_neck",
+    "relative_to": "lamp_neck_01"
+  },
+  {
+    "memory_id": "mem_000074",
+    "relation": "stored_in",
+    "relative_to": "device_01"
+  },
+  {
+    "memory_id": "mem_000074",
+    "relation": "on_wall",
+    "relative_to": "room_01"
+  },
+  {
+    "memory_id": "mem_000074",
+    "relation": "outside",
+    "relative_to": "window_01"
+  },
+  {
+    "memory_id": "mem_000074",
+    "relation": "at_base",
+    "relative_to": "lamp_01"
+  },
+  {
+    "memory_id": "mem_000074",
+    "relation": "installed_on",
+    "relative_to": "device_01"
+  },
+  {
+    "memory_id": "mem_000075",
+    "relation": "on_floor",
+    "relative_to": "room"
+  },
+  {
+    "memory_id": "mem_000075",
+    "relation": "on_table",
+    "relative_to": "room"
+  },
+  {
+    "memory_id": "mem_000075",
+    "relation": "on_mantel",
+    "relative_to": "room"
+  },
+  {
+    "memory_id": "mem_000075",
+    "relation": "on_floor",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000075",
+    "relation": "on_lap",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000075",
+    "relation": "on_lap",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000076",
+    "relation": "seated_on",
+    "relative_to": "chair_01"
+  },
+  {
+    "memory_id": "mem_000076",
+    "relation": "offscreen",
+    "relative_to": "display_01"
+  },
+  {
+    "memory_id": "mem_000076",
+    "relation": "located_in",
+    "relative_to": "workspace"
+  },
+  {
+    "memory_id": "mem_000076",
+    "relation": "running_on",
+    "relative_to": "system_01"
+  },
+  {
+    "memory_id": "mem_000076",
+    "relation": "below_viewport",
+    "relative_to": "display_01"
+  },
+  {
+    "memory_id": "mem_000077",
+    "relation": "right_side_of",
+    "relative_to": "journal_01"
+  },
+  {
+    "memory_id": "mem_000077",
+    "relation": "left_side_of",
+    "relative_to": "journal_01"
+  },
+  {
+    "memory_id": "mem_000077",
+    "relation": "outside",
+    "relative_to": "room"
+  },
+  {
+    "memory_id": "mem_000078",
+    "relation": "contains",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000078",
+    "relation": "beneath",
+    "relative_to": "blanket_01"
+  },
+  {
+    "memory_id": "mem_000080",
+    "relation": "mounted_on",
+    "relative_to": "wall"
+  },
+  {
+    "memory_id": "mem_000080",
+    "relation": "integrated_in",
+    "relative_to": "screen_surface_01"
+  },
+  {
+    "memory_id": "mem_000083",
+    "relation": "stored_in",
+    "relative_to": "photo_app_01"
+  },
+  {
+    "memory_id": "mem_000083",
+    "relation": "from_source_to_surface",
+    "relative_to": "display_01"
+  },
+  {
+    "memory_id": "mem_000084",
+    "relation": "running_on",
+    "relative_to": "phone_01"
+  },
+  {
+    "memory_id": "mem_000084",
+    "relation": "distant_from",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000085",
+    "relation": "rear_of",
+    "relative_to": "viewfinder_01"
+  },
+  {
+    "memory_id": "mem_000085",
+    "relation": "outermost",
+    "relative_to": "lens_01"
+  },
+  {
+    "memory_id": "mem_000085",
+    "relation": "at_distance",
+    "relative_to": "lens_01"
+  },
+  {
+    "memory_id": "mem_000085",
+    "relation": "propagating_from",
+    "relative_to": "mode_switch_01"
+  },
+  {
+    "memory_id": "mem_000085",
+    "relation": "from",
+    "relative_to": "lens_surface_01"
+  },
+  {
+    "memory_id": "mem_000085",
+    "relation": "through",
+    "relative_to": "lens_01"
+  },
+  {
+    "memory_id": "mem_000086",
+    "relation": "on_edge_of",
+    "relative_to": "device_01"
+  },
+  {
+    "memory_id": "mem_000086",
+    "relation": "outer_shell_of",
+    "relative_to": "device_01"
+  },
+  {
+    "memory_id": "mem_000086",
+    "relation": "running_on",
+    "relative_to": "device_01"
+  },
+  {
+    "memory_id": "mem_000086",
+    "relation": "on_screen",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000086",
+    "relation": "on_screen",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000086",
+    "relation": "on_screen",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000086",
+    "relation": "on_track",
+    "relative_to": "filled_track_01"
+  },
+  {
+    "memory_id": "mem_000086",
+    "relation": "left_part_of",
+    "relative_to": "cheerfulness_row_01"
+  },
+  {
+    "memory_id": "mem_000086",
+    "relation": "right_part_of",
+    "relative_to": "cheerfulness_row_01"
+  },
+  {
+    "memory_id": "mem_000086",
+    "relation": "top_left_of",
+    "relative_to": "voice_submenu_01"
+  },
+  {
+    "memory_id": "mem_000086",
+    "relation": "on_screen",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "standing",
+    "relative_to": "floor"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "embedded_in",
+    "relative_to": "smartphone_01"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "installed_on",
+    "relative_to": "smartphone_01"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "overlay_on",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "stored_in",
+    "relative_to": "smartphone_01"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "overlay_on",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "overlay_on",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "overlay_on",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "overlay_on",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "top_right",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "overlay_on",
+    "relative_to": "screen_01"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "mounted_on",
+    "relative_to": "room_01.wall"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "mounted_on",
+    "relative_to": "room_01.ceiling"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "contains",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "mounted_on",
+    "relative_to": "room_01.wall"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "traveling_from",
+    "relative_to": "lamp_01"
+  },
+  {
+    "memory_id": "mem_000087",
+    "relation": "propagating_in",
+    "relative_to": "room_01"
+  },
+  {
+    "memory_id": "mem_000089",
+    "relation": "at_side",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000089",
+    "relation": "propagating",
+    "relative_to": "scene"
+  },
+  {
+    "memory_id": "mem_000089",
+    "relation": "propagating",
+    "relative_to": "display_to_environment"
+  },
+  {
+    "memory_id": "mem_000089",
+    "relation": "propagating",
+    "relative_to": "display_to_basin"
+  },
+  {
+    "memory_id": "mem_000089",
+    "relation": "propagating",
+    "relative_to": "source_to_faucet"
+  },
+  {
+    "memory_id": "mem_000089",
+    "relation": "formed_on",
+    "relative_to": "mirror_surface_01"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "worn_on",
+    "relative_to": "left_wrist"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "mounted_in",
+    "relative_to": "wearable_band_01"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "mounted_in",
+    "relative_to": "wearable_band_01"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "mounted_in",
+    "relative_to": "wearable_band_01"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "mounted_in",
+    "relative_to": "wearable_band_01"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "mounted_in",
+    "relative_to": "temperature_sensor_01"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "mounted_in",
+    "relative_to": "wearable_band_01"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "mounted_in",
+    "relative_to": "wearable_band_01"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "clamped_to",
+    "relative_to": "desk_01.underside_edge"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "wall_mounted",
+    "relative_to": "room_01"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "contains",
+    "relative_to": "desk_01"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "hanging_from",
+    "relative_to": "monitor_01"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "supporting",
+    "relative_to": "desk_01"
+  },
+  {
+    "memory_id": "mem_000090",
+    "relation": "supporting",
+    "relative_to": "desk_01"
+  },
+  {
+    "memory_id": "mem_000091",
+    "relation": "emerging_from",
+    "relative_to": "nozzle_01"
+  },
+  {
+    "memory_id": "mem_000091",
+    "relation": "flowing_from",
+    "relative_to": "vehicle_01"
+  },
+  {
+    "memory_id": "mem_000092",
+    "relation": "set_in_inner_curve",
+    "relative_to": "support_rail_01"
+  },
+  {
+    "memory_id": "mem_000093",
+    "relation": "off",
+    "relative_to": "work_platform_01"
+  },
+  {
+    "memory_id": "mem_000093",
+    "relation": "through",
+    "relative_to": "air_01"
+  },
+  {
+    "memory_id": "mem_000093",
+    "relation": "through",
+    "relative_to": "air_01"
+  },
+  {
+    "memory_id": "mem_000094",
+    "relation": "top_of",
+    "relative_to": "smart_mat_01"
+  },
+  {
+    "memory_id": "mem_000094",
+    "relation": "at_top_edge_right_of_center",
+    "relative_to": "smart_mat_01"
+  },
+  {
+    "memory_id": "mem_000094",
+    "relation": "top_of",
+    "relative_to": "control_pod_01"
+  },
+  {
+    "memory_id": "mem_000094",
+    "relation": "surrounding_interface",
+    "relative_to": "control_pod_01"
+  },
+  {
+    "memory_id": "mem_000094",
+    "relation": "side_of",
+    "relative_to": "control_pod_01"
+  },
+  {
+    "memory_id": "mem_000095",
+    "relation": "fills",
+    "relative_to": "room_01"
+  },
+  {
+    "memory_id": "mem_000095",
+    "relation": "contains",
+    "relative_to": "environment"
+  },
+  {
+    "memory_id": "mem_000095",
+    "relation": "beneath",
+    "relative_to": "room_01"
+  },
+  {
+    "memory_id": "mem_000096",
+    "relation": "contains",
+    "relative_to": "person_01"
+  },
+  {
+    "memory_id": "mem_000096",
+    "relation": "in_front_of",
+    "relative_to": "projector_01"
+  },
+  {
+    "memory_id": "mem_000096",
+    "relation": "around_lens",
+    "relative_to": "projector_01"
+  },
+  {
+    "memory_id": "mem_000096",
+    "relation": "between_light_source_and_aperture",
+    "relative_to": "projector_01"
+  },
+  {
+    "memory_id": "mem_000096",
+    "relation": "connected_to_motor",
+    "relative_to": "actuator_motor_01"
+  },
+  {
+    "memory_id": "mem_000096",
+    "relation": "projected_on",
+    "relative_to": "wall_surface_01"
+  },
+  {
+    "memory_id": "mem_000096",
+    "relation": "projected_on",
+    "relative_to": "wall_surface_01"
+  },
+  {
+    "memory_id": "mem_000096",
+    "relation": "overlay_on",
+    "relative_to": "menu_ui_01"
+  },
+  {
+    "memory_id": "mem_000096",
+    "relation": "travelling",
+    "relative_to": "light_source_01"
+  },
+  {
+    "memory_id": "mem_000096",
+    "relation": "travelling",
+    "relative_to": "dust_particle_01"
+  },
+  {
+    "memory_id": "mem_000096",
+    "relation": "travelling",
+    "relative_to": "air_01"
+  },
+  {
+    "memory_id": "mem_000096",
+    "relation": "through",
+    "relative_to": "projector_01"
+  },
+  {
+    "memory_id": "mem_000097",
+    "relation": "overlay_on",
+    "relative_to": "application_ui_01"
+  },
+  {
+    "memory_id": "mem_000097",
+    "relation": "enclosing",
+    "relative_to": "desk_01"
+  },
+  {
+    "memory_id": "mem_000097",
+    "relation": "passing_through",
+    "relative_to": "window_01"
+  },
+  {
+    "memory_id": "mem_000097",
+    "relation": "worn_by",
+    "relative_to": "person_01"
+  }
+]

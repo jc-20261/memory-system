@@ -1,0 +1,1580 @@
+{
+  "pinching off tomato suckers": [
+    {
+      "memory_id": "mem_000000",
+      "goal_state": [
+        {
+          "object": "tomato_plant",
+          "attribute": "sucker.present",
+          "value": false,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "planting a window box": [
+    {
+      "memory_id": "mem_000001",
+      "goal_state": [
+        {
+          "object": "window_box",
+          "attribute": "soil.present",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "window_box",
+          "attribute": "plants.present",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "composting kitchen scraps": [
+    {
+      "memory_id": "mem_000002",
+      "goal_state": [
+        {
+          "object": "kitchen_scraps",
+          "attribute": "decomposed",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "compost",
+          "attribute": "composition",
+          "value": "decomposed_kitchen_scraps",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "simmering tomato sauce": [
+    {
+      "memory_id": "mem_000003",
+      "goal_state": [
+        {
+          "object": "tomato_sauce",
+          "attribute": "temperature",
+          "value": "simmering",
+          "aspect": null
+        },
+        {
+          "object": "tomato_sauce",
+          "attribute": "consistency",
+          "value": "desired",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "toasting nuts for a salad": [
+    {
+      "memory_id": "mem_000004",
+      "goal_state": [
+        {
+          "object": "nuts",
+          "attribute": "toasted",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "thinning carrot seedlings": [
+    {
+      "memory_id": "mem_000005",
+      "goal_state": [
+        {
+          "object": "carrot_bed",
+          "attribute": "seedling_spacing",
+          "value": "target_spacing",
+          "aspect": null
+        },
+        {
+          "object": "carrot_bed",
+          "attribute": "seedling_density",
+          "value": "target_density",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "dehydrating apple slices": [
+    {
+      "memory_id": "mem_000006",
+      "goal_state": [
+        {
+          "object": "apple_slices",
+          "attribute": "state",
+          "value": "dehydrated",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "painting the fence": [
+    {
+      "memory_id": "mem_000007",
+      "goal_state": [
+        {
+          "object": "fence",
+          "attribute": "paint.present",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "repairing a wooden gate hinge": [
+    {
+      "memory_id": "mem_000008",
+      "goal_state": [
+        {
+          "object": "hinge",
+          "attribute": "state",
+          "value": "functional",
+          "aspect": null
+        },
+        {
+          "object": "hinge",
+          "attribute": "attachment",
+          "value": "secure",
+          "aspect": null
+        },
+        {
+          "object": "wooden_gate",
+          "attribute": "operation",
+          "value": "functional",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "rendering bacon fat": [
+    {
+      "memory_id": "mem_000009",
+      "goal_state": [
+        {
+          "object": "bacon_fat",
+          "attribute": "state",
+          "value": "liquid",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "cleaning the washing machine": [
+    {
+      "memory_id": "mem_000010",
+      "goal_state": [
+        {
+          "object": "washing_machine",
+          "attribute": "cleanliness",
+          "value": "clean",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "descaling the electric kettle": [
+    {
+      "memory_id": "mem_000011",
+      "goal_state": [
+        {
+          "object": "electric_kettle",
+          "attribute": "scale_present",
+          "value": false,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "deadheading the petunias": [
+    {
+      "memory_id": "mem_000012",
+      "goal_state": [
+        {
+          "object": "petunia",
+          "attribute": "spent_flowers.present",
+          "value": false,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "pruning the grapevines": [
+    {
+      "memory_id": "mem_000013",
+      "goal_state": [
+        {
+          "object": "grapevine",
+          "attribute": "pruned",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "hardening off seedlings": [
+    {
+      "memory_id": "mem_000014",
+      "goal_state": [
+        {
+          "object": "seedling",
+          "attribute": "hardening_status",
+          "value": "complete",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "making granola": [
+    {
+      "memory_id": "mem_000015",
+      "goal_state": [
+        {
+          "object": "granola",
+          "attribute": "state",
+          "value": "ready",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "making pickled eggs": [
+    {
+      "memory_id": "mem_000016",
+      "goal_state": [
+        {
+          "object": "pickled_eggs",
+          "attribute": "pickled_status",
+          "value": "pickled"
+        }
+      ]
+    }
+  ],
+  "cleaning the toaster crumb tray": [
+    {
+      "memory_id": "mem_000017",
+      "goal_state": [
+        {
+          "object": "toaster_crumb_tray",
+          "attribute": "cleanliness",
+          "value": "clean",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "cleaning the bird bath": [
+    {
+      "memory_id": "mem_000018",
+      "goal_state": [
+        {
+          "object": "bird_bath",
+          "attribute": "clean",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "bird_bath",
+          "attribute": "water_present",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "water",
+          "attribute": "clean",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "sanitizing the cutting boards": [
+    {
+      "memory_id": "mem_000019",
+      "goal_state": [
+        {
+          "object": "cutting_board",
+          "attribute": "sanitized",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "dividing daylilies": [
+    {
+      "memory_id": "mem_000020",
+      "goal_state": [
+        {
+          "object": "daylily_clump",
+          "attribute": "divided",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "daylily_division",
+          "attribute": "roots.present",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "daylily_division",
+          "attribute": "foliage.present",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "rotating the potted plants": [
+    {
+      "memory_id": "mem_000021",
+      "goal_state": [
+        {
+          "object": "potted_plant",
+          "attribute": "rotation",
+          "value": "quarter_turn",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "making fresh pasta sauce": [
+    {
+      "memory_id": "mem_000022",
+      "goal_state": [
+        {
+          "object": "pasta_sauce",
+          "attribute": "state",
+          "value": "ready",
+          "aspect": null
+        },
+        {
+          "object": "pasta_sauce",
+          "attribute": "freshness",
+          "value": "fresh",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "repotting a fern": [
+    {
+      "memory_id": "mem_000023",
+      "goal_state": [
+        {
+          "object": "fern",
+          "attribute": "in_pot",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "pot",
+          "attribute": "has_soil",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "transplanting a rose bush": [
+    {
+      "memory_id": "mem_000024",
+      "goal_state": [
+        {
+          "object": "rose_bush",
+          "attribute": "location",
+          "value": "transplant_site",
+          "aspect": null
+        },
+        {
+          "object": "rose_bush",
+          "attribute": "in_ground",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "pouring a concrete stepping stone": [
+    {
+      "memory_id": "mem_000025",
+      "goal_state": [
+        {
+          "object": "concrete_stepping_stone",
+          "attribute": "state",
+          "value": "cured",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "making sourdough starter": [
+    {
+      "memory_id": "mem_000026",
+      "goal_state": [
+        {
+          "object": "sourdough_starter",
+          "attribute": "fermentation_status",
+          "value": "active",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "tying up climbing beans": [
+    {
+      "memory_id": "mem_000027",
+      "goal_state": [
+        {
+          "object": "bean_plant",
+          "attribute": "tied_to",
+          "value": "support",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "segmenting oranges": [
+    {
+      "memory_id": "mem_000028",
+      "goal_state": [
+        {
+          "object": "orange",
+          "attribute": "segmented",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "making a quiche": [
+    {
+      "memory_id": "mem_000029",
+      "goal_state": [
+        {
+          "object": "quiche",
+          "attribute": "state",
+          "value": "baked",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "grafting a fruit tree": [
+    {
+      "memory_id": "mem_000030",
+      "goal_state": [
+        {
+          "object": "graft_union",
+          "attribute": "status",
+          "value": "successful",
+          "aspect": null
+        },
+        {
+          "object": "scion",
+          "attribute": "attached",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "scion",
+          "attribute": "viable",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "churning butter": [
+    {
+      "memory_id": "mem_000031",
+      "goal_state": [
+        {
+          "object": "butter",
+          "attribute": "present",
+          "value": true
+        },
+        {
+          "object": "buttermilk",
+          "attribute": "present",
+          "value": true
+        }
+      ]
+    }
+  ],
+  "refilling the bird feeder": [
+    {
+      "memory_id": "mem_000032",
+      "goal_state": [
+        {
+          "object": "bird_feeder",
+          "attribute": "is_full",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "weeding between patio stones": [
+    {
+      "memory_id": "mem_000033",
+      "goal_state": [
+        {
+          "object": "patio",
+          "attribute": "weeds_present",
+          "value": false,
+          "aspect": "between_stones"
+        }
+      ]
+    }
+  ],
+  "pruning the butterfly bush": [
+    {
+      "memory_id": "mem_000034",
+      "goal_state": [
+        {
+          "object": "butterfly_bush",
+          "attribute": "pruned",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "pruning_waste",
+          "attribute": "composition",
+          "value": "cut_branches",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "top-dressing the lawn with compost": [
+    {
+      "memory_id": "mem_000035",
+      "goal_state": [
+        {
+          "object": "lawn",
+          "attribute": "top_dressing",
+          "value": "compost",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "making herbed compound butter": [
+    {
+      "memory_id": "mem_000036",
+      "goal_state": [
+        {
+          "object": "compound_butter",
+          "attribute": "exists",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "compound_butter",
+          "attribute": "composition",
+          "value": "butter + herbs",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "making croutons from stale bread": [
+    {
+      "memory_id": "mem_000037",
+      "goal_state": [
+        {
+          "object": "crouton",
+          "attribute": "state",
+          "value": "prepared",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "building a trellis for cucumbers": [
+    {
+      "memory_id": "mem_000038",
+      "goal_state": [
+        {
+          "object": "trellis",
+          "attribute": "assembled",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "sectioning grapefruit": [
+    {
+      "memory_id": "mem_000039",
+      "goal_state": [
+        {
+          "object": "grapefruit_segment",
+          "attribute": "pith.present",
+          "value": false
+        },
+        {
+          "object": "grapefruit_segment",
+          "attribute": "membrane.present",
+          "value": false
+        }
+      ]
+    }
+  ],
+  "sowing radish seeds": [
+    {
+      "memory_id": "mem_000040",
+      "goal_state": [
+        {
+          "object": "radish_seed",
+          "attribute": "sown",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "replacing the door sweep": [
+    {
+      "memory_id": "mem_000041",
+      "goal_state": [
+        {
+          "object": "door_sweep",
+          "attribute": "attachment_status",
+          "value": "installed"
+        },
+        {
+          "object": "old_door_sweep",
+          "attribute": "presence",
+          "value": false
+        }
+      ]
+    }
+  ],
+  "making fruit leather": [
+    {
+      "memory_id": "mem_000042",
+      "goal_state": [
+        {
+          "object": "fruit_leather",
+          "attribute": "consistency",
+          "value": "leathery",
+          "aspect": null
+        },
+        {
+          "object": "fruit_leather",
+          "attribute": "state",
+          "value": "dried",
+          "aspect": null
+        },
+        {
+          "object": "fruit_leather",
+          "attribute": "form",
+          "value": "sheet",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "edging the sidewalk with a spade": [
+    {
+      "memory_id": "mem_000043",
+      "goal_state": [
+        {
+          "object": "sidewalk",
+          "attribute": "edge_definition",
+          "value": "clean",
+          "aspect": null
+        },
+        {
+          "object": "sidewalk",
+          "attribute": "grass_overhang",
+          "value": false,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "brewing kombucha": [
+    {
+      "memory_id": "mem_000044",
+      "goal_state": [
+        {
+          "object": "kombucha",
+          "attribute": "fermentation_state",
+          "value": "complete",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "weatherstripping windows": [
+    {
+      "memory_id": "mem_000045",
+      "goal_state": [
+        {
+          "object": "window",
+          "attribute": "weatherstripped",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "making chicken salad": [
+    {
+      "memory_id": "mem_000046",
+      "goal_state": [
+        {
+          "object": "chicken_salad",
+          "attribute": "state",
+          "value": "prepared",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "making lemon curd": [
+    {
+      "memory_id": "mem_000047",
+      "goal_state": [
+        {
+          "object": "lemon_curd",
+          "attribute": "consistency",
+          "value": "thick",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "making French fries from scratch": [
+    {
+      "memory_id": "mem_000048",
+      "goal_state": [
+        {
+          "object": "french_fry",
+          "attribute": "cooked",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "french_fry",
+          "attribute": "crispiness",
+          "value": "crispy",
+          "aspect": null
+        },
+        {
+          "object": "french_fry",
+          "attribute": "seasoning",
+          "value": "salt",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "cleaning the refrigerator door gasket": [
+    {
+      "memory_id": "mem_000049",
+      "goal_state": [
+        {
+          "object": "refrigerator_door_gasket",
+          "attribute": "clean",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "blanching broccoli": [
+    {
+      "memory_id": "mem_000050",
+      "goal_state": [
+        {
+          "object": "broccoli",
+          "attribute": "state",
+          "value": "blanched",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "baking sugar cookies": [
+    {
+      "memory_id": "mem_000051",
+      "goal_state": [
+        {
+          "object": "sugar_cookie",
+          "attribute": "state",
+          "value": "baked",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "whipping up a batch of hummus": [
+    {
+      "memory_id": "mem_000052",
+      "goal_state": [
+        {
+          "object": "hummus",
+          "attribute": "prepared",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "hummus",
+          "attribute": "consistency",
+          "value": "smooth",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "planting a shade tree": [
+    {
+      "memory_id": "mem_000053",
+      "goal_state": [
+        {
+          "object": "tree",
+          "attribute": "planted",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "tree",
+          "attribute": "location",
+          "value": "ground",
+          "aspect": null
+        },
+        {
+          "object": "tree",
+          "attribute": "orientation",
+          "value": "upright",
+          "aspect": null
+        },
+        {
+          "object": "soil",
+          "attribute": "covering_roots",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "crushing ice for cocktails": [
+    {
+      "memory_id": "mem_000054",
+      "goal_state": [
+        {
+          "object": "ice",
+          "attribute": "texture",
+          "value": "crushed",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "shredding cheese for the freezer": [
+    {
+      "memory_id": "mem_000055",
+      "goal_state": [
+        {
+          "object": "cheese",
+          "attribute": "form",
+          "value": "shredded",
+          "aspect": null
+        },
+        {
+          "object": "cheese",
+          "attribute": "location",
+          "value": "freezer",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "making leaf mold": [
+    {
+      "memory_id": "mem_000056",
+      "goal_state": [
+        {
+          "object": "leaf_pile",
+          "attribute": "decomposition_stage",
+          "value": "leaf_mold",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "spreading mulch in the flower bed": [
+    {
+      "memory_id": "mem_000057",
+      "goal_state": [
+        {
+          "object": "flower_bed",
+          "attribute": "mulch.present",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Setting the smart planner's daily intention to None to allow spontaneous scheduling without a fixed goal": [
+    {
+      "memory_id": "mem_000058",
+      "goal_state": [
+        {
+          "object": "smart_planner",
+          "attribute": "daily_intention",
+          "value": "None",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Configuring the smart wellness app to set person.breathing_rate=normal as the baseline for its guided breathing exercise.": [
+    {
+      "memory_id": "mem_000059",
+      "goal_state": [
+        {
+          "object": "smart_wellness_app",
+          "attribute": "guided_breathing_exercise.baseline_breathing_rate",
+          "value": "normal",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Adjusting the AI-driven interview coach's tone to cheerfulness=0.5, providing balanced encouragement and constructive criticism during a mock job interview.": [
+    {
+      "memory_id": "mem_000060",
+      "goal_state": [
+        {
+          "object": "ai_driven_interview_coach",
+          "attribute": "cheerfulness",
+          "value": 0.5,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Configuring the camera's autofocus custom setting to focus=0.8 for precise focus tracking during a bird photography session": [
+    {
+      "memory_id": "mem_000061",
+      "goal_state": [
+        {
+          "object": "camera",
+          "attribute": "autofocus_custom_setting.focus",
+          "value": 0.8,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Setting the smart home gym's exhaust fan to run until person.sweat_level=0.0 is detected, ensuring the room is dry after a session": [
+    {
+      "memory_id": "mem_000062",
+      "goal_state": [
+        {
+          "object": "person",
+          "attribute": "sweat_level",
+          "value": "0.0",
+          "aspect": null
+        },
+        {
+          "object": "room",
+          "attribute": "dry_state",
+          "value": "true",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Configuring the smartwatch's sweat detection to use a sweat_level=0.0 baseline for accurate electrolyte loss monitoring during indoor cycling": [
+    {
+      "memory_id": "mem_000063",
+      "goal_state": [
+        {
+          "object": "smartwatch",
+          "attribute": "sweat_detection.baseline",
+          "value": "sweat_level=0.0",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Programming the smartwatch to log a deep-focus session when person.focus=0.8 is sustained for 25 minutes": [
+    {
+      "memory_id": "mem_000064",
+      "goal_state": [
+        {
+          "object": "smartwatch",
+          "attribute": "configuration",
+          "value": "log_deep_focus_session_on_focus_0.8_duration_25min",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Configuring the biofeedback ring's app to alert when person.breathing_rate deviates from normal during a stress-reduction session": [
+    {
+      "memory_id": "mem_000065",
+      "goal_state": [
+        {
+          "object": "biofeedback_ring_app",
+          "attribute": "alert_condition",
+          "value": "person.breathing_rate deviates from normal",
+          "aspect": null
+        },
+        {
+          "object": "biofeedback_ring_app",
+          "attribute": "alert_enabled",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Activating the browser's distraction-blocking extension when person.focus=0.8 is measured by the wearable, automatically whitelisting only work-related sites.": [
+    {
+      "memory_id": "mem_000066",
+      "goal_state": [
+        {
+          "object": "distraction_blocking_extension",
+          "attribute": "active",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "distraction_blocking_extension",
+          "attribute": "whitelist",
+          "value": "work_related_sites_only",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Programming the time-tracking software to mark a task as 'high focus' and extend its estimated duration when person.focus=0.8 is measured for 10 minutes.": [
+    {
+      "memory_id": "mem_000067",
+      "goal_state": [
+        {
+          "object": "automation_rule",
+          "attribute": "trigger",
+          "value": "person.focus == 0.8 for 10 minutes",
+          "aspect": null
+        },
+        {
+          "object": "automation_rule",
+          "attribute": "consequence",
+          "value": "mark_task_as_high_focus",
+          "aspect": null
+        },
+        {
+          "object": "automation_rule",
+          "attribute": "consequence",
+          "value": "extend_estimated_duration",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Adjusting the studio monitor's focus control to 0.8 to enhance mid-range clarity while mixing a podcast.": [
+    {
+      "memory_id": "mem_000068",
+      "goal_state": [
+        {
+          "object": "studio_monitor",
+          "attribute": "focus_control",
+          "value": "0.8",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Adjusting the smart thermostat to lower the room temperature by 2 degrees when fatigue=0.2 triggers a need for alertness": [
+    {
+      "memory_id": "mem_000069",
+      "goal_state": [
+        {
+          "object": "thermostat",
+          "attribute": "setpoint_temperature_offset",
+          "value": -2,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Configuring the smart bike trainer to automatically increase resistance when fatigue=0.2 is detected, maximizing the training stimulus during a 20-minute interval session": [
+    {
+      "memory_id": "mem_000070",
+      "goal_state": [
+        {
+          "object": "smart_bike_trainer",
+          "attribute": "fatigue_threshold",
+          "value": "0.2",
+          "aspect": null
+        },
+        {
+          "object": "smart_bike_trainer",
+          "attribute": "auto_resistance_increase",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "training_session",
+          "attribute": "duration",
+          "value": "20_minutes",
+          "aspect": null
+        },
+        {
+          "object": "training_session",
+          "attribute": "mode",
+          "value": "interval",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "mopping the kitchen floor": [
+    {
+      "memory_id": "mem_000071",
+      "goal_state": [
+        {
+          "object": "kitchen_floor",
+          "attribute": "dirt.present",
+          "value": false,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Taking a 10-minute power nap when a wearable indicates fatigue=0.2 during an afternoon work session": [
+    {
+      "memory_id": "mem_000072",
+      "goal_state": [
+        {
+          "object": "power_nap",
+          "attribute": "completed",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "person",
+          "attribute": "rested",
+          "value": true,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Resetting the wearable's respiration sensor to person.breathing_rate=normal before starting a mindful walking session.": [
+    {
+      "memory_id": "mem_000073",
+      "goal_state": [
+        {
+          "object": "respiration_sensor",
+          "attribute": "person.breathing_rate",
+          "value": "normal",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Configuring the smart desk lamp to automatically adjust brightness to 0.8 when person.focus=0.8, enhancing concentration with optimal lighting": [
+    {
+      "memory_id": "mem_000074",
+      "goal_state": [
+        {
+          "object": "smart_desk_lamp",
+          "attribute": "automation_enabled",
+          "value": true,
+          "aspect": null
+        },
+        {
+          "object": "smart_desk_lamp",
+          "attribute": "focus_threshold",
+          "value": 0.8,
+          "aspect": null
+        },
+        {
+          "object": "smart_desk_lamp",
+          "attribute": "target_brightness",
+          "value": 0.8,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Setting a weekly intention with a five-minute visualization exercise": [
+    {
+      "memory_id": "mem_000075",
+      "goal_state": [
+        {
+          "object": "intention",
+          "attribute": "status",
+          "value": "set",
+          "aspect": "weekly"
+        },
+        {
+          "object": "visualization_exercise",
+          "attribute": "completion_status",
+          "value": "completed",
+          "aspect": "5_minute"
+        }
+      ]
+    }
+  ],
+  "Configuring the virtual coach to use intention=None for an exploratory brainstorming session": [
+    {
+      "memory_id": "mem_000076",
+      "goal_state": [
+        {
+          "object": "virtual_coach",
+          "attribute": "intention",
+          "value": "None",
+          "aspect": "exploratory_brainstorming_session"
+        }
+      ]
+    }
+  ],
+  "Writing a one-sentence intention for the day in a journal": [
+    {
+      "memory_id": "mem_000077",
+      "goal_state": [
+        {
+          "object": "journal",
+          "attribute": "contains_entry",
+          "value": "true",
+          "aspect": null
+        },
+        {
+          "object": "journal_entry",
+          "attribute": "type",
+          "value": "intention",
+          "aspect": null
+        },
+        {
+          "object": "journal_entry",
+          "attribute": "sentence_count",
+          "value": "1",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Configuring the mindfulness app to set person.intention=None for a non-striving meditation session that avoids goal-oriented focus": [
+    {
+      "memory_id": "mem_000078",
+      "goal_state": [
+        {
+          "object": "person",
+          "attribute": "intention",
+          "value": null,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Configuring the social robot's emotional display to cheerfulness=0.5 during an assistive care session, so it appears calm and neutral while reminding the user to take medication.": [
+    {
+      "memory_id": "mem_000079",
+      "goal_state": [
+        {
+          "object": "social_robot",
+          "attribute": "emotional_display.cheerfulness",
+          "value": "0.5",
+          "aspect": "during_assistive_care_session"
+        }
+      ]
+    }
+  ],
+  "Adjusting the home battery inverter's disconnect threshold to energy_level=0.8 so it switches to grid power when the storage falls to 80% to preserve battery health": [
+    {
+      "memory_id": "mem_000080",
+      "goal_state": [
+        {
+          "object": "inverter",
+          "attribute": "disconnect_threshold",
+          "value": 0.8,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Configuring the smart charger to stop charging the laptop at an energy_level of 0.8 (80%) to maximize battery lifespan": [
+    {
+      "memory_id": "mem_000081",
+      "goal_state": [
+        {
+          "object": "smart_charger",
+          "attribute": "charge_limit",
+          "value": 0.8,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Calibrating the new fitness tracker to person.sweat_level=0.0 after toweling off from a swim, to set a dry baseline for subsequent runs": [
+    {
+      "memory_id": "mem_000082",
+      "goal_state": [
+        {
+          "object": "fitness_tracker",
+          "attribute": "baseline.sweat_level",
+          "value": "0.0",
+          "aspect": "dry"
+        }
+      ]
+    }
+  ],
+  "Using a photo editing app to set the focus blur intensity to 0.8 for a dreamy background effect": [
+    {
+      "memory_id": "mem_000083",
+      "goal_state": [
+        {
+          "object": "photo",
+          "attribute": "focus_blur_intensity",
+          "value": "0.8",
+          "aspect": "background"
+        }
+      ]
+    }
+  ],
+  "Configuring the noise-cancelling headphones to switch to ambient mode when person.focus=0.8 is detected, allowing the user to stay aware of their surroundings during a work session.": [
+    {
+      "memory_id": "mem_000084",
+      "goal_state": [
+        {
+          "object": "headphone_settings",
+          "attribute": "ambient_switch_enabled",
+          "value": true
+        },
+        {
+          "object": "headphone_settings",
+          "attribute": "ambient_switch_threshold",
+          "value": 0.8,
+          "aspect": "person.focus"
+        }
+      ]
+    }
+  ],
+  "Setting the manual focus distance to 0.8 meters on the camera lens for a sharp macro shot": [
+    {
+      "memory_id": "mem_000085",
+      "goal_state": [
+        {
+          "object": "camera_lens",
+          "attribute": "focus_distance",
+          "value": "0.8 meters",
+          "aspect": "manual"
+        }
+      ]
+    }
+  ],
+  "Adjusting the virtual assistant's cheerfulness setting to 0.5 so it gives friendly but professional responses.": [
+    {
+      "memory_id": "mem_000086",
+      "goal_state": [
+        {
+          "object": "virtual_assistant",
+          "attribute": "cheerfulness",
+          "value": 0.5,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Setting the smart home assistant to interpret person.intention=None as a do-not-disturb cue, silencing all proactive reminders and suggestions": [
+    {
+      "memory_id": "mem_000087",
+      "goal_state": [
+        {
+          "object": "smart_home_assistant",
+          "attribute": "do_not_disturb_trigger",
+          "value": "person.intention == None",
+          "aspect": null
+        },
+        {
+          "object": "proactive_reminder",
+          "attribute": "active",
+          "value": false,
+          "aspect": null
+        },
+        {
+          "object": "proactive_suggestion",
+          "attribute": "active",
+          "value": false,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Configuring the smart scent diffuser to release peppermint oil when person.focus=0.8 is detected, enhancing cognitive performance during a deep work session.": [
+    {
+      "memory_id": "mem_000088",
+      "goal_state": [
+        {
+          "object": "smart_scent_diffuser",
+          "attribute": "trigger_condition",
+          "value": "person.focus==0.8",
+          "aspect": null
+        },
+        {
+          "object": "smart_scent_diffuser",
+          "attribute": "scent_type",
+          "value": "peppermint_oil",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Configuring the smart mirror's display mood to a cheerfulness level of 0.5 for a balanced morning greeting.": [
+    {
+      "memory_id": "mem_000089",
+      "goal_state": [
+        {
+          "object": "smart_mirror",
+          "attribute": "display_mood.cheerfulness",
+          "value": "0.5",
+          "aspect": "balanced_morning_greeting"
+        }
+      ]
+    }
+  ],
+  "Setting the standing desk controller to raise to standing height when person.energy_level=0.8 is detected to encourage active working posture": [
+    {
+      "memory_id": "mem_000090",
+      "goal_state": [
+        {
+          "object": "standing_desk_controller",
+          "attribute": "trigger_condition",
+          "value": "person.energy_level == 0.8",
+          "aspect": null
+        },
+        {
+          "object": "standing_desk_controller",
+          "attribute": "action",
+          "value": "raise_to_standing_height",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "washing the car by hand": [
+    {
+      "memory_id": "mem_000091",
+      "goal_state": [
+        {
+          "object": "car",
+          "attribute": "dirt.present",
+          "value": false,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Resetting the treadmill's integrated sweat sensor to sweat_level=0.0 before beginning a low-intensity warm-up walk": [
+    {
+      "memory_id": "mem_000092",
+      "goal_state": [
+        {
+          "object": "treadmill_sweat_sensor",
+          "attribute": "sweat_level",
+          "value": 0.0,
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Setting the laser cutter's focus parameter to 0.8 for fine engraving details on 3mm acrylic sheets.": [
+    {
+      "memory_id": "mem_000093",
+      "goal_state": [
+        {
+          "object": "laser_cutter",
+          "attribute": "focus_parameter",
+          "value": "0.8",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Setting the smart yoga mat's respiration monitor to use person.breathing_rate=normal as the baseline before a restorative yoga session": [
+    {
+      "memory_id": "mem_000094",
+      "goal_state": [
+        {
+          "object": "respiration_monitor",
+          "attribute": "baseline",
+          "value": "person.breathing_rate=normal",
+          "aspect": "restorative_yoga_session"
+        }
+      ]
+    }
+  ],
+  "Programming the smart speaker to auto-play a high-energy workout playlist when person.energy_level=0.8 is detected during exercise": [
+    {
+      "memory_id": "mem_000095",
+      "goal_state": [
+        {
+          "object": "automation_rule",
+          "attribute": "trigger",
+          "value": "person.energy_level == 0.8 and person.activity == exercise",
+          "aspect": null
+        },
+        {
+          "object": "automation_rule",
+          "attribute": "action",
+          "value": "play high-energy workout playlist",
+          "aspect": "smart_speaker"
+        }
+      ]
+    }
+  ],
+  "Setting the smart projector's auto-focus calibration to focus=0.8 to sharpen the image on a curved wall": [
+    {
+      "memory_id": "mem_000096",
+      "goal_state": [
+        {
+          "object": "smart_projector",
+          "attribute": "auto_focus_calibration",
+          "value": "0.8",
+          "aspect": null
+        }
+      ]
+    }
+  ],
+  "Programming the smart office lighting to switch to a high-contrast, cool color temperature when person.fatigue=0.2 to maintain mental alertness during an afternoon deep-work session": [
+    {
+      "memory_id": "mem_000097",
+      "goal_state": [
+        {
+          "object": "automation_rule",
+          "attribute": "trigger_condition",
+          "value": "person.fatigue=0.2",
+          "aspect": null
+        },
+        {
+          "object": "automation_rule",
+          "attribute": "result_contrast",
+          "value": "high",
+          "aspect": null
+        },
+        {
+          "object": "automation_rule",
+          "attribute": "result_color_temperature",
+          "value": "cool",
+          "aspect": null
+        }
+      ]
+    }
+  ]
+}

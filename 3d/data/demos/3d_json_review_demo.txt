@@ -1,0 +1,2228 @@
+{
+  "memory_id": "mem3d_peeling_apple_demo",
+  "activity": "peeling an apple",
+  "3d_assembly_id": "3d_mem3d_peeling_apple_demo",
+
+  "object_templates": {
+    "object": {
+      "defaults": {
+        "dimensions": {
+          "length": {"value": 0, "unit": "cm"},
+          "width": {"value": 0, "unit": "cm"},
+          "height_thickness": {"value": 0, "unit": "cm"}
+        },
+        "mass": {"value": 0, "unit": "g"},
+        "shape": "unknown",
+        "position": {"relation": "unknown", "relative_to": "none"}
+      },
+      "functions": [],
+      "categories": ["object"],
+      "materials": [],
+      "aliases": [],
+      "composition_templates": []
+    },
+    "physical_object": {
+      "defaults": {"material": "solid"},
+      "functions": [],
+      "categories": ["physical_object", "object"],
+      "materials": [],
+      "aliases": [],
+      "composition_templates": [],
+      "parent": "object"
+    },
+    "person": {
+      "defaults": {
+        "color": "flesh",
+        "posture": "standing",
+        "cheerfulness": 0.6,
+        "focus": 0.9,
+        "fatigue": 0.2,
+        "satisfaction": 0.9,
+        "sweat_level": 0.0,
+        "energy_level": 0.8,
+        "mental_state": {},
+        "sensory_perception_touch": [],
+        "sensory_perception_sight": [],
+        "sensory_perception_smell": [],
+        "sensory_perception_taste": [],
+        "sensory_perception_sound": [],
+        "dimensions": {
+          "length": {"value": 40, "unit": "cm"},
+          "width": {"value": 30, "unit": "cm"},
+          "height_thickness": {"value": 170, "unit": "cm"}
+        },
+        "mass": {"value": 70000, "unit": "g"},
+        "shape": "humanoid",
+        "position": {"relation": "standing", "relative_to": "floor"}
+      },
+      "functions": ["agent", "observer"],
+      "categories": ["person", "physical_object", "object"],
+      "materials": ["biological"],
+      "aliases": ["human", "protagonist"],
+      "composition_templates": ["eyes", "hand", "thumb"],
+      "parent": "physical_object"
+    },
+    "eyes": {
+      "defaults": {
+        "color": "white",
+        "gaze_direction": "ahead",
+        "shape": "spherical",
+        "dimensions": {
+          "length": {"value": 3, "unit": "cm"},
+          "width": {"value": 2, "unit": "cm"},
+          "height_thickness": {"value": 2, "unit": "cm"}
+        },
+        "mass": {"value": 20, "unit": "g"},
+        "position_relative_body": {"relation": "front_of_head"}
+      },
+      "functions": ["seeing"],
+      "categories": ["eyes", "body_part", "physical_object", "object"],
+      "materials": ["biological"],
+      "aliases": [],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "hand": {
+      "defaults": {
+        "color": "flesh",
+        "finger_posture": "relaxed",
+        "grip_type": "open",
+        "grip_force_N": 0.0,
+        "contact_state": "none",
+        "surface_moisture": "dry",
+        "residue": "none",
+        "volatiles": "none",
+        "temperature": 36.0,
+        "shape": "hand",
+        "dimensions": {
+          "length": {"value": 18, "unit": "cm"},
+          "width": {"value": 8, "unit": "cm"},
+          "height_thickness": {"value": 2, "unit": "cm"}
+        },
+        "mass": {"value": 400, "unit": "g"},
+        "position_relative_body": {"relation": "chest_height"}
+      },
+      "functions": ["grasping", "holding", "manipulating", "contacting"],
+      "categories": ["hand", "body_part", "physical_object", "object"],
+      "materials": ["biological"],
+      "aliases": [],
+      "composition_templates": ["thumb"],
+      "parent": "physical_object"
+    },
+    "thumb": {
+      "defaults": {
+        "color": "flesh",
+        "position": "extended",
+        "shape": "capsule",
+        "dimensions": {
+          "length": {"value": 5, "unit": "cm"},
+          "width": {"value": 1.8, "unit": "cm"},
+          "height_thickness": {"value": 1.8, "unit": "cm"}
+        },
+        "mass": {"value": 40, "unit": "g"}
+      },
+      "functions": ["grasping", "pressing"],
+      "categories": ["thumb", "body_part", "physical_object", "object"],
+      "materials": ["biological"],
+      "aliases": [],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "shirt": {
+      "defaults": {
+        "color": "blue",
+        "material": "cotton",
+        "moisture": "dry",
+        "surface_state": "dry",
+        "shape": "box",
+        "dimensions": {
+          "length": {"value": 45, "unit": "cm"},
+          "width": {"value": 20, "unit": "cm"},
+          "height_thickness": {"value": 60, "unit": "cm"}
+        },
+        "mass": {"value": 250, "unit": "g"}
+      },
+      "functions": ["covering", "absorbing"],
+      "categories": ["shirt", "clothing", "physical_object", "object"],
+      "materials": ["cotton"],
+      "aliases": [],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "kitchen_counter": {
+      "defaults": {
+        "color": "wood",
+        "material": "laminate",
+        "shape": "box",
+        "dimensions": {
+          "length": {"value": 180, "unit": "cm"},
+          "width": {"value": 60, "unit": "cm"},
+          "height_thickness": {"value": 4, "unit": "cm"}
+        },
+        "mass": {"value": 40000, "unit": "g"},
+        "position": {"relation": "installed_in", "relative_to": "kitchen"}
+      },
+      "functions": ["supporting", "work_surface"],
+      "categories": ["kitchen_counter", "furniture", "physical_object", "object"],
+      "materials": ["laminate"],
+      "aliases": ["counter"],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "refrigerator": {
+      "defaults": {
+        "color": "silver",
+        "material": "steel",
+        "state": "closed",
+        "shape": "box",
+        "dimensions": {
+          "length": {"value": 70, "unit": "cm"},
+          "width": {"value": 70, "unit": "cm"},
+          "height_thickness": {"value": 180, "unit": "cm"}
+        },
+        "mass": {"value": 80000, "unit": "g"}
+      },
+      "functions": ["cooling", "preserving_food"],
+      "categories": ["refrigerator", "appliance", "physical_object", "object"],
+      "materials": ["steel", "plastic"],
+      "aliases": ["fridge"],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "bowl": {
+      "defaults": {
+        "color": "white",
+        "material": "ceramic",
+        "cleanliness": "clean",
+        "shape": "frustum",
+        "dimensions": {
+          "length": {"value": 14, "unit": "cm"},
+          "width": {"value": 14, "unit": "cm"},
+          "height_thickness": {"value": 6, "unit": "cm"}
+        },
+        "mass": {"value": 400, "unit": "g"},
+        "position": {"relation": "on", "relative_to": "kitchen_counter"}
+      },
+      "functions": ["containing", "holding"],
+      "categories": ["bowl", "container", "physical_object", "object"],
+      "materials": ["ceramic"],
+      "aliases": [],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "cutting_board": {
+      "defaults": {
+        "color": "wood",
+        "material": "maple",
+        "surface_state": "clean",
+        "shape": "box",
+        "dimensions": {
+          "length": {"value": 45, "unit": "cm"},
+          "width": {"value": 30, "unit": "cm"},
+          "height_thickness": {"value": 2, "unit": "cm"}
+        },
+        "mass": {"value": 800, "unit": "g"},
+        "position": {"relation": "on", "relative_to": "kitchen_counter"}
+      },
+      "functions": ["supporting", "cutting_surface"],
+      "categories": ["cutting_board", "kitchen_item", "physical_object", "object"],
+      "materials": ["maple"],
+      "aliases": ["board"],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "paring_knife": {
+      "defaults": {
+        "color": "silver",
+        "material": "stainless_steel",
+        "blade_length": "short",
+        "handle_wear": "worn_pale_at_rivets",
+        "blade_edge": "sharp",
+        "blade_film": "none",
+        "blade_angle": 0,
+        "blade_contact_point": "none",
+        "state": "resting",
+        "shape": "elongated",
+        "dimensions": {
+          "length": {"value": 20, "unit": "cm"},
+          "width": {"value": 3, "unit": "cm"},
+          "height_thickness": {"value": 1.2, "unit": "cm"}
+        },
+        "mass": {"value": 80, "unit": "g"},
+        "position": {"relation": "on", "relative_to": "kitchen_counter"}
+      },
+      "functions": ["cutting", "slicing", "peeling"],
+      "categories": ["paring_knife", "cutlery", "tool", "physical_object", "object"],
+      "materials": ["stainless_steel", "wood"],
+      "aliases": ["knife"],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "sink": {
+      "defaults": {
+        "color": "silver",
+        "material": "stainless_steel",
+        "shape": "frustum",
+        "dimensions": {
+          "length": {"value": 32, "unit": "cm"},
+          "width": {"value": 32, "unit": "cm"},
+          "height_thickness": {"value": 15, "unit": "cm"}
+        },
+        "mass": {"value": 4000, "unit": "g"},
+        "position": {"relation": "embedded_in", "relative_to": "kitchen_counter"}
+      },
+      "functions": ["receiving_waste", "washing"],
+      "categories": ["sink", "fixture", "physical_object", "object"],
+      "materials": ["stainless_steel"],
+      "aliases": [],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "faucet_tap": {
+      "defaults": {
+        "color": "silver",
+        "material": "chrome_plated_brass",
+        "state": "closed",
+        "shape": "cylinder",
+        "dimensions": {
+          "length": {"value": 3, "unit": "cm"},
+          "width": {"value": 3, "unit": "cm"},
+          "height_thickness": {"value": 25, "unit": "cm"}
+        },
+        "mass": {"value": 1800, "unit": "g"},
+        "position": {"relation": "attached_to", "relative_to": "kitchen_counter"}
+      },
+      "functions": ["dispensing_water"],
+      "categories": ["faucet_tap", "fixture", "physical_object", "object"],
+      "materials": ["chrome_plated_brass"],
+      "aliases": ["faucet", "tap"],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "compost_crock": {
+      "defaults": {
+        "color": "white",
+        "material": "ceramic",
+        "shape": "cylinder",
+        "dimensions": {
+          "length": {"value": 16, "unit": "cm"},
+          "width": {"value": 16, "unit": "cm"},
+          "height_thickness": {"value": 18, "unit": "cm"}
+        },
+        "mass": {"value": 1500, "unit": "g"},
+        "position": {"relation": "on", "relative_to": "kitchen_counter"}
+      },
+      "functions": ["containing", "receiving_waste"],
+      "categories": ["compost_crock", "container", "physical_object", "object"],
+      "materials": ["ceramic"],
+      "aliases": ["crock"],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "food": {
+      "defaults": {"edible": true},
+      "functions": ["nourishment"],
+      "categories": ["food", "physical_object", "object"],
+      "materials": [],
+      "aliases": [],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "fruit": {
+      "defaults": {
+        "has_pit": false,
+        "skin_edible": true,
+        "shape": "round"
+      },
+      "functions": ["nourishment"],
+      "categories": ["fruit", "food", "physical_object", "object"],
+      "materials": [],
+      "aliases": [],
+      "composition_templates": [],
+      "parent": "food",
+      "required_attrs": ["color"]
+    },
+    "apple": {
+      "defaults": {
+        "color": "red_brushed",
+        "skin_present": true,
+        "skin_coverage": 1.0,
+        "flesh_exposed": false,
+        "juice_surface": false,
+        "stem_present": true,
+        "calyx_present": true,
+        "calyx_point_count": 5,
+        "calyx_pucker_present": true,
+        "wax_layer_intact": true,
+        "surface_integrity": "intact",
+        "surface_state": "dry",
+        "surface_optics": "glossy",
+        "moisture": "dry",
+        "temperature": "cold",
+        "physical_state": "intact",
+        "oxidation": "none",
+        "core_present": true,
+        "calyx_cleared": false,
+        "surface": {
+          "coverage": {"type": "none"},
+          "indentations": []
+        },
+        "shape": "spherical",
+        "dimensions": {
+          "length": {"value": 8, "unit": "cm"},
+          "width": {"value": 8, "unit": "cm"},
+          "height_thickness": {"value": 8, "unit": "cm"}
+        },
+        "mass": {"value": 200, "unit": "g"}
+      },
+      "functions": ["nourishment", "snack", "baking_ingredient"],
+      "categories": ["apple", "fruit", "food", "physical_object", "object"],
+      "materials": ["apple_skin", "apple_flesh", "apple_core"],
+      "aliases": [],
+      "composition_templates": ["apple_skin", "apple_flesh", "apple_core"],
+      "parent": "fruit"
+    },
+    "apple_skin": {
+      "defaults": {
+        "material": "apple_skin",
+        "color_outer": "red_brushed",
+        "color_inner": "pale_white",
+        "surface_moisture": "dry",
+        "surface_friction": "moderate",
+        "shape": "sheet",
+        "dimensions": {
+          "length": {"value": 30, "unit": "cm"},
+          "width": {"value": 2, "unit": "cm"},
+          "height_thickness": {"value": 0.05, "unit": "cm"}
+        },
+        "mass": {"value": 10, "unit": "g"}
+      },
+      "functions": ["protective_layer"],
+      "categories": ["apple_skin", "fruit_skin", "physical_object", "object"],
+      "materials": ["apple_skin"],
+      "aliases": ["apple_peel"],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "apple_flesh": {
+      "defaults": {
+        "material": "apple_flesh",
+        "color": "cream",
+        "texture": "crisp",
+        "water_content": 0.85,
+        "surface_state": "dry",
+        "oxidation": "none",
+        "exposure": "unexposed",
+        "surface_cell_structure": "intact",
+        "shape": "spherical",
+        "dimensions": {
+          "length": {"value": 7, "unit": "cm"},
+          "width": {"value": 7, "unit": "cm"},
+          "height_thickness": {"value": 7, "unit": "cm"}
+        },
+        "mass": {"value": 180, "unit": "g"}
+      },
+      "functions": ["edible_part"],
+      "categories": ["apple_flesh", "fruit_flesh", "physical_object", "object"],
+      "materials": ["apple_flesh"],
+      "aliases": [],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "apple_core": {
+      "defaults": {
+        "material": "apple_core",
+        "color": "pale_translucent",
+        "contains_seeds": true,
+        "shape": "wedge",
+        "dimensions": {
+          "length": {"value": 1.2, "unit": "cm"},
+          "width": {"value": 2.0, "unit": "cm"},
+          "height_thickness": {"value": 1.0, "unit": "cm"}
+        },
+        "mass": {"value": 10, "unit": "g"}
+      },
+      "functions": ["holds_seeds"],
+      "categories": ["apple_core", "fruit_core", "physical_object", "object"],
+      "materials": ["apple_core"],
+      "aliases": [],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "apple_seeds": {
+      "defaults": {
+        "material": "apple_seed",
+        "color": "dark_brown",
+        "count": 3,
+        "seed_pocket_membrane": "papery",
+        "seed_shape": "pointed_both_ends",
+        "shape": "ellipsoid",
+        "dimensions": {
+          "length": {"value": 0.8, "unit": "cm"},
+          "width": {"value": 0.4, "unit": "cm"},
+          "height_thickness": {"value": 0.4, "unit": "cm"}
+        },
+        "mass": {"value": 0.5, "unit": "g"}
+      },
+      "functions": ["reproduction"],
+      "categories": ["apple_seeds", "seed", "physical_object", "object"],
+      "materials": ["apple_seed"],
+      "aliases": [],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "juice": {
+      "defaults": {
+        "state": "liquid",
+        "viscosity": "slightly_sticky",
+        "color": "clear_yellowish",
+        "material": "apple_juice",
+        "shape": "amorphous",
+        "dimensions": {
+          "length": {"value": 0.6, "unit": "cm"},
+          "width": {"value": 0.6, "unit": "cm"},
+          "height_thickness": {"value": 0.6, "unit": "cm"}
+        },
+        "mass": {"value": 0.2, "unit": "g"}
+      },
+      "functions": ["liquid"],
+      "categories": ["apple_juice", "liquid", "physical_object", "object"],
+      "materials": ["apple_juice"],
+      "aliases": [],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "peel_strip": {
+      "defaults": {
+        "material": "apple_skin",
+        "state": "detached",
+        "shape": ["strip", "spiral"],
+        "color_outer": "red_brushed",
+        "color_inner": "pale_white",
+        "transparency": "very low",
+        "oxidation": "none",
+        "length_cm": 0.0,
+        "width_cm": 2.5,
+        "side_2": {"tear_probability": 0.1, "composition": "apple_pith"},
+        "dimensions": {
+          "length": {"value": 40, "unit": "cm"},
+          "width": {"value": 2.5, "unit": "cm"},
+          "height_thickness": {"value": 0.15, "unit": "cm"}
+        },
+        "mass": {"value": 10, "unit": "g"}
+      },
+      "functions": [],
+      "categories": ["apple_peel", "fruit_skin", "physical_object", "object"],
+      "materials": ["apple_skin"],
+      "aliases": ["apple_peel"],
+      "composition_templates": [],
+      "parent": "physical_object"
+    },
+    "water_stream": {
+      "defaults": {
+        "color": "clear",
+        "material": "water",
+        "state": "flowing",
+        "shape": "cylinder",
+        "dimensions": {
+          "length": {"value": 1.2, "unit": "cm"},
+          "width": {"value": 1.2, "unit": "cm"},
+          "height_thickness": {"value": 25, "unit": "cm"}
+        },
+        "mass": {"value": 0, "unit": "g"}
+      },
+      "functions": ["flowing", "washing"],
+      "categories": ["water_stream", "liquid", "physical_object", "object"],
+      "materials": ["water"],
+      "aliases": ["stream"],
+      "composition_templates": [],
+      "parent": "physical_object"
+    }
+  },
+
+  "action_templates": {
+    "retrieve_object_from_container": {
+      "default_duration": 2,
+      "action_category": "HUMAN_INTERACTION",
+      "kinematic_trajectory": "curved",
+      "sub_action_templates": [
+        "perceive_target_location",
+        "reach_toward_object",
+        "contact_object",
+        "grasp_object",
+        "lift_object",
+        "transport_object_out_of_container"
+      ],
+      "alternatives": [],
+      "preconditions": [],
+      "default_cycle_duration": 0.0,
+      "repetitions": 1
+    },
+    "wash_object_under_water": {
+      "default_duration": 8,
+      "action_category": "HUMAN_INTERACTION",
+      "kinematic_trajectory": "cyclical",
+      "sub_action_templates": [
+        "transport_object_to_wash_location",
+        "activate_water_flow",
+        "position_object_under_stream",
+        "rotate_object_under_water",
+        "complete_rinse_and_remove_from_flow"
+      ],
+      "alternatives": [],
+      "preconditions": [],
+      "default_cycle_duration": 1.0,
+      "repetitions": 5
+    },
+    "dry_object_on_fabric": {
+      "default_duration": 4,
+      "action_category": "HUMAN_INTERACTION",
+      "kinematic_trajectory": "cyclical",
+      "sub_action_templates": [
+        "bring_object_to_absorbent_surface",
+        "rub_object_against_fabric",
+        "inspect_object_for_residual_liquid",
+        "release_absorbent_material"
+      ],
+      "alternatives": [],
+      "preconditions": [],
+      "default_cycle_duration": 0.5,
+      "repetitions": 5
+    },
+    "place_object_on_surface": {
+      "default_duration": 2,
+      "action_category": "HUMAN_INTERACTION",
+      "kinematic_trajectory": "straight",
+      "sub_action_templates": [
+        "move_object_over_support_surface",
+        "orient_object_for_task",
+        "set_object_on_surface",
+        "stabilize_object_by_pressing"
+      ],
+      "alternatives": [],
+      "preconditions": [],
+      "default_cycle_duration": 0.0,
+      "repetitions": 1
+    },
+    "prepare_tool_and_pin_object": {
+      "default_duration": 2,
+      "action_category": "HUMAN_INTERACTION",
+      "kinematic_trajectory": "straight",
+      "sub_action_templates": [
+        "reach_toward_tool",
+        "grip_tool_with_precision_brace",
+        "contact_and_pin_object",
+        "adopt_safe_hand_posture"
+      ],
+      "alternatives": [],
+      "preconditions": [],
+      "default_cycle_duration": 0.0,
+      "repetitions": 1
+    },
+    "initiate_cut": {
+      "default_duration": 1,
+      "action_category": "TOOL_USAGE",
+      "kinematic_trajectory": "linear",
+      "sub_action_templates": [
+        "position_blade_at_target_site",
+        "apply_cutting_force",
+        "blade_ruptures_surface",
+        "control_cut_depth_and_retract"
+      ],
+      "alternatives": [],
+      "preconditions": ["knife gripped", "apple pinned"],
+      "default_cycle_duration": 0.0,
+      "repetitions": 1
+    },
+    "continuous_peel": {
+      "default_duration": 40,
+      "action_category": "TOOL_USAGE",
+      "kinematic_trajectory": "helical",
+      "sub_action_templates": [
+        "create_peel_object",
+        "peel_cycle",
+        "adapt_removal_around_irregular_end"
+      ],
+      "alternatives": ["continuous_peeling_apple_rotational"],
+      "preconditions": ["initial cut made", "apple pinned"],
+      "default_cycle_duration": 1.0,
+      "repetitions": 40
+    },
+    "manipulate_and_inspect": {
+      "default_duration": 2,
+      "action_category": "MANIPULATION",
+      "kinematic_trajectory": "circular",
+      "sub_action_templates": [
+        "adjust_grip_support",
+        "rotate_and_inspect_object",
+        "orient_object_for_next_operation"
+      ],
+      "alternatives": [],
+      "preconditions": [],
+      "default_cycle_duration": 0.0,
+      "repetitions": 1
+    },
+    "quarter_object_through_core": {
+      "default_duration": 3,
+      "action_category": "TOOL_USAGE",
+      "kinematic_trajectory": "straight",
+      "sub_action_templates": [
+        "align_blade_along_axis",
+        "bisect_object_through_core",
+        "repeat_bisection_on_pieces"
+      ],
+      "alternatives": [],
+      "preconditions": ["apple peeled", "knife gripped"],
+      "default_cycle_duration": 0.0,
+      "repetitions": 1
+    },
+    "remove_core_from_quarters": {
+      "default_duration": 30,
+      "action_category": "TOOL_USAGE",
+      "kinematic_trajectory": "straight",
+      "sub_action_templates": ["core_removal_cycle"],
+      "alternatives": [],
+      "preconditions": ["four quarters"],
+      "default_cycle_duration": 7.5,
+      "repetitions": 4
+    },
+    "flick_object_to_receptacle": {
+      "default_duration": 2,
+      "action_category": "MANIPULATION",
+      "kinematic_trajectory": "arc",
+      "sub_action_templates": [
+        "gather_small_items",
+        "prepare_flicking_grip",
+        "launch_object_by_flicking",
+        "object_travels_and_impacts_surface"
+      ],
+      "alternatives": [],
+      "preconditions": [],
+      "default_cycle_duration": 0.0,
+      "repetitions": 1
+    },
+    "transfer_pieces_to_container": {
+      "default_duration": 5,
+      "action_category": "MANIPULATION",
+      "kinematic_trajectory": "arc",
+      "sub_action_templates": [
+        "create_destination_container",
+        "transfer_piece"
+      ],
+      "alternatives": [],
+      "preconditions": [],
+      "default_cycle_duration": 1.0,
+      "repetitions": 4
+    },
+    "dispose_waste_to_receptacle": {
+      "default_duration": 2,
+      "action_category": "MANIPULATION",
+      "kinematic_trajectory": "arc",
+      "sub_action_templates": [
+        "gather_discarded_layer",
+        "transfer_waste_to_receptacle",
+        "release_and_let_settle"
+      ],
+      "alternatives": [],
+      "preconditions": [],
+      "default_cycle_duration": 0.0,
+      "repetitions": 1
+    },
+    "lingering_sensory_residue": {
+      "default_duration": 3600,
+      "action_category": "PERCEPTION",
+      "kinematic_trajectory": "none",
+      "sub_action_templates": [
+        "volatile_retention_in_skin_oils",
+        "partial_removal_by_washing",
+        "olfactory_adaptation_and_intermittent_detection"
+      ],
+      "alternatives": [],
+      "preconditions": [],
+      "default_cycle_duration": 0.0,
+      "repetitions": 1
+    },
+
+    "perceive_target_location": {"default_duration": 0.3, "action_category": "PERCEPTION", "kinematic_trajectory": "angular"},
+    "reach_toward_object": {"default_duration": 0.4, "action_category": "MANIPULATION", "kinematic_trajectory": "curved"},
+    "contact_object": {"default_duration": 0.3, "action_category": "MANIPULATION", "kinematic_trajectory": "straight"},
+    "grasp_object": {"default_duration": 0.4, "action_category": "MANIPULATION", "kinematic_trajectory": "enveloping"},
+    "lift_object": {"default_duration": 0.4, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+    "transport_object_out_of_container": {"default_duration": 0.2, "action_category": "MANIPULATION", "kinematic_trajectory": "curved"},
+    "sense_object_properties_during_grasp": {"default_duration": 2, "action_category": "PERCEPTION", "kinematic_trajectory": "none"},
+    "sense_temperature": {"default_duration": 0.5, "action_category": "PERCEPTION", "kinematic_trajectory": "none"},
+    "sense_surface_texture": {"default_duration": 0.5, "action_category": "PERCEPTION", "kinematic_trajectory": "none"},
+    "sense_weight_by_proprioception": {"default_duration": 1.3, "action_category": "PERCEPTION", "kinematic_trajectory": "none"},
+
+    "transport_object_to_wash_location": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+    "activate_water_flow": {"default_duration": 0.5, "action_category": "TOOL_USAGE", "kinematic_trajectory": "angular"},
+    "position_object_under_stream": {"default_duration": 1.0, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+    "rotate_object_under_water": {"default_duration": 1.0, "action_category": "MANIPULATION", "kinematic_trajectory": "circular", "is_cyclical": true},
+    "complete_rinse_and_remove_from_flow": {"default_duration": 1.0, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+    "sense_surface_features_during_washing": {"default_duration": 8, "action_category": "PERCEPTION", "kinematic_trajectory": "none"},
+
+    "bring_object_to_absorbent_surface": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+    "rub_object_against_fabric": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "linear", "is_cyclical": true},
+    "inspect_object_for_residual_liquid": {"default_duration": 0.7, "action_category": "PERCEPTION", "kinematic_trajectory": "angular"},
+    "release_absorbent_material": {"default_duration": 0.3, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+
+    "move_object_over_support_surface": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+    "orient_object_for_task": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "angular"},
+    "set_object_on_surface": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+    "stabilize_object_by_pressing": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+
+    "reach_toward_tool": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "curved"},
+    "grip_tool_with_precision_brace": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "enveloping"},
+    "contact_and_pin_object": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "straight"},
+    "adopt_safe_hand_posture": {"default_duration": 0.5, "action_category": "BODY_MOVEMENT", "kinematic_trajectory": "angular"},
+
+    "position_blade_at_target_site": {"default_duration": 0.2, "action_category": "TOOL_USAGE", "kinematic_trajectory": "straight"},
+    "apply_cutting_force": {"default_duration": 0.2, "action_category": "TOOL_USAGE", "kinematic_trajectory": "linear"},
+    "blade_ruptures_surface": {"default_duration": 0.1, "action_category": "TOOL_USAGE", "kinematic_trajectory": "linear"},
+    "control_cut_depth_and_retract": {"default_duration": 0.2, "action_category": "TOOL_USAGE", "kinematic_trajectory": "linear"},
+
+    "create_peel_object": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "none"},
+    "peel_cycle": {"default_duration": 1.0, "action_category": "TOOL_USAGE", "kinematic_trajectory": "helical", "is_cyclical": true},
+    "adapt_removal_around_irregular_end": {"default_duration": 5.0, "action_category": "TOOL_USAGE", "kinematic_trajectory": "curved"},
+
+    "adjust_grip_support": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "enveloping"},
+    "rotate_and_inspect_object": {"default_duration": 1.0, "action_category": "PERCEPTION", "kinematic_trajectory": "circular"},
+    "orient_object_for_next_operation": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "angular"},
+
+    "align_blade_along_axis": {"default_duration": 0.5, "action_category": "TOOL_USAGE", "kinematic_trajectory": "straight"},
+    "bisect_object_through_core": {"default_duration": 1.0, "action_category": "TOOL_USAGE", "kinematic_trajectory": "linear"},
+    "repeat_bisection_on_pieces": {"default_duration": 1.0, "action_category": "TOOL_USAGE", "kinematic_trajectory": "linear"},
+    "apply_downward_cutting_force": {"default_duration": 0.3, "action_category": "TOOL_USAGE", "kinematic_trajectory": "linear"},
+    "blade_traverses_tissue": {"default_duration": 0.4, "action_category": "TOOL_USAGE", "kinematic_trajectory": "linear"},
+    "object_separates_into_halves": {"default_duration": 0.3, "action_category": "MANIPULATION", "kinematic_trajectory": "none"},
+    "rotate_reposition_pieces": {"default_duration": 0.3, "action_category": "MANIPULATION", "kinematic_trajectory": "angular"},
+    "cut_through_core_again": {"default_duration": 0.4, "action_category": "TOOL_USAGE", "kinematic_trajectory": "linear"},
+    "object_separates_into_quarters": {"default_duration": 0.3, "action_category": "MANIPULATION", "kinematic_trajectory": "none"},
+
+    "core_removal_cycle": {"default_duration": 7.5, "action_category": "TOOL_USAGE", "kinematic_trajectory": "straight", "is_cyclical": true,
+      "sub_action_templates": [
+        "place_and_stabilize_piece",
+        "identify_internal_feature",
+        "insert_blade_along_boundary",
+        "cut_around_core",
+        "extract_core",
+        "set_removed_part_aside"
+      ]},
+    "place_and_stabilize_piece": {"default_duration": 1.0, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+    "identify_internal_feature": {"default_duration": 1.0, "action_category": "PERCEPTION", "kinematic_trajectory": "angular"},
+    "insert_blade_along_boundary": {"default_duration": 2.0, "action_category": "TOOL_USAGE", "kinematic_trajectory": "linear"},
+    "cut_around_core": {"default_duration": 2.0, "action_category": "TOOL_USAGE", "kinematic_trajectory": "linear"},
+    "extract_core": {"default_duration": 1.0, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+    "set_removed_part_aside": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+
+    "gather_small_items": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+    "prepare_flicking_grip": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "angular"},
+    "launch_object_by_flicking": {"default_duration": 0.3, "action_category": "MANIPULATION", "kinematic_trajectory": "arc"},
+    "object_travels_and_impacts_surface": {"default_duration": 0.7, "action_category": "MANIPULATION", "kinematic_trajectory": "arc"},
+
+    "create_destination_container": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "none"},
+    "transfer_piece": {"default_duration": 1.0, "action_category": "MANIPULATION", "kinematic_trajectory": "arc"},
+
+    "gather_discarded_layer": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+    "transfer_waste_to_receptacle": {"default_duration": 0.7, "action_category": "MANIPULATION", "kinematic_trajectory": "arc"},
+    "release_and_let_settle": {"default_duration": 0.5, "action_category": "MANIPULATION", "kinematic_trajectory": "linear"},
+
+    "volatile_retention_in_skin_oils": {"default_duration": 0.5, "action_category": "PERCEPTION", "kinematic_trajectory": "none"},
+    "partial_removal_by_washing": {"default_duration": 60.0, "action_category": "PERCEPTION", "kinematic_trajectory": "none"},
+    "olfactory_adaptation_and_intermittent_detection": {"default_duration": 3600.0, "action_category": "PERCEPTION", "kinematic_trajectory": "none"}
+  },
+
+  "memory": {
+    "memory_id": "mem3d_peeling_apple_demo",
+    "activity": "peeling an apple",
+    "3d_assembly_id": "3d_mem3d_peeling_apple_demo",
+
+    "protagonist": {
+      "template": "person",
+      "obj_id": "person_01",
+      "anatomical_features": ["eyes_01", "left_hand_01", "right_hand_01", "left_thumb_01"],
+      "overrides": {
+        "intention": {"target": "apple_01.skin_present", "desired_state": false},
+        "cheerfulness": 0.6,
+        "focus": 0.9,
+        "satisfaction": 0.9,
+        "sensory_perception_touch": [
+          {"sensation": "cool_weight", "source": "apple_01"},
+          {"sensation": "smooth_friction", "source": "apple_01"},
+          {"sensation": "by_hand", "source": "left_hand_01"},
+          {"sensation": "slight_wetness", "source": "juice_01"},
+          {"sensation": "wet_slick", "source": "juice_01"},
+          {"sensation": "stem_dimple", "source": "apple_01"},
+          {"sensation": "scar_line", "source": "apple_01"},
+          {"sensation": "resistance_change_and_slight_pop", "source": ["paring_knife_01", "apple_01"]}
+        ],
+        "sensory_perception_sight": [
+          {"sensation": "environment_kitchen", "source": "environment"},
+          {"sensation": "composite", "objects": ["apple_01", "left_hand_01"], "source": ["apple_01", "left_hand_01"]},
+          {"sensation": "spiral_peel_strip", "source": "peel_strip_01"},
+          {"sensation": "naked_apple", "source": "apple_quarter_a_01"},
+          {"sensation": "wet_smooth_surface", "source": ["apple_quarter_a_01", "juice_01"]},
+          {"sensation": "glossy_to_matte_red", "source": "apple_quarter_a_01"},
+          {"sensation": "shallow_gouge_near_stem", "source": "apple_quarter_a_01"},
+          {"sensation": "four_pieces_fall_apart", "source": "apple_quarter_a_01"},
+          {"sensation": "core_exposed", "source": "apple_core_a_01"},
+          {"sensation": "three_dark_brown_seeds_in_papery_pockets", "source": "apple_seeds_01"},
+          {"sensation": "pale_yellow_white_beneath_skin", "source": "apple_flesh_exposed_01"},
+          {"sensation": "faintly_green_white_wet_flesh", "source": "apple_flesh_exposed_01"}
+        ],
+        "sensory_perception_smell": [
+          {"sensation": "neutral", "source": "none"},
+          {"sensation": "apple_flesh", "source": "apple_01"},
+          {"sensation": "juice", "source": "juice_01"},
+          {"sensation": "green_sharp_faintly_floral", "source": "apple_01"},
+          {"sensation": "apple_smell_persistent", "source": ["left_hand_01", "right_hand_01"], "time_scale": "hours"}
+        ],
+        "sensory_perception_sound": [
+          {"sensation": "quiet", "source": "environment"},
+          {"sensation": "soft_dry_scraping", "source": ["paring_knife_01", "apple_01"]},
+          {"sensation": "wet_scraping", "source": ["paring_knife_01", "apple_01"]},
+          {"sensation": "soft_pop", "source": ["apple_01", "paring_knife_01"]},
+          {"sensation": "firm_crunch", "source": ["apple_01", "paring_knife_01"]},
+          {"sensation": "click_against_steel", "source": ["apple_seeds_01", "sink_01"]},
+          {"sensation": "running_water", "source": "faucet_tap_01"},
+          {"sensation": "paper_tearing_slowly", "source": ["paring_knife_01", "apple_01"]}
+        ],
+        "sensory_perception_taste": [
+          {"sensation": "neutral", "source": "none"}
+        ]
+      }
+    },
+
+    "objects": [
+      {
+        "template": "eyes",
+        "obj_id": "eyes_01",
+        "number": "single",
+        "position_relative_body": {"relation": "front_of_head"},
+        "overrides": {"gaze_direction": "toward_apple"}
+      },
+      {
+        "template": "hand",
+        "obj_id": "left_hand_01",
+        "number": "single",
+        "position_relative_body": {"relation": "chest_height"},
+        "overrides": {
+          "finger_posture": "curled_back",
+          "grip_type": "pin",
+          "grip_force_N": 5.0,
+          "contact_state": "holding_apple",
+          "surface_moisture": "wet",
+          "residue": "tacky_residue",
+          "volatiles": "apple_aroma",
+          "thumb_pushes_forward": true,
+          "surface": {"coverage": [{"type": "film_patch", "composition": "apple_juice"}]}
+        }
+      },
+      {
+        "template": "thumb",
+        "obj_id": "left_thumb_01",
+        "number": "single",
+        "position_relative_body": {"relation": "on_left_hand"},
+        "overrides": {"position": "extended"}
+      },
+      {
+        "template": "hand",
+        "obj_id": "right_hand_01",
+        "number": "single",
+        "position_relative_body": {"relation": "chest_height"},
+        "overrides": {
+          "grip_type": "pinch_grip",
+          "grip_force_N": 6.0,
+          "thumb_position": "on_bolster",
+          "knife_held_nearly_still": true,
+          "residue": "tacky_residue",
+          "volatiles": "apple_aroma"
+        }
+      },
+      {
+        "template": "shirt",
+        "obj_id": "shirt_01",
+        "number": "single",
+        "overrides": {"moisture": "damp", "surface_state": "damp"}
+      },
+      {
+        "template": "kitchen_counter",
+        "obj_id": "kitchen_counter_01",
+        "number": "single",
+        "position": {"relation": "installed_in", "relative_to": "kitchen"},
+        "overrides": {}
+      },
+      {
+        "template": "refrigerator",
+        "obj_id": "refrigerator_01",
+        "number": "single",
+        "overrides": {"state": "closed"}
+      },
+      {
+        "template": "bowl",
+        "obj_id": "bowl_source_01",
+        "number": "single",
+        "position": {"relation": "on", "relative_to": "kitchen_counter_01"},
+        "overrides": {"cleanliness": "clean", "state": "empty"}
+      },
+      {
+        "template": "paring_knife",
+        "obj_id": "paring_knife_01",
+        "number": "single",
+        "position": {"relation": "on", "relative_to": "kitchen_counter_01"},
+        "overrides": {"state": "resting"}
+      },
+      {
+        "template": "cutting_board",
+        "obj_id": "cutting_board_01",
+        "number": "single",
+        "position": {"relation": "on", "relative_to": "kitchen_counter_01"},
+        "overrides": {}
+      },
+      {
+        "template": "sink",
+        "obj_id": "sink_01",
+        "number": "single",
+        "overrides": {}
+      },
+      {
+        "template": "faucet_tap",
+        "obj_id": "faucet_tap_01",
+        "number": "single",
+        "overrides": {"state": "closed"}
+      },
+      {
+        "template": "compost_crock",
+        "obj_id": "compost_crock_01",
+        "number": "single",
+        "position": {"relation": "on", "relative_to": "kitchen_counter_01"},
+        "overrides": {}
+      },
+      {
+        "template": "bowl",
+        "obj_id": "bowl_destination_01",
+        "number": "single",
+        "position": {"relation": "on", "relative_to": "kitchen_counter_01"},
+        "overrides": {"cleanliness": "clean", "state": "containing_quarters"}
+      },
+      {
+        "template": "apple_flesh",
+        "obj_id": "apple_flesh_exposed_01",
+        "number": "single",
+        "position": {"relation": "part_of", "relative_to": "apple_quarter_a_01"},
+        "overrides": {
+          "color": "light_brown",
+          "surface_state": "wet",
+          "oxidation": "light",
+          "exposure": "exposed"
+        }
+      },
+      {
+        "template": "juice",
+        "obj_id": "juice_01",
+        "number": "single",
+        "position": {"relation": "on", "relative_to": "apple_quarter_a_01"},
+        "overrides": {}
+      },
+      {
+        "template": "juice",
+        "obj_id": "juice_on_hand_01",
+        "number": "single",
+        "position": {"relation": "on", "relative_to": "left_hand_01"},
+        "overrides": {"viscosity": "slightly_sticky"}
+      },
+      {
+        "template": "peel_strip",
+        "obj_id": "peel_strip_01",
+        "number": "single",
+        "position": {"relation": "in", "relative_to": "compost_crock_01"},
+        "overrides": {
+          "state": "detached",
+          "color": "browning_at_edges",
+          "oxidation": "light",
+          "length_cm": 40.0,
+          "width_cm": 2.5,
+          "shape": ["strip", "spiral"]
+        }
+      },
+      {
+        "template": "apple",
+        "obj_id": "apple_quarter_a_01",
+        "number": "single",
+        "position": {"relation": "in", "relative_to": "bowl_destination_01"},
+        "overrides": {
+          "color": "light_brown",
+          "skin_present": false,
+          "skin_coverage": 0.0,
+          "physical_state": "peeled",
+          "oxidation": "light",
+          "core_present": false,
+          "surface_state": "wet",
+          "moisture": "wet",
+          "surface_integrity": "split",
+          "clips": [
+            {"point": [-20.0, 20.0, 92.0], "normal": [1.0, 0.0, 0.0]},
+            {"point": [-20.0, 20.0, 92.0], "normal": [0.0, 1.0, 0.0]}
+          ]
+        }
+      },
+      {
+        "template": "apple",
+        "obj_id": "apple_quarter_b_01",
+        "number": "single",
+        "position": {"relation": "in", "relative_to": "bowl_destination_01"},
+        "overrides": {
+          "color": "light_brown",
+          "skin_present": false,
+          "skin_coverage": 0.0,
+          "physical_state": "peeled",
+          "oxidation": "light",
+          "core_present": false,
+          "surface_state": "wet",
+          "moisture": "wet",
+          "surface_integrity": "split",
+          "clips": [
+            {"point": [-20.0, 20.0, 92.0], "normal": [1.0, 0.0, 0.0]},
+            {"point": [-20.0, 20.0, 92.0], "normal": [0.0, -1.0, 0.0]}
+          ]
+        }
+      },
+      {
+        "template": "apple",
+        "obj_id": "apple_quarter_c_01",
+        "number": "single",
+        "position": {"relation": "in", "relative_to": "bowl_destination_01"},
+        "overrides": {
+          "color": "light_brown",
+          "skin_present": false,
+          "skin_coverage": 0.0,
+          "physical_state": "peeled",
+          "oxidation": "light",
+          "core_present": false,
+          "surface_state": "wet",
+          "moisture": "wet",
+          "surface_integrity": "split",
+          "clips": [
+            {"point": [-20.0, 20.0, 92.0], "normal": [-1.0, 0.0, 0.0]},
+            {"point": [-20.0, 20.0, 92.0], "normal": [0.0, 1.0, 0.0]}
+          ]
+        }
+      },
+      {
+        "template": "apple",
+        "obj_id": "apple_quarter_d_01",
+        "number": "single",
+        "position": {"relation": "in", "relative_to": "bowl_destination_01"},
+        "overrides": {
+          "color": "light_brown",
+          "skin_present": false,
+          "skin_coverage": 0.0,
+          "physical_state": "peeled",
+          "oxidation": "light",
+          "core_present": false,
+          "surface_state": "wet",
+          "moisture": "wet",
+          "surface_integrity": "split",
+          "clips": [
+            {"point": [-20.0, 20.0, 92.0], "normal": [-1.0, 0.0, 0.0]},
+            {"point": [-20.0, 20.0, 92.0], "normal": [0.0, -1.0, 0.0]}
+          ]
+        }
+      },
+      {
+        "template": "apple_core",
+        "obj_id": "apple_core_a_01",
+        "number": "single",
+        "position": {"relation": "on", "relative_to": "cutting_board_01"},
+        "overrides": {}
+      },
+      {
+        "template": "apple_core",
+        "obj_id": "apple_core_b_01",
+        "number": "single",
+        "position": {"relation": "on", "relative_to": "cutting_board_01"},
+        "overrides": {}
+      },
+      {
+        "template": "apple_core",
+        "obj_id": "apple_core_c_01",
+        "number": "single",
+        "position": {"relation": "on", "relative_to": "cutting_board_01"},
+        "overrides": {}
+      },
+      {
+        "template": "apple_core",
+        "obj_id": "apple_core_d_01",
+        "number": "single",
+        "position": {"relation": "on", "relative_to": "cutting_board_01"},
+        "overrides": {}
+      },
+      {
+        "template": "apple_seeds",
+        "obj_id": "apple_seeds_01",
+        "number": "plural",
+        "position": {"relation": "in", "relative_to": "sink_01"},
+        "overrides": {}
+      }
+    ],
+
+    "actions": [
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.0",
+        "template": "retrieve_object_from_container",
+        "duration": 2,
+        "start_time": 0.0,
+        "end_time": 2.0,
+        "temporal_type": "sequential",
+        "kinematic_trajectory": "curved",
+        "action_category": "HUMAN_INTERACTION",
+        "participants": ["person_01", "left_hand_01", "eyes_01", "apple_01", "bowl_source_01"],
+        "assembly_object_ref": ["apple_01"],
+        "operation_refs": ["emit_event", "move", "contact", "attach", "contact", "change_properties", "move", "move", "change_properties", "emit_event", "emit_event"],
+        "preconditions": [
+          {"object": "apple_01", "attribute": "position", "op": "eq", "value": "in_bowl_source_01"}
+        ],
+        "changes": [
+          {"object": "left_hand_01", "attribute": "grip_type", "old": "open", "new": "power_grasp"},
+          {"object": "left_hand_01", "attribute": "grip_force_N", "old": 0.0, "new": 8.0},
+          {"object": "left_hand_01", "attribute": "contact_state", "old": "none", "new": "holding_apple"}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_tactile", "qualia": ["cold", "waxy", "dense"], "source": ["apple_01"]},
+          {"type": "sensory_visual", "qualia": ["apple_in_bowl"], "source": ["apple_01", "bowl_source_01"]}
+        ],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.0.sub.0",
+            "template": "perceive_target_location",
+            "duration": 0.3,
+            "start_time": 0.0,
+            "end_time": 0.3,
+            "participants": ["eyes_01", "apple_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.0.sub.1",
+            "template": "reach_toward_object",
+            "duration": 0.4,
+            "start_time": 0.3,
+            "end_time": 0.7,
+            "participants": ["left_hand_01", "apple_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.0.sub.2",
+            "template": "contact_object",
+            "duration": 0.3,
+            "start_time": 0.7,
+            "end_time": 1.0,
+            "participants": ["left_hand_01", "apple_01"],
+            "changes": [
+              {"object": "left_hand_01", "attribute": "contact_state", "old": "none", "new": "touching_apple"}
+            ]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.0.sub.3",
+            "template": "grasp_object",
+            "duration": 0.4,
+            "start_time": 1.0,
+            "end_time": 1.4,
+            "participants": ["left_hand_01", "apple_01"],
+            "changes": [
+              {"object": "left_hand_01", "attribute": "grip_type", "old": "open", "new": "power_grasp"},
+              {"object": "left_hand_01", "attribute": "grip_force_N", "old": 0.0, "new": 8.0}
+            ]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.0.sub.4",
+            "template": "lift_object",
+            "duration": 0.4,
+            "start_time": 1.4,
+            "end_time": 1.8,
+            "participants": ["left_hand_01", "apple_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.0.sub.5",
+            "template": "transport_object_out_of_container",
+            "duration": 0.2,
+            "start_time": 1.8,
+            "end_time": 2.0,
+            "participants": ["left_hand_01", "apple_01", "bowl_source_01"]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.1",
+        "template": "wash_object_under_water",
+        "duration": 8,
+        "start_time": 2.0,
+        "end_time": 10.0,
+        "temporal_type": "cyclical",
+        "kinematic_trajectory": "cyclical",
+        "action_category": "HUMAN_INTERACTION",
+        "cycle_duration": 1.0,
+        "repetitions": 5,
+        "participants": ["person_01", "left_hand_01", "apple_01", "faucet_tap_01", "sink_01"],
+        "assembly_object_ref": ["apple_01", "faucet_tap_01"],
+        "operation_refs": ["move", "change_properties", "add_object", "move", "compound", "compound", "compound", "compound", "compound", "change_properties", "remove_object", "move", "emit_event", "emit_event", "emit_event"],
+        "preconditions": [
+          {"object": "apple_01", "attribute": "position", "op": "eq", "value": "in_left_hand"},
+          {"object": "faucet_tap_01", "attribute": "state", "op": "eq", "value": "closed"}
+        ],
+        "changes_per_cycle": [
+          {"object": "apple_01", "attribute": "orientation", "old": "current", "new": "current_plus_90_deg"},
+          {"object": "apple_01", "attribute": "surface_state", "old": "current", "new": "wet"}
+        ],
+        "changes_total": [
+          {"object": "apple_01", "attribute": "surface_state", "old": "dry", "new": "wet"},
+          {"object": "apple_01", "attribute": "moisture", "old": "dry", "new": "wet"},
+          {"object": "faucet_tap_01", "attribute": "state", "old": "closed", "new": "closed"}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_auditory", "qualia": ["running_water"], "source": ["faucet_tap_01"]},
+          {"type": "sensory_tactile", "qualia": ["stem_dimple", "scar_line"], "source": ["apple_01"]}
+        ],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.1.sub.0",
+            "template": "transport_object_to_wash_location",
+            "duration": 0.5,
+            "start_time": 2.0,
+            "end_time": 2.5,
+            "participants": ["left_hand_01", "apple_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.1.sub.1",
+            "template": "activate_water_flow",
+            "duration": 0.5,
+            "start_time": 2.5,
+            "end_time": 3.0,
+            "participants": ["faucet_tap_01"],
+            "changes": [
+              {"object": "faucet_tap_01", "attribute": "state", "old": "closed", "new": "open"}
+            ]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.1.sub.2",
+            "template": "position_object_under_stream",
+            "duration": 1.0,
+            "start_time": 3.0,
+            "end_time": 4.0,
+            "participants": ["left_hand_01", "apple_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.1.sub.3",
+            "template": "rotate_object_under_water",
+            "duration": 5.0,
+            "start_time": 4.0,
+            "end_time": 9.0,
+            "temporal_type": "cyclical",
+            "cycle_duration": 1.0,
+            "repetitions": 5,
+            "participants": ["left_hand_01", "left_thumb_01", "apple_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.1.sub.4",
+            "template": "complete_rinse_and_remove_from_flow",
+            "duration": 1.0,
+            "start_time": 9.0,
+            "end_time": 10.0,
+            "participants": ["left_hand_01", "apple_01", "faucet_tap_01"],
+            "changes": [
+              {"object": "faucet_tap_01", "attribute": "state", "old": "open", "new": "closed"}
+            ]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.2",
+        "template": "dry_object_on_fabric",
+        "duration": 4,
+        "start_time": 10.0,
+        "end_time": 14.0,
+        "temporal_type": "sequential",
+        "kinematic_trajectory": "cyclical",
+        "action_category": "HUMAN_INTERACTION",
+        "participants": ["person_01", "left_hand_01", "apple_01", "shirt_01"],
+        "assembly_object_ref": ["apple_01", "shirt_01"],
+        "operation_refs": ["move", "contact", "compound", "compound", "compound", "compound", "compound", "release", "move", "emit_event", "emit_event"],
+        "preconditions": [
+          {"object": "apple_01", "attribute": "surface_state", "op": "eq", "value": "wet"}
+        ],
+        "changes": [
+          {"object": "apple_01", "attribute": "surface_state", "old": "wet", "new": "dry"},
+          {"object": "apple_01", "attribute": "moisture", "old": "wet", "new": "dry"},
+          {"object": "apple_01", "attribute": "color", "old": "red_brushed", "new": "red_matte"},
+          {"object": "apple_01", "attribute": "surface_optics", "old": "glossy", "new": "matte"},
+          {"object": "shirt_01", "attribute": "moisture", "old": "dry", "new": "damp"},
+          {"object": "shirt_01", "attribute": "surface_state", "old": "dry", "new": "damp"}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_visual", "qualia": ["glossy_to_matte_red"], "source": ["apple_01"]}
+        ],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.2.sub.0",
+            "template": "bring_object_to_absorbent_surface",
+            "duration": 0.5,
+            "start_time": 10.0,
+            "end_time": 10.5,
+            "participants": ["left_hand_01", "apple_01", "shirt_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.2.sub.1",
+            "template": "rub_object_against_fabric",
+            "duration": 2.5,
+            "start_time": 10.5,
+            "end_time": 13.0,
+            "temporal_type": "cyclical",
+            "cycle_duration": 0.5,
+            "repetitions": 5,
+            "participants": ["left_hand_01", "apple_01", "shirt_01"],
+            "changes_per_cycle": [
+              {"object": "apple_01", "attribute": "surface_state", "old": "current", "new": "drier"},
+              {"object": "shirt_01", "attribute": "moisture", "old": "current", "new": "damp"}
+            ],
+            "changes_total": [
+              {"object": "apple_01", "attribute": "surface_state", "old": "wet", "new": "dry"},
+              {"object": "apple_01", "attribute": "color", "old": "red_brushed", "new": "red_matte"}
+            ]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.2.sub.2",
+            "template": "inspect_object_for_residual_liquid",
+            "duration": 0.7,
+            "start_time": 13.0,
+            "end_time": 13.7,
+            "participants": ["eyes_01", "apple_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.2.sub.3",
+            "template": "release_absorbent_material",
+            "duration": 0.3,
+            "start_time": 13.7,
+            "end_time": 14.0,
+            "participants": ["left_hand_01", "shirt_01"]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.3",
+        "template": "place_object_on_surface",
+        "duration": 2,
+        "start_time": 14.0,
+        "end_time": 16.0,
+        "temporal_type": "sequential",
+        "kinematic_trajectory": "straight",
+        "action_category": "HUMAN_INTERACTION",
+        "participants": ["person_01", "left_hand_01", "apple_01", "cutting_board_01"],
+        "assembly_object_ref": ["apple_01", "cutting_board_01"],
+        "operation_refs": ["move", "rotate", "set_transform", "detach", "release", "attach", "contact", "change_properties", "move", "emit_event"],
+        "preconditions": [
+          {"object": "apple_01", "attribute": "surface_state", "op": "eq", "value": "dry"}
+        ],
+        "changes": [
+          {"object": "apple_01", "attribute": "position", "old": "in_left_hand_01", "new": "on_cutting_board_01"},
+          {"object": "apple_01", "attribute": "orientation", "old": "any", "new": "stem_side_up"},
+          {"object": "apple_01", "attribute": "linear_velocity", "old": null, "new": 0.0},
+          {"object": "apple_01", "attribute": "angular_velocity", "old": null, "new": 0.0}
+        ],
+        "sensory_effects": [],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.3.sub.0",
+            "template": "move_object_over_support_surface",
+            "duration": 0.5,
+            "start_time": 14.0,
+            "end_time": 14.5,
+            "participants": ["left_hand_01", "apple_01", "cutting_board_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.3.sub.1",
+            "template": "orient_object_for_task",
+            "duration": 0.5,
+            "start_time": 14.5,
+            "end_time": 15.0,
+            "participants": ["left_hand_01", "apple_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.3.sub.2",
+            "template": "set_object_on_surface",
+            "duration": 0.5,
+            "start_time": 15.0,
+            "end_time": 15.5,
+            "participants": ["apple_01", "cutting_board_01"],
+            "changes": [
+              {"object": "apple_01", "attribute": "position", "old": "in_left_hand_01", "new": "on_cutting_board_01"}
+            ]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.3.sub.3",
+            "template": "stabilize_object_by_pressing",
+            "duration": 0.5,
+            "start_time": 15.5,
+            "end_time": 16.0,
+            "participants": ["left_hand_01", "apple_01", "cutting_board_01"],
+            "changes": [
+              {"object": "apple_01", "attribute": "linear_velocity", "old": null, "new": 0.0},
+              {"object": "apple_01", "attribute": "angular_velocity", "old": null, "new": 0.0}
+            ]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.4",
+        "template": "prepare_tool_and_pin_object",
+        "duration": 2,
+        "start_time": 16.0,
+        "end_time": 18.0,
+        "temporal_type": "sequential",
+        "kinematic_trajectory": "straight",
+        "action_category": "HUMAN_INTERACTION",
+        "participants": ["person_01", "right_hand_01", "left_hand_01", "paring_knife_01", "apple_01"],
+        "assembly_object_ref": ["right_hand_01", "left_hand_01", "paring_knife_01", "apple_01"],
+        "operation_refs": ["move", "attach", "contact", "change_properties", "rotate", "move", "contact", "change_properties", "emit_event"],
+        "preconditions": [
+          {"object": "paring_knife_01", "attribute": "state", "op": "eq", "value": "resting"}
+        ],
+        "changes": [
+          {"object": "right_hand_01", "attribute": "grip_type", "old": "open", "new": "pinch_grip"},
+          {"object": "right_hand_01", "attribute": "grip_force_N", "old": 0.0, "new": 6.0},
+          {"object": "right_hand_01", "attribute": "thumb_position", "old": null, "new": "on_bolster"},
+          {"object": "left_hand_01", "attribute": "finger_posture", "old": "relaxed", "new": "curled_back"},
+          {"object": "left_hand_01", "attribute": "grip_type", "old": "open", "new": "pin"},
+          {"object": "left_hand_01", "attribute": "grip_force_N", "old": 0.0, "new": 5.0},
+          {"object": "left_hand_01", "attribute": "contact_state", "old": "none", "new": "holding_apple"}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_tactile", "qualia": ["worn_handle", "bolster_brace"], "source": ["paring_knife_01"]}
+        ],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.4.sub.0",
+            "template": "reach_toward_tool",
+            "duration": 0.5,
+            "start_time": 16.0,
+            "end_time": 16.5,
+            "participants": ["right_hand_01", "paring_knife_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.4.sub.1",
+            "template": "grip_tool_with_precision_brace",
+            "duration": 0.5,
+            "start_time": 16.5,
+            "end_time": 17.0,
+            "participants": ["right_hand_01", "paring_knife_01"],
+            "changes": [
+              {"object": "right_hand_01", "attribute": "grip_type", "old": "open", "new": "pinch_grip"},
+              {"object": "right_hand_01", "attribute": "grip_force_N", "old": 0.0, "new": 6.0}
+            ]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.4.sub.2",
+            "template": "contact_and_pin_object",
+            "duration": 0.5,
+            "start_time": 17.0,
+            "end_time": 17.5,
+            "participants": ["left_hand_01", "apple_01"],
+            "changes": [
+              {"object": "left_hand_01", "attribute": "contact_state", "old": "none", "new": "holding_apple"},
+              {"object": "left_hand_01", "attribute": "grip_force_N", "old": 0.0, "new": 5.0}
+            ]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.4.sub.3",
+            "template": "adopt_safe_hand_posture",
+            "duration": 0.5,
+            "start_time": 17.5,
+            "end_time": 18.0,
+            "participants": ["left_hand_01"],
+            "changes": [
+              {"object": "left_hand_01", "attribute": "finger_posture", "old": "relaxed", "new": "curled_back"}
+            ]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.5",
+        "template": "initiate_cut",
+        "duration": 1,
+        "start_time": 18.0,
+        "end_time": 19.0,
+        "temporal_type": "sequential",
+        "kinematic_trajectory": "linear",
+        "action_category": "TOOL_USAGE",
+        "participants": ["right_hand_01", "paring_knife_01", "apple_01"],
+        "assembly_object_ref": ["paring_knife_01", "apple_01", "apple_flesh_exposed_01", "juice_01"],
+        "operation_refs": ["move", "set_transform", "contact", "change_properties", "add_object", "change_properties", "add_object", "release", "move", "emit_event"],
+        "preconditions": [
+          {"object": "paring_knife_01", "attribute": "blade_edge", "op": "eq", "value": "sharp"},
+          {"object": "apple_01", "attribute": "surface_integrity", "op": "eq", "value": "intact"}
+        ],
+        "changes": [
+          {"object": "apple_01", "attribute": "surface_integrity", "old": "intact", "new": "breached"},
+          {"object": "paring_knife_01", "attribute": "blade_depth_cm", "old": 0.0, "new": 0.635},
+          {"object": "apple_flesh_exposed_01", "attribute": "color", "old": null, "new": "pale_yellow_white"},
+          {"object": "apple_flesh_exposed_01", "attribute": "surface_state", "old": null, "new": "wet"},
+          {"object": "apple_flesh_exposed_01", "attribute": "oxidation", "old": null, "new": "none"}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_auditory", "qualia": ["soft_pop"], "source": ["apple_01", "paring_knife_01"]},
+          {"type": "sensory_visual", "qualia": ["pale_yellow_white", "juice"], "source": ["apple_flesh_exposed_01"]},
+          {"type": "sensory_tactile", "qualia": ["resistance_change"], "source": ["paring_knife_01", "apple_01"]}
+        ],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.5.sub.0",
+            "template": "position_blade_at_target_site",
+            "duration": 0.2,
+            "start_time": 18.0,
+            "end_time": 18.2,
+            "participants": ["right_hand_01", "paring_knife_01", "apple_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.5.sub.1",
+            "template": "apply_cutting_force",
+            "duration": 0.2,
+            "start_time": 18.2,
+            "end_time": 18.4,
+            "participants": ["right_hand_01", "paring_knife_01", "apple_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.5.sub.2",
+            "template": "blade_ruptures_surface",
+            "duration": 0.1,
+            "start_time": 18.4,
+            "end_time": 18.5,
+            "participants": ["paring_knife_01", "apple_01"],
+            "changes": [
+              {"object": "apple_01", "attribute": "surface_integrity", "old": "intact", "new": "breached"},
+              {"object": "paring_knife_01", "attribute": "blade_depth_cm", "old": 0.0, "new": 0.635}
+            ]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.5.sub.3",
+            "template": "control_cut_depth_and_retract",
+            "duration": 0.5,
+            "start_time": 18.5,
+            "end_time": 19.0,
+            "participants": ["right_hand_01", "paring_knife_01"]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.6",
+        "template": "continuous_peel",
+        "duration": 40,
+        "start_time": 19.0,
+        "end_time": 59.0,
+        "temporal_type": "cyclical",
+        "kinematic_trajectory": "helical",
+        "action_category": "TOOL_USAGE",
+        "cycle_duration": 1.0,
+        "repetitions": 40,
+        "participants": ["left_hand_01", "left_thumb_01", "right_hand_01", "paring_knife_01", "apple_01", "peel_strip_01"],
+        "assembly_object_ref": ["apple_01", "peel_strip_01", "apple_flesh_exposed_01"],
+        "operation_refs": ["add_object", "contact", "contact", "compound", "compound_calyx_repositioning", "add_element", "change_properties", "change_properties", "release", "emit_event", "emit_event", "emit_event"],
+        "preconditions": [
+          {"object": "apple_01", "attribute": "surface_integrity", "op": "eq", "value": "breached"},
+          {"object": "paring_knife_01", "attribute": "blade_edge", "op": "eq", "value": "sharp"}
+        ],
+        "changes_per_cycle": [
+          {"object": "apple_01", "attribute": "skin_coverage", "old": "current", "new": "current_minus_0.025"},
+          {"object": "peel_strip_01", "attribute": "length_cm", "old": "current", "new": "current_plus_1.0"}
+        ],
+        "changes_total": [
+          {"object": "apple_01", "attribute": "skin_coverage", "old": 1.0, "new": 0.0},
+          {"object": "apple_01", "attribute": "skin_present", "old": true, "new": false},
+          {"object": "apple_01", "attribute": "physical_state", "old": "intact", "new": "peeled"},
+          {"object": "apple_01", "attribute": "surface_state", "old": "dry", "new": "wet"},
+          {"object": "apple_01", "attribute": "moisture", "old": "dry", "new": "wet"},
+          {"object": "peel_strip_01", "attribute": "length_cm", "old": 0.0, "new": 40.0},
+          {"object": "peel_strip_01", "attribute": "color", "old": "red_brushed", "new": "browning_at_edges"},
+          {"object": "peel_strip_01", "attribute": "oxidation", "old": "none", "new": "light"},
+          {"object": "apple_flesh_exposed_01", "attribute": "color", "old": "pale_yellow_white", "new": "faint_green_white"},
+          {"object": "apple_flesh_exposed_01", "attribute": "oxidation", "old": "none", "new": "light"},
+          {"object": "apple_flesh_exposed_01", "attribute": "oxidation_onset_delay_seconds", "old": null, "new": 10},
+          {"object": "apple_flesh_exposed_01", "attribute": "color_terminal", "old": null, "new": "light_brown"}
+        ],
+        "conditional_changes": [
+          {
+            "condition": {"attribute": "pressing_force", "op": "high"},
+            "changes": [
+              {"object": "peel_strip_01", "attribute": "width", "new": {"value": 2.0, "unit": "cm"}},
+              {"object": "peel_strip_01", "attribute": "height_thickness", "new": {"value": 0.3, "unit": "cm"}}
+            ]
+          },
+          {
+            "condition": {"attribute": "pressing_force", "op": "low"},
+            "changes": [
+              {"object": "peel_strip_01", "attribute": "width", "new": {"value": 1.0, "unit": "cm"}},
+              {"object": "peel_strip_01", "attribute": "height_thickness", "new": {"value": 0.1, "unit": "cm"}}
+            ]
+          }
+        ],
+        "sensory_effects": [
+          {"type": "sensory_auditory", "qualia": ["soft_wet_rasping", "paper_tearing_slowly"], "source": ["apple_01", "paring_knife_01"]},
+          {"type": "sensory_olfactory", "qualia": ["green", "sharp", "faintly_floral"], "source": ["apple_01"]},
+          {"type": "sensory_visual", "qualia": ["continuous_spiral_peel_ribbon"], "source": ["peel_strip_01"]}
+        ],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.6.sub.0",
+            "template": "create_peel_object",
+            "duration": 0.5,
+            "start_time": 19.0,
+            "end_time": 19.5,
+            "participants": ["paring_knife_01", "apple_01", "peel_strip_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.6.sub.1",
+            "template": "peel_cycle",
+            "duration": 40.0,
+            "start_time": 19.0,
+            "end_time": 59.0,
+            "temporal_type": "cyclical",
+            "cycle_duration": 1.0,
+            "repetitions": 40,
+            "participants": ["left_hand_01", "left_thumb_01", "right_hand_01", "paring_knife_01", "apple_01", "peel_strip_01"],
+            "changes_per_cycle": [
+              {"object": "apple_01", "attribute": "skin_coverage", "old": "current", "new": "current_minus_0.025"},
+              {"object": "peel_strip_01", "attribute": "length_cm", "old": "current", "new": "current_plus_1.0"}
+            ],
+            "changes_total": [
+              {"object": "apple_01", "attribute": "skin_coverage", "old": 1.0, "new": 0.0},
+              {"object": "apple_01", "attribute": "skin_present", "old": true, "new": false},
+              {"object": "peel_strip_01", "attribute": "length_cm", "old": 0.0, "new": 40.0}
+            ]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.6.sub.2",
+            "template": "adapt_removal_around_irregular_end",
+            "duration": 5.0,
+            "start_time": 54.0,
+            "end_time": 59.0,
+            "participants": ["left_hand_01", "right_hand_01", "paring_knife_01", "apple_01"],
+            "changes": [
+              {"object": "apple_01", "attribute": "calyx_cleared", "old": false, "new": true}
+            ],
+            "notes": "Knife lifted and repositioned twice around the calyx end."
+          }
+        ]
+      },
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.7",
+        "template": "manipulate_and_inspect",
+        "duration": 2,
+        "start_time": 59.0,
+        "end_time": 61.0,
+        "temporal_type": "sequential",
+        "kinematic_trajectory": "circular",
+        "action_category": "MANIPULATION",
+        "participants": ["person_01", "left_hand_01", "apple_01", "eyes_01"],
+        "assembly_object_ref": ["apple_01", "juice_on_hand_01", "left_hand_01"],
+        "operation_refs": ["rotate", "rotate", "rotate", "add_element", "change_properties", "add_object", "contact", "change_properties", "wait", "change_properties", "emit_event", "emit_event"],
+        "preconditions": [
+          {"object": "apple_01", "attribute": "physical_state", "op": "eq", "value": "peeled"}
+        ],
+        "changes": [
+          {"object": "apple_01", "attribute": "surface_state", "old": "dry", "new": "slippery"},
+          {"object": "apple_01", "attribute": "moisture", "old": "dry", "new": "wet"},
+          {"object": "left_hand_01", "attribute": "residue", "old": "none", "new": "juice_film"},
+          {"object": "juice_on_hand_01", "attribute": "state", "old": null, "new": "liquid"}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_tactile", "qualia": ["slippery", "juice_runs_down_wrist", "dries_tacky"], "source": ["apple_01", "juice_on_hand_01"]},
+          {"type": "sensory_visual", "qualia": ["shallow_gouge_near_stem"], "source": ["apple_01"]}
+        ],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.7.sub.0",
+            "template": "adjust_grip_support",
+            "duration": 0.5,
+            "start_time": 59.0,
+            "end_time": 59.5,
+            "participants": ["left_hand_01", "apple_01"],
+            "changes": [
+              {"object": "apple_01", "attribute": "surface_state", "old": "dry", "new": "slippery"}
+            ]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.7.sub.1",
+            "template": "rotate_and_inspect_object",
+            "duration": 1.0,
+            "start_time": 59.5,
+            "end_time": 60.5,
+            "participants": ["left_hand_01", "apple_01", "eyes_01"],
+            "notes": "Shallow gouge recorded where blade pressed too hard near stem during peel."
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.7.sub.2",
+            "template": "orient_object_for_next_operation",
+            "duration": 0.5,
+            "start_time": 60.5,
+            "end_time": 61.0,
+            "participants": ["left_hand_01", "apple_01"],
+            "changes": [
+              {"object": "left_hand_01", "attribute": "residue", "old": "none", "new": "juice_film"}
+            ]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.8",
+        "template": "quarter_object_through_core",
+        "duration": 3,
+        "start_time": 61.0,
+        "end_time": 64.0,
+        "temporal_type": "sequential",
+        "kinematic_trajectory": "straight",
+        "action_category": "TOOL_USAGE",
+        "participants": ["right_hand_01", "paring_knife_01", "apple_01", "apple_quarter_a_01", "apple_quarter_b_01", "apple_quarter_c_01", "apple_quarter_d_01", "cutting_board_01"],
+        "assembly_object_ref": ["paring_knife_01", "apple_quarter_a_01", "apple_quarter_b_01", "apple_quarter_c_01", "apple_quarter_d_01", "cutting_board_01"],
+        "operation_refs": ["set_transform", "detach", "release", "split", "split", "split", "change_properties", "change_properties", "change_properties", "change_properties", "attach", "attach", "attach", "attach", "contact", "contact", "contact", "contact", "emit_event", "emit_event"],
+        "preconditions": [
+          {"object": "apple_01", "attribute": "physical_state", "op": "eq", "value": "peeled"},
+          {"object": "paring_knife_01", "attribute": "blade_edge", "op": "eq", "value": "sharp"}
+        ],
+        "changes": [
+          {"object": "apple_quarter_a_01", "attribute": "color", "old": "pale_yellow_white", "new": "light_brown"},
+          {"object": "apple_quarter_a_01", "attribute": "oxidation", "old": "none", "new": "light"},
+          {"object": "apple_quarter_b_01", "attribute": "oxidation", "old": "none", "new": "light"},
+          {"object": "apple_quarter_c_01", "attribute": "oxidation", "old": "none", "new": "light"},
+          {"object": "apple_quarter_d_01", "attribute": "oxidation", "old": "none", "new": "light"}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_auditory", "qualia": ["firm_crunch"], "source": ["apple_01", "paring_knife_01"]},
+          {"type": "sensory_visual", "qualia": ["four_pieces_fall_apart", "core_exposed"], "source": ["apple_01"]}
+        ],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.8.sub.0",
+            "template": "align_blade_along_axis",
+            "duration": 0.5,
+            "start_time": 61.0,
+            "end_time": 61.5,
+            "participants": ["right_hand_01", "paring_knife_01", "apple_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.8.sub.1",
+            "template": "bisect_object_through_core",
+            "duration": 1.0,
+            "start_time": 61.5,
+            "end_time": 62.5,
+            "participants": ["paring_knife_01", "apple_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.8.sub.2",
+            "template": "repeat_bisection_on_pieces",
+            "duration": 1.0,
+            "start_time": 62.5,
+            "end_time": 63.5,
+            "participants": ["paring_knife_01", "apple_quarter_a_01", "apple_quarter_b_01", "apple_quarter_c_01", "apple_quarter_d_01"],
+            "changes": [
+              {"object": "apple_quarter_a_01", "attribute": "oxidation", "old": "none", "new": "light"},
+              {"object": "apple_quarter_b_01", "attribute": "oxidation", "old": "none", "new": "light"},
+              {"object": "apple_quarter_c_01", "attribute": "oxidation", "old": "none", "new": "light"},
+              {"object": "apple_quarter_d_01", "attribute": "oxidation", "old": "none", "new": "light"}
+            ]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.9",
+        "template": "remove_core_from_quarters",
+        "duration": 30,
+        "start_time": 64.0,
+        "end_time": 94.0,
+        "temporal_type": "cyclical",
+        "kinematic_trajectory": "straight",
+        "action_category": "TOOL_USAGE",
+        "cycle_duration": 7.5,
+        "repetitions": 4,
+        "participants": ["right_hand_01", "paring_knife_01", "apple_quarter_a_01", "apple_quarter_b_01", "apple_quarter_c_01", "apple_quarter_d_01", "apple_core_a_01", "apple_core_b_01", "apple_core_c_01", "apple_core_d_01", "apple_seeds_01"],
+        "assembly_object_ref": ["apple_core_a_01", "apple_core_b_01", "apple_core_c_01", "apple_core_d_01", "apple_seeds_01"],
+        "operation_refs": ["compound", "compound", "compound", "compound", "add_object", "contact", "emit_event", "emit_event"],
+        "preconditions": [
+          {"object": "apple_quarter_a_01", "attribute": "core_present", "op": "eq", "value": true}
+        ],
+        "changes_per_cycle": [
+          {"object": "apple_quarter", "attribute": "core_present", "old": true, "new": false}
+        ],
+        "changes_total": [
+          {"object": "apple_quarter_a_01", "attribute": "core_present", "old": true, "new": false},
+          {"object": "apple_quarter_b_01", "attribute": "core_present", "old": true, "new": false},
+          {"object": "apple_quarter_c_01", "attribute": "core_present", "old": true, "new": false},
+          {"object": "apple_quarter_d_01", "attribute": "core_present", "old": true, "new": false}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_tactile", "qualia": ["fibrous", "pale", "translucent"], "source": ["apple_core_a_01"]},
+          {"type": "sensory_visual", "qualia": ["three_dark_brown_seeds_in_papery_pockets"], "source": ["apple_seeds_01", "apple_core_a_01"]}
+        ],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.9.sub.0",
+            "template": "core_removal_cycle",
+            "duration": 30.0,
+            "start_time": 64.0,
+            "end_time": 94.0,
+            "temporal_type": "cyclical",
+            "cycle_duration": 7.5,
+            "repetitions": 4,
+            "participants": ["right_hand_01", "paring_knife_01", "apple_quarter_a_01", "apple_quarter_b_01", "apple_quarter_c_01", "apple_quarter_d_01"],
+            "sub_actions": [
+              {
+                "instance_id": "mem3d_peeling_apple_demo.actions.9.sub.0.0",
+                "template": "place_and_stabilize_piece",
+                "duration": 1.0,
+                "participants": ["left_hand_01", "apple_quarter"]
+              },
+              {
+                "instance_id": "mem3d_peeling_apple_demo.actions.9.sub.0.1",
+                "template": "identify_internal_feature",
+                "duration": 1.0,
+                "participants": ["eyes_01", "apple_quarter"]
+              },
+              {
+                "instance_id": "mem3d_peeling_apple_demo.actions.9.sub.0.2",
+                "template": "insert_blade_along_boundary",
+                "duration": 2.0,
+                "participants": ["right_hand_01", "paring_knife_01", "apple_quarter"]
+              },
+              {
+                "instance_id": "mem3d_peeling_apple_demo.actions.9.sub.0.3",
+                "template": "cut_around_core",
+                "duration": 2.0,
+                "participants": ["right_hand_01", "paring_knife_01", "apple_quarter"]
+              },
+              {
+                "instance_id": "mem3d_peeling_apple_demo.actions.9.sub.0.4",
+                "template": "extract_core",
+                "duration": 1.0,
+                "participants": ["right_hand_01", "apple_quarter", "apple_core"]
+              },
+              {
+                "instance_id": "mem3d_peeling_apple_demo.actions.9.sub.0.5",
+                "template": "set_removed_part_aside",
+                "duration": 0.5,
+                "participants": ["right_hand_01", "apple_core"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.10",
+        "template": "flick_object_to_receptacle",
+        "duration": 2,
+        "start_time": 94.0,
+        "end_time": 96.0,
+        "temporal_type": "sequential",
+        "kinematic_trajectory": "arc",
+        "action_category": "MANIPULATION",
+        "participants": ["person_01", "right_hand_01", "apple_seeds_01", "sink_01"],
+        "assembly_object_ref": ["apple_seeds_01", "sink_01"],
+        "operation_refs": ["move", "attach", "contact", "detach", "release", "set_transform", "attach", "contact", "move", "emit_event"],
+        "preconditions": [
+          {"object": "apple_seeds_01", "attribute": "position", "op": "eq", "value": "on_cutting_board_01"}
+        ],
+        "changes": [
+          {"object": "apple_seeds_01", "attribute": "position", "old": "on_cutting_board_01", "new": "in_sink_01"}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_auditory", "qualia": ["click_against_steel"], "source": ["apple_seeds_01", "sink_01"]}
+        ],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.10.sub.0",
+            "template": "gather_small_items",
+            "duration": 0.5,
+            "start_time": 94.0,
+            "end_time": 94.5,
+            "participants": ["right_hand_01", "apple_seeds_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.10.sub.1",
+            "template": "prepare_flicking_grip",
+            "duration": 0.5,
+            "start_time": 94.5,
+            "end_time": 95.0,
+            "participants": ["right_hand_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.10.sub.2",
+            "template": "launch_object_by_flicking",
+            "duration": 0.3,
+            "start_time": 95.0,
+            "end_time": 95.3,
+            "participants": ["right_hand_01", "apple_seeds_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.10.sub.3",
+            "template": "object_travels_and_impacts_surface",
+            "duration": 0.7,
+            "start_time": 95.3,
+            "end_time": 96.0,
+            "participants": ["apple_seeds_01", "sink_01"],
+            "changes": [
+              {"object": "apple_seeds_01", "attribute": "position", "old": "air", "new": "in_sink_01"}
+            ]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.11",
+        "template": "transfer_pieces_to_container",
+        "duration": 5,
+        "start_time": 96.0,
+        "end_time": 101.0,
+        "temporal_type": "sequential",
+        "kinematic_trajectory": "arc",
+        "action_category": "MANIPULATION",
+        "participants": ["person_01", "left_hand_01", "apple_quarter_a_01", "apple_quarter_b_01", "apple_quarter_c_01", "apple_quarter_d_01", "bowl_destination_01"],
+        "assembly_object_ref": ["bowl_destination_01", "apple_quarter_a_01", "apple_quarter_b_01", "apple_quarter_c_01", "apple_quarter_d_01"],
+        "operation_refs": ["add_object", "compound", "compound", "compound", "compound"],
+        "preconditions": [
+          {"object": "apple_quarter_a_01", "attribute": "position", "op": "eq", "value": "on_cutting_board_01"}
+        ],
+        "changes": [
+          {"object": "apple_quarter_a_01", "attribute": "position", "old": "on_cutting_board_01", "new": "in_bowl_destination_01"},
+          {"object": "apple_quarter_b_01", "attribute": "position", "old": "on_cutting_board_01", "new": "in_bowl_destination_01"},
+          {"object": "apple_quarter_c_01", "attribute": "position", "old": "on_cutting_board_01", "new": "in_bowl_destination_01"},
+          {"object": "apple_quarter_d_01", "attribute": "position", "old": "on_cutting_board_01", "new": "in_bowl_destination_01"}
+        ],
+        "sensory_effects": [],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.11.sub.0",
+            "template": "create_destination_container",
+            "duration": 0.5,
+            "start_time": 96.0,
+            "end_time": 96.5,
+            "participants": ["person_01", "bowl_destination_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.11.sub.1",
+            "template": "transfer_piece",
+            "duration": 4.0,
+            "start_time": 96.5,
+            "end_time": 100.5,
+            "temporal_type": "cyclical",
+            "cycle_duration": 1.0,
+            "repetitions": 4,
+            "participants": ["left_hand_01", "apple_quarter_a_01", "apple_quarter_b_01", "apple_quarter_c_01", "apple_quarter_d_01", "bowl_destination_01"]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.12",
+        "template": "dispose_waste_to_receptacle",
+        "duration": 2,
+        "start_time": 101.0,
+        "end_time": 103.0,
+        "temporal_type": "sequential",
+        "kinematic_trajectory": "arc",
+        "action_category": "MANIPULATION",
+        "participants": ["person_01", "left_hand_01", "peel_strip_01", "compost_crock_01"],
+        "assembly_object_ref": ["peel_strip_01", "compost_crock_01"],
+        "operation_refs": ["move", "attach", "contact", "release", "move", "detach", "release", "set_transform", "attach", "contact", "move", "change_properties", "wait"],
+        "preconditions": [
+          {"object": "peel_strip_01", "attribute": "position", "op": "eq", "value": "on_cutting_board_01"}
+        ],
+        "changes": [
+          {"object": "peel_strip_01", "attribute": "position", "old": "on_cutting_board_01", "new": "in_compost_crock_01"},
+          {"object": "peel_strip_01", "attribute": "color", "old": "red_brushed", "new": "browning_at_edges"},
+          {"object": "peel_strip_01", "attribute": "oxidation", "old": "none", "new": "light"}
+        ],
+        "sensory_effects": [],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.12.sub.0",
+            "template": "gather_discarded_layer",
+            "duration": 0.5,
+            "start_time": 101.0,
+            "end_time": 101.5,
+            "participants": ["left_hand_01", "peel_strip_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.12.sub.1",
+            "template": "transfer_waste_to_receptacle",
+            "duration": 0.7,
+            "start_time": 101.5,
+            "end_time": 102.2,
+            "participants": ["left_hand_01", "peel_strip_01", "compost_crock_01"]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.12.sub.2",
+            "template": "release_and_let_settle",
+            "duration": 1.3,
+            "start_time": 102.2,
+            "end_time": 103.5,
+            "participants": ["peel_strip_01", "compost_crock_01"],
+            "changes": [
+              {"object": "peel_strip_01", "attribute": "color", "old": "red_brushed", "new": "browning_at_edges"},
+              {"object": "peel_strip_01", "attribute": "oxidation", "old": "none", "new": "light"}
+            ]
+          }
+        ]
+      },
+      {
+        "instance_id": "mem3d_peeling_apple_demo.actions.13",
+        "template": "lingering_sensory_residue",
+        "duration": 3600,
+        "start_time": 103.0,
+        "end_time": 3703.0,
+        "temporal_type": "sequential",
+        "kinematic_trajectory": "none",
+        "action_category": "PERCEPTION",
+        "participants": ["person_01", "left_hand_01", "right_hand_01"],
+        "assembly_object_ref": ["left_hand_01", "right_hand_01"],
+        "operation_refs": ["change_properties", "change_properties", "wait", "emit_event"],
+        "preconditions": [],
+        "changes": [
+          {"object": "left_hand_01", "attribute": "volatiles", "old": "none", "new": "apple_aroma"},
+          {"object": "left_hand_01", "attribute": "residue", "old": "none", "new": "tacky_apple_juice_residue"},
+          {"object": "right_hand_01", "attribute": "volatiles", "old": "none", "new": "apple_aroma"},
+          {"object": "right_hand_01", "attribute": "residue", "old": "none", "new": "tacky_apple_juice_residue"}
+        ],
+        "sensory_effects": [
+          {"type": "sensory_olfactory", "qualia": ["apple_smell_persistent"], "source": ["left_hand_01", "right_hand_01"], "time_scale": "hours"}
+        ],
+        "sub_actions": [
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.13.sub.0",
+            "template": "volatile_retention_in_skin_oils",
+            "duration": 0.5,
+            "start_time": 103.0,
+            "end_time": 103.5,
+            "participants": ["left_hand_01", "right_hand_01"],
+            "changes": [
+              {"object": "left_hand_01", "attribute": "volatiles", "old": "none", "new": "apple_aroma"},
+              {"object": "right_hand_01", "attribute": "volatiles", "old": "none", "new": "apple_aroma"}
+            ]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.13.sub.1",
+            "template": "partial_removal_by_washing",
+            "duration": 60.0,
+            "start_time": 103.5,
+            "end_time": 163.5,
+            "participants": ["left_hand_01", "right_hand_01"],
+            "changes": [
+              {"object": "left_hand_01", "attribute": "residue", "old": "none", "new": "tacky_apple_juice_residue"},
+              {"object": "right_hand_01", "attribute": "residue", "old": "none", "new": "tacky_apple_juice_residue"}
+            ]
+          },
+          {
+            "instance_id": "mem3d_peeling_apple_demo.actions.13.sub.2",
+            "template": "olfactory_adaptation_and_intermittent_detection",
+            "duration": 3600.0,
+            "start_time": 103.0,
+            "end_time": 3703.0,
+            "participants": ["person_01", "left_hand_01", "right_hand_01"]
+          }
+        ]
+      }
+    ]
+  },
+
+  "goal_state": [
+    {
+      "object": "apple_quarter_a_01",
+      "attribute": "skin_present",
+      "op": "eq",
+      "value": false
+    },
+    {
+      "object": "apple_quarter_a_01",
+      "attribute": "core_present",
+      "op": "eq",
+      "value": false
+    },
+    {
+      "object": "apple_quarter_a_01",
+      "attribute": "position",
+      "op": "eq",
+      "value": "in_bowl_destination_01"
+    },
+    {
+      "object": "bowl_destination_01",
+      "attribute": "state",
+      "op": "eq",
+      "value": "containing_quarters"
+    },
+    {
+      "object": "peel_strip_01",
+      "attribute": "position",
+      "op": "eq",
+      "value": "in_compost_crock_01"
+    },
+    {
+      "object": "apple_seeds_01",
+      "attribute": "position",
+      "op": "eq",
+      "value": "in_sink_01"
+    },
+    {
+      "object": "left_hand_01",
+      "attribute": "volatiles",
+      "op": "eq",
+      "value": "apple_aroma"
+    },
+    {
+      "object": "right_hand_01",
+      "attribute": "volatiles",
+      "op": "eq",
+      "value": "apple_aroma"
+    }
+  ],
+
+  "relation_maps": {
+    "frame_count": 14,
+    "files": [
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0000.json",
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0001.json",
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0002.json",
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0003.json",
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0004.json",
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0005.json",
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0006.json",
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0007.json",
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0008.json",
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0009.json",
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0010.json",
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0011.json",
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0012.json",
+      "memories/relation_maps/mem3d_peeling_apple_demo/frame_0013.json"
+    ],
+    "final_frame_links": [
+      {"predicate": "on", "source": "kitchen_counter_01", "target": "floor", "verified": true},
+      {"predicate": "on", "source": "bowl_source_01", "target": "kitchen_counter_01", "verified": true},
+      {"predicate": "on", "source": "bowl_destination_01", "target": "kitchen_counter_01", "verified": true},
+      {"predicate": "on", "source": "cutting_board_01", "target": "kitchen_counter_01", "verified": true},
+      {"predicate": "on", "source": "paring_knife_01", "target": "kitchen_counter_01", "verified": true},
+      {"predicate": "on", "source": "compost_crock_01", "target": "kitchen_counter_01", "verified": true},
+      {"predicate": "in", "source": "apple_quarter_a_01", "target": "bowl_destination_01", "verified": true},
+      {"predicate": "in", "source": "apple_quarter_b_01", "target": "bowl_destination_01", "verified": true},
+      {"predicate": "in", "source": "apple_quarter_c_01", "target": "bowl_destination_01", "verified": true},
+      {"predicate": "in", "source": "apple_quarter_d_01", "target": "bowl_destination_01", "verified": true},
+      {"predicate": "in", "source": "peel_strip_01", "target": "compost_crock_01", "verified": true},
+      {"predicate": "in", "source": "apple_seeds_01", "target": "sink_01", "verified": true},
+      {"predicate": "on", "source": "apple_core_a_01", "target": "cutting_board_01", "verified": true},
+      {"predicate": "on", "source": "apple_core_b_01", "target": "cutting_board_01", "verified": true},
+      {"predicate": "on", "source": "apple_core_c_01", "target": "cutting_board_01", "verified": true},
+      {"predicate": "on", "source": "apple_core_d_01", "target": "cutting_board_01", "verified": true},
+      {"predicate": "attached", "source": "left_thumb_01", "target": "left_hand_01", "verified": true},
+      {"predicate": "attached", "source": "left_hand_01", "target": "person_01", "verified": true},
+      {"predicate": "attached", "source": "right_hand_01", "target": "person_01", "verified": true},
+      {"predicate": "attached", "source": "eyes_01", "target": "person_01", "verified": true},
+      {"predicate": "contact", "source": "left_hand_01", "target": "juice_on_hand_01", "verified": true},
+      {"predicate": "contact", "source": "apple_quarter_a_01", "target": "bowl_destination_01", "verified": true},
+      {"predicate": "contact", "source": "apple_seeds_01", "target": "sink_01", "verified": true},
+      {"predicate": "contact", "source": "peel_strip_01", "target": "compost_crock_01", "verified": true}
+    ],
+    "summary": {
+      "total_links": 24,
+      "unique_relations": ["on", "in", "attached", "contact"],
+      "unique_participants": ["kitchen_counter_01", "floor", "bowl_source_01", "bowl_destination_01", "cutting_board_01", "paring_knife_01", "compost_crock_01", "apple_quarter_a_01", "apple_quarter_b_01", "apple_quarter_c_01", "apple_quarter_d_01", "peel_strip_01", "apple_seeds_01", "sink_01", "apple_core_a_01", "apple_core_b_01", "apple_core_c_01", "apple_core_d_01", "left_thumb_01", "left_hand_01", "person_01", "right_hand_01", "eyes_01", "juice_on_hand_01"]
+    }
+  }
+}

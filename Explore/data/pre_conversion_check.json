@@ -1,0 +1,812 @@
+{
+  "total_memories": 98,
+  "total_missing_action_templates": 49,
+  "total_missing_object_templates": 0,
+  "total_unresolved_goal_objects": 0,
+  "total_alias_issues": 7,
+  "reports": [
+    {
+      "memory_id": "mem_000000",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000001",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000002",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000003",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000004",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000005",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000006",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000007",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000008",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000009",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000010",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000011",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000012",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000013",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000014",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000015",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000016",
+      "missing_action_templates": [
+        "object_hissing_and_sputtering"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000017",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000018",
+      "missing_action_templates": [
+        "fluid_becomes_cloudy",
+        "particles_and_biofilm_detach",
+        "turbulent_fluid_mixes_particles"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000019",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000020",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000021",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000022",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000023",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000024",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000025",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000026",
+      "missing_action_templates": [
+        "carry_to_waste_container",
+        "verify_proportions"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000027",
+      "missing_action_templates": [
+        "pass_material_around_support"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000028",
+      "missing_action_templates": [
+        "fixate_on_cut_edge",
+        "monitor_object_position_visually",
+        "pull_fingertips_against_surface",
+        "push_thumb_against_surface",
+        "return_hand_to_holding_posture"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000029",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000030",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000031",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000032",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000033",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000034",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000035",
+      "missing_action_templates": [
+        "descend_arm_into_material",
+        "secure_thumbs_over_handles"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000036",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000037",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000038",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000039",
+      "missing_action_templates": [
+        "downward_acceleration_of_liquid_drops",
+        "gravity_collects_liquid_in_container",
+        "liquid_flows_along_surface",
+        "liquid_patch_spreads_on_surface",
+        "liquid_seeps_between_pieces",
+        "more_volatiles_disperse",
+        "patch_boundary_expands",
+        "scent_intensifies",
+        "solute_film_concentrates",
+        "sticky_sugar_residue_accumulates",
+        "water_evaporates_from_liquid"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000040",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000041",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000042",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000043",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": [
+        {
+          "type": "duplicate_alias_across_objects",
+          "alias": "sod",
+          "object_ids": [
+            "cut_material_01",
+            "ground_cover_01"
+          ]
+        },
+        {
+          "type": "alias_matches_object_template",
+          "alias": "grass",
+          "object_ids": [
+            "ground_cover_01"
+          ]
+        },
+        {
+          "type": "alias_matches_object_template",
+          "alias": "substrate",
+          "object_ids": [
+            "soil_01"
+          ]
+        },
+        {
+          "type": "alias_matches_object_template",
+          "alias": "dirt",
+          "object_ids": [
+            "soil_01"
+          ]
+        },
+        {
+          "type": "alias_matches_object_template",
+          "alias": "wedge",
+          "object_ids": [
+            "cut_material_01"
+          ]
+        },
+        {
+          "type": "alias_matches_object_template",
+          "alias": "scent",
+          "object_ids": [
+            "odor_01"
+          ]
+        },
+        {
+          "type": "alias_matches_object_template",
+          "alias": "porch_railing",
+          "object_ids": [
+            "support_01"
+          ]
+        }
+      ]
+    },
+    {
+      "memory_id": "mem_000044",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000045",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000046",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000047",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000048",
+      "missing_action_templates": [
+        "surface_moisture_contacts_hot_oil"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000049",
+      "missing_action_templates": [
+        "lift_cloth_from_water"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000050",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000051",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000052",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000053",
+      "missing_action_templates": [
+        "pour_slower_liquid_stream",
+        "tilt_container_less_steeply"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000054",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000055",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000056",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000057",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000058",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000059",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000060",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000061",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000062",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000063",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000064",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000065",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000066",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000067",
+      "missing_action_templates": [
+        "verify_caret_position"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000068",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000069",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000070",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000071",
+      "missing_action_templates": [
+        "release_tool",
+        "tilt_bucket_over_drain"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000072",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000073",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000074",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000075",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000076",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000077",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000078",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000079",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000080",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000081",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000082",
+      "missing_action_templates": [
+        "confirm_start_measurement",
+        "drop_object_on_surface",
+        "glance_at_surrounding_surface",
+        "hear_auditory_cue",
+        "hold_body_part_still",
+        "observe_device_on_body",
+        "read_instruction_prompt",
+        "sensor_thermal_equilibration",
+        "stop_in_front_of_target",
+        "take_multiple_steps",
+        "watch_display_changes"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000083",
+      "missing_action_templates": [
+        "fixate_on_menu"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000084",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000085",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000086",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000087",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000088",
+      "missing_action_templates": [
+        "air_flows_in"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000089",
+      "missing_action_templates": [
+        "heat_flux_from_hand_to_surface",
+        "move_hand_to_side",
+        "remove_hand_from_surface"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000090",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000091",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000092",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000093",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000094",
+      "missing_action_templates": [
+        "lung_elastic_recoil"
+      ],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000095",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000096",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    },
+    {
+      "memory_id": "mem_000097",
+      "missing_action_templates": [],
+      "missing_object_templates": [],
+      "unresolved_goal_objects": [],
+      "alias_issues": []
+    }
+  ]
+}

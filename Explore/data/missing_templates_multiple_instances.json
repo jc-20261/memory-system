@@ -1,0 +1,16 @@
+[
+  {
+    "action_template": "carry_to_waste_container",
+    "memory_ids": [
+      "mem_000026"
+    ],
+    "instance_count": 3
+  },
+  {
+    "action_template": "verify_proportions",
+    "memory_ids": [
+      "mem_000026"
+    ],
+    "instance_count": 2
+  }
+]

@@ -1,0 +1,1163 @@
+--- state_annotated_sketch ---
+## Annotation legend
+
+- **P** = preconditions that must hold before the action starts.
+- **Δ** = resulting state/attribute changes.
+- **Δcyc** = per-cycle changes for cyclical/repeated actions.
+- **Δtot** = cumulative/total changes for cyclical/repeated actions.
+- **S** = sensory perception changes for the protagonist, each with `src=`.
+- **N** = directly linked natural/material process and attribute-aspect changes.
+- **Cond** = conditional_changes / variable effects.
+- Aspect notation: `object.aspect.attribute`, e.g. `apple.surface.temperature`, `apple.flesh.exposed.color`, `knife.edge.depth`, `hand.palm.residue`.
+
+## Global preconditions inherited unless overridden
+
+Actor: awake, conscious, two functional hands, intact vision, touch, proprioception, olfaction, audition, grip strength, motor control, safe cutting intent.  
+Environment: kitchen counter with bowl, cold Honeycrisp apple, running-water tap, shirt/fabric, stable cutting board, paring knife, sink, clean bowl, compost crock.  
+Object: intact Honeycrisp apple, cold from refrigerator, dense/turgid, waxy skin, stem/calyx present, no rot.  
+Tool: paring knife, short blade, handle worn pale at rivets, sharp enough to cut apple skin.  
+Safety: no interruption, no slippage, blade controlled, fingers curled back during pinning.
+
+---
+
+# LANE H — Annotated human actions
+
+## H1. `[T0, seq, ~2 s]` general: Retrieve object from container | alt: Take apple from bowl.
+
+**P:** Apple in bowl; bowl open/reachable; actor knows/estimates location; hand free; bowl not covered; apple not stuck; sufficient grip strength.  
+**Δ:** `bowl.contains(apple)` false → true after removal; `apple.location` bowl → hand/out of bowl; hand/arm posture changes; `apple.grasp_contact` true; apple orientation may rotate.  
+**S:** Tactile cold, waxy/tight skin, weight/density `src=apple.surface.temperature; apple.surface.texture; apple.mass.density`.  
+**N:** N1 initial cold hydrated state; heat transfer begins from hand to apple; turgor pressure unchanged.  
+**Cond:** If apple is slippery, grip force increases; if bowl is deep, reach path changes.
+
+- **H1.1 `[T0, seq, ~0.3 s]` Perceive target location**  
+  **P:** Attention directed; target visible/known; lighting adequate.  
+  **Δ:** Gaze/fixation on apple; internal location estimate; motor plan begins.  
+  **S:** Visual apple in bowl `src=apple.location; bowl`.  
+  **N:** none.
+
+- **H1.2 `[T0+0.3, seq, ~0.4 s]` Reach toward object**  
+  **P:** Target location known; arm free; path clear.  
+  **Δ:** Hand/arm position moves toward bowl; joint angles change; distance to apple decreases.  
+  **S:** Proprioceptive/visual hand movement `src=proprioceptors; eyes`.  
+  **N:** none.
+
+- **H1.3 `[T0+0.7, seq, ~0.3 s]` Contact object**  
+  **P:** Hand near apple; apple surface accessible.  
+  **Δ:** `hand.skin` contacts `apple.surface`; contact area established; heat conducts from apple to hand.  
+  **S:** First tactile cold/waxy contact `src=apple.surface`.  
+  **N:** N1 thermal equilibration onset.
+
+- **H1.4 `[T0+1.0, seq, ~0.4 s]` Grasp object**  
+  **P:** Contact established; apple size within grip span; friction sufficient.  
+  **Δ:** Fingers flex; pressure on `apple.surface`; `apple.grasp_contact` stable; apple may rotate slightly.  
+  **S:** Pressure, texture, cold `src=apple.surface; hand mechanoreceptors`.  
+  **N:** N1.
+
+- **H1.5 `[T0+1.4, seq, ~0.4 s]` Lift object**  
+  **P:** Grasp stable; apple weight within strength; no obstruction.  
+  **Δ:** `apple.position.z` increases; support from bowl removed; arm load increases; orientation may shift.  
+  **S:** Weight/density, cold, waxy `src=apple.mass.density; apple.surface`.  
+  **N:** N1 turgor/dense mass.
+
+- **H1.6 `[T0+1.8, seq, ~0.2 s]` Transport object out of container**  
+  **P:** Apple lifted; path clear; bowl rim not obstructing.  
+  **Δ:** Apple exits bowl; `bowl.contains(apple)=false`; apple moves to workspace/hand.  
+  **S:** Kinesthetic movement; continued tactile properties `src=hand; apple`.  
+  **N:** none.
+
+- **H1.s `[T0+0.2, parallel, ~2 s]` Sense object properties during grasp**  
+  **P:** Grasp contact; attention.  
+  **Δ:** Internal sensory estimate of temperature, texture, weight.  
+  **S:** Cold, tight/waxy, heavier than looks/dense `src=apple.surface.temperature; apple.surface.texture; apple.mass.density`.  
+  **N:** N1.
+
+  - **H1.s1 `[T0+0.2, parallel, ~0.5 s]` Sense temperature**  
+    **P:** Contact; thermoreceptors functional.  
+    **Δ:** Thermal afferent signal; percept of cold.  
+    **S:** Cold `src=apple.surface.temperature`.  
+    **N:** N1.1.
+
+  - **H1.s2 `[T0+0.3, parallel, ~0.5 s]` Sense surface texture**  
+    **P:** Contact; tactile receptors.  
+    **Δ:** Texture percept; friction estimate.  
+    **S:** Tight, waxy `src=apple.surface.texture`.  
+    **N:** N1.3.
+
+  - **H1.s3 `[T0+0.7, parallel, ~1.3 s]` Sense weight/force by proprioception**  
+    **P:** Lift/grasp; proprioceptors.  
+    **Δ:** Load estimate; percept of density.  
+    **S:** Heavier than looks, dense with water `src=apple.mass.density; proprioception`.  
+    **N:** N1.2.
+
+---
+
+## H2. `[T0+2, seq, ~8 s]` general: Wash object under running water | alt: Turn apple under tap; run palm over entire surface.
+
+**P:** Apple held; tap accessible; water available; sink functional; hand can rotate apple.  
+**Δ:** `apple.surface.wetness` increases; liquid film forms; surface contaminants lift; water beads/rolls off waxy skin; apple temp equilibrates slightly toward water temp.  
+**S:** Water sound/temp; tactile dimple/crater/scar; visual water beading.  
+**N:** N2.
+
+- **H2.1 `[T0+2, seq, ~0.5 s]` Transport object to wash location**  
+  **P:** Apple held; sink/tap reachable.  
+  **Δ:** Apple position → under tap; hand/arm posture changes.  
+  **S:** Movement, cold `src=hand; apple`.  
+  **N:** none.
+
+- **H2.2 `[T0+2.5, seq, ~0.5 s]` Activate water flow**  
+  **P:** Faucet off; other hand free or can reach tap.  
+  **Δ:** `water.flow` off → on; pressure/sound; sink basin wets.  
+  **S:** Water sound, cool temp if contact `src=water; tap`.  
+  **N:** N2.1 wetting onset.
+
+- **H2.3 `[T0+3, seq, ~1 s]` Position object under stream**  
+  **P:** Water flowing; apple held.  
+  **Δ:** `apple.surface.wetting` begins; water contacts skin; orientation under stream.  
+  **S:** Water pressure/temp on hand/apple; visual stream `src=water; apple.surface`.  
+  **N:** N2.1.
+
+- **H2.4 `[T0+4, cyclical, ~5 s]` Rotate object under flowing water while manually scanning**  
+  **P:** Water flowing; apple held; support hand can rotate; attention.  
+  **Δcyc:** New surface exposed to water each rotation; water films; contaminants lift; fingers scan features; droplets coalesce/runoff.  
+  **Δtot:** Entire `apple.surface.wetness` high; surface cleaned; stem dimple/crater and scar mapped; water beads/roll off.  
+  **S:** Tactile shallow dimple where stem sits in small crater; faint raised line scar; water beads/roll off; cold/wet `src=apple.surface.features; water/apple interface`.  
+  **N:** N2.
+
+  - **H2.4.1 `[T0+4, cyclical, ~5 s]` Rotate object with support hand**  
+    **P:** Grip; wrist mobility.  
+    **Δcyc:** `apple.orientation` changes; friction; possible slip if wet.  
+    **Δtot:** Full surface scanned.  
+    **S:** Proprioception of rotation `src=hand/arm`.  
+    **N:** none.
+
+  - **H2.4.2 `[T0+4, parallel/cyclical, ~5 s]` Fluid-surface interaction during rotation**  
+    **P:** Water flow; waxy surface.  
+    **Δcyc:** Wetting, droplet coalescence, runoff.  
+    **Δtot:** Water beads and rolls off immediately.  
+    **S:** Visual beading/rolloff `src=apple.surface; water`.  
+    **N:** N2.
+
+  - **H2.4.3 `[T0+4, parallel/cyclical, ~5 s]` Scan entire surface by touch**  
+    **P:** Fingers free; surface wet.  
+    **Δ:** Tactile exploration; internal surface map; feature detection.  
+    **S:** Dimple, crater, scar line `src=apple.surface.features`.  
+    **N:** none.
+
+- **H2.5 `[T0+9, seq, ~1 s]` Complete rinse and remove from flow**  
+  **P:** Rinse done; water on.  
+  **Δ:** Apple leaves water stream; `apple.surface.wetness` remains high; dripping begins.  
+  **S:** Water dripping, cold/wet `src=apple; water`.  
+  **N:** N2.4 evaporation/cavity retention begins.
+
+- **H2.s `[T0+2, parallel, ~8 s]` Sense surface features during washing**  
+  **P:** Contact; attention.  
+  **Δ:** Percept of stem dimple/crater and scar.  
+  **S:** Shallow dimple/crater; faint raised scar line `src=apple.surface.features`.  
+  **N:** none.
+
+  - **H2.s1 `[T0+8, parallel, ~1 s]` Probe feature with fingers**  
+    **P:** Finger access; wet surface.  
+    **Δ:** Tactile contact with feature; shape encoded.  
+    **S:** Dimple, crater, scar `src=apple.surface.features`.  
+    **N:** none.
+
+  - **H2.s2 `[T0+8.5, parallel, ~1 s]` Detect surface irregularity**  
+    **P:** Tactile signals.  
+    **Δ:** Percept of irregularity; classification as stem crater/scar.  
+    **S:** Raised line/dimple `src=apple.surface.features`.  
+    **N:** none.
+
+---
+
+## H3. `[T0+10, seq, ~4 s]` general: Dry object by wiping with fabric | alt: Dry apple on shirt.
+
+**P:** Apple wet; shirt/fabric accessible; hand can wipe.  
+**Δ:** `apple.surface.wetness` decreases; water transfers to shirt; `apple.surface.optics` glossy → matte red; `shirt.wetness` increases.  
+**S:** Tactile drying; glossy → dull matte red; fabric texture; cold.  
+**N:** N3.
+
+- **H3.1 `[T0+10, seq, ~0.5 s]` Bring object to absorbent surface**  
+  **P:** Shirt/fabric accessible; apple held.  
+  **Δ:** Apple position near shirt; contact imminent.  
+  **S:** Visual/kinesthetic `src=hand; apple`.  
+  **N:** none.
+
+- **H3.2 `[T0+10.5, seq, ~2.5 s]` Rub object against absorbent material**  
+  **P:** Contact with fabric; pressure applied.  
+  **Δcyc:** Water transfers from apple surface to fabric; fabric wets; `apple.surface.wetness` drops.  
+  **Δtot:** Surface liquid largely removed; optical change begins.  
+  **S:** Friction, damp fabric, surface change `src=apple.surface; fabric`.  
+  **N:** N3.
+
+  - **H3.2.1 `[T0+10.5, cyclical, ~2.5 s]` Cyclical rubbing/water transfer to fabric**  
+    **P:** Fabric absorbent; contact.  
+    **Δcyc:** Capillary wicking; water film reduced; fabric saturation increases.  
+    **Δtot:** `apple.surface.wetness` low; `fabric.wetness` high.  
+    **S:** Tactile damp-to-dry transition `src=apple.surface; fabric`.  
+    **N:** N3.1–N3.2.
+
+- **H3.3 `[T0+13, seq, ~0.7 s]` Inspect object for residual liquid**  
+  **P:** Visual/tactile attention.  
+  **Δ:** Percept of residual wetness; decision to continue/stop.  
+  **S:** Glossy vs matte `src=apple.surface.optics`.  
+  **N:** N3.3.
+
+- **H3.4 `[T0+13.7, seq, ~0.3 s]` Release absorbent material**  
+  **P:** Drying complete.  
+  **Δ:** Apple leaves fabric; shirt returns; hand/grip changes.  
+  **S:** Release `src=proprioception`.  
+  **N:** none.
+
+- **H3.s `[T0+10, parallel, ~4 s]` Surface drying/optical change**  
+  **P:** Water film; evaporation/wicking.  
+  **Δ:** `apple.surface.optics` glossy → matte red; microtexture exposed; water content reduced.  
+  **S:** Visual dull matte red `src=apple.surface.optics`.  
+  **N:** N3.
+
+---
+
+## H4. `[T0+14, seq, ~2 s]` general: Position and stabilize object on work surface | alt: Set apple on cutting board, stem-side up; press down.
+
+**P:** Apple dry; cutting board stable; stem-side up orientation possible.  
+**Δ:** `apple.location` → cutting board; `apple.orientation` stem-side up; contact with board; static friction; `apple.linear_velocity=0`; board bears load.  
+**S:** Visual/tactile orientation; no rolling.  
+**N:** static friction/contact.
+
+- **H4.1 `[T0+14, seq, ~0.5 s]` Move object over support surface**  
+  **P:** Board reachable.  
+  **Δ:** Apple position over board.  
+  **S:** Kinesthetic `src=proprioception`.  
+  **N:** none.
+
+- **H4.2 `[T0+14.5, seq, ~0.5 s]` Orient object for task**  
+  **P:** Can rotate apple.  
+  **Δ:** Stem-side up orientation.  
+  **S:** Tactile/visual orientation `src=apple; hand`.  
+  **N:** none.
+
+- **H4.3 `[T0+15, seq, ~0.5 s]` Place object on surface**  
+  **P:** Over board.  
+  **Δ:** Apple contacts board; board load; apple stationary.  
+  **S:** Touch `src=apple; board`.  
+  **N:** H4.s1.
+
+- **H4.4 `[T0+15.5, seq, ~0.5 s]` Stabilize object by pressing**  
+  **P:** Contact; board stable.  
+  **Δ:** Normal force increases; friction; apple stationary; slight deformation possible.  
+  **S:** Pressure, no rolling `src=apple; board; hand`.  
+  **N:** H4.s1.
+
+- **H4.s `[T0+14, parallel, ~2 s]` Object remains stationary | alt: Apple does not roll.**  
+  **P:** Apple shape/friction; board level.  
+  **Δ:** `apple.linear_velocity=0`; `apple.angular_velocity=0`.  
+  **S:** No rolling `src=apple; board`.  
+  **N:** static friction.
+
+  - **H4.s1 `[T0+15, state, ~2 s]` Static friction/contact stabilizes object**  
+    **P:** Contact; friction coefficient sufficient.  
+    **Δ:** Friction force balances gravity/torque.  
+    **S:** none.  
+    **N:** static friction.
+
+---
+
+## H5. `[T0+16, seq, ~2 s]` general: Prepare and grip cutting tool with safe object hold | alt: Hold paring knife in right hand, thumb braced on bolster; left hand pins apple, fingertips curled back.
+
+**P:** Knife accessible; right hand free; left hand can pin apple; safe posture; blade sharp.  
+**Δ:** Right hand grips knife; thumb braced on bolster; left hand pins apple; fingertips curled back; `knife.control` high; body posture safe.  
+**S:** Handle worn pale at rivets; bolster brace; grip readiness; apple pinned.  
+**N:** none.
+
+- **H5.1 `[T0+16, seq, ~0.5 s]` Reach toward tool**  
+  **P:** Knife location known; right hand free.  
+  **Δ:** Hand moves to knife.  
+  **S:** Visual/proprioceptive `src=eyes; proprioception`.  
+  **N:** none.
+
+- **H5.2 `[T0+16.5, seq, ~0.5 s]` Grip tool with precision brace**  
+  **P:** Contact; handle accessible.  
+  **Δ:** Fingers wrap handle; thumb on bolster; `knife.orientation` controlled.  
+  **S:** Handle texture/wear, grip pressure `src=knife.handle; hand`.  
+  **N:** none.
+
+- **H5.3 `[T0+17, seq, ~0.5 s]` Contact and pin object**  
+  **P:** Apple on board; left hand free.  
+  **Δ:** Left hand contacts/presses apple; apple stabilized.  
+  **S:** Pressure, dry skin `src=apple; hand`.  
+  **N:** static friction.
+
+- **H5.4 `[T0+17.5, seq, ~0.5 s]` Adopt safe hand posture**  
+  **P:** Hands on tool/apple.  
+  **Δ:** Fingertips curled; knuckles guide; safe distance.  
+  **S:** Proprioception `src=hand`.  
+  **N:** none.
+
+- **H5.s `[T0+16, parallel, ~2 s]` Sense grip readiness**  
+  **P:** Grip established.  
+  **Δ:** Readiness percept; stability estimate.  
+  **S:** Pressure/balance `src=hand; knife`.  
+  **N:** none.
+
+---
+
+## H6. `[T0+18, seq, ~1 s]` general: Initiate controlled cut into object surface | alt: First cut: sink blade just beside stem, ~1/4 inch deep, until pop through skin into flesh.
+
+**P:** Knife gripped; apple pinned; blade positioned beside stem; depth control; sharp edge.  
+**Δ:** Blade indents skin; skin deforms; resistance changes; pop as edge breaks skin; skin parts clean line; exposed flesh pale yellow-white; thin juice film weeps immediately; `knife.edge.depth` ≈ 0.25 in; `apple.surface` breached.  
+**S:** Resistance change, slight pop, pale yellow-white, thin juice film `src=knife.edge; apple.tissue`.  
+**N:** N4, N6 onset.
+
+- **H6.1 `[T0+18, seq, ~0.2 s]` Position blade at target site**  
+  **P:** Target site known; blade controlled.  
+  **Δ:** `knife.edge.location` beside stem; angle set.  
+  **S:** Visual/tactile `src=eyes; hand`.  
+  **N:** none.
+
+- **H6.2 `[T0+18.2, seq, ~0.2 s]` Apply cutting force**  
+  **P:** Blade positioned; apple pinned.  
+  **Δ:** Downward force; skin indent; tissue stress.  
+  **S:** Pressure `src=hand; knife`.  
+  **N:** elastic deformation.
+
+- **H6.3 `[T0+18.4, seq, ~0.3 s]` Material deforms under blade pressure**  
+  **P:** Force applied.  
+  **Δ:** Elastic/plastic deformation of skin; resistance increases.  
+  **S:** Resistance `src=knife; apple.skin`.  
+  **N:** N4.1.
+
+- **H6.4 `[T0+18.7, seq, ~0.1 s]` Blade ruptures surface**  
+  **P:** Stress exceeds skin strength.  
+  **Δ:** Skin separates; cell rupture; blade crosses boundary; `apple.surface.integrity` false.  
+  **S:** Slight pop; release `src=apple.skin; knife`.  
+  **N:** N4.2.
+
+- **H6.5 `[T0+18.8, seq, ~0.2 s]` Control cut depth and retract**  
+  **P:** Depth reached.  
+  **Δ:** Blade stops/retracts; cut depth set.  
+  **S:** Kinesthetic `src=hand; knife`.  
+  **N:** none.
+
+- **H6.s `[T0+18, parallel, immediate]` Surface rupture exposes tissue and fluid**  
+  **P:** Rupture occurred.  
+  **Δ:** Exposed flesh pale yellow-white; thin juice film; color change.  
+  **S:** Pale yellow-white, juice `src=apple.flesh.exposed; juice`.  
+  **N:** N4.
+
+---
+
+## H7. `[T0+19, cyclical, ~35–45 s]` general: Remove outer layer with blade by iterative rotation | alt: Peel: rotate apple against blade; left thumb pushes fruit forward in small increments; knife stays nearly still.
+
+**P:** Initial cut made; apple pinned/rotatable; knife sharp; left thumb can push; right hand rotates; safe.  
+**Δcyc:** Apple rotates incrementally; blade shears skin/flesh boundary; peel ribbon lengthens/curls; exposed flesh wet faintly green-white; juice film; aroma rises; sound; browning begins after ~10 s.  
+**Δtot:** Peel removed in continuous ribbon ~1 in wide, spiral on board; apple naked, slightly slippery; shallow gouge near stem if pressed too hard; juice runs down wrist; calyx area handled; peel edges browning; exposed flesh dulling toward tan.  
+**S:** Tactile resistance, wet/slippery, blade sound soft wet rasping like paper tearing slowly, smell green sharp faintly floral, visual ribbon spiral, exposed flesh color, gouge, juice on wrist.  
+**N:** N5, N6, N7, N8, N9, N10.  
+**Cond:** If blade angle too deep, gouge forms; if pressure even, cleaner peel; if apple slips, reposition.
+
+- **H7.1 `[T0+19, cyclical, ~35–45 s]` Iterative surface-layer removal cycle**  
+  **P:** Blade engaged; thumb push; apple rotatable.  
+  **Δcyc:** Advance object; rotate against tool; tool separates surface layer; separated layer curls/relaxes; reset grip.  
+  **Δtot:** Peel continuous, ~1 in, spiral; flesh exposed; browning.  
+  **S:** Per-cycle tactile/sound/smell `src=apple; knife; nose`.  
+  **N:** N5–N8.
+
+  - **H7.1.1 `[per cycle, seq, ~0.5–1 s]` Incrementally advance object**  
+    **P:** Thumb contact; apple on board/hand.  
+    **Δcyc:** Apple position increment; new peel area engaged.  
+    **S:** Pressure `src=thumb; apple`.  
+    **N:** none.
+
+  - **H7.1.2 `[per cycle, seq, ~0.2 s]` Rotate object against tool**  
+    **P:** Blade engaged.  
+    **Δcyc:** `apple.orientation` changes; friction.  
+    **S:** Friction `src=apple.surface; knife.edge`.  
+    **N:** none.
+
+  - **H7.1.3 `[per cycle, seq, ~0.2 s]` Tool separates surface layer**  
+    **P:** Blade at skin/flesh boundary.  
+    **Δcyc:** Peel separates; flesh exposed; juice release.  
+    **S:** Wet rasping sound `src=knife; apple.tissue`.  
+    **N:** N5.1–N5.3.
+
+  - **H7.1.4 `[per cycle, seq, ~0.2 s]` Separated layer curls/relaxes**  
+    **P:** Peel detached.  
+    **Δcyc:** Peel curls under gravity; geometry changes.  
+    **S:** Visual curl `src=peel`.  
+    **N:** gravity/elastic relaxation.
+
+  - **H7.1.5 `[per cycle, seq, ~0.1 s]` Reset grip for next cycle**  
+    **P:** Cycle complete.  
+    **Δcyc:** Hand posture reset.  
+    **S:** Kinesthetic `src=hand`.  
+    **N:** none.
+
+- **H7.2 `[T0+~50, seq, ~5 s]` Adapt removal around irregular end**  
+  **P:** Approaching calyx; peel narrows; skin puckers into five points; blade needs reposition.  
+  **Δ:** Knife lifted/repositioned twice; narrow strips cut; calyx end cleared; peel pieces detach; irregular end exposed.  
+  **S:** Visual/tactile calyx pucker five points; blade reposition; resistance changes.  
+  **N:** N5.  
+  **Cond:** If calyx too irregular, extra repositioning; if blade slips, cut irregularly.
+
+  - **H7.2.1 `[T0+~50, seq, ~1.5 s]` Reposition blade around irregular feature**  
+    **P:** Peel narrows; calyx visible.  
+    **Δ:** Blade location changes.  
+    **S:** Visual/tactile `src=eyes; hand`.  
+    **N:** none.
+
+  - **H7.2.2 `[T0+~51.5, seq, ~1.5 s]` Cut remaining narrow strip**  
+    **P:** Blade repositioned.  
+    **Δ:** Strip separates; calyx end cleared.  
+    **S:** Cutting feedback `src=knife; apple`.  
+    **N:** N5.1.
+
+  - **H7.2.3 `[T0+~53, seq, ~2 s]` Detach and release removed layer**  
+    **P:** Strip cut.  
+    **Δ:** Peel falls to board.  
+    **S:** Visual/auditory `src=peel; board`.  
+    **N:** gravity.
+
+- **H7.s `[T0+19, parallel/cyclical]` Continuous removed-layer formation**  
+  **P:** Peeling underway.  
+  **Δ:** Ribbon lengthens; curls; drops in loose spiral; irregular end pieces detach.  
+  **S:** Visual continuous ribbon ~1 in; spiral `src=peel; board`.  
+  **N:** gravity/curl.
+
+  - **H7.s1 `[T0+19, cyclical, ~35–45 s]` Removed layer lengthens and curls under gravity**  
+    **P:** Peel attached.  
+    **Δ:** Geometry changes; length increases.  
+    **S:** Visual ribbon `src=peel`.  
+    **N:** gravity.
+
+  - **H7.s2 `[T0+~50, seq, ~5 s]` Irregular end pieces detach**  
+    **P:** Calyx cuts.  
+    **Δ:** Pieces fall.  
+    **S:** Visual/auditory `src=peel; board`.  
+    **N:** gravity.
+
+---
+
+## H8. `[T0+~55, seq, ~2 s]` general: Manipulate and inspect prepared object | alt: Turn naked apple in hand.
+
+**P:** Apple naked; hand can turn; attention.  
+**Δ:** Grip adjusted; apple rotated; shallow gouge noted; slightly slippery; juice runs down wrist to heel of palm; orientation for quartering.  
+**S:** Tactile slippery; visual gouge; juice wet/tacky.  
+**N:** N9, N10.
+
+- **H8.1 `[T0+~55, seq, ~0.5 s]` Adjust grip/support**  
+  **P:** Naked apple slippery.  
+  **Δ:** Grip force changes; support stable.  
+  **S:** Slip perception `src=hand; apple.surface`.  
+  **N:** N9.
+
+- **H8.2 `[T0+~55.5, seq, ~1 s]` Rotate and inspect object**  
+  **P:** Grip; attention.  
+  **Δ:** Orientation changes; percept of gouge.  
+  **S:** Visual gouge `src=apple.surface.gouge`.  
+  **N:** none.
+
+- **H8.3 `[T0+~56.5, seq, ~0.5 s]` Orient object for next operation**  
+  **P:** Inspection done.  
+  **Δ:** Apple axis aligned for quartering.  
+  **S:** Kinesthetic `src=hand`.  
+  **N:** none.
+
+---
+
+## H9. `[T0+~57, seq, ~3 s]` general: Divide object into quarters through core | alt: Quarter apple: blade down through core, firm crunch; second cut; four pieces fall apart.
+
+**P:** Apple naked; knife gripped; board stable; core oriented; safe.  
+**Δ:** Blade aligns axis; downward force; firm crunch; tissue fractures; object separates into halves; second cut; four pieces fall apart; core exposed.  
+**S:** Firm crunch, tactile resistance, visual four pieces, core exposure.  
+**N:** N11, N6.  
+**Cond:** If core tough, more force; if blade off-axis, uneven pieces.
+
+- **H9.1 `[T0+~57, seq, ~0.5 s]` Align blade along axis**  
+  **P:** Apple oriented.  
+  **Δ:** Blade axis set.  
+  **S:** Visual/tactile `src=eyes; hand`.  
+  **N:** none.
+
+- **H9.2 `[T0+~57.5, seq, ~1 s]` Bisect object through core**  
+  **P:** Aligned; apple pinned.  
+  **Δ:** Halves; crunch; core exposed.  
+  **S:** Firm crunch `src=knife; apple.core`.  
+  **N:** N11.
+
+  - **H9.2.1 `[T0+~57.5, seq, ~0.3 s]` Apply downward cutting force**  
+    **P:** Blade contact.  
+    **Δ:** Force; deformation.  
+    **S:** Pressure `src=hand; knife`.  
+    **N:** N11.1.
+
+  - **H9.2.2 `[T0+~57.8, seq, ~0.4 s]` Blade traverses tissue, rupturing cells**  
+    **P:** Force applied.  
+    **Δ:** Cell rupture; juice; core exposed.  
+    **S:** Resistance/crunch `src=apple.tissue`.  
+    **N:** N11.1–N11.2.
+
+  - **H9.2.3 `[T0+~58.2, seq, ~0.3 s]` Object separates into halves**  
+    **P:** Cut complete.  
+    **Δ:** Halves separate.  
+    **S:** Visual `src=apple`.  
+    **N:** gravity.
+
+- **H9.3 `[T0+~58.5, seq, ~1 s]` Repeat bisection on pieces**  
+  **P:** Halves available.  
+  **Δ:** Rotate/reposition; cut; quarters.  
+  **S:** Crunch `src=knife; apple.core`.  
+  **N:** N11.
+
+  - **H9.3.1 `[T0+~58.5, seq, ~0.3 s]` Rotate/reposition pieces**  
+    **P:** Halves.  
+    **Δ:** Orientation changes.  
+    **S:** Kinesthetic `src=hand`.  
+    **N:** none.
+
+  - **H9.3.2 `[T0+~58.8, seq, ~0.4 s]` Cut through core again**  
+    **P:** Repositioned.  
+    **Δ:** Quarters.  
+    **S:** Crunch `src=apple.core`.  
+    **N:** N11.2.
+
+  - **H9.3.3 `[T0+~59.2, seq, ~0.3 s]` Object separates into quarters**  
+    **P:** Cut complete.  
+    **Δ:** Four pieces.  
+    **S:** Visual `src=apple`.  
+    **N:** gravity.
+
+- **H9.s `[T0+~57, parallel]` Crunch and core exposure during division**  
+  **P:** Cutting.  
+  **Δ:** Acoustic crunch; core wedge visible.  
+  **S:** Firm crunch; visual core `src=apple.core; knife`.  
+  **N:** N11.
+
+---
+
+## H10. `[T0+~60, iterative/cyclical, ~30 s]` general: Remove core from each piece iteratively | alt: For each quarter: lay flat and slice out core.
+
+**P:** Four quarters; knife; board; attention; safe.  
+**Δcyc:** Piece placed flat; core identified; blade inserted; cut around core; triangular wedge of fibrous pale slightly translucent material separated; contains three dark brown seeds pointed both ends each in papery pocket; seed pockets tear; juice release; oxidative browning at cut surfaces; removed part set aside.  
+**Δtot:** Cores/seeds removed from all quarters; slices remain; cut surfaces browning; juice on board.  
+**S:** Tactile fibrous/translucent core; visual three seeds dark brown pointed; papery pockets; cut surface browning; smell.  
+**N:** N6, N7.  
+**Cond:** If core soft, wedge crumbles; if seeds dislodge, they fall.
+
+- **H10.1 `[T0+~60, repeated 4×, ~7.5 s each]` Iterative core removal from pieces**  
+  **P:** Quarter flat; core visible; blade access.  
+  **Δcyc:** Place/stabilize; identify; insert blade; cut around; extract wedge; set aside.  
+  **Δtot:** 4 cycles; all cores removed.  
+  **S:** Per-quarter visual/tactile core/seeds `src=apple.core; seeds`.  
+  **N:** N6.
+
+  - **H10.1.1 `[per quarter, seq, ~1 s]` Place and stabilize piece**  
+    **P:** Quarter; board.  
+    **Δ:** Piece flat stable.  
+    **S:** Touch `src=apple; board`.  
+    **N:** friction.
+
+  - **H10.1.2 `[per quarter, seq, ~1 s]` Identify internal feature**  
+    **P:** Exposed core.  
+    **Δ:** Percept of core boundary.  
+    **S:** Visual core/seeds `src=apple.core; seeds`.  
+    **N:** none.
+
+  - **H10.1.3 `[per quarter, seq, ~2 s]` Insert blade along boundary**  
+    **P:** Identified.  
+    **Δ:** Blade enters tissue.  
+    **S:** Resistance `src=knife; apple`.  
+    **N:** N6.4.
+
+  - **H10.1.4 `[per quarter, seq, ~2 s]` Cut around core to separate**  
+    **P:** Blade inserted.  
+    **Δ:** Separation.  
+    **S:** Cutting feedback `src=knife; apple`.  
+    **N:** N6.
+
+  - **H10.1.5 `[per quarter, seq, ~1 s]` Extract internal core/seed structure**  
+    **P:** Cut complete.  
+    **Δ:** Wedge extracted; seeds in pockets.  
+    **S:** Tactile/visual core/seeds `src=apple.core; seeds`.  
+    **N:** N6.
+
+  - **H10.1.6 `[per quarter, seq, ~0.5 s]` Place removed part aside**  
+    **P:** Extracted.  
+    **Δ:** Location changes.  
+    **S:** Visual `src=core`.  
+    **N:** none.
+
+- **H10.s `[T0+~60, repeated 4×]` Core/seed extraction with cut-surface reactions**  
+  **P:** Cut surfaces exposed.  
+  **Δ:** Juice release; oxidative browning; seed pockets tear/separate.  
+  **S:** Wetness, browning, seeds `src=apple.flesh; seeds`.  
+  **N:** N6.
+
+  - **H10.s1 `[per quarter, parallel]` Juice release and oxidative browning at cut surfaces**  
+    **P:** Cell rupture.  
+    **Δ:** Juice film; browning.  
+    **S:** Visual browning `src=apple.flesh.exposed.color`.  
+    **N:** N6.
+
+  - **H10.s2 `[per quarter, parallel]` Seed pockets tear/separate**  
+    **P:** Cutting.  
+    **Δ:** Pockets open; seeds exposed.  
+    **S:** Visual/tactile seeds `src=apple.seeds; pockets`.  
+    **N:** none.
+
+---
+
+## H11. `[T0+~90, seq, ~2 s]` general: Discard small items by ballistic projection into receptacle | alt: Flick seeds into sink; they click against steel.
+
+**P:** Seeds gathered; sink nearby; hand free to flick; safe.  
+**Δ:** Seeds launched; travel; impact steel sink; click; settle in basin/drain.  
+**S:** Visual trajectory; auditory click against steel.  
+**N:** N12.  
+**Cond:** If aim off, seeds miss sink; if sink wet, different sound.
+
+- **H11.1 `[T0+~90, seq, ~0.5 s]` Gather small items**  
+  **P:** Seeds on board/hand.  
+  **Δ:** Seeds in hand.  
+  **S:** Touch `src=seeds`.  
+  **N:** none.
+
+- **H11.2 `[T0+~90.5, seq, ~0.5 s]` Prepare flicking grip/tension**  
+  **P:** Seeds held.  
+  **Δ:** Finger tension.  
+  **S:** Proprioception `src=hand`.  
+  **N:** none.
+
+- **H11.3 `[T0+~91, seq, ~0.3 s]` Launch object by flicking**  
+  **P:** Tension ready.  
+  **Δ:** Seeds velocity; trajectory.  
+  **S:** Visual `src=seeds`.  
+  **N:** projectile motion.
+
+- **H11.4 `[T0+~91.3, seq, ~0.7 s]` Object travels and impacts surface**  
+  **P:** Launched.  
+  **Δ:** Impact; elastic deformation; sound; settle.  
+  **S:** Click against steel `src=seeds; sink`.  
+  **N:** N12.
+
+- **H11.s `[T0+~90, parallel]` Impact acoustics and settling in receptacle**  
+  **P:** Impact.  
+  **Δ:** Acoustic click/steel resonance; particles settle.  
+  **S:** Click `src=seeds; sink`.  
+  **N:** N12.
+
+---
+
+## H12. `[T0+~92, seq, ~5 s]` general: Transfer prepared pieces into container | alt: Put slices into bowl.
+
+**P:** Slices available; clean bowl; hands free.  
+**Δ:** Slices move from board to bowl; `bowl.contains(slices)` true; arrangement loose.  
+**S:** Tactile/visual transfer `src=hand; slices; bowl`.  
+**N:** none.  
+**Cond:** If bowl full, pieces rest differently.
+
+- **H12.1 `[T0+~92, seq, ~1 s]` Gather pieces**  
+  **P:** Slices.  
+  **Δ:** Grouped.  
+  **S:** Touch `src=slices`.  
+  **N:** none.
+
+- **H12.2 `[T0+~93, seq, ~2 s]` Transfer pieces to container**  
+  **P:** Gathered.  
+  **Δ:** Pieces to bowl.  
+  **S:** Visual/tactile `src=slices; bowl`.  
+  **N:** gravity.
+
+- **H12.3 `[T0+~95, seq, ~1.5 s]` Place and arrange pieces loosely**  
+  **P:** In bowl.  
+  **Δ:** Arrangement; settling.  
+  **S:** Visual `src=slices; bowl`.  
+  **N:** gravity.
+
+- **H12.4 `[T0+~96.5, seq, ~0.5 s]` Withdraw and verify**  
+  **P:** Transferred.  
+  **Δ:** Hands withdraw; visual verification.  
+  **S:** Visual `src=bowl; slices`.  
+  **N:** none.
+
+---
+
+## H13. `[T0+~97, seq, ~2 s]` general: Dispose of waste into receptacle | alt: Put peels into compost crock.
+
+**P:** Peels on board; compost crock; hands free.  
+**Δ:** Peels move to compost crock; `crock.contains(peels)` true; peels edges already browning; work surface cleaned.  
+**S:** Visual browning edges.  
+**N:** N13.  
+**Cond:** If crock full, spill/overflow.
+
+- **H13.1 `[T0+~97, seq, ~0.5 s]` Gather discarded layer**  
+  **P:** Peels.  
+  **Δ:** Gathered.  
+  **S:** Touch `src=peels`.  
+  **N:** none.
+
+- **H13.2 `[T0+~97.5, seq, ~0.7 s]` Transfer waste to receptacle**  
+  **P:** Gathered.  
+  **Δ:** Peels to crock.  
+  **S:** Visual/tactile `src=peels; crock`.  
+  **N:** gravity.
+
+- **H13.3 `[T0+~98.2, seq, ~0.5 s]` Release and let settle**  
+  **P:** Over crock.  
+  **Δ:** Peels settle.  
+  **S:** Visual `src=peels`.  
+  **N:** gravity.
+
+- **H13.4 `[T0+~98.7, seq, ~0.3 s]` Clean work surface**  
+  **P:** Surface debris.  
+  **Δ:** Surface cleaned.  
+  **S:** Tactile/visual `src=board`.  
+  **N:** none.
+
+---
+
+## H14. `[T0+~99, lingering/parallel, hours]` general: Lingering sensory residue after task | alt: Hands smell like apple for rest of morning, even after washing.
+
+**P:** Task complete; hands may be washed; volatile compounds on skin.  
+**Δ:** Hands smell like apple for rest of morning even after washing; `hand.skin.volatiles` retained; partial removal by washing; olfactory adaptation/intermittent detection.  
+**S:** Smell apple `src=hand.skin.volatiles`.  
+**N:** N14.  
+**Cond:** If washed with soap, residue reduced but not eliminated; if not washed, stronger.
+
+- **H14.1 `[T0+~99, state, hours]` Volatile retention in skin oils**  
+  **P:** Volatiles contact skin.  
+  **Δ:** Absorption into skin oils.  
+  **S:** Apple odor `src=hand.skin.volatiles`.  
+  **N:** N14.1.
+
+- **H14.2 `[T0+~99, delayed, ~minutes]` Partial removal by washing leaves residue**  
+  **P:** Washing.  
+  **Δ:** Some volatiles removed; residue remains.  
+  **S:** Reduced but present odor `src=hand.skin.volatiles`.  
+  **N:** N14.2.
+
+- **H14.3 `[T0+~99, parallel, hours]` Olfactory adaptation and intermittent detection**  
+  **P:** Exposure.  
+  **Δ:** Adaptation; intermittent detection.  
+  **S:** Intermittent apple smell `src=olfactory system; hand.skin.volatiles`.  
+  **N:** N14.3.
+
+---
+
+# LANE N — Annotated natural / material processes
+
+## N1. `[T0, state, continuous]` Initial material state of cold hydrated object | alt: Apple is cold from refrigerator; dense with water.
+
+**P:** Apple stored in refrigerator; intact skin; mature Honeycrisp; water-filled cells.  
+**Δ:** `apple.surface.temperature` cold; `apple.mass.density` high/turgid; `apple.surface.waxy` low friction.  
+**S:** Touch cold, dense, waxy `src=apple.surface.temperature; apple.mass.density; apple.surface.texture`.  
+**N:** direct attribute state.
+
+- **N1.1 `[T0, state, continuous]` Thermal equilibration/heat transfer**  
+  **P:** Temperature gradient between apple and hand/air.  
+  **Δ:** Heat flows from hand/air to apple; apple temperature rises slowly.  
+  **S:** Cold diminishes slowly `src=apple.surface.temperature`.  
+  **N:** heat transfer.
+
+- **N1.2 `[T0, state, continuous]` Turgor pressure/dense mass**  
+  **P:** Water-filled cells; intact cell walls.  
+  **Δ:** Cell walls under pressure; mass/density high.  
+  **S:** Dense/heavy `src=apple.mass.density`.  
+  **N:** turgor.
+
+- **N1.3 `[T0, state, continuous]` Intact waxy surface/low friction**  
+  **P:** Cuticle intact.  
+  **Δ:** Water repellency; low friction.  
+  **S:** Waxy/tight `src=apple.surface.texture`.  
+  **N:** cuticle properties.
+
+---
+
+## N2. `[T0+2, parallel, ~8 s]` Liquid-surface interaction and runoff | alt: Water beads and rolls off waxy skin immediately during washing.
+
+**P:** Water flow; waxy apple surface.  
+**Δ:** Water wets surface; droplets form; coalesce; runoff; some evaporation; cavities retain water.  
+**S:** Visual beading/rolloff; tactile wet `src=apple.surface; water`.  
+**N:** surface tension, gravity.
+
+- **N2.1 `[T0+2, seq, ~0.5 s]` Liquid wetting of surface**  
+  **P:** Water contacts surface.  
+  **Δ:** Surface energy interaction; water film/droplets.  
+  **S:** Wetness `src=apple.surface; water`.  
+  **N:** wetting.
+
+- **N2.2 `[T0+2.5, cyclical, ~5 s]` Droplet coalescence under surface tension**  
+  **P:** Droplets on surface.  
+  **Δ:** Smaller droplets merge; larger drops.  
+  **S:** Visual beading `src=water; apple.surface`.  
+  **N:** surface tension.
+
+- **N2.3 `[T0+3, parallel, ~5 s]` Gravity/capillary runoff**  
+  **P:** Drops on inclined/wet surface.  
+  **Δ:** Water runs off.  
+  **S:** Visual rolloff `src=water; apple.surface`.  
+  **N:** gravity/capillary.
+
+- **N2.4 `[T0+4, delayed, ~minutes]` Evaporation and cavity retention**  
+  **P:** Water film; dimple/crater.  
+  **Δ:** Evaporation; water retained in stem crater.  
+  **S:** Residual wetness `src=apple.surface; water`.  
+  **N:** evaporation.
+
+---
+
+## N3. `[T0+10, parallel, ~4 s]` Fabric drying and surface optical change | alt: Drying on shirt changes skin from glossy to dull matte red.
+
+**P:** Wet apple; absorbent shirt; rubbing.  
+**Δ:** Capillary wicking into fabric; surface liquid reduced; evaporation; microtexture exposed; `apple.surface.optics` glossy → matte red.  
+**S:** Visual glossy → dull matte red `src=apple.surface.optics`.  
+**N:** wicking, evaporation, optical scattering.
+
+- **N3.1 `[T0+10, parallel, ~2.5 s]` Capillary wicking into fabric**  
+  **P:** Fabric contact.  
+  **Δ:** Water enters fabric.  
+  **S:** Damp fabric `src=fabric`.  
+  **N:** capillarity.
+
+- **N3.2 `[T0+10.5, parallel, ~2.5 s]` Absorption reduces surface liquid**  
+  **P:** Fabric absorbency.  
+  **Δ:** `apple.surface.wetness` decreases.  
+  **S:** Drying `src=apple.surface`.  
+  **N:** absorption.
+
+- **N3.3 `[T0+12, delayed, ~minutes]` Evaporation alters surface optics**  
+  **P:** Thin water film.  
+  **Δ:** Optical scattering changes.  
+  **S:** Appearance change `src=apple.surface.optics`.  
+  **N:** evaporation.
+
+- **N3.4 `[T0+13, delayed, ~minutes]` Matte appearance from exposed microtexture**  
+  **P:** Microtexture exposed.  
+  **Δ:** Diffuse reflection; dull red.  
+  **S:** Matte red `src=apple.surface.optics`.  
+  **N:** optical scattering.
+
+---
+
+## N4. `[T0+18, parallel, immediate]` Cut-induced tissue exposure and fluid release | alt: Cut breaks skin; exposed flesh is pale yellow-white; thin juice film weeps immediately.
+
+**P:** Blade cuts skin.  
+**Δ:** Blade parts layers; cell rupture; vacuolar fluid; juice film; cut surface pale yellow-white; oxidation onset.  
+**S:** Pop, pale yellow-white, juice `src=apple.tissue; knife`.  
+**N:** N6 onset.
+
+- **N4.1 `[T0+18, seq, immediate]` Blade parts surface layers**  
+  **P:** Sharp blade force.  
+  **Δ:** Skin separation.  
+  **S:** Resistance/pop `src=knife; apple.skin`.  
+  **N:** fracture.
+
+- **N4.2 `[T0+18.1, seq, immediate]` Cell rupture releases vacuolar fluid**  
+  **P:** Cells cut.  
+  **Δ:** Fluid release.  
+  **S:** Wetness `src=apple.flesh`.  
+  **N:** cell rupture.
+
+- **N4.3 `[T0+18.2, parallel, immediate]` Fluid film forms on cut surface**  
+  **P:** Fluid released.  
+  **Δ:** Thin juice film.  
+  **S:** Visible juice `src=juice`.  
+  **N:** surface film.
+
+- **N4.4 `[T0+18.2, parallel, immediate]` Cut surface color change from scattering/air**  
+  **P:** Air contact.  
+  **Δ:** Pale yellow-white.  
+  **S:** Pale yellow-white `src=apple.flesh.exposed.color`.  
+  **N:** optical scattering.
+
+- **N4.5 `[T0+18.3, delayed, +10 s]` Oxidation onset**  
+  **P:** Oxygen contact.  
+  **Δ:** Browning begins.  
+  **S:** Dulling toward tan `src=apple.flesh.exposed.color`.  
+  **N:** N6.
+
+---
+
+## N5. `[T0+19, parallel, ~35–45 s]` Surface-layer separation and tissue exposure | alt: Peel separation exposes wet, faintly green-white flesh.
+
+**P:** Blade shears skin/flesh boundary.  
+**Δ:** Cell adhesion sheared; tissue exposed wet faintly green-white; fluid films/runs; browning.  
+**S:** Visual wet faintly green-white; tactile wet `src=apple.flesh.exposed`.  
+**N:** N6.
+
+- **N5.1 `[T0+19, cyclical, ~35–45 s]` Blade shears cell adhesion layer**  
+  **P:** Blade at boundary.  
+  **Δ:** Separation.  
+  **S:** Cutting feedback `src=knife; apple`.  
+  **N:** shear.
+
+- **N5.2 `[T0+19, parallel/cyclical]` Surface layer separates exposing tissue**  
+  **P:** Shear.  
+  **Δ:** Exposure.  
+  **S:** Flesh color `src=apple.flesh.exposed.color`.  
+  **N:** none.
+
+- **N5.3 `[T0+19, parallel/cyclical]` Fluid films and runs down object**  
+  **P:** Cell rupture.  
+  **Δ:** Juice films/runs.  
+  **S:** Wetness `src=juice; apple`.  
+  **N:** gravity.
+
+- **N5.4 `[T0+19, delayed]` Browning of exposed tissue**  
+  **P:** Oxygen.  
+  **Δ:** Browning.  
+  **S:** Dulling toward tan `src=apple.flesh.exposed.color`.  
+  **N:** N6.
+
+---
+
+## N6. `[T0+29, delayed, +10 s after first exposure, ongoing]` Oxidative browning of cut tissue | alt: Exposed flesh begins dulling toward tan; oxidation/browning repeats for every new cut surface.
+
+**P:** Cut tissue exposed to oxygen; polyphenol oxidase active.  
+**Δ:** Oxygen diffusion; enzymatic oxidation; polymerization to brown pigments; after ~10 s flesh dulls toward tan; reset by new cuts.  
+**S:** Visual dulling toward tan `src=apple.flesh.exposed.color`.  
+**N:** enzymatic browning.
+
+- **N6.1 `[T0+29, seq, +10 s]` Oxygen diffusion into tissue**  
+  **P:** Air contact.  
+  **Δ:** O₂ enters tissue.  
+  **S:** none.  
+  **N:** diffusion.
+
+- **N6.2 `[T0+29, parallel, ongoing]` Enzymatic oxidation of phenolics**  
+  **P:** Enzyme + substrate.  
+  **Δ:** Quinones formed.  
+  **S:** none.  
+  **N:** oxidation.
+
+- **N6.3 `[T0+29, delayed, seconds–minutes]` Polymerization to brown pigments**  
+  **P:** Quinones.  
+  **Δ:** Brown pigments.  
+  **S:** Dulling toward tan `src=apple.flesh.exposed.color`.  
+  **N:** polymerization.
+
+- **N6.4 `[T0+29, parallel, ongoing]` Cut-surface browning reset by new cuts**  
+  **P:** New cut.  
+  **Δ:** Fresh surface exposed.  
+  **S:** Fresh pale surface `src=apple.flesh.exposed.color`.  
+  **N:** reset.
+
+---
+
+## N7. `[T0+19, parallel, continuous]` Aroma release and perception | alt: Aroma volatiles rise — green, sharp, faintly floral.
+
+**P:** Cell rupture; volatile precursors; air.  
+**Δ:** Volatiles release; diffuse; reach olfactory epithelium.  
+**S:** Smell green, sharp, faintly floral `src=apple.volatiles`.  
+**N:** diffusion, olfaction.
+
+- **N7.1 `[T0+19, parallel, continuous]` Cell rupture releases volatiles**  
+  **P:** Cut cells.  
+  **Δ:** Volatiles released.  
+  **S:** Aroma `src=apple.volatiles`.  
+  **N:** release.
+
+- **N7.2 `[T0+19, parallel, continuous]` Volatile diffusion/dispersal**  
+  **P:** Concentration gradient.  
+  **Δ:** Dispersal.  
+  **S:** Aroma intensity `src=apple.volatiles`.  
+  **N:** diffusion.
+
+- **N7.3 `[T0+19, parallel, continuous]` Olfactory detection of volatiles**  
+  **P:** Receptors.  
+  **Δ:** Percept.  
+  **S:** Green/sharp/floral `src=olfactory system; apple.volatiles`.  
+  **N:** olfaction.
+
+---
+
+## N8. `[T0+19, parallel]` Acoustic emission and perception during cutting | alt: Blade makes soft, wet, rasping sound, like paper tearing slowly.
+
+**P:** Blade friction/rupture.  
+**Δ:** Acoustic bursts; transmission; percept.  
+**S:** Soft wet rasping sound `src=knife; apple.tissue`.  
+**N:** acoustics.
+
+- **N8.1 `[T0+19, cyclical]` Tool-tissue friction**  
+  **P:** Blade moving.  
+  **Δ:** Friction.  
+  **S:** Rasping onset `src=knife; apple.tissue`.  
+  **N:** friction.
+
+- **N8.2 `[T0+19, parallel]` Acoustic bursts from cell rupture**  
+  **P:** Cell rupture.  
+  **Δ:** Sound bursts.  
+  **S:** Wet rasp `src=apple.tissue`.  
+  **N:** acoustic emission.
+
+- **N8.3 `[T0+19, parallel]` Sound transmission to auditory system**  
+  **P:** Air/bone conduction.  
+  **Δ:** Signal reaches ear.  
+  **S:** Sound `src=air; ear`.  
+  **N:** transmission.
+
+- **N8.4 `[T0+19, parallel]` Perception of cutting sound**  
+  **P:** Auditory system.  
+  **Δ:** Percept.  
+  **S:** Like paper tearing slowly `src=auditory system`.  
+  **N:** perception.
+
+---
+
+## N9. `[T0+~55, parallel/after peeling]` Fluid runoff along skin | alt: Juice runs down wrist to heel of palm.
+
+**P:** Juice on hand; gravity.  
+**Δ:** Fluid accumulates; spreads; reaches wrist/heel palm.  
+**S:** Wetness running down wrist `src=hand.skin; juice`.  
+**N:** gravity/capillary.
+
+- **N9.1 `[T0+~55, seq]` Fluid accumulation at contact**  
+  **P:** Juice present.  
+  **Δ:** Droplet/pool.  
+  **S:** Wetness `src=hand.skin`.  
+  **N:** accumulation.
+
+- **N9.2 `[T0+~55, parallel]` Gravity/capillary spread on skin**  
+  **P:** Gravity/capillarity.  
+  **Δ:** Spread.  
+  **S:** Running juice `src=hand.skin; juice`.  
+  **N:** gravity.
+
+- **N9.3 `[T0+~55, delayed]` Fluid reaches distal skin area**  
+  **P:** Flow.  
+  **Δ:** Wet area at wrist/heel palm.  
+  **S:** Wet/tacky `src=hand.skin`.  
+  **N:** transport.
+
+---
+
+## N10. `[T0+~55 to +minutes, delayed]` Fluid film drying to tacky residue | alt: Juice dries tacky on skin.
+
+**P:** Juice film on skin; time.  
+**Δ:** Water evaporates; solutes concentrate; tacky residue adheres to skin oils.  
+**S:** Tacky feel `src=hand.skin.residue`.  
+**N:** evaporation, adhesion.
+
+- **N10.1 `[T0+~55, delayed, minutes]` Water evaporation from film**  
+  **P:** Air exposure.  
+  **Δ:** Water loss.  
+  **S:** Drying `src=hand.skin`.  
+  **N:** evaporation.
+
+- **N10.2 `[T0+~55, delayed, minutes]` Solute concentration forms tacky residue**  
+  **P:** Evaporation.  
+  **Δ:** Tacky concentrate.  
+  **S:** Tackiness `src=hand.skin.residue`.  
+  **N:** concentration.
+
+- **N10.3 `[T0+~55, delayed, minutes]` Residue adhesion to skin oils**  
+  **P:** Residue + oils.  
+  **Δ:** Adhesion.  
+  **S:** Sticky/tacky `src=hand.skin.residue`.  
+  **N:** adhesion.
+
+---
+
+## N11. `[T0+~57, parallel]` Crunch and core tissue exposure during division | alt: Quartering produces firm crunch; core wedge is fibrous, pale, slightly translucent.
+
+**P:** Blade through core.  
+**Δ:** Cell walls snap; acoustic crunch; core wedge fibrous pale slightly translucent.  
+**S:** Firm crunch; visual core `src=apple.core; knife`.  
+**N:** fracture, acoustics.
+
+- **N11.1 `[T0+~57, seq]` Blade fractures tissue, cell walls snap**  
+  **P:** Force.  
+  **Δ:** Fracture.  
+  **S:** Crunch `src=apple.tissue`.  
+  **N:** fracture.
+
+- **N11.2 `[T0+~57, parallel]` Acoustic crunch from microfractures**  
+  **P:** Microfractures.  
+  **Δ:** Sound.  
+  **S:** Firm crunch `src=apple.core`.  
+  **N:** acoustic emission.
+
+- **N11.3 `[T0+~57, parallel]` Core wedge material properties**  
+  **P:** Core tissue.  
+  **Δ:** Fibrous, pale, slightly translucent.  
+  **S:** Visual/tactile core `src=apple.core`.  
+  **N:** material structure.
+
+---
+
+## N12. `[T0+~90, parallel]` Impact acoustics and settling in receptacle | alt: Seeds click against steel sink.
+
+**P:** Seeds projected; steel sink.  
+**Δ:** Impact; elastic deformation; acoustic click/steel resonance; settle.  
+**S:** Click against steel `src=seeds; sink`.  
+**N:** impact, resonance, settling.
+
+- **N12.1 `[T0+~90, seq]` Impact and elastic deformation**  
+  **P:** Collision.  
+  **Δ:** Deformation.  
+  **S:** Impact `src=seeds; sink`.  
+  **N:** collision.
+
+- **N12.2 `[T0+~90, parallel]` Acoustic click/steel resonance**  
+  **P:** Impact.  
+  **Δ:** Sound/resonance.  
+  **S:** Click `src=seeds; steel sink`.  
+  **N:** resonance.
+
+- **N12.3 `[T0+~90, parallel]` Particles settle in basin/drain**  
+  **P:** Gravity.  
+  **Δ:** Seeds settle.  
+  **S:** Visual settling `src=seeds; sink`.  
+  **N:** gravity.
+
+---
+
+## N13. `[T0+~97, parallel]` Post-disposal oxidative deterioration | alt: Peel edges in compost crock are already browning.
+
+**P:** Peels in compost crock; oxygen; moisture.  
+**Δ:** Oxygen exposure at cut edges; enzymatic browning/dehydration; progressive darkening.  
+**S:** Visual browning edges `src=peel.edges`.  
+**N:** oxidation, dehydration.
+
+- **N13.1 `[T0+~97, parallel]` Oxygen exposure at cut edges**  
+  **P:** Air.  
+  **Δ:** O₂ contact.  
+  **S:** none.  
+  **N:** diffusion.
+
+- **N13.2 `[T0+~97, delayed]` Enzymatic browning and dehydration**  
+  **P:** Enzymes; moisture loss.  
+  **Δ:** Brown/dry edges.  
+  **S:** Browning `src=peel.edges`.  
+  **N:** browning.
+
+- **N13.3 `[T0+~97, ongoing]` Progressive browning/darkening**  
+  **P:** Time.  
+  **Δ:** Darkening.  
+  **S:** Visual darkening `src=peel.edges`.  
+  **N:** oxidation.
+
+---
+
+## N14. `[T0+~99, lingering, hours]` Lingering volatile retention and perception | alt: Apple odor persists on hands after washing.
+
+**P:** Volatiles on hands; skin oils; washing.  
+**Δ:** Absorption into skin; slow release; persistent intermittent olfactory detection.  
+**S:** Smell apple on hands `src=hand.skin.volatiles`.  
+**N:** absorption, release, olfaction.
+
+- **N14.1 `[T0+~99, state, hours]` Volatile absorption into skin**  
+  **P:** Contact.  
+  **Δ:** Volatiles in skin oils.  
+  **S:** Odor `src=hand.skin.volatiles`.  
+  **N:** absorption.
+
+- **N14.2 `[T0+~99, delayed, hours]` Slow release from skin oils**  
+  **P:** Volatiles absorbed.  
+  **Δ:** Slow release.  
+  **S:** Intermittent odor `src=hand.skin.volatiles`.  
+  **N:** desorption.
+
+- **N14.3 `[T0+~99, parallel, hours]` Persistent intermittent olfactory detection**  
+  **P:** Olfactory system.  
+  **Δ:** Adaptation/intermittent detection.  
+  **S:** Apple smell for rest of morning even after washing `src=olfactory system; hand.skin.volatiles`.  
+  **N:** olfaction.

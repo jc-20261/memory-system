@@ -1,0 +1,481 @@
+# Comprehensive Explanation of the Search System
+
+This document describes the full search system as implemented, covering indexing, query term generation, matching modes, scoring multipliers, filtration rules, and worked examples.
+
+---
+
+## 1. Overall Architecture
+
+The system has four main parts:
+
+- **Memory encodings** – structured JSON memories, converted to pickle objects.
+- **Search index (`pickle_search_index.py`)** – a reverse index over all terms, full-path entries, measurements, and precomputed embeddings.
+- **Query processor (`pickle_query_processor.py`)** – converts natural language into structured search terms.
+- **Search engine (`pickle_search_engine.py`)** – matches query terms against the index and produces ranked memories.
+
+---
+
+## 2. Term Prefixes
+
+Every search term carries a prefix identifying its role.
+
+### Attribute / value terms
+| Prefix | Meaning | Example |
+|--------|---------|---------|
+| `attribute_value:` | Full attribute path + value | `attribute_value:surface.color=red` |
+| `attribute:` | Attribute component only | `attribute:surface` |
+| `value:` | Leaf value only | `value:red` |
+| `attribute_token:` | Word from attribute path | `attribute_token:surface` |
+| `value_token:` | Word from a value | `value_token:red` |
+
+### Object / action terms
+| Prefix | Meaning |
+|--------|---------|
+| `object:` | Object template or instance ID |
+| `object_token:` | Word from object name |
+| `action:` | Action template name |
+| `action_token:` | Word from action name |
+| `verb:` | Verb name from action template/alt |
+| `category:` | Category term |
+| `trajectory:` | Kinematic trajectory |
+| `alias:` | Object alias |
+
+### Special prefixes
+| Prefix | Meaning |
+|--------|---------|
+| `fullpath:` | Full `(action)(object)(path op value)` structured entry |
+| `goalstate:` | Qualifier prefix for goal-state terms |
+| `position_unit:` | Position as a whole unit |
+| `spatial:` | Spatial relation query term |
+| `attribute_expanded:` / `value_expanded:` / `object_expanded:` / `action_expanded:` | Alias forms |
+| `*_expanded_token:` | Alias token forms |
+
+---
+
+## 3. Query Term Generation
+
+The query processor uses an LLM to produce structured JSON with:
+
+- `query_objects` – objects with template name, categories, attributes.
+- `query_actions` – target and context actions with verbs, participants, preconditions, changes.
+- `initial_conditions` – starting state conditions.
+- `goal_state` – target conditions.
+
+From this JSON, the processor generates search terms:
+
+- **Fullpath terms** for every condition (object attributes, preconditions, changes, goal state, participants).
+- **Object / action terms and tokens**.
+- **Verb target/context terms**.
+- **Component and token terms** for attribute paths and values.
+- **Alias terms** for objects, actions, attributes, and values.
+- **Spatial terms** for spatial conditions.
+- **Measurement terms** for dimensions, weight, mass, volume.
+- **Goalstate qualifiers** where applicable.
+
+**Query term weights are ignored by the engine** – all scoring comes from multipliers.
+
+---
+
+## 4. Matching Modes
+
+For each query term, the engine tries modes in order until one succeeds.
+
+### Mode 1 — Exact full term
+Direct lookup in the reverse index.
+
+### Mode 2 — Full path matching
+The query term is `fullpath:{...}`. Compared against every indexed fullpath entry.
+
+### Mode 3 — Component matching (`attribute:` / `value:`)
+Compares query component against indexed components of the same base type (including aliases).
+
+### Mode 4 — Token matching (`*_token:`)
+Compares query token against indexed tokens of the same type.
+
+### Mode 5 — Verb matching (`verb_target:` / `verb_context:`)
+Compares query verb against all `verb:` terms.
+
+### Mode 6 — Standalone object/action matching (`object:` / `action:`)
+Compares query object/action against the object/action name group.
+
+### Mode 7 — Measurement unit matching
+Groups dimension and volume terms into one unit.
+
+### Mode 8 — Position unit matching
+Special term `position_unit:` handled as a whole.
+
+### Mode 9 — Spatial matching
+`spatial:` term triggers direct + one-hop inference.
+
+### Mode 10 — Regular fallback
+Exact lookup for `category:`, `function:`, `material:`, etc.
+
+---
+
+## 5. Core Scoring — Full Path Matching
+
+Each `fullpath:` match produces a score of:
+
+```
+score = 2.0 × path_mult × value_mult × op_mult × object_mult × action_mult × goalstate_mult × alias_penalty
+```
+
+Where 2.0 is the **max core score**.
+
+### 5.1 Path matching
+
+Query and index paths are normalized to tuples before comparison (no object component).
+
+| Case | Multiplier |
+|------|------------|
+| Contiguous exact | **1.0** |
+| Non-contiguous exact | **0.9** |
+| Contiguous fuzzy | **0.9** |
+| Non-contiguous fuzzy | **0.8** |
+| Partial exact (all matched components / index path length) | **ratio** |
+| Partial fuzzy | **ratio × 0.8** |
+
+Alias exact (via explicit alias relation) is treated as exact for path matching, but only the alias penalty applies at the end.
+
+### 5.2 Value matching
+
+| Case | Multiplier |
+|------|------------|
+| Exact normalized equality | **1.0** |
+| Scalar with unit within ±30% | **0.7** |
+| List: all index elements matched | **1.0** |
+| List: at least one but not all matched | **0.7** |
+| List: none matched | **0.0** |
+| Fuzzy full string | **0.9** |
+| Fuzzy partial (list element fuzzy) | **0.6** |
+| No match (fallback) | **0.2** |
+
+Fallback 0.2 is not used if all path components are banned/unmatchable → score becomes **0**.
+
+### 5.3 Operator matching
+
+| Case | Multiplier |
+|------|------------|
+| Exact operator | **1.0** |
+| `!=` | **0.5** |
+| Any other operator | **0.8** |
+
+### 5.4 Object multiplier
+
+| Case | Multiplier |
+|------|------------|
+| Exact object ID or template | **×2.0** |
+| Explicit alias relation (exact or fuzzy) | **×2.0 × 0.9** |
+| Fuzzy object name | **×1.6** |
+| Fuzzy alias (index alias or query alias) | **×1.6 × 0.9** |
+| No match or either side absent | **×1.0** |
+
+### 5.5 Action multiplier
+
+Same structure as object multiplier.
+
+### 5.6 Goal state multiplier
+
+- Only one side is goalstate: **×4**
+- Both sides are goalstate: **×16**
+
+### 5.7 Alias penalty
+
+When a match segment (path, value, object, action) involves an alias, multiply that segment by **×0.9**. Applied once per segment.
+
+---
+
+## 6. Component and Token Matching
+
+### Component matching (`attribute:` / `value:`)
+
+Type-aware multipliers:
+
+| Query type vs Index type | Exact | Fuzzy |
+|--------------------------|-------|-------|
+| Same type | **0.5** | **0.4** |
+| Different type | **0.4** | **0.3** |
+
+### Token matching (`*_token:`)
+
+| Query type vs Index type | Exact | Fuzzy |
+|--------------------------|-------|-------|
+| Same type | **0.3** | **0.2** |
+| Different type | **0.2** | **0.1** |
+
+Both component and token matches:
+
+- Use precomputed embeddings for fuzzy.
+- Fold alias matches to base terms via `alias_to_base`.
+- Deduplicate postings after alias folding.
+- Apply frequency-based filtration (see section 8).
+- Apply alias penalty **×0.9** once if alias used.
+- Apply goalstate multiplier if either query or matched term is a goalstate term.
+
+---
+
+## 7. Verb Matching
+
+- Query uses `verb_target:` or `verb_context:`.
+- Engine compares against all `verb:` terms via embeddings.
+- For each verb term above threshold:
+  - Exact string: score **1.0 × 2.0 = 2.0** (non-goalstate)
+  - Fuzzy: score **0.9 × 2.0 = 1.8**
+- The extra ×2 is only for non-goalstate verb matches.
+- The cap is applied **per memory**:
+  - Target verb: top **4** contributions per memory.
+  - Context verb: top **2** contributions per memory.
+- Goalstate verb matches do not receive the ×2 bonus.
+
+---
+
+## 8. Frequency Filtration Rules
+
+Applied to **matched index terms** (not query terms).
+
+### Attribute components and attribute tokens
+| Occurrence percentage | Rule |
+|-----------------------|------|
+| ≥ 0.3% | Unmatchable |
+| 0.03% < occ ≤ 0.07% | One match per memory |
+| Else | Diminishing: 1.0, 0.5, 0.1, 0 |
+
+### Value components and value tokens
+- Numeric values, unit-only values: unmatchable.
+- Else: diminishing **1.0, 0.2, 0**.
+
+### Object and action tokens
+- Same as attribute tokens.
+
+---
+
+## 9. Global Diminishing Rule
+
+Applied after all query terms are processed, **before** co-match, for all modes **except** component/token/verb matches.
+
+For each `(query_term, matched_index_term, memory)` group:
+
+- Sort contributions by score descending.
+- Apply multipliers: **1.0, 0.5, 0.1, 0**.
+
+Only the first three contributions of the same index term in the same memory contribute.
+
+---
+
+## 10. Co-Match Multiplier
+
+For matches sharing the same object within a memory:
+
+```
+mult = min(1.2^(n-1), 2.0)
+```
+
+where `n` is the number of matches under the same object.
+
+---
+
+## 11. Index Term Cap
+
+**Final post-processing step.** For each `(memory, matched_index_term)`:
+
+- Sort by score descending.
+- Keep only the top **6** contributions.
+- Discard the rest.
+
+This caps the total contribution of any one index term within a memory, regardless of how many places it appeared (state changes, preconditions, goal state, etc.).
+
+---
+
+## 12. Special Units
+
+### 12.1 Measurement unit (dimensions + volume)
+
+- Group all four measurement paths.
+- For each: within 50–150% of indexed value → ×1, else ×0.5.
+- Product of multipliers is the score.
+- If all four fail (0.5^4) → score = **0**.
+- Otherwise capped at **1**.
+
+### 12.2 Position unit
+
+`relationr`, `relation`, `relative_to` matched as one unit:
+
+| Component | Match multiplier | No match |
+|-----------|------------------|----------|
+| relationr | 1.0 | 0.5 |
+| relation | 1.0 | 0.8 |
+| relative_to (exact or fuzzy) | 1.0 | 0.0 |
+
+If `relative_to` fails, whole unit is 0.
+
+### 12.3 Spatial one-hop
+
+For `spatial:near(apple,table)`:
+
+- **Direct match**: if apple's relationr = near and relative_to = table → score **1.0**.
+- **One-hop**: if apple → intermediate → table, with both relations in allowed set → score **0.5**.
+
+---
+
+## 13. Banned Attribute Components
+
+These components are not indexed as `attribute:` or `attribute_token:` terms and are filtered from query generation:
+
+```
+length, width, height_thickness, height, mass, weight, shape,
+dimensions, volume, duration, repetitions, cycle_duration,
+start_offset, temporal_type, number, position,
+position_relative_body, material, materials, category,
+categories, function, functions, relation, relative_to,
+relationr, content, contents, state
+```
+
+**Additional rule:** In full-path matching, if the value does not match and **all** path components are banned/unmatchable, the whole match returns **0**.
+
+**Partial ban rule:** If the value does not match and some but not all path components are banned, the banned components are **removed** before path matching is redone with the remaining components.
+
+---
+
+## 14. Alias Handling
+
+- Every alias term (e.g., `attribute_expanded:purity`) is mapped to its base term via `alias_to_base`.
+- When a query term matches an alias, the contribution records the **base term** as `matched_index_term`.
+- Multiple aliases folding to the same base term are **deduplicated** by `(memory, source_context, term_type)`.
+- On the query side, `_query_alias_to_base` groups aliases from the same base concept so the global diminishing and index term cap treat them as one term.
+
+---
+
+## 15. Worked Examples
+
+### Example 1: Full-path exact match
+
+Query fullpath: `(null)(apple)(skin.present=true)`  
+Index fullpath: `(null)(apple)(skin.present=true)`
+
+- Path `("skin", "present")` matches exactly → 1.0
+- Value `true` matches → 1.0
+- Op `=` matches → 1.0
+- Object `apple` matches → ×2.0
+- No action → ×1.0
+- No alias → no penalty
+
+Score = **2.0 × 1.0 × 1.0 × 1.0 × 2.0 = 4.0**
+
+### Example 2: Full-path fuzzy path, alias used
+
+Query fullpath: `(null)(light_bulb)(state=changed)`  
+Index fullpath: `(null)(lips_01)(state=closed)`
+
+- Path `("state")` vs `("state")` → 1.0
+- Value `changed` vs `closed` → fuzzy 0.2 fallback (but state is banned; path-only banned → return 0)
+
+Score = **0** (because value mismatch and all path components banned)
+
+### Example 3: Alias match folded to base
+
+Query component: `attribute_expanded:purity`  
+Index component: `attribute:cleanliness`
+
+- Alias `purity` maps to `cleanliness`
+- Base component `attribute:cleanliness` matched fuzzily → 0.4 (same type fuzzy)
+- Alias penalty → ×0.9
+- Goalstate multiplier if goalstate → ×4
+
+Score = 0.4 × 0.9 = **0.36**, ×4 if goalstate = **1.44**
+
+### Example 4: List-to-list value matching
+
+Query value: `["person", "microwave"]`  
+Index value: `["person", "microwave"]`
+
+- All index elements match → **1.0**
+
+If index value: `["person", "toaster"]`
+
+- At least one but not all → **0.7**
+
+If index value: `["plate", "cup"]`
+
+- None match → **0.0**
+
+### Example 5: Position unit
+
+Query: `position_unit:apple:near:near:table`  
+Index: `position_unit:apple:on:on:table`
+
+- relationr near vs on → ×0.5
+- relation near vs on → ×0.8
+- relative_to table vs table → ×1.0
+
+Score = 0.5 × 0.8 × 1.0 = **0.4**
+
+### Example 6: Spatial one-hop
+
+Query spatial: `near(apple, table)`  
+Memory has:
+- `apple.relationr = on, apple.relative_to = cutting_board`
+- `cutting_board.relationr = on, cutting_board.relative_to = table`
+
+- Direct match fails
+- One-hop: both `on` are allowed spatial operators → score **0.5**
+
+### Example 7: Verb matching
+
+Query: `verb_target:bake`  
+Index: `verb:bake` in 22 memories
+
+Per memory, exact verb match = **2.0** (non-goalstate). Each memory receives up to 4 verb contributions of 2.0 (target cap).
+
+### Example 8: Index term cap applied
+
+Suppose `value:clean` matches 15 times in the same memory (from different state changes, preconditions, goal state). After all scoring and co-match, the top **6** contributions are kept; the remaining 9 are discarded.
+
+---
+
+## 16. Summary of Scoring Multipliers
+
+| Match | Multiplier |
+|-------|-----------|
+| Full-path max core | 2.0 |
+| Path contiguous exact | 1.0 |
+| Path non-contiguous exact | 0.9 |
+| Path contiguous fuzzy | 0.9 |
+| Path non-contiguous fuzzy | 0.8 |
+| Path partial exact | ratio |
+| Path partial fuzzy | ratio × 0.8 |
+| Value exact | 1.0 |
+| Value scalar ±30% | 0.7 |
+| Value list full | 1.0 |
+| Value list partial | 0.7 |
+| Value fuzzy full | 0.9 |
+| Value fuzzy partial | 0.6 |
+| Value no match | 0.2 |
+| Op exact | 1.0 |
+| Op `!=` | 0.5 |
+| Op other | 0.8 |
+| Object exact | ×2.0 |
+| Object fuzzy | ×1.6 |
+| Action exact | ×2.0 |
+| Action fuzzy | ×1.6 |
+| Alias penalty | ×0.9 |
+| Goalstate single | ×4 |
+| Goalstate both | ×16 |
+| Component exact same type | 0.5 |
+| Component exact diff type | 0.4 |
+| Component fuzzy same type | 0.4 |
+| Component fuzzy diff type | 0.3 |
+| Token exact same type | 0.3 |
+| Token exact diff type | 0.2 |
+| Token fuzzy same type | 0.2 |
+| Token fuzzy diff type | 0.1 |
+| Verb exact (non-goal) | 2.0 |
+| Verb fuzzy (non-goal) | 1.8 |
+| Co-match | 1.2^(n-1) capped at 2.0 |
+| Measurement unit | product of 1.0/0.5, max 1 |
+| Position unit | product of relationr/relation/relative_to |
+| Spatial direct | 1.0 |
+| Spatial one-hop | 0.5 |
+
+---
+
+This completes the comprehensive explanation of the search system. Every scoring rule, matching mode, alias behaviour, special unit, and post-processing step has been covered.

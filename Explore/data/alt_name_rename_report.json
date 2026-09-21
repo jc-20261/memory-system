@@ -1,0 +1,1106 @@
+[
+  {
+    "original_alt_name": "air_flow",
+    "new_alt_name": "air_flow__01",
+    "parent_general": "air_flow",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "air_temperature_drop",
+    "new_alt_name": "air_temperature_drop__01",
+    "parent_general": "air_temperature_drop",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "alertness_recovery",
+    "new_alt_name": "alertness_recovery__01",
+    "parent_general": "alertness_recovery",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "align_container_against_wall",
+    "new_alt_name": "align_container_against_wall__01",
+    "parent_general": "align_container_against_wall",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "anthocyanin_accumulation_in_stem_base",
+    "new_alt_name": "anthocyanin_accumulation_in_stem_base__01",
+    "parent_general": "anthocyanin_accumulation_in_stem_base",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "arrange_support_arches",
+    "new_alt_name": "arrange_support_arches__01",
+    "parent_general": "arrange_support_arches",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "assess_root_anchoring_by_observing_sway",
+    "new_alt_name": "assess_root_anchoring_by_observing_sway__01",
+    "parent_general": "assess_root_anchoring_by_observing_sway",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "awareness_ascends",
+    "new_alt_name": "awareness_ascends__01",
+    "parent_general": "awareness_ascends",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "awareness_fades",
+    "new_alt_name": "awareness_fades__01",
+    "parent_general": "awareness_fades",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "backrest_tilts_backward",
+    "new_alt_name": "backrest_tilts_backward__01",
+    "parent_general": "backrest_tilts_backward",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "begin_typing",
+    "new_alt_name": "begin_typing__01",
+    "parent_general": "begin_typing",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "blink_slowly",
+    "new_alt_name": "blink_slowly__01",
+    "parent_general": "blink_slowly",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "body_relaxation_transition",
+    "new_alt_name": "body_relaxation_transition__01",
+    "parent_general": "body_relaxation_transition",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "carry_container_back_to_indoor_growing_area",
+    "new_alt_name": "carry_container_back_to_indoor_growing_area__01",
+    "parent_general": "carry_container_back_to_indoor_growing_area",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "carry_container_to_partial_shade_zone",
+    "new_alt_name": "carry_container_to_partial_shade_zone__01",
+    "parent_general": "carry_container_to_partial_shade_zone",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "check_growing_medium_moisture",
+    "new_alt_name": "check_growing_medium_moisture__01",
+    "parent_general": "check_growing_medium_moisture",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "check_phone_elapsed_10min",
+    "new_alt_name": "check_phone_elapsed_10min__01",
+    "parent_general": "check_phone_elapsed_10min",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "check_shadow_path_across_surface",
+    "new_alt_name": "check_shadow_path_across_surface__01",
+    "parent_general": "check_shadow_path_across_surface",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "check_support_arch_alignment",
+    "new_alt_name": "check_support_arch_alignment__01",
+    "parent_general": "check_support_arch_alignment",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "clip_in_and_settle",
+    "new_alt_name": "clip_in_and_settle__01",
+    "parent_general": "clip_in_and_settle",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "cold_night_exposure",
+    "new_alt_name": "cold_night_exposure__01",
+    "parent_general": "cold_night_exposure",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "conclude_readiness",
+    "new_alt_name": "conclude_readiness__01",
+    "parent_general": "conclude_readiness",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "continued_wax_deposition",
+    "new_alt_name": "continued_wax_deposition__01",
+    "parent_general": "continued_wax_deposition",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "cover_support_structure_with_shade_cloth",
+    "new_alt_name": "cover_support_structure_with_shade_cloth__01",
+    "parent_general": "cover_support_structure_with_shade_cloth",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "crouch_beside_container",
+    "new_alt_name": "crouch_beside_container__01",
+    "parent_general": "crouch_beside_container",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "cut_butter_into_cubes",
+    "new_alt_name": "cut_butter_into_cubes__01",
+    "parent_general": "cut_fat_into_cubes",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "cuticle_wax_formation",
+    "new_alt_name": "cuticle_wax_formation__01",
+    "parent_general": "cuticle_wax_formation",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "daily_monitoring",
+    "new_alt_name": "daily_monitoring__01",
+    "parent_general": "daily_monitoring",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "dim_backlight",
+    "new_alt_name": "dim_backlight__01",
+    "parent_general": "dim_display_backlight",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "direct_sun_exposure_test",
+    "new_alt_name": "direct_sun_exposure_test__01",
+    "parent_general": "direct_sun_exposure_test",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "direct_sunlight_strikes_leaves",
+    "new_alt_name": "direct_sunlight_strikes_leaves__01",
+    "parent_general": "direct_sunlight_strikes_leaves",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "don_eye_mask",
+    "new_alt_name": "don_eye_mask__01",
+    "parent_general": "don_eye_mask",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "dropdown_menu_opens",
+    "new_alt_name": "dropdown_menu_opens__01",
+    "parent_general": "dropdown_menu_opens",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "edge_drying_of_growing_medium_surface",
+    "new_alt_name": "edge_drying_of_growing_medium_surface__01",
+    "parent_general": "edge_drying_of_growing_medium_surface",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "evening_bring_container_inside",
+    "new_alt_name": "evening_bring_container_inside__01",
+    "parent_general": "evening_bring_container_inside",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "extend_index_finger",
+    "new_alt_name": "extend_index_finger__01",
+    "parent_general": "extend_digit",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "eyelid_pressure_builds",
+    "new_alt_name": "eyelid_pressure_builds__01",
+    "parent_general": "eyelid_pressure_builds",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "feel_cornea_dryness",
+    "new_alt_name": "feel_cornea_dryness__01",
+    "parent_general": "feel_cornea_dryness",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "final_readiness_assessment",
+    "new_alt_name": "final_readiness_assessment__01",
+    "parent_general": "final_readiness_assessment",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "fit_mask_over_eyes",
+    "new_alt_name": "fit_mask_over_eyes__01",
+    "parent_general": "fit_mask_over_eyes",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "flywheel_inertia_resists_load",
+    "new_alt_name": "flywheel_inertia_resists_load__01",
+    "parent_general": "flywheel_inertia_resists_load",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "flywheel_slows_and_stops",
+    "new_alt_name": "flywheel_slows_and_stops__01",
+    "parent_general": "flywheel_slows_and_stops",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "flywheel_spins_freely",
+    "new_alt_name": "flywheel_spins_freely__01",
+    "parent_general": "flywheel_spins_freely",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "fold_glasses",
+    "new_alt_name": "fold_glasses__01",
+    "parent_general": "fold_glasses",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "freehub_clicks",
+    "new_alt_name": "freehub_clicks__01",
+    "parent_general": "freehub_clicks",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "gaze_at_monitor",
+    "new_alt_name": "gaze_at_monitor__01",
+    "parent_general": "gaze_at_display",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "gaze_at_display",
+    "new_alt_name": "gaze_at_display__01",
+    "parent_general": "gaze_at_monitor",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "gaze_at_monitor",
+    "new_alt_name": "gaze_at_monitor__02",
+    "parent_general": "gaze_at_monitor",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "glance_at_watch",
+    "new_alt_name": "glance_at_watch__01",
+    "parent_general": "glance_at_watch",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "glance_at_watch_0.08",
+    "new_alt_name": "glance_at_watch_0.08__01",
+    "parent_general": "glance_at_watch_0.08",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "grate_cheese",
+    "new_alt_name": "grate_cheese__01",
+    "parent_general": "grate_food_item",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "growing_medium_moisture_evaporation",
+    "new_alt_name": "growing_medium_moisture_evaporation__01",
+    "parent_general": "growing_medium_moisture_evaporation",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "harden_off_seedlings",
+    "new_alt_name": "harden_off_seedlings__01",
+    "parent_general": "harden_off_seedlings",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "heart_rate_catches_up",
+    "new_alt_name": "heart_rate_catches_up__01",
+    "parent_general": "heart_rate_catches_up",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "heart_rate_holds_steady",
+    "new_alt_name": "heart_rate_holds_steady__01",
+    "parent_general": "heart_rate_holds_steady",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "hum_fades_to_silence",
+    "new_alt_name": "hum_fades_to_silence__01",
+    "parent_general": "hum_fades_to_silence",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "human_interaction_bundle",
+    "new_alt_name": "human_interaction_bundle__01",
+    "parent_general": "human_interaction_bundle",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "human_pedaling",
+    "new_alt_name": "human_pedaling__01",
+    "parent_general": "human_pedaling",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "hypnic_jerk_left_knee",
+    "new_alt_name": "hypnic_jerk_left_knee__01",
+    "parent_general": "hypnic_jerk_left_knee",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "increase_effort",
+    "new_alt_name": "increase_effort__01",
+    "parent_general": "increase_effort",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "inspect_root_growth_through_drainage_slits",
+    "new_alt_name": "inspect_root_growth_through_drainage_slits__01",
+    "parent_general": "inspect_root_growth_through_drainage_slits",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "inspect_root_ball",
+    "new_alt_name": "inspect_root_ball__01",
+    "parent_general": "inspect_root_system",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "install_shade_cloth_over_support_arches",
+    "new_alt_name": "install_shade_cloth_over_support_arches__01",
+    "parent_general": "install_shade_cloth_over_support_arches",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "leaf_flutter_from_air_movement",
+    "new_alt_name": "leaf_flutter_from_air_movement__01",
+    "parent_general": "leaf_flutter_from_air_movement",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "leaf_transpiration",
+    "new_alt_name": "leaf_transpiration__01",
+    "parent_general": "leaf_transpiration",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "left_leg_power_stroke",
+    "new_alt_name": "left_leg_power_stroke__01",
+    "parent_general": "left_leg_power_stroke",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "left_power_phase",
+    "new_alt_name": "left_power_phase__01",
+    "parent_general": "left_power_phase",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "left_power_stroke",
+    "new_alt_name": "left_power_stroke__01",
+    "parent_general": "left_power_stroke",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "let_eyelids_grow_heavy",
+    "new_alt_name": "let_eyelids_grow_heavy__01",
+    "parent_general": "let_eyelids_grow_heavy",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "lift_shade_cloth",
+    "new_alt_name": "lift_shade_cloth__01",
+    "parent_general": "lift_shade_cloth",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "light_passage_to_eyes",
+    "new_alt_name": "light_passage_to_eyes__01",
+    "parent_general": "light_passage_to_eyes",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "long_exhalation",
+    "new_alt_name": "long_exhalation__01",
+    "parent_general": "long_exhalation",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "make_croutons_from_stale_bread",
+    "new_alt_name": "make_croutons_from_stale_bread__01",
+    "parent_general": "make_croutons_from_stale_bread",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "move_container_to_partial_shade_if_scorch_risk",
+    "new_alt_name": "move_container_to_partial_shade_if_scorch_risk__01",
+    "parent_general": "move_container_to_partial_shade_if_scorch_risk",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "move_mouse_to_side",
+    "new_alt_name": "move_mouse_to_side__01",
+    "parent_general": "move_mouse_to_side",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "moving_structure_shadow_across_container",
+    "new_alt_name": "moving_structure_shadow_across_container__01",
+    "parent_general": "moving_structure_shadow_across_container",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "natural_process_bundle",
+    "new_alt_name": "natural_process_bundle__01",
+    "parent_general": "natural_process_bundle",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "no_dreams_remembered",
+    "new_alt_name": "no_dreams_remembered__01",
+    "parent_general": "no_dreams_remembered",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "notice_body_and_intention",
+    "new_alt_name": "notice_body_and_intention__01",
+    "parent_general": "notice_body_and_intention",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "open_controller_app",
+    "new_alt_name": "open_controller_app__01",
+    "parent_general": "open_control_app",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "open_drawer",
+    "new_alt_name": "open_drawer__01",
+    "parent_general": "open_drawer",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "open_freezer_door",
+    "new_alt_name": "open_freezer_door__01",
+    "parent_general": "open_freezer_door",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "outdoor_exposure_and_monitoring",
+    "new_alt_name": "outdoor_exposure_and_monitoring__01",
+    "parent_general": "outdoor_exposure_and_monitoring",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "overnight_recovery",
+    "new_alt_name": "overnight_recovery__01",
+    "parent_general": "overnight_recovery",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "pedal_against_rising_resistance",
+    "new_alt_name": "pedal_against_rising_resistance__01",
+    "parent_general": "pedal_against_rising_resistance",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "peel_back_wrapper",
+    "new_alt_name": "peel_back_wrapper__01",
+    "parent_general": "peel_back_packaging",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "perceive_limb_heaviness",
+    "new_alt_name": "perceive_limb_heaviness__01",
+    "parent_general": "perceive_limb_heaviness",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "phone_alarm_chime",
+    "new_alt_name": "phone_alarm_chime__01",
+    "parent_general": "phone_alarm_chime",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "photosynthesis",
+    "new_alt_name": "photosynthesis__01",
+    "parent_general": "photosynthesis",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "pinch_stem_between_thumb_and_forefinger",
+    "new_alt_name": "pinch_stem_between_thumb_and_forefinger__01",
+    "parent_general": "pinch_stem_between_thumb_and_forefinger",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "place_container_under_artificial_light",
+    "new_alt_name": "place_container_under_artificial_light__01",
+    "parent_general": "place_container_under_artificial_light",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "place_glasses_on_mousepad",
+    "new_alt_name": "place_glasses_on_mousepad__01",
+    "parent_general": "place_glasses_on_mousepad",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "place_phone_face_down",
+    "new_alt_name": "place_phone_face_down__01",
+    "parent_general": "place_phone_face_down",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "pneumatic_hiss",
+    "new_alt_name": "pneumatic_hiss__01",
+    "parent_general": "pneumatic_hiss",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "position_container_for_light_and_shade",
+    "new_alt_name": "position_container_for_light_and_shade__01",
+    "parent_general": "position_container_for_light_and_shade",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "pre_nap_work_session",
+    "new_alt_name": "pre_nap_work_session__01",
+    "parent_general": "pre_nap_work_session",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "make_croutons_from_stale_bread",
+    "new_alt_name": "make_croutons_from_stale_bread__02",
+    "parent_general": "prepare_bread_cubes",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "prepare_eggs",
+    "new_alt_name": "prepare_eggs__01",
+    "parent_general": "prepare_egg_mixture",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "prepare_nap_area",
+    "new_alt_name": "prepare_nap_area__01",
+    "parent_general": "prepare_nap_area",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "press_fingertip_into_growing_medium",
+    "new_alt_name": "press_fingertip_into_growing_medium__01",
+    "parent_general": "press_fingertip_into_growing_medium",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "press_side_button",
+    "new_alt_name": "press_side_button__01",
+    "parent_general": "press_hardware_button",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "press_head_into_headrest",
+    "new_alt_name": "press_head_into_headrest__01",
+    "parent_general": "press_head_into_headrest",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "press_start_button",
+    "new_alt_name": "press_start_button__01",
+    "parent_general": "press_start_control",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "pull_chair_lever",
+    "new_alt_name": "pull_chair_lever__01",
+    "parent_general": "pull_chair_lever",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "pull_keyboard_toward",
+    "new_alt_name": "pull_keyboard_toward__01",
+    "parent_general": "pull_keyboard_toward",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "pull_off_eye_mask",
+    "new_alt_name": "pull_off_eye_mask__01",
+    "parent_general": "pull_off_eye_mask",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "push_keyboard_forward",
+    "new_alt_name": "push_keyboard_forward__01",
+    "parent_general": "push_keyboard_forward",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "put_glasses_on",
+    "new_alt_name": "put_glasses_on__01",
+    "parent_general": "put_glasses_on",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "read_options",
+    "new_alt_name": "read_options__01",
+    "parent_general": "read_menu_options",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "read_summary_screen",
+    "new_alt_name": "read_summary_screen__01",
+    "parent_general": "read_summary_screen",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "redistribute_exposure_among_containers",
+    "new_alt_name": "redistribute_exposure_among_containers__01",
+    "parent_general": "redistribute_exposure_among_containers",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "register_fatigue_0.2",
+    "new_alt_name": "register_fatigue_0.2__01",
+    "parent_general": "register_fatigue_0.2",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "release_calves",
+    "new_alt_name": "release_calves__01",
+    "parent_general": "release_calves",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "remove_and_store_accessories",
+    "new_alt_name": "remove_and_store_accessories__01",
+    "parent_general": "remove_and_store_accessories",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "remove_glasses",
+    "new_alt_name": "remove_glasses__01",
+    "parent_general": "remove_glasses",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "respiration_slows",
+    "new_alt_name": "respiration_slows__01",
+    "parent_general": "respiration_slows",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "rest_hands_on_armrests",
+    "new_alt_name": "rest_hands_on_armrests__01",
+    "parent_general": "rest_hands_on_armrests",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "resume_work",
+    "new_alt_name": "resume_work__01",
+    "parent_general": "resume_work",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "right_leg_power_stroke",
+    "new_alt_name": "right_leg_power_stroke__01",
+    "parent_general": "right_leg_power_stroke",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "right_power_phase",
+    "new_alt_name": "right_power_phase__01",
+    "parent_general": "right_power_phase",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "right_power_stroke",
+    "new_alt_name": "right_power_stroke__01",
+    "parent_general": "right_power_stroke",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "root_anchoring",
+    "new_alt_name": "root_anchoring__01",
+    "parent_general": "root_anchoring",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "root_system_expansion",
+    "new_alt_name": "root_system_expansion__01",
+    "parent_general": "root_system_expansion",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "rotate_container_half_turn",
+    "new_alt_name": "rotate_container_half_turn__01",
+    "parent_general": "rotate_container_half_turn",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "save_document",
+    "new_alt_name": "save_document__01",
+    "parent_general": "save_document",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "second_playback_and_listen",
+    "new_alt_name": "second_playback_and_listen__01",
+    "parent_general": "second_playback_and_listen",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "secure_shade_cloth_edges",
+    "new_alt_name": "secure_shade_cloth_edges__01",
+    "parent_general": "secure_shade_cloth_edges",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "set_container_on_low_surface",
+    "new_alt_name": "set_container_on_low_surface__01",
+    "parent_general": "set_container_on_low_surface",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "set_phone_timer_600s",
+    "new_alt_name": "set_phone_timer_600s__01",
+    "parent_general": "set_phone_timer_600s",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "shift_container_farther_into_open_conditions_each_day",
+    "new_alt_name": "shift_container_farther_into_open_conditions_each_day__01",
+    "parent_general": "shift_container_farther_into_open_conditions_each_day",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "sit_upright",
+    "new_alt_name": "sit_upright__01",
+    "parent_general": "sit_upright",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "sleep_interval",
+    "new_alt_name": "sleep_interval__01",
+    "parent_general": "sleep_interval",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "sleep_onset",
+    "new_alt_name": "sleep_onset__01",
+    "parent_general": "sleep_onset",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "slider_pulses_at_detents",
+    "new_alt_name": "slider_pulses_at_detents__01",
+    "parent_general": "slider_pulses_at_detents",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "sound_habituation",
+    "new_alt_name": "sound_habituation__01",
+    "parent_general": "sound_habituation",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "spinning_sensation",
+    "new_alt_name": "spinning_sensation__01",
+    "parent_general": "spinning_sensation",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "spray_mist_cycle",
+    "new_alt_name": "spray_mist_cycle__01",
+    "parent_general": "spray_mist_cycle",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "start_signal_sent_to_device",
+    "new_alt_name": "start_signal_sent_to_device__01",
+    "parent_general": "start_signal_sent_to_device",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "stem_stiffening",
+    "new_alt_name": "stem_stiffening__01",
+    "parent_general": "stem_stiffening",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "stem_thickening_and_pigment_accumulation_at_base",
+    "new_alt_name": "stem_thickening_and_pigment_accumulation_at_base__01",
+    "parent_general": "stem_thickening_and_pigment_accumulation_at_base",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "stop_pedaling",
+    "new_alt_name": "stop_pedaling__01",
+    "parent_general": "stop_pedaling",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "sunlight_incidence",
+    "new_alt_name": "sunlight_incidence__01",
+    "parent_general": "sunlight_incidence",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "sweat_production_increases",
+    "new_alt_name": "sweat_production_increases__01",
+    "parent_general": "sweat_production_increases",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "system_process_bundle",
+    "new_alt_name": "system_process_bundle__01",
+    "parent_general": "system_process_bundle",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "take_out_eye_mask",
+    "new_alt_name": "take_out_eye_mask__01",
+    "parent_general": "take_out_eye_mask",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "timer_begins_countdown",
+    "new_alt_name": "timer_begins_countdown__01",
+    "parent_general": "timer_begins_countdown",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "touch_growing_medium_for_warmth_and_moisture",
+    "new_alt_name": "touch_growing_medium_for_warmth_and_moisture__01",
+    "parent_general": "touch_growing_medium_for_warmth_and_moisture",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "touch_leaf_to_test_tenderness",
+    "new_alt_name": "touch_leaf_to_test_tenderness__01",
+    "parent_general": "touch_leaf_to_test_tenderness",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "turgor_recovery_and_night_growth",
+    "new_alt_name": "turgor_recovery_and_night_growth__01",
+    "parent_general": "turgor_recovery_and_night_growth",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "turn_monitor_away",
+    "new_alt_name": "turn_monitor_away__01",
+    "parent_general": "turn_monitor_away",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "type_at_keyboard",
+    "new_alt_name": "type_at_keyboard__01",
+    "parent_general": "type_at_keyboard",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "unclip_and_stand",
+    "new_alt_name": "unclip_and_stand__01",
+    "parent_general": "unclip_and_stand",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "vibration_transmission_through_frame",
+    "new_alt_name": "vibration_transmission_through_frame__01",
+    "parent_general": "vibration_transmission_through_frame",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "wake_up",
+    "new_alt_name": "wake_up__01",
+    "parent_general": "wake_up",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "walk_to_outdoor_location_while_carrying_container",
+    "new_alt_name": "walk_to_outdoor_location_while_carrying_container__01",
+    "parent_general": "walk_to_outdoor_location_while_carrying_container",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "warm_dark_suspension",
+    "new_alt_name": "warm_dark_suspension__01",
+    "parent_general": "warm_dark_suspension",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "watch_droplets_bead_on_leaf_surface",
+    "new_alt_name": "watch_droplets_bead_on_leaf_surface__01",
+    "parent_general": "watch_droplets_bead_on_leaf_surface",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "watch_for_wilting_or_scorch",
+    "new_alt_name": "watch_for_wilting_or_scorch__01",
+    "parent_general": "watch_for_wilting_or_scorch",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "watch_leaf_movement",
+    "new_alt_name": "watch_leaf_movement__01",
+    "parent_general": "watch_leaf_movement",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "watch_vibrates",
+    "new_alt_name": "watch_vibrates__01",
+    "parent_general": "watch_vibrates",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "water_droplets_bead_on_leaf_surface",
+    "new_alt_name": "water_droplets_bead_on_leaf_surface__01",
+    "parent_general": "water_droplets_bead_on_leaf_surface",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "water_with_gentle_spray",
+    "new_alt_name": "water_with_gentle_spray__01",
+    "parent_general": "water_with_gentle_spray",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "week2_full_time_outdoor_exposure",
+    "new_alt_name": "week2_full_time_outdoor_exposure__01",
+    "parent_general": "week2_full_time_outdoor_exposure",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "weekly_rotation",
+    "new_alt_name": "weekly_rotation__01",
+    "parent_general": "weekly_rotation",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "weight_shifts_tailbone_to_shoulder_blades",
+    "new_alt_name": "weight_shifts_tailbone_to_shoulder_blades__01",
+    "parent_general": "weight_shifts_tailbone_to_shoulder_blades",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "wind_drying_of_growing_medium",
+    "new_alt_name": "wind_drying_of_growing_medium__01",
+    "parent_general": "wind_drying_of_growing_medium",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "wind_induced_stem_mechanical_stress",
+    "new_alt_name": "wind_induced_stem_mechanical_stress__01",
+    "parent_general": "wind_induced_stem_mechanical_stress",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "wind_lift_container_corner",
+    "new_alt_name": "wind_lift_container_corner__01",
+    "parent_general": "wind_lift_container_corner",
+    "reason": "alt_equals_general"
+  },
+  {
+    "original_alt_name": "adjust_cheerfulness_setting",
+    "new_alt_name": "adjust_cheerfulness_setting__01",
+    "parent_general": "adjust_setting_via_slider",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "adjust_cheerfulness_setting",
+    "new_alt_name": "adjust_cheerfulness_setting__02",
+    "parent_general": "adjust_ui_parameter",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "initial_assessment",
+    "new_alt_name": "initial_assessment__01",
+    "parent_general": "assess_initial_state",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "initial_assessment",
+    "new_alt_name": "initial_assessment__02",
+    "parent_general": "initial_inspection",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "cut_lemon_in_half",
+    "new_alt_name": "cut_lemon_in_half__01",
+    "parent_general": "cut_citrus_in_half",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "cut_lemon_in_half",
+    "new_alt_name": "cut_lemon_in_half__02",
+    "parent_general": "cut_fruit_in_half",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "screen_light_reaches_eyes",
+    "new_alt_name": "screen_light_reaches_eyes__01",
+    "parent_general": "display_light_reaches_eyes",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "screen_light_reaches_eyes",
+    "new_alt_name": "screen_light_reaches_eyes__02",
+    "parent_general": "light_reaches_eyes",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "squeeze_lemon_juice",
+    "new_alt_name": "squeeze_lemon_juice__01",
+    "parent_general": "extract_fruit_juice",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "squeeze_lemon_juice",
+    "new_alt_name": "squeeze_lemon_juice__02",
+    "parent_general": "squeeze_juice_from_fruit",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "feel_haptic_ticks",
+    "new_alt_name": "feel_haptic_ticks__01",
+    "parent_general": "feel_haptic_feedback",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "feel_haptic_ticks",
+    "new_alt_name": "feel_haptic_ticks__02",
+    "parent_general": "perceive_haptic_feedback",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "glance_at_time_device",
+    "new_alt_name": "glance_at_time_device__01",
+    "parent_general": "glance_at_watch",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "glance_at_time_device",
+    "new_alt_name": "glance_at_time_device__02",
+    "parent_general": "glance_at_watch_0.08",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "unwrap_butter",
+    "new_alt_name": "unwrap_butter__01",
+    "parent_general": "unwrap_fat",
+    "reason": "duplicated_across_generals"
+  },
+  {
+    "original_alt_name": "unwrap_butter",
+    "new_alt_name": "unwrap_butter__02",
+    "parent_general": "unwrap_packaged_item",
+    "reason": "duplicated_across_generals"
+  }
+]
