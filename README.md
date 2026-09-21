@@ -150,7 +150,6 @@ This project is licensed under the MIT License. See LICENSE for the full text.
 
 If you use this system in academic work, cite the archived version:
 
-    <author>. Memory System. Zenodo, 2026.
-    https://doi.org/10.5281/zenodo.XXXXXXX
+    Jack Cheng. Using LLM to build a cognitive system: a preliminary study. Zenodo, 2026.
+    https://doi.org/10.5281/zenodo.22870202  
 
-Replace the author and DOI with the values from your Zenodo deposit.
