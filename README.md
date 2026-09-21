@@ -57,10 +57,14 @@ The search and planning CLI is the main entry point.
 
 The default query mode is LLM. Type a natural language query at the prompt. Type `plan` at the result prompt to generate plans for the last query. Type `manual` to switch to manual query terms, `github` to print the repository URL, or `quit` to exit.
 
+Search and planning are based on an initial batch of 98 memories and are for demonstrating basic functionalities. 
+
 To run the memory generation pipeline:
 
     cd "Memory generation"
     python mgen.py
+
+You can examine the memories file and records file in the Memories folder to see the initial batch of 98 memories generated, as well as all output from all stages of memory generation. if you wish to generate memories, you can set parameters in the mgen.py file on how many to generate and the conditions. The code is not currently optimized with respect to token usage and each memory might output ~200k tokens in total. 
 
 ## Repository layout
 
@@ -127,9 +131,11 @@ Given a query with a goal state, the planner retrieves seed actions by verb, cha
 
 Traces are written to `plan_trace_simple.txt` and `plan_trace_full.txt`.
 
-### 3D module
+### 3D module 
 
 Each memory can be represented as an assembly of primitive elements with transforms. The module supports assembly generation from a memory JSON via LLM, rendering, shape similarity via Chamfer distance, spatial relation extraction, and relation map similarity.
+
+This module is under development. Token usage is very high for memory generation. You can check out scene renders from: https://github.com/jc-20261/memory-system-paper/tree/main/figures/3D%20frames%20for%20peeling%20apple%20memory
 
 ## Memory corpus
 
