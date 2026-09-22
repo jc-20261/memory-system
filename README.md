@@ -57,7 +57,7 @@ The search and planning CLI is the main entry point.
     cd Explore
     python Explorer.py
 
-The default query mode is LLM. Type a natural language query at the prompt. Type `plan` at the result prompt to generate plans for the last query. Type `manual` to switch to manual query terms, `github` to print the repository URL, or `quit` to exit.
+The default query mode is LLM. Type a natural language query at the prompt (e.g. baking a pizza). Type `plan` at the result prompt to generate plans for the last query. Type `manual` to switch to manual query terms, `github` to print the repository URL, or `quit` to exit.
 
 Search and planning are based on an initial batch of 98 memories and are for demonstrating basic functionalities. 
 
