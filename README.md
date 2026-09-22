@@ -16,7 +16,6 @@ The system has four subsystems:
 
 4. **3D module** — represents each memory as an assembly of primitive elements and extracts a spatial relation map.
 
-Technical paper: doi.org/10.5281/zenodo.22870201
 
 ## Requirements
 
@@ -156,7 +155,7 @@ This project is licensed under the MIT License. See LICENSE for the full text.
 
 ## Citation
 
-If you use this system in academic work, cite the archived version:
+If you use this system in academic work, cite the technical paper:
 
     Jack Cheng. Using LLM to build a cognitive system: a preliminary study. Zenodo, 2026.
     https://doi.org/10.5281/zenodo.22870201  
