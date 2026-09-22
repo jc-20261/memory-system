@@ -16,6 +16,8 @@ The system has four subsystems:
 
 4. **3D module** — represents each memory as an assembly of primitive elements and extracts a spatial relation map.
 
+Technical paper: doi.org/10.5281/zenodo.22870201
+
 ## Requirements
 
 - Python 3.10 or newer
