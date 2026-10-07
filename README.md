@@ -156,8 +156,41 @@ This project is licensed under the MIT License. See LICENSE for the full text.
 
 ## Citation
 
-If you use this system in academic work, cite the technical paper:
+If you use this system in academic work, please cite both the software code and the accompanying technical paper:
 
-    Jack Cheng. Using LLM to build a cognitive system: a preliminary study. Zenodo, 2026.
-    https://doi.org/10.5281/zenodo.22870201  
+### Code Citation
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23223406.svg)](https://doi.org/10.5281/zenodo.23223406)
+
+> Cheng, J. (2026). *Using LLM to build a cognitive system: a preliminary study* (Software, v1.0.3). Zenodo. https://doi.org/10.5281/zenodo.23223406
+
+### Technical Paper Citation
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22870201.svg)](https://doi.org/10.5281/zenodo.22870201)
+
+> Cheng, J. (2026). *Using LLM to build a cognitive system: a preliminary study*. Zenodo. https://doi.org/10.5281/zenodo.22870201
+
+### BibTeX
+
+```bibtex
+@software{cheng_2026_memory_system_code,
+  author       = {Cheng, Jack},
+  title        = {{Using LLM to build a cognitive system: a preliminary study}},
+  month        = oct,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {v1.0.3},
+  doi          = {10.5281/zenodo.23223406},
+  url          = {https://doi.org/10.5281/zenodo.23223406}
+}
+
+@article{cheng_2026_memory_system_paper,
+  author       = {Cheng, Jack},
+  title        = {Using LLM to build a cognitive system: a preliminary study},
+  journal      = {Zenodo},
+  year         = 2026,
+  month        = oct,
+  doi          = {10.5281/zenodo.22870201},
+  url          = {https://doi.org/10.5281/zenodo.22870201}
+}
+```
