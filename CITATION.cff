@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the software and the accompanying technical paper."
+title: "Using LLM to build a cognitive system: a preliminary study"
+abstract: "A memory system that encodes natural language narratives as structured memory objects, indexes them for hybrid search, plans over them via backward chaining, and represents them geometrically as 3D assemblies."
+authors:
+  - family-names: "Cheng"
+    given-names: "Jack"
+version: "v1.0.3"
+doi: "10.5281/zenodo.23223406"
+date-released: "2026-10-07"
+license: "MIT"
+repository-code: "https://github.com/jc-20261/memory-system"
+keywords:
+  - "large language models"
+  - "memory system"
+  - "cognitive architecture"
+  - "planning"
+  - "search"
+  - "3D scene representation"
+preferred-citation:
+  type: article
+  title: "Using LLM to build a cognitive system: a preliminary study"
+  authors:
+    - family-names: "Cheng"
+      given-names: "Jack"
+  year: 2026
+  month: 10
+  doi: "10.5281/zenodo.22870201"
+  url: "https://doi.org/10.5281/zenodo.22870201"
