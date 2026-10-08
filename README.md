@@ -156,7 +156,7 @@ This project is licensed under the MIT License. See LICENSE for the full text.
 
 ## Citation
 
-If you use this system in academic work, please cite both the software code and the accompanying technical paper:
+If you use this system in academic work, you can cite the accompanying technical paper:
 
 ### Code Citation
 
